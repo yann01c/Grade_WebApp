@@ -32,6 +32,8 @@
         </div>
         <div class="main">
             <div class="form">
+                <form action="" method="post">
+                </form>
             </div>
 
                 <?php
@@ -41,12 +43,13 @@
                         $grade = htmlspecialchars($_POST['s2-grade']);
                         $date = htmlspecialchars($_POST['s3-date']);
                         $weight = htmlspecialchars($_POST['s4-weighting']);
-                        echo $grade;
-                        echo $class; 
+                        echo $class;
+                        echo $grade; 
                         echo $date; 
                         echo $weight;
                     }
                 ?>
+                    <p>Grade: <?php echo $grade; ?></p>
         </div>
         <div class="footer">
         </div>
