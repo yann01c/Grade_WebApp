@@ -12,7 +12,7 @@
     {
         function __construct()
         {
-            $this->open('grade.db');
+            $db = $this->open('grade.db');
         }
     }
     $db = new MyDB();
@@ -23,7 +23,7 @@
     }
     
     $sql =<<<EOF
-    CREATE TABLE SUBMIT
+    CREATE TABLE CLASSES
     (ID INT PRIMARY KEY     NOT NULL,
     GRADE           FLOAT    NOT NULL,
     CLASS           VARCHAR(30) NOT NULL,
@@ -76,6 +76,9 @@
                         <label for="s2-grade">Grade</label><br>
                         <input type="number" step="0.1" name="s2-grade" required>
                     </div>
+                    <?php 
+                        $this->exec("INSERT INTO SUBMIT(GRADE) VALUES(1)");
+                    ?>
                     <div>
                         <label for="s3-date">Date</label><br>
                         <input type="date" name="s3-date" required>
