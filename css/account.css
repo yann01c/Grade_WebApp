@@ -1,4 +1,4 @@
-body,html {
+body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,9 +6,7 @@ body,html {
     display: flex;
     justify-content: space-between;
     padding: 38px;
-    border-bottom: 2px solid black;
 }
-
 .left-side {
     display: flex;
 }
@@ -49,7 +47,7 @@ span {
     display: block;
 }
 .form {
-    margin-top: 9em; 
+    margin-top: 25vh;
     display: flex;
     justify-content: center;
 }
@@ -58,23 +56,6 @@ span {
 }
 .form > form > div > label {
     font-size: 1.2em;
-}
-.form > form > div > input {
-    margin-top: 10px;
-    font-size: 0.9em;
-    width: 10em;
-}
-.form > form > div > select {
-    width: 8.6em;
-    margin-top: 10px;
-    font-size: 0.9em;
-}
-.form > form > div > textarea {
-    margin-top: 10px;
-    font-size: 0.9em;
-    width: 30em;
-    resize: none;
-    font-family: Arial, Helvetica, sans-serif;
 }
 .form > form > input {
     margin-top: 10px;
@@ -90,22 +71,15 @@ span {
     background-color: black;
     color: white;
 }
-.float {
+#a-float {
     float: left;
-    width: 6em;
-    margin-right: 12em;
-    font-family: Arial, Helvetica, sans-serif;
 }
-@media (max-width: 450px) {
-    .nav-wrapper > .left-side > div {font-size: 1.2em;}
-    .form > form > div > label { font-size: 1em;}
-    div.float { width: 1em; }
-    .form > form > div > textarea {width: 25em;}
+.form > form > div > a {
+    color: black;
+    text-decoration: none;
+    transition: color 150ms;
 }
-@media (max-width: 410px) {
-    .nav-wrapper > .left-side > div {font-size: 1.2em;}
-    .form > form > div > label { font-size: 0.9em;}
-    div.float { width: 0.5em; }
-    .form > form > div > textarea {width: 24em;}
+.form > form > div > a:hover {
+    color: blue;
 }
 

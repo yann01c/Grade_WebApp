@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade</title>
+    <title>Grade - Classes</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
                     <a href="#" class="active">Classes</a>
                 </div>
                 <div class="nav-link-wrapper">
-                    <a href="#">Account</a>
+                    <a href="account.php">Account</a>
                 </div>
             </div>
             <div class="right-side">
@@ -35,21 +35,8 @@
                 <form action="" method="post">
                 </form>
             </div>
-
-                <?php
-                    $class = $grade = $date = $weight = "";
-                    if( isset($_POST['submit'])){
-                        $class = htmlspecialchars($_POST['s1-class']);
-                        $grade = htmlspecialchars($_POST['s2-grade']);
-                        $date = htmlspecialchars($_POST['s3-date']);
-                        $weight = htmlspecialchars($_POST['s4-weighting']);
-                        echo $class;
-                        echo $grade; 
-                        echo $date; 
-                        echo $weight;
-                    }
-                ?>
-                    <p>Grade: <?php echo $grade; ?></p>
+                <?php include 'submit.php'; ?>
+            <p>Grade: <?php echo $grade; ?></p>
         </div>
         <div class="footer">
         </div>

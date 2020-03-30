@@ -1,0 +1,4 @@
+<?php 
+	$db->exec("INSERT INTO `SUBMIT` (GRADE, CLASS, DATE, WEIGHT)
+	VALUES (5, 'English', '23.03.2020', 50);");
+?>

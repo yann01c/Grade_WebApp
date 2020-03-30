@@ -3,42 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade</title>
+    <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <?php
-    class MyDB extends SQLite3
-    {
-        function __construct()
-        {
-            $db = $this->open('grade.db');
-        }
-    }
-    $db = new MyDB();
-    if(!$db){
-        echo $db->lastErrorMsg();
-    } else {
-        echo "Opened database successfully\n";
-    }
-    
-    $sql =<<<EOF
-    CREATE TABLE CLASSES
-    (ID INT PRIMARY KEY     NOT NULL,
-    GRADE           FLOAT    NOT NULL,
-    CLASS           VARCHAR(30) NOT NULL,
-    DATE            DATE        NOT NULL,
-    WEIGHT         INT          NOT NULL);
-    EOF;
-
-    $ret = $db->exec($sql);
-    if(!$ret){
-    echo $db->lastErrorMsg();
-    } else {
-    echo "Table created successfully\n";
-    }
-    $db->close();
-    ?>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -49,7 +17,7 @@
                     <a href="classes.php">Classes</a>
                 </div>
                 <div class="nav-link-wrapper">
-                    <a href="#">Account</a>
+                    <a href="account.php">Account</a>
                 </div>
             </div>
             <div class="right-side">
@@ -65,7 +33,7 @@
         <div class="main">
             <div class="form">
                 <form action="classes.php" method="post">
-                    <div>
+                    <div class="float">
                         <label for="s1-class">Class</label><br>
                         <select id="s1-class" name="s1-class">
                             <option value="none">- none -</option>
@@ -76,23 +44,26 @@
                         <label for="s2-grade">Grade</label><br>
                         <input type="number" step="0.1" name="s2-grade" required>
                     </div>
-                    <?php 
-                        $this->exec("INSERT INTO SUBMIT(GRADE) VALUES(1)");
-                    ?>
-                    <div>
+                    <div class="float">
                         <label for="s3-date">Date</label><br>
                         <input type="date" name="s3-date" required>
                     </div>
                     <div>
                         <label for="s4-weighting">Weighting</label><br>
-                        <input type="number" name="s4-weighting" placeholder="                                %" required>
+                        <input type="number" name="s4-weighting" placeholder="                           %" required>
                     </div>
-                    <input name="submit" type="submit">
+                    <div>
+                        <label for="s5-description">Description</label><br>
+                        <textarea rows="6" cols="50" name="s5-description" placeholder="Sample"></textarea>
+                    </div>
+                    <input name="submit" type="submit" value="Submit">
                 </form>
             </div>
         </div>
         <div class="footer">
+            <div class="copyright"></div>
         </div>
     </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
