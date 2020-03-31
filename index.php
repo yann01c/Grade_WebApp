@@ -6,7 +6,7 @@
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body id="index">
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -21,13 +21,6 @@
                 </div>
             </div>
             <div class="right-side">
-                <div class="dropdown">
-                    <span>ENGLISH</span>
-                    <div class="dropdown-content">
-                        <a href="#">GERMAN</a></br>
-                        <a href="#">FRENCH</a>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="main">

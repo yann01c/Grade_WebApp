@@ -4,26 +4,33 @@ body {
 }
 .nav-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 38px;
 }
 .left-side {
     display: flex;
 }
 .nav-wrapper > .left-side > div {
-    margin-right: 5vw;
     font-size: 1.5em;
 }
 .nav-link-wrapper a {
     color: grey;
     text-decoration: none;
-    transition : color 300ms;
+    transition: all 300ms;
+    border: 1px solid silver;
+    padding: 8px;
 }
 .nav-link-wrapper a:hover {
-    color: black;
+    color: white;
+    border: 1px solid black;
+    background-color: black;
 }
 a.active {
     color: black;
+    border: 1px solid black;
+    -webkit-box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
 }
 span {
     font-size: 1.0em;
@@ -47,7 +54,7 @@ span {
     display: block;
 }
 .form {
-    margin-top: 25vh;
+    margin-top: 13em;
     display: flex;
     justify-content: center;
 }
@@ -56,6 +63,11 @@ span {
 }
 .form > form > div > label {
     font-size: 1.2em;
+}
+.form > form > div > input {
+    margin-top: 10px;
+    font-size: 0.9em;
+    width: 15em;
 }
 .form > form > input {
     margin-top: 10px;
@@ -73,6 +85,7 @@ span {
 }
 #a-float {
     float: left;
+    width: 11em;
 }
 .form > form > div > a {
     color: black;
@@ -82,4 +95,3 @@ span {
 .form > form > div > a:hover {
     color: blue;
 }
-

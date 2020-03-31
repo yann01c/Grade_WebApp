@@ -6,7 +6,8 @@
     <title>Grade - Classes</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<?php include 'submit.php'; ?>
+<body id="classes">
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -21,22 +22,25 @@
                 </div>
             </div>
             <div class="right-side">
-                <div class="dropdown">
-                    <span>ENGLISH</span>
-                    <div class="dropdown-content">
-                        <a href="#">GERMAN</a></br>
-                        <a href="#">FRENCH</a>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="main">
             <div class="form">
-                <form action="" method="post">
-                </form>
+                <div class="">
+                    <label for="c1-class">Class</label><br>
+                    <button name="c1-class" type="button">English</button>
+                </div>
+                <div>
+                    <label for="c-average">Average</label><br>
+                    <input type="number" name="c-average" placeholder="GRADE" required>
+                </div>
+                <div class="c-float">
+                    <button name="c1-class" type="button">German</button>
+                </div>
+                <div>
+                    <input type="number" name="c-average" placeholder="GRADE" required>
+                </div>
             </div>
-                <?php include 'submit.php'; ?>
-            <p>Grade: <?php echo $grade; ?></p>
         </div>
         <div class="footer">
         </div>

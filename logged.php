@@ -6,7 +6,7 @@
     <title>Grade - Account</title>
     <link rel="stylesheet" href="css/account.css">
 </head>
-<body id="account">
+<body>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -25,22 +25,29 @@
         </div>
         <div class="main">
             <div class="form">
-                <form action="login_cred.php" method="post">
+                <form action="classes.php" method="post">
                     <div>
                         <label for="a1-username">Username</label><br>
                         <input type="text" step="0.1" name="a1-username" required>
                     </div>
                     <div>
-                        <label for="a2-password">Password</label><br>
-                        <input type="password" name="a2-password" required>
+                        <label for="a1-password">Password</label><br>
+                        <input type="password" name="a1-password" required>
+                    </div>
+                    <div>
+                        <label for="s1-class">Language</label><br>
+                        <select id="s1-class" name="s1-class">
+                            <option value="english">English</option>
+                            <option value="german">German</option>
+                        </select>
                     </div>
                     <div>
                         <a href="#" id="a-float">Forgot Password</a>
-                    </div>    
-                    <div>
-                        <a href="register.php">Register</a>
                     </div>
-                    <input name="submit" type="submit" value="Login">
+                    <div>
+                        <a href="#">Register</a>
+                    </div>
+                    <input name="submit" type="submit" value="Save Changes">
                 </form>
             </div>
         </div>
