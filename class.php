@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <?php include 'submit.php'; ?>
-<body id="classes">
+<body id="class">
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -25,25 +25,15 @@
             </div>
         </div>
         <div class="main">
+            <div class="bck-btn">
+                <a href="classes.php">Back</a>
+            </div>
+            <div class="title">
+                <h2>Overview - English</h2>
+            </div>
             <div class="form">
                 <form action="">
-                    <button id="c-add" class="c-add">Add new Class</button>
-                    <div class="float">
-                        <label for="c1-class">Class</label><br>
-                        <select id="c1-class" name="c1-class">
-                            <option value="-">-</option>
-                            <option value="English">English</option>
-                            <option value="German">German</option>
-                            <option value="Math">Math</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="c2-class">Average</label><br>
-                        <input type="text" name="c2-grade" vaule="<?php echo "$grade"; ?>" disabled>
-                    </div>
-                    <div>
-                        <a href="class.php" class="c-add" id="c-btn"></a>
-                    </div>
+
                 </form>
             </div>
         </div>

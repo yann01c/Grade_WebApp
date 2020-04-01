@@ -10,5 +10,4 @@
         echo $date; 
         echo $weight;
     }
-
 ?>
