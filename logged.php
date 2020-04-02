@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade - Account</title>
+    <title>Grade - Logged In</title>
     <link rel="stylesheet" href="css/account.css">
 </head>
-<body>
+<body id="logged">
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -27,12 +27,16 @@
             <div class="form">
                 <form action="classes.php" method="post">
                     <div>
-                        <label for="a1-username">Username</label><br>
-                        <input type="text" step="0.1" name="a1-username" required>
+                        <label for="logged1-username">Username</label><br>
+                        <input type="text" step="0.1" name="logged1-username">
                     </div>
                     <div>
-                        <label for="a1-password">Password</label><br>
-                        <input type="password" name="a1-password" required>
+                        <label for="logged2-password">E-Mail</label><br>
+                        <input type="password" name="logged1-password">
+                    </div>
+                    <div>
+                        <label for="logged3-group">Group</label><br>
+                        <input type="text" name="logged3-group" disabled>
                     </div>
                     <div>
                         <label for="s1-class">Language</label><br>
@@ -42,10 +46,10 @@
                         </select>
                     </div>
                     <div>
-                        <a href="#" id="a-float">Forgot Password</a>
+                        <a href="#" id="a-float">Change Password</a>
                     </div>
                     <div>
-                        <a href="#">Register</a>
+                        <a href="#">Logout</a>
                     </div>
                     <input name="submit" type="submit" value="Save Changes">
                 </form>

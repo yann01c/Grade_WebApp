@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body id="index">
+    <?php include 'sqlite/grade_db.php' ?>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -27,30 +28,40 @@
             <div class="form">
                 <form action="classes.php" method="post">
                     <div class="float">
-                        <label for="s1-class">Class</label><br>
-                        <select id="s1-class" name="s1-class">
+                        <label for="s_class">Class</label><br>
+                        <select id="s-class" name="s_class">
                             <option value="none">- none -</option>
                             <option value="english">English</option>
                         </select>
                     </div>
                     <div>
-                        <label for="s2-grade">Grade</label><br>
-                        <input type="number" step="0.1" name="s2-grade" required>
+                        <label for="s_grade">Grade</label><br>
+                        <input type="number" step="0.1" name="s_grade" required>
                     </div>
                     <div class="float">
-                        <label for="s3-date">Date</label><br>
-                        <input type="date" name="s3-date" required>
+                        <label for="s_date">Date</label><br>
+                        <input type="date" name="s_date" required>
                     </div>
                     <div>
-                        <label for="s4-weighting">Weighting</label><br>
-                        <input type="number" name="s4-weighting" placeholder="                           %" required>
+                        <label for="s_weighting">Weighting</label><br>
+                        <input type="number" name="s_weighting" placeholder="                         %" required>
                     </div>
                     <div>
-                        <label for="s5-description">Description</label><br>
-                        <textarea rows="6" cols="50" name="s5-description" placeholder="Sample"></textarea>
+                        <label for="s_description">Description</label><br>
+                        <textarea rows="6" cols="50" name="s_description" placeholder=""></textarea>
                     </div>
                     <input name="submit" type="submit" value="Submit">
                 </form>
+                <?php 
+                if(isset($_POST['submit'])){
+                    $s_class = $_POST['s_class'];
+                    $s_grade = $_POST['s_grade'];
+                    $s_date = $_POST['s_date'];
+                    $s_weighting = $_POST['s_weighting'];
+                    $s_description = $_POST['s_description'];
+                    $db->exec("INSERT INTO grades (s_class,s_grade,s_date,s_weighting,s_description) VALUES ('$s_class','$s_grade','$s_date','$s_weighting','$s_description')");
+                }
+                ?>
             </div>
         </div>
         <div class="footer">

@@ -26,7 +26,7 @@
         </div>
         <div class="main">
             <div class="form">
-                <form action="">
+                <form action="class.php" method="POST">
                     <button id="c-add" class="c-add">Add new Class</button>
                     <div class="float">
                         <label for="c1-class">Class</label><br>

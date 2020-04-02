@@ -1,3 +1,12 @@
+select {
+    border: 1px solid black;
+}
+textarea {
+    border: 1px solid black;
+}
+input {
+    border: 1px solid black;
+}
 body,html {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -7,7 +16,6 @@ body,html {
     justify-content: center;
     padding: 38px;
 }
-
 .left-side {
     display: flex;
 }
@@ -57,7 +65,7 @@ span {
     display: block;
 }
 .form {
-    margin-top: 9em; 
+    margin-top: 12em;
     display: flex;
     justify-content: center;
 }
@@ -73,15 +81,19 @@ label {
     width: 10em;
 }
 #index .form > form > div > select {
-    width: 8.6em;
+    width: 10.4em;
     margin-top: 10px;
     font-size: 1em;
 }
 #index .form > form > div > textarea {
     margin-top: 10px;
-    font-size: 0.9em;
+    font-size: 1em;
     width: 30em;
     resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#index input[type="date"] {
+    font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
 }
 #index .form > form > input {
@@ -100,7 +112,7 @@ label {
 }
 #index .float {
     float: left;
-    width: 5em;
+    width: 8em;
     margin-right: 12em;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -115,6 +127,9 @@ label {
     .form > form > div > label { font-size: 0.9em;}
     div.float { width: 0.5em; }
     .form > form > div > textarea {width: 24em;}
+}
+#classe .form {
+    margin-top: 30em
 }
 #classes .c-add {
     border: 1px solid black;
@@ -170,7 +185,55 @@ label {
     font-size: 1.1em;
     color: black;
 }
-#class .back-btn {
+#class .bck-btn {
     position: absolute;
-    top: 50%;
+    top: 90%;
+    left: 5%;
+}
+#class .bck-btn a{
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 8px;
+    border: 1px solid black;
+    color: black;
+    transition: all 300ms;
+}
+#class .bck-btn a:hover {
+    background-color: black;
+    color: white;
+}
+#class input {
+    margin-top: 10px;
+    font-size: 1em;
+    background-color: lightblue;
+    color: black;
+    border: 1px solid black;
+
+}
+#class select {
+    width: 8.2em;
+    margin-top: 10px;
+    font-size: 1em;
+}
+#class #class-center {
+    display: flex;
+}
+#class #class4-description {
+    margin-top: 10px;
+}
+#class textarea {
+    resize: none;
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightblue;
+    border: 1px solid black;
+    color:black;
+    width: 30.9em;
+}
+#class select {
+    margin-right: 10px;
+}
+#class #class2-weighting {
+    margin-right: 10px;
 }
