@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body id="index">
-    <?php include 'sqlite/grade_db.php' ?>
+    <?php include 'sqlite/grade_db.php'; ?>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -52,16 +52,6 @@
                     </div>
                     <input name="submit" type="submit" value="Submit">
                 </form>
-                <?php 
-                if(isset($_POST['submit'])){
-                    $s_class = $_POST['s_class'];
-                    $s_grade = $_POST['s_grade'];
-                    $s_date = $_POST['s_date'];
-                    $s_weighting = $_POST['s_weighting'];
-                    $s_description = $_POST['s_description'];
-                    $db->exec("INSERT INTO grades (s_class,s_grade,s_date,s_weighting,s_description) VALUES ('$s_class','$s_grade','$s_date','$s_weighting','$s_description')");
-                }
-                ?>
             </div>
         </div>
         <div class="footer">
