@@ -11,16 +11,15 @@ sel.addEventListener ("change", function () {
 let cadd = document.getElementById("c-add");
 
 cadd.addEventListener("click", function () {
-    var cprompt = prompt("Please enter Class Name:");   
-    if (cprompt != "") {
-        var op1 = document.createElement("option");
-        op1.value = cprompt;
-        op1.innerHTML = cprompt;
-        sel.appendChild(op1);    
-    }
-    else {
-        alert("INVALID");
-    }
+    var cprompt = prompt("Please enter Class Name:");
+    var newclass = cprompt;
+    $.post("sql_classes.php", {
+        newclass: newclass
+    });
+    //var op1 = document.createElement("option");
+    //op1.value = cprompt;
+    //op1.innerHTML = cprompt;
+    //sel.appendChild(op1);    
 });
 
 //let body = document.getElementById("classes");

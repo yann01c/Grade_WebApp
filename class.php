@@ -6,7 +6,6 @@
     <title>Grade - Class</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<?php include 'submit.php'; ?>
 <body id="class">
     <div class="container">
         <div class="nav-wrapper">
@@ -61,7 +60,5 @@
         <div class="footer">
         </div>
     </div>
-    <script src="js/main.js"></script>
-    <script src="sqlite/sqlite.js"></script>
 </body>
 </html>

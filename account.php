@@ -36,7 +36,7 @@
                     </div>
                     <div>
                         <a href="#" id="a-float">Forgot Password</a>
-                    </div>    
+                    </div>
                     <div>
                         <a href="register.php">Register</a>
                     </div>

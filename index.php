@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body id="index">
-    <?php include 'sqlite/grade_db.php'; ?>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -26,7 +26,7 @@
         </div>
         <div class="main">
             <div class="form">
-                <form action="classes.php" method="post">
+                <form action="#" method="post">
                     <div class="float">
                         <label for="s_class">Class</label><br>
                         <select id="s-class" name="s_class">
@@ -44,7 +44,7 @@
                     </div>
                     <div>
                         <label for="s_weighting">Weighting</label><br>
-                        <input type="number" name="s_weighting" placeholder="                         %" required>
+                        <input type="number" name="s_weighting" placeholder="                           %" required>
                     </div>
                     <div>
                         <label for="s_description">Description</label><br>
@@ -53,11 +53,11 @@
                     <input name="submit" type="submit" value="Submit">
                 </form>
             </div>
+            <?php include 'sqlite/submit.php';?>
         </div>
         <div class="footer">
-            <div class="copyright"></div>
+            <div class="copyright">Copyright - SPIE ICS</div>
         </div>
     </div>
-    <script src="js/main.js"></script>
 </body>
 </html>
