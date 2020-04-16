@@ -25,22 +25,22 @@
         </div>
         <div class="main">
             <div class="form">
-                <form action="login_cred.php" method="post">
+                <form action="login/check_login.php" method="post">
                     <div>
-                        <label for="a1-username">Username</label><br>
-                        <input type="text" step="0.1" name="a1-username" required>
+                        <label for="a-username">Username</label><br>
+                        <input type="text" step="0.1" name="a-username" required>
                     </div>
                     <div>
-                        <label for="a2-password">Password</label><br>
-                        <input type="password" name="a2-password" required>
+                        <label for="a-password">Password</label><br>
+                        <input type="password" name="a-password" required>
                     </div>
                     <div>
-                        <a href="#" id="a-float">Forgot Password</a>
+                        <a href="#" id="a-float">Forgot Password?</a>
                     </div>
                     <div>
                         <a href="register.php">Register</a>
                     </div>
-                    <input name="submit" type="submit" value="Login">
+                    <button name="login" type="submit" value="Login">Login</button>
                 </form>
             </div>
         </div>

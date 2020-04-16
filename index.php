@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body id="index">
     <div class="container">
@@ -30,8 +29,8 @@
                     <div class="float">
                         <label for="s_class">Class</label><br>
                         <select id="s-class" name="s_class">
-                            <option value="none">- none -</option>
-                            <option value="english">English</option>
+                            <option value="none">-</option>
+                            <?php include 'classes/select_class.php';?>
                         </select>
                     </div>
                     <div>
@@ -50,10 +49,10 @@
                         <label for="s_description">Description</label><br>
                         <textarea rows="6" cols="50" name="s_description" placeholder=""></textarea>
                     </div>
-                    <input name="submit" type="submit" value="Submit">
+                    <button name="submit" type="submit" value="Submit">Submit</button>
                 </form>
             </div>
-            <?php include 'sqlite/submit.php';?>
+            <?php include 'submit/submit.php';?>
         </div>
         <div class="footer">
             <div class="copyright">Copyright - SPIE ICS</div>

@@ -17,7 +17,7 @@
                     <a href="classes.php">Classes</a>
                 </div>
                 <div class="nav-link-wrapper">
-                    <a href="#" class="active">Account</a>
+                    <a href="account.php" class="active">Account</a>
                 </div>
             </div>
             <div class="right-side">
@@ -25,27 +25,27 @@
         </div>
         <div class="main">
             <div class="form">
-                <form action="register_cred.php" method="post">
+                <form action="login/insert_register.php" method="post">
                     <div>
-                        <label for="r1-username">Username</label><br>
-                        <input type="text" step="0.1" name="r1-username" required>
+                        <label for="r-username">Username</label><br>
+                        <input type="text" name="r-username" required>
                     </div>
                     <div>
-                        <label for="r2-email">E-Mail</label><br>
-                        <input type="email" step="0.1" name="r2-email" required>
+                        <label for="r-email">E-Mail</label><br>
+                        <input type="email" name="r-email" required>
                     </div>
                     <div>
-                        <label for="r3-password">Password</label><br>
-                        <input type="password" name="r3-password" required>
+                        <label for="r-password">Password</label><br>
+                        <input type="password" name="r-password" required>
                     </div>
                     <div>
-                        <label for="r4-rpassword">Repeat Password</label><br>
-                        <input type="password" name="r4-rpassword" required>
+                        <label for="r-rpassword">Repeat Password</label><br>
+                        <input type="password" name="r-rpassword" required>
                     </div>
                     <div>
                         <a href="account.php">Login</a>
                     </div>
-                    <input name="submit" type="submit" value="Register">
+                    <button name="register" type="submit" value="Register">Register</button>
                 </form>
             </div>
         </div>

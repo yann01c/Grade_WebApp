@@ -79,7 +79,7 @@ span {
     width: 15em;
 
 }
-.form > form > input {
+.form > form > button {
     margin-top: 10px;
     background-color: white;
     font-size: 1.0em;
@@ -89,7 +89,7 @@ span {
     border: 1px solid black;
     cursor: pointer;
 }
-.form > form > input:hover {
+.form > form > button:hover {
     background-color: black;
     color: white;
 }

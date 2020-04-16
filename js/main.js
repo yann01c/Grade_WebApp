@@ -1,28 +1,23 @@
-let sel = document.getElementById('c1-class');
-sel.addEventListener ("change", function () {
-    var cbtn = document.getElementById("c-btn");
-    cbtn.innerHTML = "Go to " + this.value;
-    cbtn.style.display = "flex";
-    if (sel.value == "English") {
-        cbtn = cbtn.href = "class.php";
+
+var newclassname = document.getElementById("newclass").value;
+if (newclassname !== "") {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost/grade_webapp/sqlite/insert_class.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("class=",newclassname);
+    xhr.onreadystatechange = function() { // Call a function when the state changes.
+        const serverResponse = document.getElementById("classadded");
+        serverResponse.innerHTML = "Success!";
     }
-});
+} else {
+    invalidClass();
+}
 
-let cadd = document.getElementById("c-add");
-
-cadd.addEventListener("click", function () {
-    var cprompt = prompt("Please enter Class Name:");
-    var newclass = cprompt;
-    $.post("sql_classes.php", {
-        newclass: newclass
-    });
-    //var op1 = document.createElement("option");
-    //op1.value = cprompt;
-    //op1.innerHTML = cprompt;
-    //sel.appendChild(op1);    
-});
-
-//let body = document.getElementById("classes");
-//body.addEventListener("click", function () {
-//    body.style.color = "red";
-//});
+function invalidClass() {
+    const serverResponse = document.getElementById("classadded");
+    serverResponse.innerHTML = "Invalid Classname!";
+}
+//xhr.onload = function() {
+//    const serverResponse = document.getElementById("classadded");
+//    serverResponse.innerHTML = this.responseText;
+//}
