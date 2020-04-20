@@ -43,14 +43,24 @@
                         <input type="password" name="r-rpassword" required>
                     </div>
                     <div>
+                        <label for="r-group">Group</label><br>
+                        <select name="r-group" id="r-group">
+                            <option value="-">-</option>
+                            <?php include 'group/select_group.php'; ?>
+                        </select>
+                    </div>
+                    <div>
                         <a href="account.php">Login</a>
                     </div>
-                    <button name="register" type="submit" value="Register">Register</button>
+                    <div>
+                        <button id="r-btn" name="register" type="submit" value="Register">Register</button>
+                    </div>
                 </form>
             </div>
         </div>
         <div class="footer">
         </div>
     </div>
+    <script src="js/account.js"></script>
 </body>
 </html>

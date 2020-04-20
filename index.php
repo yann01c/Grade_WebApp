@@ -6,6 +6,7 @@
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+<?php include 'group/db_group.php'; ?>
 <body id="index">
     <div class="container">
         <div class="nav-wrapper">
@@ -30,7 +31,7 @@
                         <label for="s_class">Class</label><br>
                         <select id="s-class" name="s_class">
                             <option value="none">-</option>
-                            <?php include 'classes/select_class.php';?>
+                            <?php include 'classes/select_classes.php';?>
                         </select>
                     </div>
                     <div>
@@ -52,10 +53,10 @@
                     <button name="submit" type="submit" value="Submit">Submit</button>
                 </form>
             </div>
-            <?php include 'submit/submit.php';?>
+            <?php include 'submit/insert_grade.php'; ?>
         </div>
         <div class="footer">
-            <div class="copyright">Copyright - SPIE ICS</div>
+            <div class="copyright">Copyright - SPIE ICS ©</div>
         </div>
     </div>
 </body>

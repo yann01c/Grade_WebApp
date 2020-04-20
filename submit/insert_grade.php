@@ -7,6 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $description = $_POST['s_description'];
     }
     $db = new SQLite3('sqlite/webapp.db');
-    $db->exec('INSERT INTO grade (grade,date,weighting,description) VALUES ($grade,$date,$weighting,$description)');
+    $db->exec("INSERT INTO grade (grade,date,weighting,description) VALUES ('$grade','$date','$weighting','$description')");
 }
 ?>

@@ -1,23 +1,58 @@
+// Sleep (Wait) function
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-var newclassname = document.getElementById("newclass").value;
-if (newclassname !== "") {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost/grade_webapp/sqlite/insert_class.php");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("class=",newclassname);
-    xhr.onreadystatechange = function() { // Call a function when the state changes.
-        const serverResponse = document.getElementById("classadded");
-        serverResponse.innerHTML = "Success!";
+// Prompt, send data to insert_class.php
+function newClass() {
+    var cprompt = prompt("Enter Classname:", "");
+    String(cprompt);
+    if(cprompt == "" || cprompt == null) {
+        invalidClass();
+    } else {
+        var xhr = new XMLHttpRequest();
+        
+        // Response from insert_class.php
+                xhr.onload = async function() {
+            var serverResponse = document.getElementById("classadded");
+            serverResponse.innerHTML = this.responseText;
+            await sleep(3000);
+            location.reload();
+        }
+        xhr.open("POST", "classes/insert_classes.php");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("class=" + cprompt);
     }
-} else {
-    invalidClass();
 }
 
-function invalidClass() {
-    const serverResponse = document.getElementById("classadded");
+// If prompt is empty | invalid
+async function invalidClass() {
+    var serverResponse = document.getElementById("classadded");
     serverResponse.innerHTML = "Invalid Classname!";
+    await sleep(3000);
+    location.reload();
 }
-//xhr.onload = function() {
-//    const serverResponse = document.getElementById("classadded");
-//    serverResponse.innerHTML = this.responseText;
-//}
+
+// Change button text to selected class (Invisible when "-" is selected)
+function cbtnAppear() {
+    var cbutton = document.getElementById("c-btn");
+    var dropdown = document.getElementById("c1-class").value;
+    if(dropdown == "-") {
+        cbutton.style.display = "none";
+    } else {
+        cbutton.innerHTML = "Go to " + dropdown;
+        cbutton.style.display = "flex";
+    }
+}
+
+// Change button text to selected grade (Invisible when "-" is selected)
+function cgradebtnAppear() {
+    var classbtn = document.getElementById("class-btn");
+    var cgradedropdown = document.getElementById("class-grades");
+    if(classdropdown == "-") {
+        classbtn.style.display = "none";
+    } else {
+        classbtn.innerHTML = "Go to " + clasdropdown;
+        classbtn.style.display = "flex";
+    }
+}

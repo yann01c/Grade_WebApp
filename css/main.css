@@ -69,6 +69,9 @@ span {
     display: flex;
     justify-content: center;
 }
+#classes .form {
+    margin-top: 19em;
+}
 #index .form > form > div {
     margin-top: 10px;
 }
@@ -116,6 +119,19 @@ label {
     margin-right: 12em;
     font-family: Arial, Helvetica, sans-serif;
 }
+#index .footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 18em;
+}
+#index .copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    width: 13em;
+}
 @media (max-width: 580px) {
     .nav-wrapper > .left-side > div {font-size: 1.5em;}
     #index .form > form > div > label {font-size: 1.1em;}
@@ -132,8 +148,22 @@ label {
     #index .form > form > div > select {width: 9.4em; font-size: 0.9em;}
     #index .form {margin-top: 9em;}
 }
-#classe .form {
+/*#classes .form {
     margin-top: 30em;
+}*/
+.c-button {
+    display: none;
+    border: 1px solid black;
+    padding: 8px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.0em;
+    transition: all 300ms;
+    margin-top: 20px;
+}
+.c-button:hover {
+    background-color: black;
+    color: white;
 }
 #classes .c-add {
     border: 1px solid black;
@@ -142,12 +172,16 @@ label {
     cursor: pointer;
     font-size: 1.0em;
     transition: all 300ms;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 #classes .c-add:hover {
     background-color: black;
     color: white;
+}
+#classes #c-add-cont {
+    position: absolute;
+    margin-right: 2.6em;
+    top: 22em;
 }
 #classes .c-float {
     font-family: Arial, Helvetica, sans-serif;
@@ -171,9 +205,6 @@ label {
     width: 10em;
     font-size: 1.0em;
     padding: 0;
-}
-#classes #c-btn {
-    display: none;
 }
 #classes .form > form > div > a {
     padding: 8px;

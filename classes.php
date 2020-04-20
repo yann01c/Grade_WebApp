@@ -25,16 +25,15 @@
         </div>
         <div class="main">
             <div class="form">
-                <form action="#" method="POST">
-                    <div>
-                        <input type="text" name="newclass" id="newclass" placeholder="Enter Classname"></br>
-                        <button onclick="newClass()" id="c-add" class="c-add">Add new Class</button>
-                    </div>
+                <div id="c-add-cont">
+                    <button onclick="newClass()" id="c-add" class="c-add">Add new Class</button>
+                </div>
+                <form action="class.php" method="POST">
                     <div class="float">
                         <label for="c1-class">Class</label><br>
-                        <select id="c1-class" name="c1-class">
+                        <select id="c1-class" name="c1-class" onchange="cbtnAppear()">
                             <option value="-">-</option>
-                            <?php include 'classes/select_class.php';?>
+                            <?php include 'classes/select_classes.php';?>
                         </select>
                     </div>
                     <div>
@@ -42,7 +41,7 @@
                         <input type="text" name="c2-grade" vaule="" disabled>
                     </div>
                     <div>
-                        <a href="class.php" class="c-add" id="c-btn"></a>
+                        <button type="submit" class="c-button" id="c-btn">Go to</button>
                     </div>
                 </form>
             </div>

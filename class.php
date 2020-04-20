@@ -28,31 +28,33 @@
                 <a href="classes.php">Back</a>
             </div>
             <div class="title">
-                <h2>Overview - English</h2>
+                <h2>Overview - <?php include 'class/select_class.php'; ?></h2>
             </div>
             <div class="form">
                 <form action="grade.php" method="POST">
                     <div id="class-center">
                         <div>
-                            <label for="class1-grades">Grades</label><br/>
-                            <select name="class1-grades" id="class1-grades">
+                            <label for="class-grades">Grades</label><br/>
+                            <select name="class-grades" id="class1-grades">
                                 <option value="-">-</option>
-                                <option value="5.0">5.0</option>
-                                <option value="">6.0</option>
+                                <?php include 'class/select_grade.php'; ?>
                             </select>
                         </div>
                         <div>
-                            <label for="class2-weighting">Weighting</label><br/>
-                            <input type="text" name="class2-weighting" id="class2-weighting" disabled>                        
+                            <label for="class-weighting">Weighting</label><br/>
+                            <input type="text" name="class2-weighting" id="class-weighting" disabled>                        
                         </div>
                         <div>
-                            <label for="class3-date">Date</label><br/>
-                            <input type="text" name="class3-date" id="class3-date" disabled>
+                            <label for="class-date">Date</label><br/>
+                            <input type="text" name="class3-date" id="class-date" disabled>
                         </div>
                     </div>
                     <div id="class4-description">
-                        <label for="class4-description">Description</label><br/>
-                        <textarea rows="6" cols="50" name="class4-description" placeholder="" disabled></textarea>
+                        <label for="class-description">Description</label><br/>
+                        <textarea rows="6" cols="50" name="class-description" placeholder="" disabled></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="c-button" id="class-btn">Go to Grade</button>                
                     </div>
                 </form>
             </div>
