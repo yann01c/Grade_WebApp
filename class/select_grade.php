@@ -1,7 +1,8 @@
 <?php
     $db = new SQLite3('sqlite/webapp.db');
+    $userID = $_SESSION['userID'];
 
-    $result = $db->query('select * from grade');
+    $result = $db->query("SELECT * FROM grade WHERE fk_user = '$userID'");
 
     // Select every grade in grade and display it in "option" element in HTML
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {

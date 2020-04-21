@@ -5,5 +5,4 @@
         class varchar(50) NOT NULL,
         fk_group INTEGER,
         FOREIGN KEY (fk_group)
-            REFERENCES group (group_id))');
-?>
+            REFERENCES "group" (group_id))');

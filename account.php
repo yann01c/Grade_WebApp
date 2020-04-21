@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +22,27 @@
                 </div>
             </div>
             <div class="right-side">
+            <?php
+                if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
+                    echo '<form action="login/logout.php" method="POST">
+                        <button class="logout">Logout</button>
+                        </form>';
+                } else {
+                }
+            ?>
             </div>
         </div>
         <div class="main">
             <div class="form">
-                <form action="login/check_login.php" method="post">
+            <?php
+                if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
+                    echo "<div>";
+                    echo "<p>Username: " .$_SESSION['userUID'] ."</p>";
+                    echo "<p>Email: ".$_SESSION['userMAIL']."</p>";
+                    echo "<a href='changepassword.php'>Change Password</a>";
+                    echo "</div>";
+                } else {
+                    echo '<form action="login/check_login.php" method="post">
                     <div>
                         <label for="a-username">Username</label><br>
                         <input type="text" step="0.1" name="a-username" required>
@@ -38,10 +55,12 @@
                         <a href="#" id="a-float">Forgot Password?</a>
                     </div>
                     <div>
-                        <a href="register.php">Register</a>
+                        <a href="register.php">Sign Up</a>
                     </div>
                     <button name="login" type="submit" value="Login">Login</button>
-                </form>
+                </form>';
+                }
+            ?>
             </div>
         </div>
         <div class="footer">

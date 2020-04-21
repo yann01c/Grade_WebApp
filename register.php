@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,26 +22,34 @@
                 </div>
             </div>
             <div class="right-side">
+            <?php
+                if (isset($_SESSION['userID'])) {
+                    echo '<form action="login/logout.php" method="POST">
+                    <button class="logout">Logout</button>
+                    </form>';
+                } else {
+                }
+            ?>
             </div>
         </div>
         <div class="main">
             <div class="form">
                 <form action="login/insert_register.php" method="post">
                     <div>
-                        <label for="r-username">Username</label><br>
-                        <input type="text" name="r-username" required>
+                        <label for="r-uid">Username</label><br>
+                        <input type="text" name="r-uid">
                     </div>
                     <div>
                         <label for="r-email">E-Mail</label><br>
-                        <input type="email" name="r-email" required>
+                        <input type="email" name="r-email">
                     </div>
                     <div>
-                        <label for="r-password">Password</label><br>
-                        <input type="password" name="r-password" required>
+                        <label for="r-pwd">Password</label><br>
+                        <input type="password" name="r-pwd">
                     </div>
                     <div>
-                        <label for="r-rpassword">Repeat Password</label><br>
-                        <input type="password" name="r-rpassword" required>
+                        <label for="r-rpwd">Repeat Password</label><br>
+                        <input type="password" name="r-rpwd">
                     </div>
                     <div>
                         <label for="r-group">Group</label><br>
@@ -53,7 +62,7 @@
                         <a href="account.php">Login</a>
                     </div>
                     <div>
-                        <button id="r-btn" name="register" type="submit" value="Register">Register</button>
+                        <button id="r-btn" name="register" type="submit" value="Register">Sign Up</button>
                     </div>
                 </form>
             </div>

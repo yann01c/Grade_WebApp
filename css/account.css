@@ -87,20 +87,8 @@ span {
     margin-top: 10px;
     background-color: white;
     font-size: 1.0em;
-    padding: 0;
     transition: all 301ms;
-    padding: 5px;
-    border: 1px solid black;
-    cursor: pointer;
-}
-#register .form > form > div > button {
-    display: none;
-    margin-top: 10px;
-    background-color: white;
-    font-size: 1.0em;
-    padding: 0;
-    transition: all 301ms;
-    padding: 5px;
+    padding: 8px;
     border: 1px solid black;
     cursor: pointer;
 }
@@ -108,9 +96,22 @@ span {
     background-color: black;
     color: white;
 }
+#register .form > form > div > button {
+    margin-top: 5px;
+    background-color: white;
+    font-size: 1.0em;
+    transition: all 301ms;
+    padding: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+#register .form > form > div > button:hover {
+    background-color: black;
+    color: white;
+}
 #a-float {
     float: left;
-    width: 13em;
+    width: 14em;
 }
 .form > form > div > a {
     color: black;
@@ -130,3 +131,20 @@ span {
     color: black;
     border: 1px solid black;
 }
+.logout {
+    padding: 8px;
+    font-size: 1.2em;
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+    position: absolute;
+    left: 10em;
+    top: 38px;
+    cursor: pointer;
+    transition: 300ms;
+}
+.logout:hover {
+    background-color: black;
+    color: white;
+}
+

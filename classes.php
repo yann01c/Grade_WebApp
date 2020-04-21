@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,14 @@
                 </div>
             </div>
             <div class="right-side">
+            <?php 
+                if (isset($_SESSION['userID'])) {
+                    echo '<form action="login/logout.php" method="POST">
+                    <button class="logout">Logout</button>
+                    </form>';
+                } else {
+                }
+            ?>
             </div>
         </div>
         <div class="main">

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,6 @@
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<?php include 'group/db_group.php'; ?>
 <body id="index">
     <div class="container">
         <div class="nav-wrapper">
@@ -22,6 +22,14 @@
                 </div>
             </div>
             <div class="right-side">
+            <?php
+                if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
+                    echo '<form action="login/logout.php" method="POST">
+                        <button class="logout">Logout</button>
+                        </form>';
+                } else {
+                }
+            ?>
             </div>
         </div>
         <div class="main">
@@ -44,7 +52,7 @@
                     </div>
                     <div>
                         <label for="s_weighting">Weighting</label><br>
-                        <input type="number" name="s_weighting" placeholder="                           %" required>
+                        <input type="number" name="s_weighting" placeholder="%" required>
                     </div>
                     <div>
                         <label for="s_description">Description</label><br>

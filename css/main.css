@@ -282,3 +282,19 @@ label {
 #class #class2-weighting {
     margin-right: 10px;
 }
+.logout {
+    padding: 8px;
+    background-color: white;
+    color: black;
+    border: solid 1px black;
+    position: absolute;
+    left: 10em;
+    cursor: pointer;
+    transition: 300ms;
+    font-size: 1.2em;
+}
+.logout:hover {
+    background-color: black;
+    color: white;
+}
+
