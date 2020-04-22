@@ -50,6 +50,20 @@ if(isset($_POST['register'])) {
         exit();
     }
 
+    // Check if mail exists
+    $mail = $db->prepare("SELECT email FROM login WHERE email=:mail");
+    $mail->bindValue(':mail',$email);
+    $result = $mail->execute();
+    $n_rows = 0;
+
+    while ($row = $result->fetchArray()) {
+        $n_rows += 1;
+    }
+    if ($n_rows == 1) {
+        header("Location: ../register.php?error=mailtaken");
+        exit();
+    }
+
     // Check if username exists
     $sql = $db->prepare("SELECT username FROM login WHERE username=:uid");
     $sql->bindValue(':uid',$username);

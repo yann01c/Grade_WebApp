@@ -64,10 +64,39 @@
                     <div>
                         <button id="r-btn" name="register" type="submit" value="Register">Sign Up</button>
                     </div>
+                    <?php 
+                        if(isset($_GET['error'])) {
+                            if($_GET['error'] == "emptyfields") {
+                                echo '<p class="signuperror">Fill in all fields!</p>';
+                            }
+                            else if ($_GET['error'] == "invalidgroup") {
+                                echo '<p class="signuperror">Select a group!</p>';
+                            }
+                            else if ($_GET['error'] == "invalidmailusername") {
+                                echo '<p class="signuperror">Select a valid E-Mail and Username!</p>';
+                            }
+                            else if ($_GET['error'] == "invalidmail") {
+                                echo '<p class="signuperror">Select a valid E-Mail!</p>';
+                            }
+                            else if ($_GET['error'] == "invalidusername") {
+                                echo '<p class="signuperror">Select a valid Username! (a-z | A-Z | 0-9)</p>';
+                            }
+                            else if ($_GET['error'] == "passwordcheck") {
+                                echo '<p class="signuperror">Passwords do not match!</p>';
+                            }
+                            else if ($_GET['error'] == "mailtakens") {
+                                echo '<p class="signuperror">E-Mail already taken!</p>';
+                            }
+                            else if ($_GET['error'] == "usertaken") {
+                                echo '<p class="signuperror">Username already taken!</p>';
+                            }
+                        }
+                    ?>
                 </form>
             </div>
         </div>
         <div class="footer">
+            <div class="copyright">Copyright - SPIE ICS ©</div>
         </div>
     </div>
     <script src="js/account.js"></script>

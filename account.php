@@ -23,10 +23,13 @@
             </div>
             <div class="right-side">
             <?php
+            if (isset($_GET['login'])) {
+                echo '<p class="success">Successfully logged in!</p>';
+            }
+            ?>
+            <?php
                 if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
-                    echo '<form action="login/logout.php" method="POST">
-                        <button class="logout">Logout</button>
-                        </form>';
+                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
                 } else {
                 }
             ?>
@@ -36,10 +39,14 @@
             <div class="form">
             <?php
                 if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
-                    echo "<div>";
-                    echo "<p>Username: " .$_SESSION['userUID'] ."</p>";
-                    echo "<p>Email: ".$_SESSION['userMAIL']."</p>";
+                    echo "<div class='account-logged'>";
+                    echo "<p>Username: <span class='width-logged'>" .$_SESSION['userUID'] ."</span></p>";
+                    echo "<p>Email: <span class='width-logged2'>".$_SESSION['userMAIL']."</span></p>";
+                    echo "<a href='changepassword.php'>Change Username</a><br>";
                     echo "<a href='changepassword.php'>Change Password</a>";
+                    echo "<form action='login/logout.php' method='post'>
+                    <button class='logout'>Logout</button>
+                    </form>";
                     echo "</div>";
                 } else {
                     echo '<form action="login/check_login.php" method="post">
@@ -64,6 +71,7 @@
             </div>
         </div>
         <div class="footer">
+            <div class="copyright">Copyright - SPIE ICS ©</div>
         </div>
     </div>
 </body>

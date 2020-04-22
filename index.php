@@ -24,9 +24,7 @@
             <div class="right-side">
             <?php
                 if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
-                    echo '<form action="login/logout.php" method="POST">
-                        <button class="logout">Logout</button>
-                        </form>';
+                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
                 } else {
                 }
             ?>

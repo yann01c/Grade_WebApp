@@ -24,9 +24,7 @@
             <div class="right-side">
             <?php 
                 if (isset($_SESSION['userID'])) {
-                    echo '<form action="login/logout.php" method="POST">
-                    <button class="logout">Logout</button>
-                    </form>';
+                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
                 } else {
                 }
             ?>
@@ -59,6 +57,7 @@
             </div>
         </div>
         <div class="footer">
+            <div class="copyright">Copyright - SPIE ICS ©</div>
         </div>
     </div>
     <script src="js/main.js"></script>

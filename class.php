@@ -24,9 +24,7 @@
             <div class="right-side">
             <?php 
                 if (isset($_SESSION['userID'])) {
-                    echo '<form action="login/logout.php" method="POST">
-                    <button class="logout">Logout</button>
-                    </form>';
+                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
                 } else {
                 }
             ?>
@@ -40,36 +38,30 @@
                 <h2>Overview - <?php include 'class/select_class.php'; ?></h2>
             </div>
             <div class="form">
-                <form action="grade.php" method="POST">
+                <form>
                     <div id="class-center">
                         <div>
-                            <label for="class-grades">Grades</label><br/>
-                            <select name="class-grades" id="class1-grades">
-                                <option value="-">-</option>
+                            <ul>
                                 <?php include 'class/select_grade.php'; ?>
-                            </select>
+                            </ul>
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+                            <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <p>Some text in the Modal..</p>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <label for="class-weighting">Weighting</label><br/>
-                            <input type="text" name="class2-weighting" id="class-weighting" disabled>                        
-                        </div>
-                        <div>
-                            <label for="class-date">Date</label><br/>
-                            <input type="text" name="class3-date" id="class-date" disabled>
-                        </div>
-                    </div>
-                    <div id="class4-description">
-                        <label for="class-description">Description</label><br/>
-                        <textarea rows="6" cols="50" name="class-description" placeholder="" disabled></textarea>
-                    </div>
-                    <div>
                         <button type="submit" class="c-button" id="class-btn">Go to Grade</button>                
                     </div>
                 </form>
             </div>
         </div>
         <div class="footer">
+            <div class="copyright">Copyright - SPIE ICS ©</div>
         </div>
     </div>
+    <script src="js/popup.js"></script>
 </body>
 </html>

@@ -69,9 +69,8 @@ span {
     display: flex;
     justify-content: center;
 }
-#classes .form {
-    margin-top: 19em;
-}
+
+/* Submit Page */
 #index .form > form > div {
     margin-top: 10px;
 }
@@ -119,12 +118,13 @@ label {
     margin-right: 12em;
     font-family: Arial, Helvetica, sans-serif;
 }
-#index .footer {
+.footer {
     display: flex;
     justify-content: center;
-    margin-top: 18em;
 }
-#index .copyright {
+.copyright {
+    bottom: 2em;
+    position: absolute;
     display: flex;
     justify-content: center;
     font-size: 1em;
@@ -132,6 +132,8 @@ label {
     border-right: 2px solid black;
     width: 13em;
 }
+
+/* Mobile Responsive */
 @media (max-width: 580px) {
     .nav-wrapper > .left-side > div {font-size: 1.5em;}
     #index .form > form > div > label {font-size: 1.1em;}
@@ -148,9 +150,8 @@ label {
     #index .form > form > div > select {width: 9.4em; font-size: 0.9em;}
     #index .form {margin-top: 9em;}
 }
-/*#classes .form {
-    margin-top: 30em;
-}*/
+
+/* Classes Page */
 .c-button {
     display: none;
     border: 1px solid black;
@@ -160,10 +161,14 @@ label {
     font-size: 1.0em;
     transition: all 300ms;
     margin-top: 20px;
+    position: absolute;
 }
 .c-button:hover {
     background-color: black;
     color: white;
+}
+#classes .form {
+    margin-top: 19em;
 }
 #classes .c-add {
     border: 1px solid black;
@@ -223,6 +228,14 @@ label {
     display: flex;
     justify-content: center;
 }
+
+/* Class Page */
+#class .form {
+    background-color: black;
+    color: white;
+    height: 15em;
+    overflow: auto;
+}
 #class .title {
     display: flex;
     justify-content: center;
@@ -232,8 +245,8 @@ label {
 }
 #class .bck-btn {
     position: absolute;
-    top: 90%;
-    left: 5%;
+    bottom: 38px;
+    left: 10em;
 }
 #class .bck-btn a{
     text-decoration: none;
@@ -247,54 +260,95 @@ label {
     background-color: black;
     color: white;
 }
-#class input {
-    margin-top: 10px;
-    font-size: 1em;
-    background-color: lightblue;
-    color: black;
-    border: 1px solid black;
-
+#class .class-gradelist {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    text-decoration: none;
+    list-style: none;
+    margin-right: 50px;
+    width: 5em;
 }
-#class select {
-    width: 8.2em;
-    margin-top: 10px;
-    font-size: 1em;
-}
-#class #class-center {
+#class .gradelist {
     display: flex;
+    justify-content: center;
+    width: 35em;
+    overflow: auto;
 }
-#class #class4-description {
-    margin-top: 10px;
+#class .view-btn {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border: solid 1px white;
+    transition: 300ms;
+    cursor: pointer;
 }
-#class textarea {
-    resize: none;
-    margin-top: 10px;
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: lightblue;
-    border: 1px solid black;
-    color:black;
-    width: 30.9em;
-}
-#class select {
-    margin-right: 10px;
-}
-#class #class2-weighting {
-    margin-right: 10px;
-}
-.logout {
-    padding: 8px;
-    background-color: white;
+#class .view-btn:hover {
     color: black;
-    border: solid 1px black;
+    background-color: white;
+}
+#class .trash-btn {
+    transition: 300ms;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    font-size: 0.8em;
+}
+
+/* Logged In */
+.userlogged {
+    border-radius: 100px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    font-size: 1.2;
     position: absolute;
     left: 10em;
     cursor: pointer;
     transition: 300ms;
-    font-size: 1.2em;
+    top: 2em;
+    text-decoration: none;
 }
-.logout:hover {
-    background-color: black;
-    color: white;
+.userlogged:hover {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
 }
 
+/* PopUp */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+/* Modal Content */
+.modal-content {
+background-color: #fefefe;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+}
+/* The Close Button */
+.close {
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
