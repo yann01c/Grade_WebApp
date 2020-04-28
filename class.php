@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade - Class</title>
+    <title>Grade - <?php include 'class/select_class.php'; ?></title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body id="class">
     <div class="container">
@@ -22,6 +24,7 @@
                 </div>
             </div>
             <div class="right-side">
+            <img src="images/logo.png" class="logo" alt="logo"/>
             <?php 
                 if (isset($_SESSION['userID'])) {
                     echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
@@ -36,6 +39,8 @@
             </div>
             <div class="title">
                 <h2>Overview - <?php include 'class/select_class.php'; ?></h2>
+                <!--<p>Total Grades: <?php //include 'class/total_grade.php'; ?></p>-->
+
             </div>
             <div class="form">
                 <form>
@@ -44,16 +49,7 @@
                             <ul>
                                 <?php include 'class/select_grade.php'; ?>
                             </ul>
-                            <!-- The Modal -->
-                            <div id="myModal" class="modal">
-                            <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">&times;</span>
-                                    <p>Some text in the Modal..</p>
-                                </div>
-                            </div>
                         </div>
-                        <button type="submit" class="c-button" id="class-btn">Go to Grade</button>                
                     </div>
                 </form>
             </div>

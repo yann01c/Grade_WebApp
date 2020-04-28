@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Iceland&family=Nosifer&family=Open+Sans:wght@300&family=Philosopher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+body, html {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Philosopher', sans-serif;
+    font-family: 'Faster One', cursive;*/
+    font-family: 'Iceland', cursive;
+}
+.logo {
+    position: absolute;
+    right: 15em;
+    top: 38px;
+    width: 5em;
+    height: auto;
+}
 select {
     border: 1px solid black;
 }
@@ -6,10 +23,6 @@ textarea {
 }
 input {
     border: 1px solid black;
-}
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
 .nav-wrapper {
     display: flex;
@@ -20,26 +33,24 @@ body {
     display: flex;
 }
 .nav-wrapper > .left-side > div {
-    font-size: 1.5em;
+    font-size: 2.0em;
 }
 .nav-link-wrapper a {
     color: grey;
     text-decoration: none;
-    transition: all 300ms;
+    transition: all 200ms;
     border: 1px solid silver;
     padding: 8px;
 }
 .nav-link-wrapper a:hover {
-    color: white;
-    border: 1px solid black;
-    background-color: black;
-}
-a.active {
     color: black;
     border: 1px solid black;
-    -webkit-box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
-    box-shadow: 0px 4px 5px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px #0F2259;
+}
+a.active {
+    color: #0F2259;
+    border: 1px solid black;
+    box-shadow: 0px 5px #0F2259;
 }
 span {
     font-size: 1.0em;
@@ -71,50 +82,78 @@ span {
     margin-top: 10px;
 }
 .form > form > div > label {
-    font-size: 1.4em;
+    font-size: 1.8em;
 }
 .form > form > div > input {
     margin-top: 10px;
     font-size: 1em;
+    width: 10em;
+    padding: 5px;
+    height: 1.3em;
     width: 15em;
+    box-shadow: 0px 5px #0F2259;
+    transition: 200ms;
+}
+.form > form > div > input:focus {
+    box-shadow: none;
 }
 .form > form > div > select {
-    width: 10.4em;
+    height: 32.8px;
+    width: 10.6em;
+    font-family: 'Raleway', sans-serif;
     margin-top: 10px;
     font-size: 1em;
+    padding: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: 200ms;
+    box-shadow: 0px 5px #0F2259;
+}
+.form > form > div > select:focus {
+    box-shadow: none;
 }
 .form > form > button {
     margin-top: 10px;
     background-color: white;
     font-size: 1.0em;
-    transition: all 301ms;
+    transition: all 200ms;
     padding: 8px;
     border: 1px solid black;
     cursor: pointer;
+    box-shadow: 0px 5px #BF0413;
 }
 .form > form > button:hover {
-    background-color: black;
+    background-color: #BF0413;
     color: white;
+    box-shadow: none;
+}
+#register .form {
+    margin-top: 6em;
 }
 #register .form > form > div > button {
     margin-top: 5px;
     background-color: white;
-    font-size: 1.0em;
-    transition: all 301ms;
+    font-size: 1.3em;
+    transition: all 200ms;
     padding: 8px;
     border: 1px solid black;
     cursor: pointer;
+    font-family: 'Iceland', cursive;
+    box-shadow: 0px 5px #BF0413;
 }
 #register .form > form > div > button:hover {
-    background-color: black;
+    background-color: #BF0413;
+    box-shadow: none;
     color: white;
 }
 #a-float {
     float: left;
-    width: 14em;
+    width: 11em;
 }
 .form > form > div > a {
     color: black;
+    font-size: 1.3em;
     text-decoration: none;
     transition: color 150ms;
 }
@@ -140,7 +179,7 @@ span {
     position: absolute;
     display: flex;
     justify-content: center;
-    font-size: 1em;
+    font-size: 1.2em;
     border-left: 2px solid black;
     border-right: 2px solid black;
     width: 13em;
@@ -148,17 +187,20 @@ span {
 
 /* Logged In */
 .logout {
+    font-family: 'Iceland', cursive;
     margin-top: 15px;
     padding: 5px;
-    font-size: 1.1em;
+    font-size: 1.3em;
     background-color: white;
     color: black;
     border: solid 1px black;
     cursor: pointer;
-    transition: 300ms;
+    box-shadow: 0px 5px #BF0413;
+    transition: 200ms;
 }
 .logout:hover {
-    background-color: black;
+    box-shadow: none;
+    background-color: #BF0413;
     color: white;
 }
 .signuperror {
@@ -166,38 +208,49 @@ span {
     font-weight: bold;
 }
 .userlogged {
-    border-radius: 100px;
-    border: 2px solid white;
-    background-color: black;
-    color: white;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
     padding: 12px;
-    font-size: 1.2;
+    font-size: 1.3em;
     position: absolute;
     left: 10em;
-    top: 2em;
-    transition: 300ms;
     cursor: pointer;
+    transition: 300ms;
+    top: 2em;
     text-decoration: none;
+    box-shadow: 0px 15px #0F2259;
 }
 .userlogged:hover {
     background-color: white;
-    border: 2px solid black;
-    color: black;
+    color: white;
+    box-shadow: none;
+    background-color: #0F2259;
 }
 .success {
     color: green;
     font-weight: bold;
     position: absolute;
-    right: 10em;
+    right: 42em;
+    top: 5em;
+    font-family: 'Iceland', cursive;
+    font-size: 1.3em;
 }
 .account-logged {
     padding: 50px;
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: black;
+    font-family: 'Maven Pro', sans-serif;
 }
 .account-logged a {
-    color: blue;
+    color: black;
+    font-size: 1.2em;
     text-decoration: none;
+    font-family: 'Iceland', cursive;
+    transition: 200ms;
+}
+.account-logged a:hover {
+    color: blue;
 }
 .accoung-logged p {
 }

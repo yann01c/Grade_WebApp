@@ -22,6 +22,7 @@
                 </div>
             </div>
             <div class="right-side">
+            <img src="images/logo.png" class="logo" alt="logo"/>
             <?php
                 if (isset($_SESSION['userID'])) {
                     echo '<form action="login/logout.php" method="POST">

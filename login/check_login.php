@@ -22,10 +22,15 @@ if (isset($_POST['login'])) {
                     exit();
                 }
                 else if ($pwdCheck == true) {
+                    $fkgroup = $row['fk_group'];
+                    $sql = $db->prepare("SELECT * FROM 'group' WHERE group_id = $fkgroup");
+                    $result = $sql->execute();
+                    $group = $result->fetchArray();
                     session_start();
                     $_SESSION['userID'] = $row['user_id'];
                     $_SESSION['userUID'] = $row['username'];
                     $_SESSION['userMAIL'] = $row['email'];
+                    $_SESSION['userGRP'] = $group['group'];
                     header("Location: ../account.php?login=success");
                     exit();
                 } else {

@@ -1,8 +1,13 @@
 <?php
-if(isset($_POST['c1-class'])) {
+if(isset($_POST['c1-class']) || ($_GET['class'])) {
     $db = new SQLite3('sqlite/webapp.db');
     $userID = $_SESSION['userID'];
-    $fkclass = $_POST['c1-class'];
+    if(isset($_GET['class'])){
+        $fkclass = $_GET['class'];
+    } else {
+        $fkclass = $_POST['c1-class'];
+    }
+
     $fk = $db->prepare("SELECT class_id FROM class WHERE class = :class");
     $fk->bindValue(':class',$fkclass);
     $r = $fk->execute();
@@ -29,16 +34,24 @@ if(isset($_POST['c1-class'])) {
             $color = 'red';
             $count = $count + 3;
         }
+        $des = $row['description'];
+        $id = $row['grade_id'];
+        $grade = $row['grade'];
+        $userID = $_SESSION['userID'];
         $style = '<style type="text/css">#class-grade'.$count.'{color:'.$color.';}</style>';
         echo "<div class='gradelist'>";
         echo $style;
-        echo "<li class='class-gradelist' id='class-grade$count'>".$row['grade']."</li>";
-        echo "<li class='class-gradelist'>".$row['date']."</li>";
-        echo "<li class='class-gradelist'>".$row['weighting']."</li>";
-        echo "<li class='class-gradelist'><button id='myBtn' class='view-btn'>Description</button></li>";
-        echo "<li class='class-gradelist'><button onclick='popup()' class='trash-btn'>🗑️</button></li>";
-        $script = "<script type='text/javascript'>function popup () {alert('".$row['description']."');}</script>";
-        echo $script;
+        echo "<form action='class/delete_grade.php' method='post'>";
+        echo "<li class='class-gradelist' id='class-grade$count'>".$grade."</li>";
+        echo "<li class='class-gradelist' id='class-date>".$row['date']."</li>";
+        echo "<li class='class-gradelist' id='class-weighting'>".$row['weighting']."%</li>";
+        echo "<input type='text' name='delete_id' value='$id' style='display: none; position: absolute;'>";
+        echo "<input type='text' name='delete_grade' value='$grade' style='display: none; position: absolute;'>";
+        echo "<input type='text' name='delete_userID' value='$userID' style='display: none; position: absolute;'>";
+        echo "<input type='text' name='class' value='$class' style='display: none; position: absolute;'>";
+        echo "<li class='class-gradelist'><button type='submit' name='delete_btn' class='trash-btn'>🗑️</button></li>";
+        echo "<li class='class-gradelist'><div class='c-des'>$des</div></li>";
+        echo "</form>";
         echo "</div>";
     }
 }

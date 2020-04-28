@@ -22,8 +22,10 @@
                 </div>
             </div>
             <div class="right-side">
+            <img src="images/logo.png" class="logo" alt="logo"/>
             <?php
             if (isset($_GET['login'])) {
+                echo '<script>alert("Successfully logged in!");</script>';
                 echo '<p class="success">Successfully logged in!</p>';
             }
             ?>
@@ -42,6 +44,7 @@
                     echo "<div class='account-logged'>";
                     echo "<p>Username: <span class='width-logged'>" .$_SESSION['userUID'] ."</span></p>";
                     echo "<p>Email: <span class='width-logged2'>".$_SESSION['userMAIL']."</span></p>";
+                    echo "<p>Group: <span class='width-logged2'>".$_SESSION['userGRP']."</span></p>";
                     echo "<a href='changepassword.php'>Change Username</a><br>";
                     echo "<a href='changepassword.php'>Change Password</a>";
                     echo "<form action='login/logout.php' method='post'>
