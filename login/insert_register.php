@@ -26,18 +26,16 @@ if(isset($_POST['register'])) {
         exit();
     }
 
-    // Check if mail and username are correct
+    // Check if mail and username are valid
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         header("Location: ../register.php?error=invalidmailusername");
         exit();
     }
-
-    // Check if mail is correct
+    // Check if mail is valid
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: ../register.php?error=invalidmail&r-uid=".$username);
         exit();
     }
-
     // Check if username is correct
     else if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         header("Location: ../register.php?error=invalidusername&r-email=".$email);
@@ -86,8 +84,9 @@ if(isset($_POST['register'])) {
         $sql->bindValue(':pwd',$passwordHashed);
         $sql->bindValue(':group',$group);
         $r = $sql->execute();
-        header("Location: ../account.php?signup=success");
-        exit();
+        //header("Location: ../account.php?signup=success");
+        //exit();
+        echo "FINITO";
     }
     $db->close();
 } else { // When accessed manually, send user back to signup page

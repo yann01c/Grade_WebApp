@@ -25,8 +25,8 @@
             <img src="images/logo.png" class="logo" alt="logo"/>
             <?php
             if (isset($_GET['login'])) {
-                echo '<script>alert("Successfully logged in!");</script>';
-                echo '<p class="success">Successfully logged in!</p>';
+                //echo '<script>alert("Successfully logged in!");</script>';
+                echo '<div><p class="success">Successfully logged in!</p></div>';
             }
             ?>
             <?php
@@ -41,15 +41,34 @@
             <div class="form">
             <?php
                 if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
+                    $uid = $_SESSION['userUID'];
+                    $mail = $_SESSION['userMAIL'];
+                    $group = $_SESSION['userGRP'];
+
+                    $sessionid = $_SESSION['userID'];
+                    $sessionuid = $_SESSION['userUID'];
+                    $sessionmail = $_SESSION['userMAIL'];
+                    $sessiongroup = $_SESSION['userGRP'];
+
+                    $php = "<?php include 'group/select_group.php'; ?>";
+                    echo "<form action='login/change_login.php' method='post'>";
+                    echo "<input name='session-id' value='$sessionid' style='display: none;'>";
+                    echo "<input name='session-uid' value='$sessionuid' style='display: none;'>";
+                    echo "<input name='session-mail' value='$sessionmail' style='display: none;'>";
+                    echo "<input name='session-group' value='$sessiongroup' style='display: none;'>";
                     echo "<div class='account-logged'>";
-                    echo "<p>Username: <span class='width-logged'>" .$_SESSION['userUID'] ."</span></p>";
-                    echo "<p>Email: <span class='width-logged2'>".$_SESSION['userMAIL']."</span></p>";
-                    echo "<p>Group: <span class='width-logged2'>".$_SESSION['userGRP']."</span></p>";
-                    echo "<a href='changepassword.php'>Change Username</a><br>";
-                    echo "<a href='changepassword.php'>Change Password</a>";
-                    echo "<form action='login/logout.php' method='post'>
-                    <button class='logout'>Logout</button>
-                    </form>";
+                    echo "<button class='btn-logged' id='edit-btn' type='button' onclick='edit()'>Edit</button>";
+                    echo "<button name='change' class='btn-logged' id='save-btn' type='submit'>Save</button>";
+                    echo "<button class='btn-logged' id='cancel-btn' type='button' onclick='cancel()'>Cancel</button>";
+                    echo "<p>Username</p><div class='div-logged'><input class='input-logged' id='i-uid' name='change-uid' value='$uid' disabled></div>";
+                    echo "<p>Email</p><div class='div-logged'><input class='input-logged' id='i-mail' name='change-mail' value='$mail' disabled></div>";
+                    echo "<p>Group</p><div class='div-logged'><select name='change-group' class='select-logged' id='s-group' disabled>";
+                    echo "<option id='s-group' name='l-group' value='$group'>$group</option>";
+                    echo include 'group/select_group.php';;
+                    echo "</select></div>";
+                    echo "</form>";
+                    echo "<br><br><a href='changepassword.php'>Change Password</a>";
+                    echo "<form action='login/logout.php' method='post'><button class='logout'>Logout</button></form>";
                     echo "</div>";
                 } else {
                     echo '<form action="login/check_login.php" method="post">
@@ -77,5 +96,6 @@
             <div class="copyright">Copyright - SPIE ICS ©</div>
         </div>
     </div>
+    <script src="js/change.js"></script>
 </body>
 </html>

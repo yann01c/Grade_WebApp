@@ -1,12 +1,15 @@
 <?php
-if(isset($_POST['c1-class']) || ($_GET['class'])) {
+if(isset($_POST['c1-class']) || isset($_GET['success'])) {
+    $db = new SQLite3('sqlite/webapp.db');
+    if (empty($_GET['success'])) {
+        $fkclass = $_POST['c1-class'];
+        $class = $_POST['c1-class'];
+    } else {
+        $fkclass = $_GET['success'];
+        $class = $_GET['success'];
+    }
     $db = new SQLite3('sqlite/webapp.db');
     $userID = $_SESSION['userID'];
-    if(isset($_GET['class'])){
-        $fkclass = $_GET['class'];
-    } else {
-        $fkclass = $_POST['c1-class'];
-    }
 
     $fk = $db->prepare("SELECT class_id FROM class WHERE class = :class");
     $fk->bindValue(':class',$fkclass);
@@ -43,7 +46,7 @@ if(isset($_POST['c1-class']) || ($_GET['class'])) {
         echo $style;
         echo "<form action='class/delete_grade.php' method='post'>";
         echo "<li class='class-gradelist' id='class-grade$count'>".$grade."</li>";
-        echo "<li class='class-gradelist' id='class-date>".$row['date']."</li>";
+        echo "<li class='class-gradelist' id='class-date'>".$row['date']."</li>";
         echo "<li class='class-gradelist' id='class-weighting'>".$row['weighting']."%</li>";
         echo "<input type='text' name='delete_id' value='$id' style='display: none; position: absolute;'>";
         echo "<input type='text' name='delete_grade' value='$grade' style='display: none; position: absolute;'>";
@@ -54,5 +57,6 @@ if(isset($_POST['c1-class']) || ($_GET['class'])) {
         echo "</form>";
         echo "</div>";
     }
+} else {
+    header("Location: clkdelete_data.php");
 }
-?>

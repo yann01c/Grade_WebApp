@@ -40,7 +40,7 @@ function cbtnAppear() {
     if(dropdown == "-") {
         cbutton.style.display = "none";
     } else {
-        cbutton.innerHTML = "Go to " + dropdown;
+        cbutton.innerHTML = "-> " + dropdown;
         cbutton.style.display = "flex";
     }
 }

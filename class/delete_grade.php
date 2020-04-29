@@ -15,7 +15,7 @@
             $sql->bindValue(':id',$id);
             $sql->bindValue(':user',$userID);
             $result = $sql->execute();
-            header("Location: ../class.php?success=deleted?class=$class");
+            header("Location: ../class.php?success=$class");
             exit();
         }
     } else { // When accessed manually, send user back to signup page

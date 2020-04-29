@@ -38,17 +38,23 @@
                 <a href="classes.php">Back</a>
             </div>
             <div class="title">
-                <h2>Overview - <?php include 'class/select_class.php'; ?></h2>
-                <!--<p>Total Grades: <?php //include 'class/total_grade.php'; ?></p>-->
-
+                <h2>Overview - <?php if(isset($_GET['success'])) {
+                            $class = $_GET['success'];
+                            echo $class;
+                        } else {
+                            include 'class/select_class.php';
+                        }?></h2>
             </div>
             <div class="form">
                 <form>
                     <div id="class-center">
                         <div>
                             <ul>
-                                <?php include 'class/select_grade.php'; ?>
+                                <?php
+                                    include 'class/select_grade.php';
+                                ?>
                             </ul>
+                            <?php include "class/total_grade.php"; ?>
                         </div>
                     </div>
                 </form>

@@ -1,9 +1,11 @@
 <?php
-    if(isset($_POST['c1-class']) || ($_GET['class'])) {
+if(isset($_POST['c1-class']) || isset($_GET['success'])) {
+    $db = new SQLite3('sqlite/webapp.db');
+    if (empty($_GET['success'])) {
         $class = $_POST['c1-class'];
-        if(empty($class)) {
-            $class = $_GET['class'];
-        }
-        echo $class;
+    } else {
+        $class = $_GET['success'];
     }
+    echo $class;
+}
 ?>
