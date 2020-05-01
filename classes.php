@@ -27,6 +27,8 @@
                 if (isset($_SESSION['userID'])) {
                     echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
                 } else {
+		    // maybe redirect to login page if no active session
+		    header("Location: /account.php\n\r");
                 }
             ?>
             </div>
@@ -36,7 +38,7 @@
                 <div id="c-add-cont">
                     <button onclick="newClass()" id="c-add" class="c-add">Add new Class</button>
                 </div>
-                <form action="class.php" method="POST">
+                <form action="class.php" method="GET">
                     <div class="float">
                         <label for="c1-class">Class</label><br>
                         <select id="c1-class" name="c1-class" onchange="cbtnAppear()">

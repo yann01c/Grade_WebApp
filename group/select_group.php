@@ -5,6 +5,6 @@
 
     // Select every class in class and display it in "option" element in HTML
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
-        echo "<option value=".$row['group'].">".$row['group']."</option>";
+        echo "<option value=".$row['group_id'].">".$row['group']."</option>";
     }
 ?>

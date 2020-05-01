@@ -24,9 +24,12 @@
             <div class="right-side">
                 <img src="images/logo.png" class="logo" alt="logo"/>
             <?php
-                if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
+		// why both? you actually only need "userUID"..?
+                if (isset($_SESSION['userUID'])) {
                     echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
                 } else {
+		    // maybe redirect to login page if no active session
+		    header("Location: /account.php\n\r");
                 }
             ?>
             </div>

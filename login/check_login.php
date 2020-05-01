@@ -1,18 +1,19 @@
 <?php
 if (isset($_POST['login'])) {
-    $db = new SQLite3('../sqlite/webapp.db');
     $username = $_POST['a-username'];
     $password = $_POST['a-password'];
     if (empty($username) || empty($password)) {
         header("Location: ../account.php?error=emptyfields");
         exit();
     } else {
+        $db = new SQLite3('../sqlite/webapp.db');
         $sql = $db->prepare("SELECT * FROM login WHERE username=:uid OR email=:mail");
         if (!$sql) {
             header("Location: ../account.php?error=sqlerror");
             exit();
         } else {
             $sql->bindValue(':uid',$username);
+	    // why does mail bind to password?
             $sql->bindValue(':mail',$password);
             $r = $sql->execute();
             if ($row = $r->fetchArray()) {

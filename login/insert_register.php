@@ -7,15 +7,17 @@ if(isset($_POST['register'])) {
     $group = $_POST['r-group'];
 
     // Check group ID
-    if ($group == "IT") {
-        $group = 2;
-    }
-    else if ($group == "KV") {
-        $group = 1;
-    } else {
-        header("Location: ../register.php?error=invalidgroup");
-        exit();
-    }
+    // try to avoid hardcoded values :/
+    // still I like the idea of input validation
+   // if ($group == "IT") {
+   //     $group = 2;
+   // }
+   // else if ($group == "KV") {
+   //     $group = 1;
+   // } else {
+   //     header("Location: ../register.php?error=invalidgroup");
+   //     exit();
+   // }
 
     // Open DB
     $db = new SQLite3('../sqlite/webapp.db');
@@ -84,9 +86,9 @@ if(isset($_POST['register'])) {
         $sql->bindValue(':pwd',$passwordHashed);
         $sql->bindValue(':group',$group);
         $r = $sql->execute();
-        //header("Location: ../account.php?signup=success");
+        header("Location: ../account.php?signup=success");
         //exit();
-        echo "FINITO";
+        //echo "FINITO";
     }
     $db->close();
 } else { // When accessed manually, send user back to signup page

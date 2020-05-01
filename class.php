@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - <?php include 'class/select_class.php'; ?></title>
     <link rel="stylesheet" href="css/main.css">
+    <!-- are you sure you need ajax and bootstrap? or is bootstrap for the popup? -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -38,26 +39,23 @@
                 <a href="classes.php">Back</a>
             </div>
             <div class="title">
-                <h2>Overview - <?php if(isset($_GET['success'])) {
-                            $class = $_GET['success'];
-                            echo $class;
-                        } else {
+                <h2>Overview - <?php if(isset($_POST['c1-class']) || ($_GET['c1-class'])) {
                             include 'class/select_class.php';
+                        } else {
+			    header("Location: /classes.php\n\r");
                         }?></h2>
             </div>
             <div class="form">
-                <form>
-                    <div id="class-center">
-                        <div>
-                            <ul>
-                                <?php
-                                    include 'class/select_grade.php';
-                                ?>
-                            </ul>
-                            <?php include "class/total_grade.php"; ?>
-                        </div>
-                    </div>
-                </form>
+               <div id="class-center">
+                   <div>
+                       <ul>
+                           <?php
+                               include 'class/select_grade.php';
+                           ?>
+                       </ul>
+                       <?php include "class/total_grade.php"; ?>
+                   </div>
+               </div>
             </div>
         </div>
         <div class="footer">

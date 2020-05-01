@@ -25,10 +25,12 @@
             <img src="images/logo.png" class="logo" alt="logo"/>
             <?php
                 if (isset($_SESSION['userID'])) {
-                    echo '<form action="login/logout.php" method="POST">
-                    <button class="logout">Logout</button>
-                    </form>';
-                } else {
+		    // checking for a session makes sense. But I would propably just redirect to account.php
+		    // The logout button maybe would makes sense in the navigation?
+                    //echo '<form action="login/logout.php" method="POST">
+                    //<button class="logout">Logout</button>
+                    //</form>';
+		    header("Location: /account.php\n\r");
                 }
             ?>
             </div>
