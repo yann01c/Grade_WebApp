@@ -1,14 +1,16 @@
 <?php
+session_start();
+
 if(isset($_POST['change'])) {
     $db = new SQLite3('../sqlite/webapp.db');
     
     $username = $_POST['change-uid'];
     $email = $_POST['change-mail'];
     $group = $_POST['change-group'];
-    $userID = $_POST['session-id'];
-    $uid = $_POST['session-uid'];
-    $mail = $_POST['session-mail'];
-    $userGRP = $_POST['session-group'];
+    $userID = $_SESSION['userID'];
+    $uid = $_SESSION['userUID'];
+    $mail = $_SESSION['userMAIL'];
+    $userGRP  = $_SESSION['userGRP'];
 
     $sql = $db->prepare("SELECT * FROM login WHERE user_id = :id AND username = :uid");
     $sql->bindValue(':id',$userID);
@@ -21,12 +23,6 @@ if(isset($_POST['change'])) {
         exit();
     }
 
-    // Check group ID
-    if ($userGRP == "IT") {
-        $group = 2;
-    } else {
-        $group = 1;
-    }
     // Check if any variable is empty
     if (empty($username) || empty($email)) {
         header("Location: ../account.php?lerror=emptyfields&l-uid=".$username."&l-email=".$email);
@@ -49,9 +45,9 @@ if(isset($_POST['change'])) {
     }
 
     // Check if mail exists
-    $mail = $db->prepare("SELECT email FROM login WHERE email=:mail");
-    $mail->bindValue(':mail',$email);
-    $result = $mail->execute();
+    $existing_mail = $db->prepare("SELECT email FROM login WHERE email=:mail");
+    $existing_mail->bindValue(':mail',$email);
+    $result = $existing_mail->execute();
 
     $n_rows = 0;
 

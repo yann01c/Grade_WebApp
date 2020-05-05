@@ -19,5 +19,6 @@ function cancel() {
     editbtn.disabled = false;
     iuid.disabled = true;
     imail.disabled = true;
-    sgroup.disabled = true;  
+    sgroup.disabled = true;
+    location.reload();
 }

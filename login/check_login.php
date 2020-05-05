@@ -1,19 +1,19 @@
 <?php
 if (isset($_POST['login'])) {
-    $db = new SQLite3('../sqlite/webapp.db');
     $username = $_POST['a-username'];
     $password = $_POST['a-password'];
     if (empty($username) || empty($password)) {
         header("Location: ../account.php?error=emptyfields");
         exit();
     } else {
+        $db = new SQLite3('../sqlite/webapp.db');
         $sql = $db->prepare("SELECT * FROM login WHERE username=:uid OR email=:mail");
         if (!$sql) {
             header("Location: ../account.php?error=sqlerror");
             exit();
         } else {
             $sql->bindValue(':uid',$username);
-            $sql->bindValue(':mail',$password);
+            $sql->bindValue(':mail',$username);
             $r = $sql->execute();
             if ($row = $r->fetchArray()) {
                 $pwdCheck = password_verify($password, $row['passwd']);
@@ -31,6 +31,8 @@ if (isset($_POST['login'])) {
                     $_SESSION['userUID'] = $row['username'];
                     $_SESSION['userMAIL'] = $row['email'];
                     $_SESSION['userGRP'] = $group['group'];
+                    $_SESSION['userGRPID'] = $group['group_id'];
+
                     header("Location: ../account.php?login=success");
                     exit();
                 } else {

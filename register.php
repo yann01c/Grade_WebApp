@@ -23,14 +23,6 @@
             </div>
             <div class="right-side">
             <img src="images/logo.png" class="logo" alt="logo"/>
-            <?php
-                if (isset($_SESSION['userID'])) {
-                    echo '<form action="login/logout.php" method="POST">
-                    <button class="logout">Logout</button>
-                    </form>';
-                } else {
-                }
-            ?>
             </div>
         </div>
         <div class="main">
@@ -55,7 +47,7 @@
                     <div>
                         <label for="r-group">Group</label><br>
                         <select name="r-group" id="r-group">
-                            <option value="-">-</option>
+                            <option value="-">&#8595</option>
                             <?php include 'group/select_group.php'; ?>
                         </select>
                     </div>

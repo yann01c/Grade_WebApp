@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Account</title>
     <link rel="stylesheet" href="css/account.css">
+    <link rel="manifest" href="script/manifest.json">
 </head>
 <body id="account">
     <div class="container">
@@ -25,12 +26,11 @@
             <img src="images/logo.png" class="logo" alt="logo"/>
             <?php
             if (isset($_GET['login'])) {
-                //echo '<script>alert("Successfully logged in!");</script>';
                 echo '<div><p class="success">Successfully logged in!</p></div>';
             }
             ?>
             <?php
-                if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
+                if (isset($_SESSION['userID'])) {
                     echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
                 } else {
                 }
@@ -40,22 +40,12 @@
         <div class="main">
             <div class="form">
             <?php
-                if (isset($_SESSION['userID']) && ($_SESSION['userUID'])) {
+                if (isset($_SESSION['userID'])) {
                     $uid = $_SESSION['userUID'];
                     $mail = $_SESSION['userMAIL'];
                     $group = $_SESSION['userGRP'];
-
-                    $sessionid = $_SESSION['userID'];
-                    $sessionuid = $_SESSION['userUID'];
-                    $sessionmail = $_SESSION['userMAIL'];
-                    $sessiongroup = $_SESSION['userGRP'];
-
-                    $php = "<?php include 'group/select_group.php'; ?>";
+                    $groupid = $_SESSION['userGRPID'];
                     echo "<form action='login/change_login.php' method='post'>";
-                    echo "<input name='session-id' value='$sessionid' style='display: none;'>";
-                    echo "<input name='session-uid' value='$sessionuid' style='display: none;'>";
-                    echo "<input name='session-mail' value='$sessionmail' style='display: none;'>";
-                    echo "<input name='session-group' value='$sessiongroup' style='display: none;'>";
                     echo "<div class='account-logged'>";
                     echo "<button class='btn-logged' id='edit-btn' type='button' onclick='edit()'>Edit</button>";
                     echo "<button name='change' class='btn-logged' id='save-btn' type='submit'>Save</button>";
@@ -63,7 +53,7 @@
                     echo "<p>Username</p><div class='div-logged'><input class='input-logged' id='i-uid' name='change-uid' value='$uid' disabled></div>";
                     echo "<p>Email</p><div class='div-logged'><input class='input-logged' id='i-mail' name='change-mail' value='$mail' disabled></div>";
                     echo "<p>Group</p><div class='div-logged'><select name='change-group' class='select-logged' id='s-group' disabled>";
-                    echo "<option id='s-group' name='l-group' value='$group'>$group</option>";
+                    echo "<option id='s-group' name='l-group' value='$groupid'>$group</option>";
                     echo include 'group/select_group.php';;
                     echo "</select></div>";
                     echo "</form>";

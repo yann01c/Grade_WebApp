@@ -11,13 +11,13 @@
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
-                <div class="nav-link-wrapper">
+                <div class="nav-link-wrapper" id="a-submit">
                     <a href="index.php">Submit</a>
                 </div>
-                <div class="nav-link-wrapper">
+                <div class="nav-link-wrapper" id="a-classes">
                     <a href="#" class="active">Classes</a>
                 </div>
-                <div class="nav-link-wrapper">
+                <div class="nav-link-wrapper" id="a-account">
                     <a href="account.php">Account</a>
                 </div>
             </div>
@@ -27,20 +27,22 @@
                 if (isset($_SESSION['userID'])) {
                     echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
                 } else {
+                    // Redirect to login page if no active session
+		            header("Location: account.php");
                 }
             ?>
             </div>
         </div>
         <div class="main">
             <div class="form">
+                <form action="class.php" method="GET">
                 <div id="c-add-cont">
-                    <button onclick="newClass()" id="c-add" class="c-add">Add new Class</button>
+                    <button onclick="newClass()" type="button" id="c-add" class="c-add">Add new Class</button>
                 </div>
-                <form action="class.php" method="POST">
                     <div class="float">
                         <label for="c1-class">Class</label><br>
                         <select id="c1-class" name="c1-class" onchange="cbtnAppear()">
-                            <option value="-">-</option>
+                            <option value="-">&#8595</option>
                             <?php include 'classes/select_classes.php';?>
                         </select>
                     </div>

@@ -1,9 +1,9 @@
 <?php
+    session_start();
     if(isset($_POST['delete_btn'])) {
-        $id = $_POST['delete_id'];
-        $grade = $_POST['delete_grade'];
-        $userID = $_POST['delete_userID'];
+        $gradeID = $_POST['delete_id'];
         $class = $_POST['class'];
+        $userID = $_SESSION['userID'];
 
         $db = new SQLite3('../sqlite/webapp.db');
 
@@ -12,10 +12,10 @@
             header("Location: ../class.php?error=sqlerror");
             exit();
         } else {
-            $sql->bindValue(':id',$id);
+            $sql->bindValue(':id',$gradeID);
             $sql->bindValue(':user',$userID);
             $result = $sql->execute();
-            header("Location: ../class.php?success=$class");
+            header("Location: ../class.php?c1-class=$class");
             exit();
         }
     } else { // When accessed manually, send user back to signup page

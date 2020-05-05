@@ -1,10 +1,10 @@
 <?php
-    if(isset($_POST['c1-class']) || isset($_GET['success'])) {
+    if(isset($_POST['c1-class']) || isset($_GET['c1-class'])) {
         $db = new SQLite3('sqlite/webapp.db');
-        if (empty($_GET['success'])) {
+        if (empty($_GET['c1-class'])) {
             $class = $_POST['c1-class'];
         } else {
-            $class = $_GET['success'];
+            $class = $_GET['c1-class'];
         }
 
         // SELECT class ID

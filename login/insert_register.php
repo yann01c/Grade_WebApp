@@ -6,17 +6,6 @@ if(isset($_POST['register'])) {
     $rpasswd = $_POST['r-rpwd'];
     $group = $_POST['r-group'];
 
-    // Check group ID
-    if ($group == "IT") {
-        $group = 2;
-    }
-    else if ($group == "KV") {
-        $group = 1;
-    } else {
-        header("Location: ../register.php?error=invalidgroup");
-        exit();
-    }
-
     // Open DB
     $db = new SQLite3('../sqlite/webapp.db');
 
@@ -84,9 +73,7 @@ if(isset($_POST['register'])) {
         $sql->bindValue(':pwd',$passwordHashed);
         $sql->bindValue(':group',$group);
         $r = $sql->execute();
-        //header("Location: ../account.php?signup=success");
-        //exit();
-        echo "FINITO";
+        header("Location: ../account.php?signup=success");
     }
     $db->close();
 } else { // When accessed manually, send user back to signup page
