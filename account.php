@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Account</title>
     <link rel="stylesheet" href="css/account.css">
-    <link rel="manifest" href="script/manifest.json">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body id="account">
     <div class="container">

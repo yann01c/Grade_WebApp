@@ -3,7 +3,7 @@ Grade WebApp for SPIE Apprentice
 Pages:
 
 - Submit
-- Classes
+- Classes - Class
 - Account
 
 **How to use**

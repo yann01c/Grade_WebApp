@@ -23,6 +23,10 @@ $sql->bindValue(':fkclass',$fkclass);
 $result = $sql->execute();
 $count = 0;
 $check = 0;
+$number = 0;
+$px = "'400px'";
+$pos = 'absolute';
+$onclick = "onclick=this.style.height = '400px';";
 
 // Select every grade in grade and display it in "option" element in HTML
 while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
@@ -40,7 +44,10 @@ while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
     }
     $id = $row['grade_id'];
     $grade = $row['grade'];
+    $weighting = $row['weighting'] * 100;
     $userID = $_SESSION['userID'];
+    $pathtofile = "upload/".$row['filename'];
+    $number = $number + 1;
 
     $style = '<style type="text/css">#class-grade'.$count.'{color:'.$color.'; font-weight: bold;}</style>';
     //echo "<div class='gradelist'>";
@@ -66,9 +73,10 @@ while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
     echo "<tr>
         <td id='class-grade$count'>".$row['grade']."</td>
         <td>".$row['date']."</td>
-        <td>".$row['weighting'].'%'."</td>
+        <td>".$weighting.'%'."</td>
         <td id='des-hidden'>".$row['description']."</td>
-        <td><button type='submit' name='delete_btn' class='trash-btn'>🗑️</button></td>";
+        <td><button type='submit' name='delete_btn' class='trash-btn'>🗑️</button></td>
+        <td><img style='width:10px;height:10px;cursor:pointer;position:relative;box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);' id='screenshot$number' onclick='zoom(this.id)' src='$pathtofile'></td>";
     echo "<input type='text' name='delete_id' value='$id' style='display: none; position: absolute;'>";
     echo "<input type='text' name='delete_grade' value='$grade' style='display: none; position: absolute;'>";
     echo "<input type='text' name='class' value='$class' style='display: none; position: absolute;'>";

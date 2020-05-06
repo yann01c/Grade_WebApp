@@ -29,7 +29,7 @@ function newClass() {
 async function invalidClass() {
     var serverResponse = document.getElementById("classadded");
     serverResponse.innerHTML = "Invalid Classname!";
-    await sleep(3000);
+    await sleep(2000);
     location.reload();
 }
 

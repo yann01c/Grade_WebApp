@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="manifest" href="script/manifest.json">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body id="index">
     <div class="container">
@@ -37,10 +37,10 @@
             </div>
             <div class="main">
                 <div class="form">
-                    <form action="#" method="post">
+                    <form action="#" method="post" enctype="multipart/form-data">
                         <div>
                         <label for="fileToUpload">Upload Screenshot:</label><br>
-                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="file" name="fileToUpload" id="fileToUpload" multiple>
                         </div>
                         <div class="float">
                             <label for="s_class">Class</label><br>
@@ -51,15 +51,15 @@
                         </div>
                         <div>
                             <label for="s_grade">Grade</label><br>
-                            <input type="number" step="0.1" name="s_grade" required>
+                            <input type="number" step="0.1" name="s_grade">
                         </div>
                         <div class="float">
                             <label for="s_date">Date</label><br>
-                            <input type="date" name="s_date" required>
+                            <input type="date" name="s_date">
                         </div>
                         <div>
                             <label for="s_weighting">Weighting</label><br>
-                            <input type="number" name="s_weighting" placeholder="%" required>
+                            <input type="number" step="0.05" name="s_weighting" placeholder="%">
                         </div>
                         <div>
                             <label for="s_description">Description</label><br>
@@ -68,7 +68,7 @@
                         <button name="submit" type="submit" value="Submit">Submit</button>
                     </form>
                 </div>
-                <?php include 'submit/insert_grade.php'; ?>
+                <?php include "submit/insert_grade.php"; ?>
             </div>
             <div class="footer">
                 <div class="copyright">Copyright - SPIE ICS ©</div>
