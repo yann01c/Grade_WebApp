@@ -13,6 +13,7 @@ html {
 }
 body {
     min-height: 100%;
+    line-height: 1.25;
 }
 .container {
     height: 100vh;
@@ -46,30 +47,40 @@ input {
     display: flex;
 }
 .nav-wrapper > .left-side > div {
-    font-size: 2.0em;
+    margin-right: 0;
+    font-size: 2em;
 }
 .nav-link-wrapper a {
     opacity: 0.7;
     color: white;
     text-decoration: none;
     transition: all 200ms;
+    border: 1px solid silver;
     padding: 8px;
-    border-top: 1px solid silver;
-    border-bottom: 1px solid silver;
 }
 .nav-link-wrapper a:hover {
-    color: white;
     opacity: 1;
-    border-top: 1px solid #0F2259;
-    border-bottom: 1px solid #0F2259;
+    color: white;
+    border: 1px solid #0F2259;
     box-shadow: 0px 5px #0F2259;
 }
 a.active {
-    color: white;
     opacity: 1;
-    border-top: 1px solid #0F2259;
-    border-bottom: 1px solid #0F2259;
+    color: white;
+    border: 1px solid #0F2259;
     box-shadow: 0px 5px #0F2259;
+}
+#a-submit a {
+    border-left: none;
+    border-right: none;
+}
+#a-classes a {
+    border-left: none;
+    border-right: none;
+}
+#a-account  a {
+    border-left: none;
+    border-right: none;
 }
 span {
     font-size: 1.0em;
@@ -93,9 +104,11 @@ span {
     display: block;
 }
 .form {
-    margin-top: 13em;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
 }
 .form > form > div {
     margin-top: 10px;
@@ -157,7 +170,7 @@ span {
     box-shadow: none;
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive
 @media (max-width: 580px) {
     .nav-wrapper > .left-side > div {font-size: 1.9em;}
     #account .form > form > div > label {font-size: 1.4em;}
@@ -173,40 +186,37 @@ span {
     #account .form > form > div > select {width: 9.4em; font-size: 0.9em;}
     #account .form {margin-top: 7em;}
 }
-/* Logo & Logged In disapear */
+/* Logo & Logged In disapear
 @media (max-width: 1150px) {
     .logo {display: none;}
     .userlogged {display: none;}
 }
-/* iPhone X Submit */
+/* iPhone X Submit
 @media (max-width: 375px) and (max-height: 812px) {
     #account .form {margin-top: 9.5em;}
     #account .form > form > div > label {font-size: 1.4em;}
 }
-/* iPhone 6/7/8 PLUS Submit */
+/* iPhone 6/7/8 PLUS Submit
 @media (max-width: 414px) and (max-height: 736px) {
     #account.form {margin-top: 8em;}
     #account .form > form > div > label {font-size: 1.3em;}
 }
-/* iPhone 6/7/8 Submit */
+/* iPhone 6/7/8 Submit
 @media (max-height: 667px) {
     #account .form {margin-top: 5.5em;}
 }
-/* Galaxy S9/S9+ Submit */
+/* Galaxy S9/S9+ Submit
 @media (height: 740px) {
     #account .form {margin-top: 6em;}
 }
-/* iPad Submit */
+/* iPad Submit
 @media (height: 1024px) {
     #account .form {margin-top: 14.5em;}
 }
-/* Laptop with MDPI Screen Submit */
+/* Laptop with MDPI Screen Submit 
 @media (width: 1280px) and (height: 800px) {
     #account .form {margin-top: 5em;}
-}
-#register .form {
-    margin-top: 6em;
-}
+}*/
 #register .form > form > div > button {
     background-color: rgba(255, 255, 255, 0.1);
     margin-top: 0px;
@@ -251,15 +261,17 @@ span {
     justify-content: center;
 }
 .copyright {
+    align-items: center;
     color: white;
     bottom: 2em;
+    height: 2em;
     position: absolute;
     display: flex;
     justify-content: center;
-    font-size: 1.2em;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    width: 13em;
+    font-size: 1.4em;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    width: 10em;
 }
 
 /* Logged In */
@@ -303,12 +315,20 @@ span {
     box-shadow: none;
     background-color: #0F2259;
 }
-.success {
+.successdiv {
     color: lightgreen;
     font-weight: bold;
+    font-family: 'Iceland', cursive;
+    font-size: 1.3em;
     position: absolute;
-    right: 42em;
-    top: 5em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.successtext {
+    position: relative;
+    color: lightgreen;
+    font-weight: bold;
     font-family: 'Iceland', cursive;
     font-size: 1.3em;
 }
@@ -355,7 +375,7 @@ span {
 }
 .select-logged {
     color: white;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
     width: 6em;
     border: none;
     height: 2.1em;
@@ -374,7 +394,7 @@ span {
 .input-logged {
     color: white;
     border: none;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
     width: 17em;
     padding: 5px;
     font-size: 1em;

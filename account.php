@@ -13,23 +13,18 @@
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
-                <div class="nav-link-wrapper">
+                <div id="a-submit"  class="nav-link-wrapper">
                     <a href="index.php">Submit</a>
                 </div>
-                <div class="nav-link-wrapper">
+                <div id="a-classes" class="nav-link-wrapper">
                     <a href="classes.php">Classes</a>
                 </div>
-                <div class="nav-link-wrapper">
+                <div id="a-account" class="nav-link-wrapper">
                     <a href="#" class="active">Account</a>
                 </div>
             </div>
             <div class="right-side">
             <img src="images/logo.png" class="logo" alt="logo"/>
-            <?php
-            if (isset($_GET['login'])) {
-                echo '<div><p class="success">Successfully logged in!</p></div>';
-            }
-            ?>
             <?php
                 if (isset($_SESSION['userID'])) {
                     echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
@@ -39,6 +34,11 @@
             </div>
         </div>
         <div class="main">
+        <?php
+            if (isset($_GET['login'])) {
+                echo '<div class="successdiv"><p class="successtext">Successfully logged in!</p></div>';
+            }
+            ?>
             <div class="form">
             <?php
                 if (isset($_SESSION['userID'])) {

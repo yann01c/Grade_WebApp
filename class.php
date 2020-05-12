@@ -10,7 +10,6 @@
 </head>
 <body id="class">
     <div class="container">
-        <div class="blur">
             <div class="nav-wrapper">
                 <div class="left-side">
                     <div class="nav-link-wrapper" id="a-submit">
@@ -34,9 +33,6 @@
                 </div>
             </div>
             <div class="main">
-                <div class="bck-btn">
-                    <a href="classes.php">Back</a>
-                </div>
                 <div class="form">
                         <div id="class-center">
                                 <?php include 'class/select_grade.php'; ?>
@@ -49,12 +45,16 @@
                             </div>
                             <?php include "class/total_grade.php"; ?>
                         </div>
+                    <div id='imgdiv' style='width:100%;position:absolute;display:flex;justify-content:center;'></div>
+                    <div class="bck-btn">
+                        <a href="classes.php" style="margin-right:10px;">Back</a>
+                        <a href="index.php">Submit</a>
+                    </div>
                 </div>
             </div>
             <div class="footer">
                 <div class="copyright">Copyright - SPIE ICS ©</div>
             </div>
-        </div>
     </div>
     <script src="js/zoom.js"></script>
 </body>
