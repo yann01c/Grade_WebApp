@@ -28,31 +28,33 @@ if(isset($_POST['submit'])) {
     } else {
         // File Vars
         $target_dir = "upload/";
-        $filetype = $_FILES['fileToUpload']['type'];
-        $filesize = $_FILES['fileToUpload']['size'];
-        $file = $_FILES['fileToUpload']['name'];
-        $path = pathinfo($file);
-        $filename = $path['filename'];
-        $ext = $path['extension'];
-        $temp_name = $_FILES['fileToUpload']['tmp_name'];
-        $path_filename_ext = $target_dir.$filename.".".$ext;
-        $maxSize = 0;
-        // Check if extension is = JPG or JPEG
-        if ($ext != "jpg" && $ext != "jpeg") {
-            echo "<p style='color:red;font-weight:bold;font-size:1.2em;'>Extension Invalid!</p>";
-            exit();
+        for($i=0;$i<$total_files;$i++) {
+            $filetype = $_FILES['fileToUpload']['type'][$i];
+            $filesize = $_FILES['fileToUpload']['size'][$i];
+            $file = $_FILES['fileToUpload']['name'][$i];
+            $path = pathinfo($file);
+            $filename = $path['filename'];
+            $ext = $path['extension'];
+            $temp_name = $_FILES['fileToUpload']['tmp_name'][$i];
+            $path_filename_ext = $target_dir.$filename.".".$ext;
+            $maxSize = 0;
+            // Check if extension is = JPG or JPEG
+            if ($ext != "jpg" && $ext != "jpeg") {
+                echo "<p style='color:red;font-weight:bold;font-size:1.2em;'>Extension Invalid!</p>";
+                exit();
+            }
+            // Check if file already exists
+            if (file_exists($path_filename_ext)) {
+                echo "<p style='color:blue;font-weight:bold;font-size:1.2em;'>File already exists!</p>";
+                exit();
+            }
+            move_uploaded_file($temp_name,$path_filename_ext);
+            chmod($path_filename_ext, 0755);
+            echo "FILENAME = ".$filename;
+            echo "TEMP = ".$temp_name;
+            echo "PATH = ".$path_filename_ext;
+            echo "FILE UPLOADED";
         }
-        // Check if file already exists
-        if (file_exists($path_filename_ext)) {
-            echo "<p style='color:blue;font-weight:bold;font-size:1.2em;'>File already exists!</p>";
-            exit();
-        }
-        move_uploaded_file($temp_name,$path_filename_ext);
-        chmod($path_filename_ext, 0755);
-        echo "FILENAME = ".$filename;
-        echo "TEMP = ".$temp_name;
-        echo "PATH = ".$path_filename_ext;
-        echo "FILE UPLOADED";
     }
     
     $db = new SQLite3('sqlite/webapp.db');

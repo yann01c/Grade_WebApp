@@ -41,7 +41,7 @@
                     <form action="#" method="post" enctype="multipart/form-data">
                         <div>
                         <label for="fileToUpload">Upload Screenshot:</label><br>
-                            <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+                            <input type="file" name="fileToUpload[]" id="fileToUpload" multiple>
                         </div>
                         <div class="float">
                             <label for="s_class">Class</label><br>
