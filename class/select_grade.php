@@ -11,22 +11,27 @@ if (empty($_GET['c1-class'])) {
 $db = new SQLite3('sqlite/webapp.db');
 $userID = $_SESSION['userID'];
 
-$fk = $db->prepare("SELECT class_id FROM class WHERE class = :class");
-$fk->bindValue(':class',$fkclass);
-$r = $fk->execute();
+$sqlfk = $db->prepare("SELECT class_id FROM class WHERE class = :class");
+if (!$sqlfk) {
+    echo "<p style='color:orange;font-weight:bold;'>SQLite Error</p>";
+    exit();
+}
+$sqlfk->bindValue(':class',$fkclass);
+$r = $sqlfk->execute();
 $rr = $r->fetchArray();
 $fkclass = $rr['class_id'];
 
 $sql = $db->prepare("SELECT * FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
+if (!$sql) {
+    echo "<p style='color:orange;font-weight:bold;'>SQLite Error</p>";
+    exit();
+}
 $sql->bindValue(':userid',$userID);
 $sql->bindValue(':fkclass',$fkclass);
 $result = $sql->execute();
 $count = 0;
 $check = 0;
 $number = 0;
-$px = "'400px'";
-$pos = 'absolute';
-$onclick = "onclick=this.style.height = '400px';";
 
 // Select every grade in grade and display it in "option" element in HTML
 while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
@@ -49,12 +54,16 @@ while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
     $pathtofile = "upload/".$row['filename'];
     $number = $number + 1;
 
-    $style = '<style type="text/css">#class-grade'.$count.'{color:'.$color.'; font-weight: bold;}</style>';
-    //echo "<div class='gradelist'>";
+    $style = '<style type="text/css">.class-grade'.$count.'{color:'.$color.'; font-weight: bold;}</style>';
     echo $style;
     echo "<form action='class/delete_grade.php' method='post'>";
-    $check++;
-    $img = "<img src='upload/".$row['filename']."' id='screenshotimg' onclick='zoom()'>";
+    $check = $check + 1;
+    if ($row['filename'] == "No Image") {
+        $imgpath = "";
+    } else {
+        $imgpath = "upload/".$row['filename'];
+    }
+    $img = "<img src='$imgpath' alt='No Image' class='screenshotimg' onclick='zoom()'>";
         echo "<table>
         <caption sytle='color:white;'></caption>
         <thead>
@@ -68,13 +77,13 @@ while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
         </tr>
         </thead>";
     echo "<tbody>
-            <tr id='$count' onclick='collapse(this.id)' style='cursor:pointer;'>
-                <td id='class-grade$count' data-label='Grade' style='display:block;'>".$row['grade']."</td>
-                <td class='td$count' data-label='Date'>".$row['date']."</td>
-                <td class='td$count' data-label='Weighting'>".$weighting."%"."</td>
-                <td class='td$count' data-label='Description'>".$row['description']."</td>
-                <td class='td$count' data-label='Screenshots'>$img</td>
-                <td class='td$count' data-label=''><button type='submit' name='delete_btn' onclick='zoom()'>DELETE</button></td>
+            <tr onclick='collapse()'>
+                <td class='class-grade$count' id='$count' onclick='collapse(this.id)' style='cursor:pointer;' data-label='Grade' style='display:block;'>".$row['grade']."</td>
+                <td class='td$count' data-label='Date' style='display: none; position: absolute;'>".$row['date']."</td>
+                <td class='td$count' data-label='Weighting' style='display: none; position: absolute;'>".$weighting."%"."</td>
+                <td class='td$count' data-label='Description' style='display: none; position: absolute;'>".$row['description']."</td>
+                <td class='td$count' data-label='Screenshots' style='display: none; position: absolute;'>$img</td>
+                <td class='td'><button type='submit' id='trash-btn' name='delete_btn'>DELETE</button></td>
             </tr>
         </tbody>
         </table>";

@@ -4,6 +4,9 @@
         $gradeID = $_POST['delete_id'];
         $class = $_POST['class'];
         $userID = $_SESSION['userID'];
+        echo $gradeID;
+        echo $class;
+        echo $userID;
 
         $db = new SQLite3('../sqlite/webapp.db');
 
@@ -17,6 +20,7 @@
             $result = $sql->execute();
             header("Location: ../class.php?c1-class=$class");
             exit();
+            echo "DONE";
         }
     } else { // When accessed manually, send user back to signup page
         header("Location: ../index.php");

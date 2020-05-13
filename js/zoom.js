@@ -10,9 +10,18 @@ function zoom(id) {
     //img.style.bottom = (img.style.bottom == "300px") ? "0px" : "300px";
 }
 function collapse(id) {
-    tr = document.getElementById(id);
     tdclass = ".td"+id;
-    td = document.querySelectorAll("td"+"."+tdclass);
-    td.style.display = (td.style.display == "block") ? "none" : "block";
-    td.style.position = (td.style.position == "relative") ? "absolute" : "relative";
+    var x, i;
+    x = document.querySelectorAll(tdclass);
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = (x[i].style.display == "block") ? "none" : "block";
+        x[i].style.position = (x[i].style.position == "relative") ? "absolute" : "relative";
+    }
+}
+
+function submit(id) {
+    tr = document.getElementById(id);
+    formid = "form"+id;
+    form = document.getElementById(formid);
+    form.submit();
 }

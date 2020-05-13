@@ -13,7 +13,7 @@ function newClass() {
         var xhr = new XMLHttpRequest();
         
         // Response from insert_class.php
-                xhr.onload = async function() {
+        xhr.onload = async function() {
             var serverResponse = document.getElementById("classadded");
             serverResponse.innerHTML = this.responseText;
             await sleep(3000);

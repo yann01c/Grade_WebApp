@@ -67,12 +67,14 @@ body {
     color: white;
     border: 1px solid #0F2259;
     box-shadow: 0px 5px #0F2259;
+    -webkit-box-shadow: 0px 5px #0F2259;
 }
 a.active {
     opacity: 1;
     color: white;
     border: 1px solid #0F2259;
     box-shadow: 0px 5px #0F2259;
+    -webkit-box-shadow: 0px 5px #0F2259;
 }
 #a-submit a {
     border-left: none;
@@ -182,6 +184,17 @@ label {
     padding: 10px;
     margin-bottom: 20px;
 }
+#index .submit-handler {
+    font-size: 1.5em;
+    position: relative;
+    font-weight: bold;
+}
+#index .submitteddiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
 .footer {
     display: flex;
     justify-content: center;
@@ -281,43 +294,7 @@ label {
     background-color: #BF0413;
     color: white;
     box-shadow: none;
-}
-#classes .c-rfloat {
-    float: right;
-}
-#classes .c-lfloat {
-    float: left;
-}
-#classes select {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    height: 32.8px;
-    width: 10.6em;
-    font-family: 'Maven Pro', sans-serif;
-    border: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 1em;
-    padding: 5px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    transition: 200ms;
-    box-shadow: 0px 3px #0F2259;
-}
-#classes select > option {
-    color: black;
-}
-#classes input {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    margin-top: 10px;
-    width: 10em;
-    height: 1.3em;
-    font-size: 1.0em;
-    padding: 5px;
-    box-shadow: 0px 3px #0F2259;
-}
+}d
 #classes .form > form > div > a {
     padding: 8px;
     margin: 0;
@@ -338,28 +315,38 @@ label {
     display: flex;
     justify-content: center;
 }
-
+#classes form {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 800px) { 
+    #classes form { width: 50vw; }
+}
+#classes .form {
+    width: 100%;
+    height: 75vh;
+    overflow: auto;
+    overflow-x: hidden;
+    border: none;
+    color: black;
+    transition: 200ms;
+    align-items: baseline;
+    display: flex;
+}
+@media (max-height: 890px) { 
+    #classes .form { height: 70vh; }
+}
 /* Mobile Responsive */
 
-/* iPhone X Classes 
-@media (max-width: 375px) and (max-height: 812px) {
-    #classes .form {margin-top: 13em;}
-    .nav-wrapper > .left-side > div {font-size: 1.6em;}
-    #classes .form > form > div > label {font-size: 1.4em;}
-    #classes #c-add-cont {top: 15.5em;}
-}
-/* iPhone 6/7/8 PLUS Classes 
-@media (max-width: 414px) and (max-height: 736px) {
-    #classes .form {margin-top: 11em;}
-    #classes .form > form > div > label {font-size: 1.4em;}
-    #classes #c-add-cont {top: 13.5em;}
-}
 
 /* Class Page */
 #class .title {
     font-family: 'Maven Pro', sans-serif;
-    bottom: 21em;
+    margin: 0;
+    padding: 0;
     left: 50px;
+    bottom: 20.5em;
     position: absolute;
     font-size: 1.8em;
     color: white;
@@ -391,6 +378,11 @@ label {
 }
 
 /* Grade Table */
+#screenshotimg {
+    width: 20px;
+    height: 20px;
+}
+
 body {
     line-height: 1.25;
 }
@@ -403,13 +395,16 @@ table {
     table-layout: fixed;
 }
 table caption {
-    font-size: 1.5em;
-    margin: .5em 0 .75em;
+    margin-bottom: 1em;
 }
 table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 0px solid black;
     padding: .35em;
+    transition: 200ms;
+}
+table tr:hover {
+    background-color: white;
 }
 table th,
 table td {
@@ -417,17 +412,14 @@ table td {
     text-align: center;
 }
 table th {
-    font-size: .85em;
+    font-family: 'Iceland', cursive;
     letter-spacing: .1em;
     text-transform: uppercase;
 }
   
-@media screen and (max-width: 2000px) {
+@media screen and (max-width: 4000px) {
     table {
         border: 0;
-    }
-    table caption {
-        font-size: 1.3em;
     }
     table thead {
         border: none;
@@ -440,14 +432,15 @@ table th {
         width: 1px;
     }
     table tr {
-        border-bottom: 3px solid #ddd;
+        border-bottom: 5px solid black;
         display: block;
         margin-bottom: .625em;
     }
     table td {
-        border-bottom: 1px solid #ddd;
+        font-family: 'Maven Pro', sans-serif;
+        border-bottom: 1px solid black;
         display: block;
-        font-size: .8em;
+        font-size: 1em;
         text-align: right;
     }
     table td::before {
@@ -466,22 +459,25 @@ table th {
     }
 }
 
-#class .trash-btn {
-    margin-left: 100px;
+#class #trash-btn {
     cursor: pointer;
-    text-decoration: none;
     font-size: 1em;
-    font-family: 'Iceland', cursive;
-    border-radius: 50px;
-    border: none;
-    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
     transition: 200ms;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 5px #BF0413;
+}
+#class #trash-btn:hover { 
+    box-shadow: none;
+    background-color: #BF0413;
 }
 #class .form {
     width: 100%;
-    height: 65vh;
-    overflow: auto;
+    height: 75vh;
+    overflow: scroll;
+    overflow-x: hidden;
     border: none;
     color: black;
     transition: 200ms;
@@ -497,6 +493,12 @@ table th {
     display: flex;
     justify-content: center;
 }
+@media (max-width: 600px) { 
+    #class form { width: 65vw; }
+}
+@media (max-height: 900px) { 
+    #class .form { height: 60vh; }
+}
 #class .nav-wrapper {
     margin-bottom: 1.5em;
 }
@@ -509,6 +511,22 @@ table th {
     left: 50px;
     color: white;
 }
+#class .absolute-center {
+    display: none;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+#class .screenshotimg {
+    cursor: pointer;
+
+}
+
 /* Logged In */
 .userlogged {
     background-color: rgba(255, 255, 255, 0.1);

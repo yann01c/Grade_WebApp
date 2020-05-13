@@ -36,25 +36,12 @@
         </div>
         <div class="main">
             <div class="form">
-                <form action="class.php" method="GET">
-                <div id="c-add-cont">
-                    <button onclick="newClass()" type="button" id="c-add" class="c-add">Add new Class</button>
+                <div class="class-center">
+                    <div id="c-add-cont">
+                        <button onclick="newClass()" type="button" id="c-add" class="c-add">Add new Class</button>
+                   </div>
+                   <?php include 'classes/select_classes.php';?>
                 </div>
-                    <div class="float">
-                        <label for="c1-class">Class</label><br>
-                        <select id="c1-class" name="c1-class" onchange="cbtnAppear()">
-                            <option value="-">&#8595</option>
-                            <?php include 'classes/select_classes.php';?>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="c2-class">Average</label><br>
-                        <input type="text" name="c2-grade" vaule="" disabled>
-                    </div>
-                    <div>
-                        <button type="submit" class="c-button" id="c-btn">Go to</button>
-                    </div>
-                </form>
             </div>
             <div id="classadded_container">
                 <p id="classadded"></p>
@@ -64,6 +51,7 @@
             <div class="copyright">Copyright - SPIE ICS ©</div>
         </div>
     </div>
+    <script src="js/zoom.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
