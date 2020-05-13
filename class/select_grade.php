@@ -53,34 +53,34 @@ while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
     //echo "<div class='gradelist'>";
     echo $style;
     echo "<form action='class/delete_grade.php' method='post'>";
-    echo "<table>";
     $check++;
-    if ($check == 1) {
-        echo "<tr>
-        <th>Grade</th>
-        <th>Date</th>
-        <th>Weighting</th>
-        <th>Description</th>
-        </tr>";
-    } else {
-        echo "<tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        </tr>";
-    }
-    echo "<tr>
-        <td id='class-grade$count'>".$row['grade']."</td>
-        <td>".$row['date']."</td>
-        <td>".$weighting.'%'."</td>
-        <td id='des-hidden'>".$row['description']."</td>
-        <td><button type='submit' name='delete_btn' class='trash-btn'>🗑️</button></td>
-        <td><img style='width:10px;height:10px;cursor:pointer;position:relative;box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);' id='screenshot$number' onclick='zoom(this.id)' src='$pathtofile'></td>";
+    $img = "<img src='upload/".$row['filename']."' id='screenshotimg' onclick='zoom()'>";
+        echo "<table>
+        <caption sytle='color:white;'></caption>
+        <thead>
+        <tr>
+            <th scope='col' style='color:black;'>Grade</th>
+            <th scope='col'>Date</th>
+            <th scope='col'>Weighting</th>
+            <th scope='col'>Description</th>
+            <th scope='col'>Screenshots</th>
+            <th scope='col'></th>
+        </tr>
+        </thead>";
+    echo "<tbody>
+            <tr id='$count' onclick='collapse(this.id)' style='cursor:pointer;'>
+                <td id='class-grade$count' data-label='Grade' style='display:block;'>".$row['grade']."</td>
+                <td class='td$count' data-label='Date'>".$row['date']."</td>
+                <td class='td$count' data-label='Weighting'>".$weighting."%"."</td>
+                <td class='td$count' data-label='Description'>".$row['description']."</td>
+                <td class='td$count' data-label='Screenshots'>$img</td>
+                <td class='td$count' data-label=''><button type='submit' name='delete_btn' onclick='zoom()'>DELETE</button></td>
+            </tr>
+        </tbody>
+        </table>";
     echo "<input type='text' name='delete_id' value='$id' style='display: none; position: absolute;'>";
     echo "<input type='text' name='delete_grade' value='$grade' style='display: none; position: absolute;'>";
     echo "<input type='text' name='class' value='$class' style='display: none; position: absolute;'>";
-    echo "</table>";
     echo "</form>";
     }
 }

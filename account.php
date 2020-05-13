@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Account</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/account.css">
     <link rel="manifest" href="manifest.json">
 </head>
@@ -12,13 +13,13 @@
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
-                <div class="nav-link-wrapper">
+                <div id="a-submit"  class="nav-link-wrapper">
                     <a href="index.php">Submit</a>
                 </div>
-                <div class="nav-link-wrapper">
+                <div id="a-classes" class="nav-link-wrapper">
                     <a href="classes.php">Classes</a>
                 </div>
-                <div class="nav-link-wrapper">
+                <div id="a-account" class="nav-link-wrapper">
                     <a href="#" class="active">Account</a>
                 </div>
             </div>

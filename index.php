@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="manifest" href="manifest.json">
 </head>
 <body id="index">
@@ -59,7 +60,7 @@
                         </div>
                         <div>
                             <label for="s_weighting">Weighting</label><br>
-                            <input type="number" step="0.05" name="s_weighting" placeholder="%">
+                            <input type="number" step="0.01" name="s_weighting" placeholder="%">
                         </div>
                         <div>
                             <label for="s_description">Description</label><br>
