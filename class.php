@@ -37,6 +37,7 @@
                     <a href="classes.php">Back</a>
                 </div>
                 <div class="form">
+                    <form>
                         <div id="class-center">
                                 <?php include 'class/select_grade.php'; ?>
                             <div class="title">
@@ -48,6 +49,7 @@
                             </div>
                             <?php include "class/total_grade.php"; ?>
                         </div>
+                    </form>
                 </div>
             </div>
             <div class="footer">
