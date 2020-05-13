@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Iceland&family=Nosifer&family=Open+Sans:wght@300&family=Philosopher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+body, html {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Philosopher', sans-serif;
+    font-family: 'Faster One', cursive;*/
+    font-family: 'Iceland', cursive;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    line-height: 1.25;
+}
+.container {
+    height: 100vh;
+    min-height: 100%;
+    background-image: url("../images/wp_blur.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.logo {
+    position: absolute;
+    right: 15em;
+    top: 38px;
+    width: 5em;
+    height: auto;
+}
+select {
+    border: 1px solid black;
+}
+textarea {
+    border: 1px solid black;
+}
+input {
+    border: 1px solid black;
+}
+.nav-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 38px;
+}
+.left-side {
+    display: flex;
+}
+.nav-wrapper > .left-side > div {
+    margin-right: 0;
+    font-size: 2em;
+}
+.nav-link-wrapper a {
+    opacity: 0.7;
+    color: white;
+    text-decoration: none;
+    transition: all 200ms;
+    border: 1px solid silver;
+    padding: 8px;
+}
+.nav-link-wrapper a:hover {
+    opacity: 1;
+    color: white;
+    border: 1px solid #0F2259;
+    box-shadow: 0px 5px #0F2259;
+}
+a.active {
+    opacity: 1;
+    color: white;
+    border: 1px solid #0F2259;
+    box-shadow: 0px 5px #0F2259;
+}
+#a-submit a {
+    border-left: none;
+    border-right: none;
+}
+#a-classes a {
+    border-left: none;
+    border-right: none;
+}
+#a-account  a {
+    border-left: none;
+    border-right: none;
+}
+span {
+    font-size: 1.0em;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 105px;
+    z-index: 1;
+    transition: all 500ms;
+}
+.dropdown-content a {
+    text-decoration: none;
+    color: darkblue;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+.form > form > div {
+    margin-top: 10px;
+}
+.form > form > div > label {
+    font-size: 1.8em;
+    color: white;
+}
+.form > form > div > input {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+    border: none;
+    color: white;
+    font-size: 1em;
+    width: 10em;
+    padding: 5px;
+    height: 1.3em;
+    width: 15em;
+    box-shadow: 0px 3px #0F2259;
+    transition: 200ms;
+}
+.form > form > div > input:focus {
+    background-color: transparent;
+}
+.form > form > div > select {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 32.8px;
+    width: 10.6em;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 10px;
+    border: none;
+    font-size: 1em;
+    padding: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: 200ms;
+    box-shadow: 0px 3px #0F2259;
+}
+.form > form > div > select > option {
+    color: black;
+}
+.form > form > button {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+    font-size: 1.3em;
+    transition: all 200ms;
+    padding: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Iceland', cursive;
+    box-shadow: 0px 3px #BF0413;
+}
+.form > form > button:hover {
+    background-color: #BF0413;
+    color: white;
+    box-shadow: none;
+}
+
+/* Mobile Responsive
+@media (max-width: 580px) {
+    .nav-wrapper > .left-side > div {font-size: 1.9em;}
+    #account .form > form > div > label {font-size: 1.4em;}
+    #account .form > form > div.float {width: 3.5em;}
+    #account .form > form > div > textarea {width: 25.5em;}
+    #account .form {margin-top: 3em;}
+}
+@media (max-width: 460px) {
+    .nav-wrapper > .left-side > div {font-size: 1.9em;}
+    #account .form > form > div > label {font-size: 1.4em;}
+    #account .form > form > div.float {width: 1.6em;}
+    #account .form > form > div > textarea {width: 21.7em; font-size: 1em;}
+    #account .form > form > div > select {width: 9.4em; font-size: 0.9em;}
+    #account .form {margin-top: 7em;}
+}
+/* Logo & Logged In disapear
+@media (max-width: 1150px) {
+    .logo {display: none;}
+    .userlogged {display: none;}
+}
+/* iPhone X Submit
+@media (max-width: 375px) and (max-height: 812px) {
+    #account .form {margin-top: 9.5em;}
+    #account .form > form > div > label {font-size: 1.4em;}
+}
+/* iPhone 6/7/8 PLUS Submit
+@media (max-width: 414px) and (max-height: 736px) {
+    #account.form {margin-top: 8em;}
+    #account .form > form > div > label {font-size: 1.3em;}
+}
+/* iPhone 6/7/8 Submit
+@media (max-height: 667px) {
+    #account .form {margin-top: 5.5em;}
+}
+/* Galaxy S9/S9+ Submit
+@media (height: 740px) {
+    #account .form {margin-top: 6em;}
+}
+/* iPad Submit
+@media (height: 1024px) {
+    #account .form {margin-top: 14.5em;}
+}
+/* Laptop with MDPI Screen Submit 
+@media (width: 1280px) and (height: 800px) {
+    #account .form {margin-top: 5em;}
+}*/
+#register .form > form > div > button {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 0px;
+    font-size: 1.3em;
+    transition: all 200ms;
+    padding: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Iceland', cursive;
+    box-shadow: 0px 3px #BF0413;
+}
+#register .form > form > div > button:hover {
+    background-color: #BF0413;
+    box-shadow: none;
+}
+#a-float {
+    float: left;
+    width: 11em;
+}
+.form > form > div > a {
+    color: black;
+    font-size: 1.3em;
+    text-decoration: none;
+    transition: color 150ms;
+}
+.form > form > div > a:hover {
+    color: blue;
+}
+#logged select {
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 3px;
+}
+#logged input[name="logged3-group"] {
+    background-color: lightblue;
+    color: black;
+    border: 1px solid black;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+}
+.copyright {
+    align-items: center;
+    color: white;
+    bottom: 2em;
+    height: 2em;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4em;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    width: 10em;
+}
+
+/* Logged In */
+.logout {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-family: 'Iceland', cursive;
+    margin-top: 15px;
+    padding: 5px;
+    font-size: 1.3em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 3px #BF0413;
+    transition: 200ms;
+}
+.logout:hover {
+    box-shadow: none;
+    background-color: #BF0413;
+}
+.signuperror {
+    color: red;
+    font-weight: bold;
+}
+.userlogged {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 1.3em;
+    position: absolute;
+    left: 10em;
+    cursor: pointer;
+    transition: 300ms;
+    top: 2em;
+    text-decoration: none;
+    box-shadow: 0px 10px #0F2259;
+}
+.userlogged:hover {
+    background-color: white;
+    color: white;
+    box-shadow: none;
+    background-color: #0F2259;
+}
+.successdiv {
+    color: lightgreen;
+    font-weight: bold;
+    font-family: 'Iceland', cursive;
+    font-size: 1.3em;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.successtext {
+    position: relative;
+    color: lightgreen;
+    font-weight: bold;
+    font-family: 'Iceland', cursive;
+    font-size: 1.3em;
+}
+.btn-logged {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: -10px;
+    margin-right: 10px;
+    font-family: 'Iceland', cursive;
+    margin-top: 15px;
+    padding: 5px;
+    font-size: 1.3em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 3px #BF0413;
+    transition: 200ms;
+}
+.btn-logged:hover {
+    box-shadow: none;
+    background-color: #BF0413;
+    color: white;
+}
+#edit-btn {
+    box-shadow: 0px 3px #0F2259;
+}
+#edit-btn:hover {
+    box-shadow: none;
+    background-color: #0F2259;
+}
+#save-btn {
+    box-shadow: 0px 3px green;
+    visibility: hidden;
+}
+#save-btn:hover {
+    box-shadow: none;
+    background-color: green;
+}
+#cancel-btn {
+    visibility: hidden;
+}
+.div-logged {
+    height: 1em;
+    margin-top: 10px;
+}
+.select-logged {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 6em;
+    border: none;
+    height: 2.1em;
+    padding: 5px;
+    font-size: 1em;
+    transition: 200ms;
+    box-shadow: 0px 3px #0F2259;
+    font-family: 'Maven Pro', sans-serif;
+}
+.select-logged option {
+    color: black;
+}
+.select-logged:focus {
+    background-color: transparent;
+}
+.input-logged {
+    color: white;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 17em;
+    padding: 5px;
+    font-size: 1em;
+    height: 1.3em;
+    transition: 200ms;
+    box-shadow: 0px 3px #0F2259;
+    font-family: 'Maven Pro', sans-serif;
+}
+.input-logged:focus {
+    background-color: transparent;
+}
+.account-logged {
+    margin: 0;
+    justify-content: center;
+    color: black;
+    font-family: 'Maven Pro', sans-serif;
+}
+.account-logged p{
+    color: white;
+    margin: 0;
+    padding: 30px 0 0 0;
+    font-family: 'Iceland', cursive;
+    font-size: 1.6em;
+}
+.account-logged a {
+    color: black;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-family: 'Iceland', cursive;
+    transition: 200ms;
+}
+.account-logged a:hover {
+    color: blue;
+}
