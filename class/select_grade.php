@@ -1,22 +1,30 @@
 <?php
-if (isset($_GET['c1-class']) || (isset($_POST['c1-class']))) {
+if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-pre'])) {
     // why do you need two variables with the same value?
-if (empty($_GET['c1-class'])) {
-    $fkclass = $_POST['c1-class'];
-    $class = $_POST['c1-class'];
-} else {
-    $fkclass = $_GET['c1-class'];
-    $class = $_GET['c1-class'];
+if (empty($_GET['c1-class']) && empty($_POST['c1-class'])) {
+    $class = $_POST['c2-class'];
 }
+else if (empty($_POST['c1-class'])) {
+    $class = $_GET['c1-class'];
+} 
+else if (empty($_GET['c1-class'])) {
+    $class = $_POST['c1-class'];
+}
+
 $db = new SQLite3('sqlite/webapp.db');
-$userID = $_SESSION['userID'];
+
+if (isset($_POST['user-pre'])) {
+    $userID = $_POST['bbid'];
+} else {
+    $userID = $_SESSION['userID'];
+}
 
 $sqlfk = $db->prepare("SELECT class_id FROM class WHERE class = :class");
 if (!$sqlfk) {
     echo "<p style='color:orange;font-weight:bold;'>SQLite Error</p>";
     exit();
 }
-$sqlfk->bindValue(':class',$fkclass);
+$sqlfk->bindValue(':class',$class);
 $r = $sqlfk->execute();
 $rr = $r->fetchArray();
 $fkclass = $rr['class_id'];

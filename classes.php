@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Classes</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body id="classes">
@@ -40,7 +40,36 @@
                     <div id="c-add-cont">
                         <button onclick="newClass()" type="button" id="c-add" class="c-add">Add new Class</button>
                    </div>
-                   <?php include 'classes/select_classes.php';?>
+                   <?php
+                   if (isset($_SESSION['userID'])) {
+                        if ($_SESSION['userGRPID'] == 3) {
+                            //echo "<form action='#' method='GET' class='user-form'>";
+                            //echo "<div id='user-div'><select name='user-preview' class='user-dropdown'>Select User";
+                            //echo "<option value='-'>Select User</option>";
+                            //include "classes/select_users.php";
+                            //echo "</select></div>";
+                            echo "<div>";
+                            echo "<a class='c-add' id='user-bb' href='overview.php' name='user-bb'>User Overview</a>";
+                            echo "</div>";
+                            //echo "</form>";
+                        } else {
+                            echo "Nothing to see here ...";
+                        }
+                    } else {
+                        header("Location: account.php");
+                   }
+                   ?>
+                   <?php
+                        if (isset($_GET['user-preview'])) {
+                            if ($_SESSION['userGRPID'] == 3) {
+                                include 'classes/select_classes_bb.php';
+                            } else {
+                                header("Location: classes.php");
+                            }
+                        } else {
+                            include 'classes/select_classes.php';
+                        }
+                    ?>
                 </div>
             </div>
             <div id="classadded_container">

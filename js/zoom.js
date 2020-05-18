@@ -11,6 +11,7 @@ function zoom(id) {
 }
 function collapse(id) {
     tdclass = ".td"+id;
+    td = document.getElementById(id);
     var x, i;
     x = document.querySelectorAll(tdclass);
     for (i = 0; i < x.length; i++) {

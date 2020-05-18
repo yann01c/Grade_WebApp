@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - <?php include 'class/select_class.php'; ?></title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body id="class">
@@ -33,19 +33,15 @@
             </div>
         </div>
         <div class="main">
-            <div class='class-info'></div>
+            <div class='class-info'><p class="title"><?php if(isset($_POST['c1-class']) || ($_GET['c1-class'])) {
+                                                include 'class/select_class.php';
+                                            } else if (isset($_POST['user-pre'])) {
+                                                echo "<p class='title'>".$_POST['bbuid'].", ".$_POST['c2-class']."</p>";
+                                            }?></p><p class='title' id='between'>-</p><?php include "class/total_grade.php"; ?></div>
             <div class="absolute-center"></div>
             <div class="form">
                     <div id="class-center">
                             <?php include 'class/select_grade.php'; ?>
-                        <div class="title">
-                            <p><?php if(isset($_POST['c1-class']) || ($_GET['c1-class'])) {
-                                include 'class/select_class.php';
-                            } else {
-                                header("Location: /classes.php");
-                            }?></p>
-                        </div>
-                        <?php include "class/total_grade.php"; ?>
                     </div>
                 <div id='imgdiv' style='width:100%;position:absolute;display:flex;justify-content:center;'></div>
                 <div class="bck-btn">

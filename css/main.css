@@ -68,6 +68,7 @@ body {
     border: 1px solid #0F2259;
     box-shadow: 0px 5px #0F2259;
     -webkit-box-shadow: 0px 5px #0F2259;
+    -moz-box-shadow: 0px 5px #0F2259;
 }
 a.active {
     opacity: 1;
@@ -75,6 +76,7 @@ a.active {
     border: 1px solid #0F2259;
     box-shadow: 0px 5px #0F2259;
     -webkit-box-shadow: 0px 5px #0F2259;
+    -moz-box-shadow: 0px 5px #0F2259;
 }
 #a-submit a {
     border-left: none;
@@ -118,6 +120,8 @@ label {
     height: 1.3em;
     transition: 200ms;
     box-shadow: 0px 3px #0F2259;
+    -webkit-box-shadow: 0px 3px #0F2259;
+    -moz-box-shadow: 0px 3px #0F2259;
     font-family: 'Maven Pro', sans-serif;
 }
 #index .form > form > div > input:focus {
@@ -153,6 +157,8 @@ label {
     resize: none;
     transition: 200ms;
     box-shadow: 0px 3px #0F2259;
+    -webkit-box-shadow: 0px 3px #0F2259;
+    -moz-box-shadow: 0px 3px #0F2259;
     color: white;
 }
 #index .form > form > div > textarea:focus {
@@ -168,10 +174,14 @@ label {
     cursor: pointer;
     color: white;
     box-shadow: 0px 5px #BF0413;
+    -webkit-box-shadow: 0px 5px #BF0413;
+    -moz-box-shadow: 0px 5px #BF0413;
     border: none;
 }
 #index .form > form > button:hover {
     box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     background-color: #BF0413;
 }
 #index .float {
@@ -264,6 +274,8 @@ label {
     background-color: rgba(255, 255, 255, 0.1);
     font-family: 'Iceland', cursive;
     box-shadow: 0px 5px #BF0413;
+    -webkit-box-shadow: 0px 5px #BF0413;
+    -moz-box-shadow: 0px 5px #BF0413;
     display: none;
     padding: 8px;
     color: white;
@@ -277,16 +289,21 @@ label {
     background-color: #BF0413;
     color: white;
     box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
 }
 #classes .c-add {
+    text-decoration: none;
     background-color: rgba(255, 255, 255, 0.1);
     font-family: 'Iceland', cursive;
     box-shadow: 0px 3px #BF0413;
+    -webkit-box-shadow: 0px 3px #BF0413;
+    -moz-box-shadow: 0px 3px #BF0413;
     border: none;
     color: white;
     padding: 8px;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 1.3em;
     transition: all 200ms;
 }
@@ -294,7 +311,47 @@ label {
     background-color: #BF0413;
     color: white;
     box-shadow: none;
-}d
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+#classes #c-add-cont {
+    margin-top: 5vh;
+}
+#classes .user-dropdown {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-family: 'Iceland', cursive;
+    box-shadow: 0px 3px #0F2259;
+    -webkit-box-shadow: 0px 3px #0F2259;
+    -moz-box-shadow: 0px 3px #0F2259;
+    border: none;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: all 200ms;
+}
+#classes option {
+    color: black;
+}
+#classes #user-div {
+    width: 16em;
+} 
+#classes #user-bb {
+    box-shadow: 0px 3px green;
+    -webkit-box-shadow: 0px 3px green;
+    -moz-box-shadow: 0px 3px green;
+    margin-bottom: 10px;
+}
+#classes #user-bb:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background-color: green;
+}
+#classes .user-form {
+    display: flex;
+    justify-content: left;
+}
 #classes .form > form > div > a {
     padding: 8px;
     margin: 0;
@@ -326,7 +383,7 @@ label {
 #classes .form {
     width: 100%;
     height: 75vh;
-    overflow: auto;
+    overflow: scroll;
     overflow-x: hidden;
     border: none;
     color: black;
@@ -339,18 +396,17 @@ label {
 }
 /* Mobile Responsive */
 
-
 /* Class Page */
 #class .title {
+    font-size: 1.3em;
     font-family: 'Maven Pro', sans-serif;
-    margin: 0;
-    padding: 0;
-    left: 50px;
-    bottom: 20.5em;
-    position: absolute;
-    font-size: 1.8em;
+    position: relative;
     color: white;
-    transition: 200ms;
+    z-index: 100;
+}
+#class #between {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 #class .bck-btn {
     width: 100%;
@@ -468,14 +524,18 @@ table th {
     transition: 200ms;
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 5px #BF0413;
+    -webkit-box-shadow: 0px 5px #BF0413;
+    -moz-box-shadow: 0px 5px #BF0413;
 }
 #class #trash-btn:hover { 
     box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     background-color: #BF0413;
 }
 #class .form {
     width: 100%;
-    height: 75vh;
+    height: 70vh;
     overflow: scroll;
     overflow-x: hidden;
     border: none;
@@ -486,6 +546,8 @@ table th {
 }
 #class .form:hover {
     box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     background-color: rgba(255, 255, 255, 0);
 }
 #class form {
@@ -494,22 +556,16 @@ table th {
     justify-content: center;
 }
 @media (max-width: 600px) { 
-    #class form { width: 65vw; }
+    #class form { width: 75vw; }
 }
 @media (max-height: 900px) { 
-    #class .form { height: 60vh; }
+    #class .form { height: 50vh; }
 }
-#class .nav-wrapper {
-    margin-bottom: 1.5em;
-}
-#class .total {
-    font-size: 1.3em;
-    font-family: 'Maven Pro', sans-serif;
-    width: 7em;
-    bottom: 27.5em;
-    position: absolute;
-    left: 50px;
-    color: white;
+#class .class-info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
 }
 #class .absolute-center {
     display: none;
@@ -542,8 +598,60 @@ table th {
     text-decoration: none;
     box-shadow: 0px 10px #0F2259;
     -webkit-box-shadow: 0px 10px #0F2259;
+    -moz-box-shadow: 0px 10px #0F2259;
 }
 .userlogged:hover {
     box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     background-color: #0F2259;
+}
+#overview .form {
+    height: 50vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    align-items: baseline;
+    margin-top: 10vh;
+}
+#overview form#user-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#overview .main {
+    display: flex;
+    justify-content: center;
+}
+#overview .user-dropdown {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    height: 30.8px;
+    width: 20em;
+    font-family: 'Maven Pro', sans-serif;
+    margin-top: 10px;
+    font-size: 1em;
+    padding: 5px;
+    border: none;
+    transition: 200ms;
+    box-shadow: 0px 3px #0F2259;
+}
+#overview option {
+    color: black;
+}
+#overview .class-btn {
+    display: flex;
+    justify-content: center;
+    width: 20em;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 3px solid black;
+    cursor: pointer;
+    color: white;
+    font-size: 1.0em;
+    margin-bottom: 10px;
+    transition: 200ms;
+}
+#overview .class-btn:hover {
+    background-color: black;
+    color: white;
 }
