@@ -19,7 +19,6 @@ function collapse(id) {
         x[i].style.position = (x[i].style.position == "relative") ? "absolute" : "relative";
     }
 }
-
 function submit(id) {
     tr = document.getElementById(id);
     formid = "form"+id;

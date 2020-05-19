@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include "login/check_cookies.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,11 +66,11 @@
                     echo '<form action="login/check_login.php" method="post">
                     <div>
                         <label for="a-username">Username</label><br>
-                        <input type="text" step="0.1" name="a-username" required>
+                        <input type="text" step="0.1" name="a-username" value="" required>
                     </div>
                     <div>
                         <label for="a-password">Password</label><br>
-                        <input type="password" name="a-password" required>
+                        <input type="password" name="a-password" value="" required>
                     </div>
                     <div>
                         <a href="#" id="a-float">Forgot Password?</a>
@@ -77,6 +78,7 @@
                     <div>
                         <a href="register.php">Sign Up</a>
                     </div>
+                    <p class="input-text"><input id="remember" type="checkbox" name="remember" value="Remember">Remember me</p>
                     <button name="login" type="submit" value="Login">Login</button>
                 </form>';
                 }

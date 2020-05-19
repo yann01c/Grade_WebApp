@@ -12,13 +12,13 @@
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
-                <div class="nav-link-wrapper">
+                <div class="nav-link-wrapper" id="a-submit">
                     <a href="index.php">Submit</a>
                 </div>
-                <div class="nav-link-wrapper">
+                <div class="nav-link-wrapper" id="a-classes">
                     <a href="classes.php">Classes</a>
                 </div>
-                <div class="nav-link-wrapper">
+                <div class="nav-link-wrapper" id="a-account">
                     <a href="account.php" class="active">Account</a>
                 </div>
             </div>

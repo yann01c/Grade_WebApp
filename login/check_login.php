@@ -2,6 +2,7 @@
 if (isset($_POST['login'])) {
     $username = $_POST['a-username'];
     $password = $_POST['a-password'];
+    $remember = $_POST['remember'];
     if (empty($username) || empty($password)) {
         header("Location: ../account.php?error=emptyfields");
         exit();
@@ -32,7 +33,17 @@ if (isset($_POST['login'])) {
                     $_SESSION['userMAIL'] = $row['email'];
                     $_SESSION['userGRP'] = $group['group'];
                     $_SESSION['userGRPID'] = $group['group_id'];
+                    
+                    $userid = $_SESSION['userID'];
 
+                    $bytes = random_bytes(20);
+                    $string = var_dump(bin2hex($bytes));
+
+                    if (!empty($remember)) {
+                        header("Location: set_cookies.php?uid=$username");
+                        exit();
+                    }
+                    
                     header("Location: ../account.php?login=success");
                     exit();
                 } else {

@@ -186,7 +186,7 @@ span {
     #account .form > form > div > select {width: 9.4em; font-size: 0.9em;}
     #account .form {margin-top: 7em;}
 }
-/* Logo & Logged In disapear
+/* Logo & Logged In disapear */
 @media (max-width: 1150px) {
     .logo {display: none;}
     .userlogged {display: none;}
@@ -376,7 +376,7 @@ span {
 .select-logged {
     color: white;
     background-color: rgba(255, 255, 255, 0.3);
-    width: 6em;
+    width: 8em;
     border: none;
     height: 2.1em;
     padding: 5px;
@@ -408,6 +408,8 @@ span {
 }
 .account-logged {
     margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
     justify-content: center;
     color: black;
     font-family: 'Maven Pro', sans-serif;
@@ -428,4 +430,12 @@ span {
 }
 .account-logged a:hover {
     color: blue;
+}
+#account .input-text {
+    color: black;
+    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: color 150ms;
 }

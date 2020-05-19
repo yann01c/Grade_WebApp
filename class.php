@@ -33,10 +33,11 @@
             </div>
         </div>
         <div class="main">
-            <div class='class-info'><p class="title"><?php if(isset($_POST['c1-class']) || ($_GET['c1-class'])) {
-                                                include 'class/select_class.php';
-                                            } else if (isset($_POST['user-pre'])) {
-                                                echo "<p class='title'>".$_POST['bbuid'].", ".$_POST['c2-class']."</p>";
+            <div class='class-info'><p class="title"><?php if (isset($_POST['c1-class']) || (isset($_GET['c1-class']))) {
+                                                                include 'class/select_class.php';
+                                                            }
+                                                            if (isset($_POST['user-pre'])) {
+                                                                echo "<p class='title'>".$_POST['bbuid'].", ".$_POST['c2-class']."</p>";
                                             }?></p><p class='title' id='between'>-</p><?php include "class/total_grade.php"; ?></div>
             <div class="absolute-center"></div>
             <div class="form">

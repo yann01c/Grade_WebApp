@@ -53,7 +53,6 @@
                             echo "</div>";
                             //echo "</form>";
                         } else {
-                            echo "Nothing to see here ...";
                         }
                     } else {
                         header("Location: account.php");
