@@ -37,6 +37,12 @@ if(isset($_POST['register'])) {
         exit();
     }
 
+    // Check if group has been selected
+    else if ($group == "-") {
+        header("Location: ../register.php?error=invalidgroup");
+        exit();
+    }
+
     // Check if mail exists
     $mail = $db->prepare("SELECT email FROM login WHERE email=:mail");
     $mail->bindValue(':mail',$email);

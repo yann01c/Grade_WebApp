@@ -66,11 +66,11 @@
                     echo '<form action="login/check_login.php" method="post">
                     <div>
                         <label for="a-username">Username</label><br>
-                        <input type="text" step="0.1" name="a-username" value="" required>
+                        <input type="text" step="0.1" name="a-username" value="">
                     </div>
                     <div>
                         <label for="a-password">Password</label><br>
-                        <input type="password" name="a-password" value="" required>
+                        <input type="password" name="a-password" value="">
                     </div>
                     <div>
                         <a href="#" id="a-float">Forgot Password?</a>
@@ -80,10 +80,29 @@
                     </div>
                     <p class="input-text"><input id="remember" type="checkbox" name="remember" value="Remember">Remember me</p>
                     <button name="login" type="submit" value="Login">Login</button>
-                </form>';
+                    </form>';
                 }
             ?>
             </div>
+            <?php
+            // Error handlers
+            if(isset($_GET['error'])) {
+                if($_GET['error'] == "wrongpassword") {
+                    echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Wrong Password!</p></div>";
+                }
+                else if ($_GET['error'] == "nouser") {
+                    echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>User does not exist!</p></div>";
+                }
+                else if ($_GET['error'] == "emptyfields") {
+                    echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Empty fields!</p></div>";
+                }
+            }
+            if (isset($_GET['info'])) {
+                if ($_GET['info'] == "logout") {
+                    echo "<div class='submitteddiv'><p class='error-handler'style='color:blue;'>Successfully logged out!</p></div>";
+                }
+            }
+            ?>
         </div>
         <div class="footer">
             <div class="copyright">Copyright - SPIE ICS ©</div>

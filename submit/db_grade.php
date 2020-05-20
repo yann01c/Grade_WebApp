@@ -6,7 +6,6 @@
         date DATE,
         weighting INTEGER,
         description TEXT,
-        filename TEXT,
         fk_user INTEGER,
         fk_class INTEGER,
         FOREIGN KEY (fk_user)

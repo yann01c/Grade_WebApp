@@ -37,7 +37,7 @@
         </div>
         <div class="main">
             <div class="form">
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action="submit/insert_grade.php" method="post" enctype="multipart/form-data">
                     <div>
                     <label for="fileToUpload">Upload Screenshot:</label><br>
                         <input type="file" name="fileToUpload[]" id="fileToUpload" multiple>
@@ -68,8 +68,36 @@
                     <button name="submit" type="submit" value="Submit">Submit</button>
                 </form>
             </div>
-            <?php include "submit/insert_grade.php"; ?>
-        </div>
+            <?php
+            // Error Handler
+            if (isset($_GET['error'])) {
+                if ($_GET['error'] == 'wrongext') {
+                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Extension Invalid!</p>";
+                }
+                else if ($_GET['error'] == 'empty') {
+                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Missing fields!</p></div>";
+                }
+                else if ($_GET['error'] == 'weighting') {
+                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Weighting Invalid!</p></div>";
+                }
+                else if ($_GET['error'] == 'grade') {
+                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Grade Invalid!</p></div>";
+                }
+                else if ($_GET['error'] == 'exist') {
+                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:blue;'>File already exists!</p></div>";
+                }
+                else if ($_GET['error'] == 'sql') {
+                    echo "<div class='submitteddiv'><p class='submit-handler'style='color:orange;'>SQlite Error</p></div>";
+                }
+            }
+            // Info Handler
+            if (isset($_GET['info'])) {
+                if ($_GET['info'] == 'success') {
+                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:lightgreen;'>Successfully Submitted Grade!</p></div>";
+                }
+            }
+            ?>
+            </div>
         <div class="footer">
             <div class="copyright">Copyright - SPIE ICS ©</div>
         </div>
