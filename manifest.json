@@ -1,0 +1,15 @@
+{
+  "background_color": "white",
+  "description": "SPIE ICS Aprentice Grade App",
+  "display": "fullscreen",
+  "icons": [
+    { 
+              "src": "images/logo.png",
+              "sizes": "192x192", 
+              "type": "image/png"
+    }
+  ],
+  "name": "Grade WebApp",
+  "short_name": "GRADES",
+  "start_url": "/grade_webapp/index.php"
+}
