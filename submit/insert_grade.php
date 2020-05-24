@@ -33,22 +33,26 @@ if(isset($_POST['submit'])) {
     }
 
     // Check if no file was submitted
-    if (empty($_FILES['fileToUpload']['name'])) {
-        $file = "No Image";
-    } else {
+    $db = new SQLite3('../sqlite/webapp.db');
 
-        $db = new SQLite3('../sqlite/webapp.db');
+    // File array
+    $filearray = array();
+    $path_filename_ext = array();
+    // Target directory var
+    $target_dir = "../upload/";
+    // Allowed extensions array
+    $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG");
 
-        // File array
-        $filearray = array();
-        $path_filename_ext = array();
-        // Target directory var
-        $target_dir = "../upload/";
-        // Allowed extensions array
-        $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG");
-
-        // For loop for multiple files
-        for ($i=0; $i<$total_files; $i++) {
+    // For loop for multiple files
+    for ($i = 0; $i < $total_files; $i++) {
+        if(!is_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i])) {
+            $dbfile = "No Image";
+            echo $dbfile;
+            $sqlfile2 = $db->prepare("INSERT INTO file (filename) VALUES (:files)");
+            $sqlfile2->bindValue(':files', $dbfile);
+            $finish2 = $sqlfile2->execute();
+            break;
+        } else {
             // Type
             $filetype = $_FILES['fileToUpload']['type'][$i];
             // Size
@@ -71,6 +75,8 @@ if(isset($_POST['submit'])) {
             $temp_name = $_FILES['fileToUpload']['tmp_name'][$i];
             // Target path
             $path_filename_ext[] = $target_dir.$filename[$i].".".$ext;
+            // DB insert
+            $dbfile[] = "upload/".$filename[$i].".".$ext;
             // Max size of files (byte)
             $maxSize = 0;
 
@@ -92,7 +98,7 @@ if(isset($_POST['submit'])) {
             // Move file(s) in /upload directory with the right permissions
             move_uploaded_file($temp_name,$path_filename_ext[$i]);
             chmod($path_filename_ext[$i], 0755);
-            
+
             // Change content when empty
             //if (empty($file)) {
             //    $file = "No Image";
@@ -101,9 +107,9 @@ if(isset($_POST['submit'])) {
             //}
 
             $sqlfile = $db->prepare("INSERT INTO file (filename) VALUES (:file)");
-            $sqlfile->bindValue(':file',$path_filename_ext[$i]);
+            $sqlfile->bindValue(':file', $dbfile[$i]);
             $finish = $sqlfile->execute();
-            
+
             if ($total_files > 1) {
                 echo "File's Submitted";
             } else {
@@ -143,7 +149,7 @@ if(isset($_POST['submit'])) {
 
         //$fileid = $db->prepare("INSERT INTO file_grade (fk_file,fk_grade) VALUES (...,$maxid)")
         // Success message
-        //header("Location: ../index.php?info=success");
-        //exit();
+        header("Location: ../index.php?info=success");
+        exit();
     }
 }

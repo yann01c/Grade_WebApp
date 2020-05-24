@@ -37,7 +37,6 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['identifier'])) {
         $group = $result->fetchArray();
 
         // Start session
-        session_start();
         $_SESSION['userID'] = $row['user_id'];
         $_SESSION['userUID'] = $row['username'];
         $_SESSION['userMAIL'] = $row['email'];
