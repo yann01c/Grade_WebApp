@@ -63,6 +63,24 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     // Select every grade in grade and display it in "option" element in HTML (WHILE statement returns)
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
 
+        $grade_id = $row['grade_id'];
+
+        // Prepare SELECT statement for file_grade
+        $sqlfilegrade = $db->prepare("SELECT fk_file FROM file_grade WHERE fk_grade = :file_grade");
+        $sqlfilegrade->bindValue(':file_grade',$grade_id);
+        $rfg = $sqlfilegrade->execute();
+        $afg = $rfg->fetchArray();
+        
+        echo "GRADE ID= ".$grade_id;
+        echo "AFG= ".$afg['fk_file'];
+
+        // Prepare SELECT statement for file
+        $sqlfile = $db->prepare("SELECT * FROM file WHERE file_id = :fk_file");
+        $sqlfile->bindValue(':fk_file',$afg['fk_file']);
+        $res = $sqlfile->execute();
+        $testa = $res->fetchArray();
+        echo "TEST= ".$testa['filename'];
+
         // Grade greater or equal to 5.0 gets color GREEN
         if ($row['grade'] >= 5.0) {
             $color = 'green';
@@ -84,13 +102,13 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $grade = $row['grade'];
         $weighting = $row['weighting'] * 100;
         $userID = $_SESSION['userID'];
-        $pathtofile = "upload/".$row['filename'];
+        //$pathtofile = "upload/".$row['filename'];
         $number = $number + 1;
         $count2++;
-        $uploadimg = $row['filename'];
+        //$uploadimg = $row['filename'];
 
         // Input with path value (used for zoom.js ZOOM function)
-        echo "<input id='imginput$count2' value='$uploadimg' style='display:none;position:absolute;'>";
+        //echo "<input id='imginput$count2' value='$uploadimg' style='display:none;position:absolute;'>";
 
         $style = '<style type="text/css">.class-grade'.$count.'{color:'.$color.'; font-weight: bold;}</style>';
         echo $style;
@@ -98,11 +116,11 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         // Echo tables with content
         echo "<form action='class/delete_grade.php' method='post'>";
         $check = $check + 1;
-        if ($row['filename'] == "No Image") {
-            $img = "<img src='' style='color:red;' alt='No Image' id='$count2' class='screenshotimg'>";
-        } else {
-            $img = "<img src='$uploadimg' alt='No Image' id='$count2' class='screenshotimg' onclick='zoom(this.id)'>";
-        }
+        //if ($row['filename'] == "No Image") {
+        //    $img = "<img src='' style='color:red;' alt='No Image' id='$count2' class='screenshotimg'>";
+        //} else {
+        //    $img = "<img src='$uploadimg' alt='No Image' id='$count2' class='screenshotimg' onclick='zoom(this.id)'>";
+        //}
         echo "<table>
             <caption sytle='color:white;'></caption>
             <thead>
@@ -121,7 +139,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
                     <td class='td$count' data-label='Date' style='display: none; position: absolute;'>".$row['date']."</td>
                     <td class='td$count' data-label='Weighting' style='display: none; position: absolute;'>".$weighting."%"."</td>
                     <td class='td$count' data-label='Description' style='display: none; position: absolute;'>".$row['description']."</td>
-                    <td class='td$count' data-label='Screenshots' style='display: none; position: absolute;'>$img</td>
+                    <td class='td$count' data-label='Screenshots' style='display: none; position: absolute;'>test</td>
                     <td class='td'><button type='submit' id='trash-btn' name='delete_btn'>DELETE</button></td>
                 </tr>
             </tbody>
