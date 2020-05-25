@@ -61,6 +61,7 @@ body {
     transition: all 200ms;
     border: 1px solid silver;
     padding: 8px;
+    text-shadow: 3px 3px 0 black;
 }
 .nav-link-wrapper a:hover {
     opacity: 1;
@@ -107,6 +108,7 @@ span {
 label {
     font-size: 1.8em;
     color: white;
+    text-shadow: 2px 2px 0 black;
 }
 #index .form > form > div > input {
     background-color: rgba(255, 255, 255, 0.1);
@@ -225,7 +227,7 @@ label {
     font-size: 1.4em;
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
-    width: 10em;
+    width: 20em;
 }
 
 /* Mobile Responsive */
@@ -672,8 +674,10 @@ table th {
     color: white;
     font-size: 1.0em;
     margin-bottom: 10px;
-    margin-left: 1vw;
     transition: 200ms;
+}
+#overview .class-div {
+    
 }
 #overview .class-btn:hover {
     background-color: black;

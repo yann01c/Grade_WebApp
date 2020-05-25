@@ -9,6 +9,8 @@ if(isset($_POST['submit'])) {
     $description = $_POST['s_description'];
     $class = $_POST['s_class'];
 
+    $check = 0;
+
     // Count files
     if (isset($_FILES['fileToUpload']['name'])) { 
         $total_files = count($_FILES['fileToUpload']['name']);
@@ -32,9 +34,6 @@ if(isset($_POST['submit'])) {
         exit();
     }
 
-    // Check if no file was submitted
-    $db = new SQLite3('../sqlite/webapp.db');
-
     // File array
     $filearray = array();
     $path_filename_ext = array();
@@ -46,13 +45,20 @@ if(isset($_POST['submit'])) {
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
         if(!is_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i])) {
-            $dbfile = "No Image";
+            $db = new SQLite3('../sqlite/webapp.db');
+            $db->busyTimeout(5000);
+            $db->exec('PRAGMA journal_mode = wal;');
+            $dbfile = "No Image!";
             echo $dbfile;
             $sqlfile2 = $db->prepare("INSERT INTO file (filename) VALUES (:files)");
             $sqlfile2->bindValue(':files', $dbfile);
             $finish2 = $sqlfile2->execute();
+            $db->close();
             break;
         } else {
+            $db = new SQLite3('../sqlite/webapp.db');
+            $db->busyTimeout(5000);
+            $db->exec('PRAGMA journal_mode = wal;');
             // Type
             $filetype = $_FILES['fileToUpload']['type'][$i];
             // Size
@@ -61,13 +67,8 @@ if(isset($_POST['submit'])) {
             $file = $_FILES['fileToUpload']['name'][$i];
             // Path
             $path = pathinfo($file);
-            // Filename
-            //$filename = $path['filename'];
-
             // Custom file name
-            //$filename = "file".$i.$_SESSION['userID'];
-            $filename[] = md5(uniqid(rand(), true));
-            //echo "Filename = ".$filename.$id;
+            $filename[$i] = md5(uniqid(rand(), true));
             echo "<h1>".$filename[$i]."</h1>";
             // File extension
             $ext = $path['extension'];
@@ -90,36 +91,37 @@ if(isset($_POST['submit'])) {
             }
 
             // Check if file already exists
-            if (file_exists($path_filename_ext[$i])) {
-                header("Location: ../index.php?error=exist");
-                exit();
-            }
+            //if (file_exists($path_filename_ext[$i])) {
+            //    header("Location: ../index.php?error=exist");
+            //    exit();
+            //}
 
             // Move file(s) in /upload directory with the right permissions
             move_uploaded_file($temp_name,$path_filename_ext[$i]);
             chmod($path_filename_ext[$i], 0755);
 
-            // Change content when empty
-            //if (empty($file)) {
-            //    $file = "No Image";
-            //} else {
-            //    $file = "upload/".$filename.".".$ext;
-            //}
+            $idfiles[] = array();
 
             $sqlfile = $db->prepare("INSERT INTO file (filename) VALUES (:file)");
             $sqlfile->bindValue(':file', $dbfile[$i]);
             $finish = $sqlfile->execute();
 
-            if ($total_files > 1) {
-                echo "File's Submitted";
-            } else {
-                echo "File Submitted";
-            }
+            $sqlids = $db->prepare("SELECT MAX(file_id) FROM file");
+            $idfres = $sqlids->execute();
+            $idfrow = $idfres->fetchArray();
+            
+            $idfiles[$i] = $idfrow[0];
+            $check = 1;
+            echo "FILE ID's = ".$idfiles[$i];
+            $db->close();
         }
     }
     
-    // SQL insert into table "grade"
     $db = new SQLite3('../sqlite/webapp.db');
+    $db->busyTimeout(5000);
+    $db->exec('PRAGMA journal_mode = wal;');
+
+    // SQL insert into table "grade"
     $sql = $db->prepare("SELECT class_id from class WHERE class='$class'");
     $r = $sql->execute();
     $row = $r->fetchArray();
@@ -145,9 +147,22 @@ if(isset($_POST['submit'])) {
         $idselect = $db->prepare("SELECT MAX(grade_id) FROM grade");
         $idres = $idselect->execute();
         $idrow = $idres->fetchArray();
-        $maxid = $idrow[0];
+        $idgrade = $idrow[0];
 
-        //$fileid = $db->prepare("INSERT INTO file_grade (fk_file,fk_grade) VALUES (...,$maxid)")
+        $check = 1;
+        $i = 0;
+        $a = $total_files;
+        while ($a != $i) {
+            $file_grade = $db->prepare("INSERT INTO file_grade (fk_grade,fk_file) VALUES (:gradeid,:fileid)");
+            $file_grade->bindValue(':gradeid',$idgrade);
+            $file_grade->bindValue(':fileid',$idfiles[$i]);
+            $file_result = $file_grade->execute();
+            $i++;
+        }
+        //} else {
+        //    echo "Check = FALSE";
+        //}
+
         // Success message
         header("Location: ../index.php?info=success");
         exit();

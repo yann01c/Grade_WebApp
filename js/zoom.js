@@ -2,9 +2,9 @@
 function zoom(id) {
 
     // Input field id (upload in value)
-    id = "imginput"+id;
+    inputid = "imginput"+id;
     // Get value from input (upload/...)
-    imginput = document.getElementById(id).value;
+    imginput = document.getElementById(inputid).value;
     // Get absolute div (container)
     absolute = document.getElementById("absolutecenter");
     // URL for background-image tag

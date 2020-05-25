@@ -34,7 +34,9 @@ if (isset($_GET['user-preview'])) {
         echo "<input name='c2-class' style='position:absolute;display:none;' value='$class'>";
         echo "<input name='bbid' style='position:absolute;display:none;' value='$userID'>";
         echo "<input name='bbuid' style='position:absolute;display:none;' value='$uid'>";
+        echo "<div class='class-div'>";
         echo "<button type='submit' name='user-pre' class='class-btn'>".$row['class']." - AVERAGE"."</button>";
+        echo "<div>";
         echo "</form>";
     }
 }

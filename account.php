@@ -105,7 +105,7 @@
             ?>
         </div>
         <div class="footer">
-            <div class="copyright">Copyright - SPIE ICS ©</div>
+            <div class="copyright">All Rights Reserved - © SPIE ICS</div>
         </div>
     </div>
     <script src="js/change.js"></script>
