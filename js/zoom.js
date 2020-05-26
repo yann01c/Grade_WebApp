@@ -13,11 +13,26 @@ function zoom(id) {
     absolute.style.backgroundImage = imgurl;
     // Display absolut div
     absolute.style.display = "flex";
-    
+
+    var download = document.createElement("a");
+    var div = document.getElementById("download");
+    download.setAttribute('href',imginput);
+    download.setAttribute('class','a-download');
+    download.setAttribute('download',"IMAGE"+id)
+    download.textContent = 'DOWNLOAD';
+    div.appendChild(download);
 }
 
 // class.php Close image
 function unzoom() {
+    var x, i;
+    x = document.querySelectorAll("a-download");
+
+    for (i = 0; i < x.length; i++) { 
+        x[i].style.display = "none";
+    }
+
+    
 
     // Get container
     absolute = document.getElementById("absolutecenter");
@@ -28,7 +43,6 @@ function unzoom() {
 
 // class.php Collapse tables
 function collapse(id) {
-
     // Unique class
     tdclass = ".td"+id;
     // Select table

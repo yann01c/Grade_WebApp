@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="images/logo.png" sizes="96x96">
@@ -72,28 +72,40 @@
             // Error Handler
             if (isset($_GET['error'])) {
                 if ($_GET['error'] == 'wrongext') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Extension Invalid!</p>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Extension Invalid!</p>";
+                    $message = "Extension Invalid";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'empty') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Missing fields!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Missing fields!</p></div>";
+                    $message = "Missing fields!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'weighting') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Weighting Invalid!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Weighting Invalid!</p></div>";
+                    $message = "Weighting Invalid!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'grade') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Grade Invalid!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Grade Invalid!</p></div>";
+                    $message = "Grade Invalid!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'exist') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:blue;'>File already exists!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:blue;'>File already exists!</p></div>";
                 }
                 else if ($_GET['error'] == 'sql') {
-                    echo "<div class='submitteddiv'><p class='submit-handler'style='color:orange;'>SQlite Error</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler'style='color:orange;'>SQlite Error</p></div>";
+                    $message = "SQlite Error!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
             }
             // Info Handler
             if (isset($_GET['info'])) {
                 if ($_GET['info'] == 'success') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:lightgreen;'>Successfully Submitted Grade!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:lightgreen;'>Successfully Submitted Grade!</p></div>";
+                    $message = "Successfully submitted Grade!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
             }
             ?>

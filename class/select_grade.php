@@ -82,7 +82,14 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
             $filea = $res->fetchArray();
 
             $i++;
-            $path = $filea['filename'];
+
+            // Array error fix
+            if (empty($filea['filename'])) {
+                $path = "";
+            } else {
+                $path = $filea['filename'];
+            }
+
             $imgid = $afg['fk_file'];
     
             if (empty($filea['filename'])) {

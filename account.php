@@ -37,7 +37,9 @@
         <div class="main">
         <?php
             if (isset($_GET['login'])) {
-                echo '<div class="successdiv"><p class="successtext">Successfully logged in!</p></div>';
+                //echo '<div class="successdiv"><p class="successtext">Successfully logged in!</p></div>';
+                $message = "Welcome, ".$_SESSION['userUID'];
+                echo "<script type='text/javascript'>alert('$message');</script>";
             }
             ?>
             <div class="form">

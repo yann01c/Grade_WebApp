@@ -39,7 +39,13 @@
                                                             if (isset($_POST['user-pre'])) {
                                                                 echo "<p class='title'>".$_POST['bbuid'].", ".$_POST['c2-class']."</p>";
                                             }?></p><p class='title' id='between'>-</p><?php include "class/total_grade.php"; ?></div>
-            <div id="absolutecenter"><div id="close" onclick="unzoom()">&#10006</div></div>
+            <div id="absolutecenter">
+                <div id="close" onclick="unzoom()">
+                    &#10006
+                </div>
+                <div id="download">
+                </div>
+            </div>
             <div class="form">
                     <div id="class-center">
                             <?php include 'class/select_grade.php'; ?>
