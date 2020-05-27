@@ -45,7 +45,7 @@
                     <div class="float">
                         <label for="s_class">Class</label><br>
                         <select id="s-class" name="s_class">
-                            <option value="none">&#8595</option>
+                            <option value="">&#8595</option>
                             <?php include 'submit/select_s_classes.php';?>
                         </select>
                     </div>
@@ -59,7 +59,15 @@
                     </div>
                     <div>
                         <label for="s_weighting">Weighting</label><br>
-                        <input type="number" step="0.01" name="s_weighting" placeholder="%">
+                        <select name="s_weighting">
+                            <option value="">&#8595</option>
+                            <option value="0.0">0%</option>
+                            <option value="0.25">25%</option>
+                            <option value="0.5">50%</option>
+                            <option value="0.75">75%</option>
+                            <option value="1">100%</option>
+                        </select>
+                        <!--<input type="number" step="0.01" name="s_weighting" placeholder="%">-->
                     </div>
                     <div>
                         <label for="s_description">Description</label><br>

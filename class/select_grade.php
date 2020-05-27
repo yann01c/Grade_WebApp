@@ -59,7 +59,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     $count2 = 0;
     $check = 0;
     $number = 0;
-    $imgcheck = "false";
+    $imgcheck = 0;
 
     // Select every grade in grade and display it in "option" element in HTML (WHILE statement returns)
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
@@ -74,7 +74,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $image[] = array();
         //$sqlimg = $db->prepare("SELECT * ")
         while($afg = $rfg->fetchArray(SQLITE3_ASSOC)) {
-            $imgcheck = "true";
+            $imgcheck = 1;
 
             $sqlfile = $db->prepare("SELECT * FROM file WHERE file_id = :fk_file");
             $sqlfile->bindValue(':fk_file',$afg['fk_file']);
@@ -93,9 +93,10 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
             $imgid = $afg['fk_file'];
     
             if (empty($filea['filename'])) {
-                $image[$i] = "<img src='' alt='No Image'>";
+                $imgcheck = 0;
             } else {
-                $image[$i] = "<img src='$path' class='$i' id='$imgid' style='width:30px;height:30px;margin-left:10px;cursor:pointer;' onclick='zoom(this.id)' alt='No Image'>";
+                $imgstyle = "<style>#$imgid:hover { translate: scale(1.2);}</style>";
+                $image[$i] = "<img src='$path' class='small-image' id='$imgid' style='width:30px;height:30px;margin-left:10px;cursor:pointer;' onclick='zoom(this.id)' alt='No Image'>";
             }
 
             // Input with path value (used for zoom.js ZOOM function)
@@ -116,7 +117,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         }
         // Grade smaller or equal to 3.9 gets color ORANGE
         else if ($row['grade'] <= 3.9) {
-            $color = 'red';
+            $color = '#BF0413';
             $count = $count + 3;
         }
 
@@ -148,14 +149,15 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
             </thead>";
         echo "<tbody>
                 <tr onclick='collapse()'>
-                    <td class='class-grade$count' id='$count' onclick='collapse(this.id)' style='cursor:pointer;' data-label='Grade' style='display:block;'>".$row['grade']."</td>
+                    <td class='class-grade$count' id='$count' onclick='collapse(this.id)' style='cursor:pointer;display:block;background-color: $color;color:black;border: 1px solid black;' data-label='Grade'>".$row['grade']."</td>
                     <td class='td$count' data-label='Date' style='display: none; position: absolute;'>".$row['date']."</td>
                     <td class='td$count' data-label='Weighting' style='display: none; position: absolute;'>".$weighting."%"."</td>
                     <td class='td$count' data-label='Description' style='display: none; position: absolute;'>".$row['description']."</td>
-                    <td class='td$count' data-label='Screenshots' style='display: none; position: absolute;'>"; if ($imgcheck != "true") {
-                        echo "No Image!";
+                    <td class='td$count' data-label='Screenshots' style='display: none; position: absolute;'>"; if ($imgcheck == 0) {
+                        echo "-";
                     } else {
                         for ($i = 1; $i <= $a ; $i++) {
+                            echo $imgstyle;
                             echo $image[$i];
                         }
                     }

@@ -41,7 +41,7 @@
                                             }?></p><p class='title' id='between'>-</p><?php include "class/total_grade.php"; ?></div>
             <div id="absolutecenter">
                 <div id="close" onclick="unzoom()">
-                    &#10006
+                    ✕
                 </div>
                 <div id="download">
                 </div>

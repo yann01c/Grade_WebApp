@@ -61,7 +61,7 @@
                     echo include 'group/select_group.php';;
                     echo "</select></div>";
                     echo "</form>";
-                    echo "<br><br><a href='changepassword.php'>Change Password</a>";
+                    echo "<br><br><a id='a-change' href='change_password.php'>Change Password</a>";
                     echo "<form action='login/logout.php' method='post'><button class='logout'>Logout</button></form>";
                     echo "</div>";
                 } else {
@@ -90,18 +90,26 @@
             // Error handlers
             if(isset($_GET['error'])) {
                 if($_GET['error'] == "wrongpassword") {
-                    echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Wrong Password!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Wrong Password!</p></div>";
+                    $message = "Wrong Password!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == "nouser") {
-                    echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>User does not exist!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>User does not exist!</p></div>";
+                    $message = "User does not exist!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == "emptyfields") {
-                    echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Empty fields!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Empty fields!</p></div>";
+                    $message = "Empty fields!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
             }
             if (isset($_GET['info'])) {
                 if ($_GET['info'] == "logout") {
-                    echo "<div class='submitteddiv'><p class='error-handler'style='color:blue;'>Successfully logged out!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='error-handler'style='color:blue;'>Successfully logged out!</p></div>";
+                    $message = "Successfully logged out!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
             }
             ?>

@@ -18,21 +18,18 @@ function zoom(id) {
     var div = document.getElementById("download");
     download.setAttribute('href',imginput);
     download.setAttribute('class','a-download');
-    download.setAttribute('download',"IMAGE"+id)
-    download.textContent = 'DOWNLOAD';
+    download.setAttribute('id','id-download');
+    download.setAttribute('download',"IMAGE"+id+".jpg");
+    download.textContent = '☇';
     div.appendChild(download);
+    window.close();
 }
 
 // class.php Close image
 function unzoom() {
-    var x, i;
-    x = document.querySelectorAll("a-download");
 
-    for (i = 0; i < x.length; i++) { 
-        x[i].style.display = "none";
-    }
-
-    
+    download = document.getElementById("id-download");
+    download.remove();    
 
     // Get container
     absolute = document.getElementById("absolutecenter");
@@ -54,6 +51,7 @@ function collapse(id) {
 
     // For loop for arrays ([0],[1],...)
     for (i = 0; i < x.length; i++) {
+        x[i].style.transition = "all 200ms";
         x[i].style.display = (x[i].style.display == "block") ? "none" : "block";
         x[i].style.position = (x[i].style.position == "relative") ? "absolute" : "relative";
     }

@@ -48,7 +48,7 @@ input {
 }
 .nav-wrapper > .left-side > div {
     margin-right: 0;
-    font-size: 2em;
+    font-size: 2.2em;
 }
 .nav-link-wrapper a {
     opacity: 0.7;
@@ -242,10 +242,11 @@ span {
     color: black;
     font-size: 1.3em;
     text-decoration: none;
-    transition: color 150ms;
+    transition: all 150ms;
 }
 .form > form > div > a:hover {
     color: blue;
+    margin-left: 10px;
 }
 #logged select {
     font-size: 1em;
@@ -262,7 +263,7 @@ span {
     justify-content: center;
 }
 .copyright {
-    text-shadow: 3px 3px 0 black;
+    text-shadow: 2px 2px 0 black;
     align-items: center;
     color: white;
     bottom: 1em;
@@ -461,4 +462,79 @@ span {
     justify-content: center;
     position: absolute;
     bottom: 10em;
+}
+
+
+/* CHANGE PASSWORD */
+#change #change_cont {
+    height: 100vh;
+    min-height: 100%;
+    background-color: #0F2259;
+    /*background-image: url("../images/wp_blur.png");
+    background-size: cover;
+    background-repeat: no-repeat;*/
+}
+#change #change_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #0F2259;
+}
+#change #change_main > form > div > input {
+    width: 20em;
+    padding: 4px;
+    border: none;
+    font-size: 1.1em;
+}
+#change #change_main > form > div > label {
+    font-size: 1.7em;
+    color: white; 
+}
+#change #change-btn {
+    width: 20.4em;
+    padding: 8px;
+    border: none;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: white;
+    background-color: black;
+    transition: 200ms;
+    cursor: pointer;
+}
+#change form {
+}
+#change #change-btn:hover {
+    background-color: white;
+    color: black;
+}
+#change #change-bck {
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+    transition: 200ms;
+}
+#change #change-bck:hover {
+    color: blue;
+    margin-left: 10px;
+}
+#change .change-text {
+    position:relative;
+    background-image:linear-gradient(transparent 60%,  black 0px);
+    color: white;
+    font-size: 1.4em;
+    margin: 0;
+}
+#change #change-text_2 {
+    
+}
+@media (max-width: 550px) { 
+    #change #change_main > form > div > input { font-size: 1.0em;}
+    #change #change_main > form > div > label { font-size: 1.3em;}
+    #change #change-btn { font-size: 1.0em; }
+    #change .change-text { font-size: 1.2em; }
+}
+@media (max-width: 450px) { 
+    #change .change-text { font-size: 1.0em; }
 }
