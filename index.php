@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>Grade - Submit</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="images/logo.png" sizes="96x96">
@@ -45,7 +45,7 @@
                     <div class="float">
                         <label for="s_class">Class</label><br>
                         <select id="s-class" name="s_class">
-                            <option value="none">&#8595</option>
+                            <option value="">&#8595</option>
                             <?php include 'submit/select_s_classes.php';?>
                         </select>
                     </div>
@@ -59,7 +59,15 @@
                     </div>
                     <div>
                         <label for="s_weighting">Weighting</label><br>
-                        <input type="number" step="0.01" name="s_weighting" placeholder="%">
+                        <select name="s_weighting">
+                            <option value="">&#8595</option>
+                            <option value="0.0">0%</option>
+                            <option value="0.25">25%</option>
+                            <option value="0.5">50%</option>
+                            <option value="0.75">75%</option>
+                            <option value="1">100%</option>
+                        </select>
+                        <!--<input type="number" step="0.01" name="s_weighting" placeholder="%">-->
                     </div>
                     <div>
                         <label for="s_description">Description</label><br>
@@ -72,28 +80,40 @@
             // Error Handler
             if (isset($_GET['error'])) {
                 if ($_GET['error'] == 'wrongext') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Extension Invalid!</p>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Extension Invalid!</p>";
+                    $message = "Extension Invalid";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'empty') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Missing fields!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Missing fields!</p></div>";
+                    $message = "Missing fields!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'weighting') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Weighting Invalid!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Weighting Invalid!</p></div>";
+                    $message = "Weighting Invalid!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'grade') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Grade Invalid!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Grade Invalid!</p></div>";
+                    $message = "Grade Invalid!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'exist') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:blue;'>File already exists!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:blue;'>File already exists!</p></div>";
                 }
                 else if ($_GET['error'] == 'sql') {
-                    echo "<div class='submitteddiv'><p class='submit-handler'style='color:orange;'>SQlite Error</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler'style='color:orange;'>SQlite Error</p></div>";
+                    $message = "SQlite Error!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
             }
             // Info Handler
             if (isset($_GET['info'])) {
                 if ($_GET['info'] == 'success') {
-                    echo "<div class='submitteddiv'><p class='submit-handler' style='color:lightgreen;'>Successfully Submitted Grade!</p></div>";
+                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:lightgreen;'>Successfully Submitted Grade!</p></div>";
+                    $message = "Successfully submitted Grade!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
                 }
             }
             ?>

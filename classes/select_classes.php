@@ -23,12 +23,41 @@
     $result = $sql2->execute();
 
     $count = 0;
+    $i = 0;
 
     // Select every class in class with the right group id and display it in Table
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
         //$btn = "Go to ".$row['class'];
         $count++;
         $class = $row['class'];
+        $class_id = $row['class_id'];
+
+        $average = $db->prepare("SELECT * FROM grade WHERE fk_user = :fk_user AND fk_class = :fk_class");
+        $average->bindValue('fk_user',$userID);
+        $average->bindValue(':fk_class',$class_id);
+        $aresult = $average->execute();
+
+        while($arow = $aresult->fetchArray(SQLITE3_ASSOC)) {
+            $newgrades[] = array();
+            $newgrades[] = $arow['grade'] * $arow['weighting'];
+        }
+        if (empty($newgrades)) {
+            $av = "No Grades yet!";
+        } else {
+            $av = array_product($newgrades);
+            unset($newgrades);
+        }
+        //$newgrades[] = array();
+
+        //$i++;
+        //$newgrades[$i] =  $arow['grade'] * $arow['weighting'];
+
+        //foreach ($grades as $value) {
+        //    $newgrades[] = $value * $arow['weighting'];
+        //}
+
+        //$av = array_product($newgrades);
+
         echo "<form id='form$count' action='class.php' method='GET'>";
         echo "<table>
             <caption></caption>
@@ -42,7 +71,7 @@
         echo "<tbody>
                 <tr id='$count' onclick='submit(this.id)' style='cursor:pointer;'>
                     <td data-label='Class' style='font-weight:bolder;'>".$row['class']."</td>
-                    <td data-label='Average'>-</td>
+                    <td data-label='Average'>$av</td>
                 </tr>
             </tbody>
             </table>";

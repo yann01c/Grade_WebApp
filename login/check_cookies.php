@@ -48,8 +48,6 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['identifier'])) {
 
     // Cookie identifier / username does not match with db identifier / username
     } else {
-        header("Location: account.php?error=nocookiematch");
-        exit();
     }
 
 // Cookie status (NO COOKIE)

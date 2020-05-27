@@ -17,16 +17,16 @@ if(isset($_POST['submit'])) {
     }
 
     // Check for missing fields
-    if (empty($grade) || empty($date) || empty($weighting)) {
+    if (empty($grade) || empty($date) || empty($weighting) || empty($class)) {
         header("Location: ../index.php?error=empty");
         exit();
     }
 
     // Check if weighting is valid
-    else if ($weighting > 2.0 || $weighting < 0) {
-        header("Location: ../index.php?error=weighting");
-        exit();
-    }
+    //else if ($weighting > 2.0 || $weighting < 0) {
+    //    header("Location: ../index.php?error=weighting");
+    //    exit();
+    //}
 
     // Check if grade is valid
     else if ($grade > 6.0 || $grade < 0) {
