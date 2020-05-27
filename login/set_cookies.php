@@ -13,8 +13,8 @@ if (isset($_GET['uid'])) {
     
     // Generate identifier string and set cookies
     $identifier = md5(uniqid(rand(), true));
-    setcookie("username",$uid,time()+ 60,"/");
-    setcookie("identifier",$identifier,time()+ 60,"/");
+    setcookie("username",$uid,time()+ 604800,"/");
+    setcookie("identifier",$identifier,time()+ 604800,"/");
 
     // Set identifier for cookie auth
     $sql = $db->prepare("UPDATE login SET identifier = :random WHERE username = :user");
