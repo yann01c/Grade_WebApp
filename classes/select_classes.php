@@ -38,14 +38,25 @@
         $aresult = $average->execute();
 
         while($arow = $aresult->fetchArray(SQLITE3_ASSOC)) {
+            //$w = $arow['weighting'] * 100;
+            $i++;
             $newgrades[] = array();
-            $newgrades[] = $arow['grade'] * $arow['weighting'];
+            $newweighting[] = array();
+            $newgrades[] = $arow['grade'] * ($arow['weighting'] * 100);
+            $newweighting[$i] = ($arow['weighting'] * 100) + ($arow['weighting'] * 100);
+            //echo $newweighting[$i];
+
+                        
         }
         if (empty($newgrades)) {
-            $av = "No Grades yet!";
+            $avfinish = "No Grades yet!";
         } else {
-            $av = array_product($newgrades);
-            unset($newgrades);
+            $avweighting = array_sum($newweighting);
+            //$avcount = count($newgrades);
+            $avgrade = array_sum($newgrades);
+            $avfinish = $avgrade / $avweighting;
+            unset($avgrades);
+            unset($avweighting);
         }
         //$newgrades[] = array();
 
@@ -71,7 +82,7 @@
         echo "<tbody>
                 <tr id='$count' onclick='submit(this.id)' style='cursor:pointer;'>
                     <td data-label='Class' style='font-weight:bolder;'>".$row['class']."</td>
-                    <td data-label='Average'>$av</td>
+                    <td data-label='Average'>$avfinish</td>
                 </tr>
             </tbody>
             </table>";
