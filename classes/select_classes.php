@@ -44,10 +44,8 @@
             $newweighting[] = array();
             $newgrades[] = $arow['grade'] * ($arow['weighting'] * 100);
             $newweighting[$i] = ($arow['weighting'] * 100) + ($arow['weighting'] * 100);
-            //echo $newweighting[$i];
-
-                        
         }
+
         if (empty($newgrades)) {
             $avfinish = "No Grades yet!";
         } else {
@@ -57,6 +55,16 @@
             $avfinish = $avgrade / $avweighting;
             unset($avgrades);
             unset($avweighting);
+        }
+
+        // Count grades
+        $sqlt = $db->prepare("SELECT grade FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
+        $sqlt->bindValue(':userid',$userID);
+        $sqlt->bindValue(':fkclass',$class_id);
+        $resultt = $sqlt->execute();
+        $total = 0;
+        while ($rowt = $resultt->fetchArray()) {
+                $total += 1;
         }
         //$newgrades[] = array();
 
@@ -75,14 +83,14 @@
             <thead>
             <tr>
                 <th scope='col'>Class</th>
-                <th scope='col'>Average</th>
+                <th scope='col'>Total</th>
                 <th scope='col'></th>
             </tr>
             </thead>";
         echo "<tbody>
                 <tr id='$count' onclick='submit(this.id)' style='cursor:pointer;'>
                     <td data-label='Class' style='font-weight:bolder;'>".$row['class']."</td>
-                    <td data-label='Average'>$avfinish</td>
+                    <td data-label=''>$total</td>
                 </tr>
             </tbody>
             </table>";

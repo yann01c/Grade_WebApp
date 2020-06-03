@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/account.css">
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
 </head>
 <body id="account">
     <div class="container">
@@ -119,5 +120,24 @@
         </div>
     </div>
     <script src="js/change.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+    window.cookieconsent.initialise({
+    "palette": {
+        "popup": {
+        "background": "#0f2259"
+        },
+        "button": {
+        "background": "#bf0413"
+        }
+    },
+    "position": "bottom-right",
+    "content": {
+        "message": "This website only uses cookies if you check the \"Remember Me\" box to log in.",
+        "dismiss": "Understood!",
+        "link": "Learn more"
+    }
+    });
+    </script>
 </body>
 </html>

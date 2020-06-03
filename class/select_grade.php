@@ -60,16 +60,27 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     $check = 0;
     $number = 0;
     $imgcheck = 0;
+    $e = 0;
 
     // Select every grade in grade and display it in "option" element in HTML (WHILE statement returns)
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
         $grade_id = $row['grade_id'];
+        $wfile = $row['weighting'] * 100;
         $i = 0;
 
         // Prepare SELECT statement for file_grade
         $sqlfilegrade = $db->prepare("SELECT fk_file FROM file_grade WHERE fk_grade = :file_grade");
         $sqlfilegrade->bindValue(':file_grade',$grade_id);
         $rfg = $sqlfilegrade->execute();
+
+        $downloadpath = "download/summary$grade_id.txt";
+
+        if (!file_exists($downloadpath)) {
+            $myfile = fopen("download/summary$grade_id.txt", "w");
+            $txt = "ID: ".$grade_id." | GRADE: ".$row['grade']." | WEIGHTING: ".$wfile."%"." | DATE: ".$row['date']." | DESCRIPTION: ".$row['description']." | CLASS: ".$class." | USER: ".$_SESSION['userUID'];        
+            fwrite($myfile, $txt);
+            fclose($myfile);
+        }
 
         $image[] = array();
         //$sqlimg = $db->prepare("SELECT * ")
@@ -129,6 +140,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $number = $number + 1;
         $count2++;
         $check = $check + 1;
+        $e++;
 
         $style = '<style type="text/css">.class-grade'.$count.'{color:'.$color.'; font-weight: bold;}</style>';
         echo $style;
@@ -162,7 +174,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
                         }
                     }
                     echo "</td>
-                    <td class='td'><button type='submit' id='trash-btn' name='delete_btn'>DELETE</button></td>
+                    <td class='td'><a class='download-btn' href='$downloadpath' download>Download Grade</a><button type='submit' class='trash-btn' name='delete_btn'>DELETE</button></td>
                 </tr>
             </tbody>
             </table>";

@@ -37,7 +37,7 @@
                                                                 include 'class/select_class.php';
                                                             }
                                                             if (isset($_POST['user-pre'])) {
-                                                                echo "<p class='title'>".$_POST['bbuid'].", ".$_POST['c2-class']."</p>";
+                                                                echo "<p class='title'><span style='font-weight:bold;'>".$_POST['bbuid']."</span>, ".$_POST['c2-class']."</p>";
                                             }?></p><p class='title' id='between'>-</p><?php include "class/total_grade.php"; ?></div>
             <div id="absolutecenter">
                 <div id="close" onclick="unzoom()">

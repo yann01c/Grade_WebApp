@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="right-side">
-                <img src="images/logo.png" class="logo" alt="logo"/>
+                <a href="secret.php"><img src="images/logo.png" class="logo" alt="logo"/></a>
             <?php
                 if (isset($_SESSION['userID'])) {
                     echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
