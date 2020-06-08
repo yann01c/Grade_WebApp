@@ -529,13 +529,13 @@ span {
 #change #change-text_2 {
 }
 @media (max-width: 550px) { 
-    #change #change_main > form > div > input { font-size: 1.0em;}
+    #change #change_main > form > div > input { font-size: 0.9em;}
     #change #change_main > form > div > label { font-size: 1.3em;}
-    #change #change-btn { font-size: 1.0em; }
-    #change .change-text { font-size: 1.2em; }
+    #change #change-btn { font-size: 0.9em; }
+    #change .change-text { font-size: 1.1em; }
 }
 @media (max-width: 450px) { 
-    #change .change-text { font-size: 1.0em; }
+    #change .change-text { font-size: 0.5em; }
 }
 
 /* SECRET */

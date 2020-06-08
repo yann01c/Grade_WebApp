@@ -6,10 +6,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - Account</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/icons/icon_iphone_transparent_big.png">
     <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
+
+    <!-- IOS Icon (instead of manifest icon) 
+    <link rel="apple-touch-icon" href="images/icons/icon_iphone_57x57.png">-->
+    <!-- IPHONE -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon_background.png">
+    <!-- IPAD 
+    <link rel="apple-touch-icon" sizes="72x72" href="images/logo.png">-->
+
+    <!-- IOS Startup SPLASH -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="apple-touch-startup-image" href="images/splash/splash_1125x2436.png">
+
+    <!-- iPad Pro 12.9-inch -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_2048x2732.png">
+    <!-- iPad Pro 10.5-inch -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1112px) and (device-height: 834px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_1668x2224.png">
+    <!-- iPad Pro 9.7-inch, iPad Air 2, iPad Mini 4 -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_1536x2048.png">
+    <!-- iPhone X -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/splash/splash_1125x2436.png">
+    <!-- iPhone 6/6s Plus, iPhone 7/7s Plus, iPohne 8 Plus -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/splash/splash_1242x2208.png">
+    <!-- iPhone 6/6s, iPhone 7, iPhone 8 -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_750x1334.png">
+    <!-- iPhone SE -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_640x1136.png">
+
+    <meta name="apple-mobile-web-app-title" content="Grades - WebApp">
+
 </head>
 <body id="account">
     <div class="container">
@@ -116,9 +148,10 @@
             ?>
         </div>
         <div class="footer">
-            <div class="copyright">All Rights Reserved - © SPIE ICS</div>
+            <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
+    <script src="js/install.js"></script>
     <script src="js/change.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
@@ -131,11 +164,12 @@
         "background": "#bf0413"
         }
     },
-    "position": "bottom-right",
+    "theme": "edgeless",
+    "position": "top-right",
     "content": {
-        "message": "This website only uses cookies if you check the \"Remember Me\" box to log in.",
         "dismiss": "Understood!",
-        "link": "Learn more"
+        "link": "Privacy Terms",
+        "href": "privacy.php"
     }
     });
     </script>

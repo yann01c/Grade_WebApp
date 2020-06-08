@@ -43,15 +43,9 @@
                    <?php
                    if (isset($_SESSION['userID'])) {
                         if ($_SESSION['userGRPID'] == 3) {
-                            //echo "<form action='#' method='GET' class='user-form'>";
-                            //echo "<div id='user-div'><select name='user-preview' class='user-dropdown'>Select User";
-                            //echo "<option value='-'>Select User</option>";
-                            //include "classes/select_users.php";
-                            //echo "</select></div>";
                             echo "<div>";
                             echo "<a class='c-add' id='user-bb' href='overview.php' name='user-bb'>User Overview</a>";
                             echo "</div>";
-                            //echo "</form>";
                         } else {
                         }
                     } else {
@@ -71,12 +65,12 @@
                     ?>
                 </div>
             </div>
-            <div id="classadded_container">
+            <!--<div id="classadded_container">
                 <p id="classadded"></p>
-            </div>
+            </div>-->
         </div>
         <div class="footer">
-            <div class="copyright">All Rights Reserved - © SPIE ICS</div>
+            <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
     <script src="js/zoom.js"></script>

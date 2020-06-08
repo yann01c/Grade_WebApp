@@ -123,7 +123,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         }
         // Grade greater or equal to 4.0 gets color ORANGE
         else if ($row['grade'] >= 4.0 && $row['grade'] <= 4.9) {
-            $color = 'orange';
+            $color = '#ff8c00';
             $count = $count + 2;
         }
         // Grade smaller or equal to 3.9 gets color ORANGE
@@ -161,7 +161,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
             </thead>";
         echo "<tbody>
                 <tr onclick='collapse()'>
-                    <td class='class-grade$count' id='$count' onclick='collapse(this.id)' style='cursor:pointer;display:block;background-color: $color;color:black;border: 1px solid black;' data-label='Grade'>".$row['grade']."</td>
+                    <td class='class-grade$count' id='$count' onclick='collapse(this.id)' style='cursor:pointer;display:block;color: $color;' data-label='Grade'>".$row['grade']."</td>
                     <td class='td$count' data-label='Date' style='display: none; position: absolute;'>".$row['date']."</td>
                     <td class='td$count' data-label='Weighting' style='display: none; position: absolute;'>".$weighting."%"."</td>
                     <td class='td$count' data-label='Description' style='display: none; position: absolute;'>".$row['description']."</td>
@@ -174,7 +174,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
                         }
                     }
                     echo "</td>
-                    <td class='td'><a class='download-btn' href='$downloadpath' download>Download Grade</a><button type='submit' class='trash-btn' name='delete_btn'>DELETE</button></td>
+                    <td class='td'><a class='download-btn' href='$downloadpath' download>DOWNLOAD</a><button type='submit' class='trash-btn' name='delete_btn'>🗑️</button></td>
                 </tr>
             </tbody>
             </table>";

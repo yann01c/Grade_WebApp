@@ -14,11 +14,12 @@
     $fkgroup = $fk['fk_group'];
 
     // Get all Classes with group_id = $fkgroup
-    $sql2 = $db->prepare("SELECT * FROM class WHERE fk_group = :fkg");
+    $sql2 = $db->prepare("SELECT * FROM class WHERE fk_user = :userid AND fk_group = :fkg");
     if (!$sql2) {
         echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 2</p>";
         exit();
     }
+    $sql2->bindValue(':userid',$userID);
     $sql2->bindValue(':fkg',$fkgroup);
     $result = $sql2->execute();
 
@@ -76,15 +77,14 @@
         //}
 
         //$av = array_product($newgrades);
-
         echo "<form id='form$count' action='class.php' method='GET'>";
         echo "<table>
             <caption></caption>
             <thead>
             <tr>
                 <th scope='col'>Class</th>
-                <th scope='col'>Total</th>
                 <th scope='col'></th>
+                <th scope='col'>test</th>
             </tr>
             </thead>";
         echo "<tbody>

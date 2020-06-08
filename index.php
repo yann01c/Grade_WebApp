@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include "classes/db_classes.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,23 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="images/logo.png" sizes="96x96">
     <link rel="manifest" href="manifest.json">
+
+    <!-- IOS Icon (instead of manifest icon) -->
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/logo.png">
+
+    <!-- IOS Startup -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="images/splash/splash_2048x2732.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+    <link href="images/splash/splash_1668x2224.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="images/splash/splash_1536x2048.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="images/splash/splash_1125x2436.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="images/splash/splash_1242x2208.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="images/splash/splash_750x1334.png" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="images/splash/splash_640x1136.png" sizes="640x1136" rel="apple-touch-startup-image" />
+
 </head>
 <body id="index">
     <div class="container">
@@ -119,8 +137,9 @@
             ?>
             </div>
         <div class="footer">
-            <div class="copyright">All Rights Reserved - © SPIE ICS</div>
+            <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
+    <script src="js/install.js"></script>
 </body>
 </html>

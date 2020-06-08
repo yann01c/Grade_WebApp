@@ -17,12 +17,13 @@ if (isset($_GET['user-preview'])) {
     $uid = $fk['username'];
 
     // Get all Classes with group_id = $fkgroup
-    $sql2 = $db->prepare("SELECT * FROM class WHERE fk_group = :fkg");
+    $sql2 = $db->prepare("SELECT * FROM class WHERE fk_group = :fkg AND fk_user = :id");
     if (!$sql2) {
         echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 2</p>";
         exit();
     }
     $sql2->bindValue(':fkg',$fkgroup);
+    $sql2->bindValue(':id',$userID);
     $result = $sql2->execute();
 
     $count = 0;

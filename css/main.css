@@ -221,7 +221,6 @@ label {
 .copyright {
     text-shadow: 2px 2px 0 black;
     align-items: center;
-    color: white;
     bottom: 1em;
     height: auto;
     position: absolute;
@@ -231,7 +230,15 @@ label {
     /*border-top: 1px solid silver;
     border-bottom: 1px solid silver;*/
     width: 15em;
+    transition: 200ms;
     /*background-image: linear-gradient(transparent 60%,  #BF0413 0px);*/
+}
+.copyright > a {
+    color: white;
+    transition: 200ms;
+}
+.copyright > a:hover {
+    color: silver;
 }
 
 /* Mobile Responsive */
@@ -376,6 +383,7 @@ label {
     text-decoration: none;
     color: black;
 }
+/*
 #classes #classadded {
     width: 9em;
     position: absolute;
@@ -388,6 +396,10 @@ label {
 #classes #classadded_container {
     display: flex;
     justify-content: center;
+}
+*/
+#classes .class-center {
+    position: relative;
 }
 #classes form {
     margin: 0;
@@ -411,10 +423,29 @@ label {
     transition: 200ms;
     align-items: baseline;
     display: flex;
+    margin-top: 4vh;
 }
 @media (max-height: 890px) { 
     #classes .form { height: 65vh; }
 }
+#classes .c-delete {
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    padding: 0;
+    align-self: left;
+    color: black;
+    transition: 200ms;
+    background-color: transparent;
+    box-shadow: 0px 5px #BF0413;
+    -webkit-box-shadow: 0px 5px #BF0413;
+    -moz-box-shadow: 0px 5px #BF0413;
+}
+#classes .c-delete:hover {
+    background-color: #BF0413;
+    box-shadow: none;
+}
+
 /* Mobile Responsive */
 
 /* Class Page */
@@ -585,6 +616,7 @@ table th {
     transition: 200ms;
     align-items: baseline;
     display: flex;
+    margin-top: 3vh;
 }
 #class .form:hover {
     box-shadow: none;

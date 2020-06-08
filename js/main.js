@@ -13,10 +13,10 @@ function newClass() {
         var xhr = new XMLHttpRequest();
         
         // Response from insert_class.php
-        xhr.onload = async function() {
+        xhr.onload = function() {
             var serverResponse = document.getElementById("classadded");
-            serverResponse.innerHTML = this.responseText;
-            await sleep(3000);
+            //serverResponse.innerHTML = this.responseText;
+            alert(this.responseText);
             location.reload();
         }
         xhr.open("POST", "classes/insert_classes.php");
@@ -26,10 +26,10 @@ function newClass() {
 }
 
 // If prompt is empty | invalid
-async function invalidClass() {
+function invalidClass() {
     var serverResponse = document.getElementById("classadded");
-    serverResponse.innerHTML = "Invalid Classname!";
-    await sleep(2000);
+    //serverResponse.innerHTML = "Invalid Classname!";
+    alert("Invalid Classname!");
     location.reload();
 }
 

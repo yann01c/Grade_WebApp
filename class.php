@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="footer">
-            <div class="copyright">All Rights Reserved - © SPIE ICS</div>
+            <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
     <script src="js/zoom.js"></script>
