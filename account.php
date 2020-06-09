@@ -109,11 +109,11 @@
                     </div>
                     <div>
                         <a href="#" id="a-float">Forgot Password?</a>
-                    </div>
-                    <div>
-                        <a href="register.php">Sign Up</a>
-                    </div>
-                    <p class="input-text"><input id="remember" type="checkbox" name="remember" value="Remember">Remember me</p>
+                    </div>';
+                    //echo '<div>
+                      //  <a href="register.php">Sign Up</a>
+                    //</div>';
+                    echo '<p class="input-text"><input id="remember" type="checkbox" name="remember" value="Remember">Remember me</p>
                     <button name="login" type="submit" value="Login">Login</button>
                     </form>';
                 }

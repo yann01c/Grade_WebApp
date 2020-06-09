@@ -30,7 +30,7 @@
                         <select onchange='submit()' name='user-preview' class='user-dropdown'>
                             <option value='-'><?php include "overview/select_username.php"; ?></option>
                             <?php if (isset($_SESSION['userID'])) {
-                                    if ($_SESSION['userGRPID'] == 3) {
+                                    if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
                                         include "overview/select_users.php";
                                     } else {
                                         header("Location: classes.php?error=noperm");

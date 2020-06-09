@@ -313,9 +313,9 @@ label {
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.1);
     font-family: 'Iceland', cursive;
-    box-shadow: 0px 3px #BF0413;
-    -webkit-box-shadow: 0px 3px #BF0413;
-    -moz-box-shadow: 0px 3px #BF0413;
+    box-shadow: 0px 5px #BF0413;
+    -webkit-box-shadow: 0px 5px #BF0413;
+    -moz-box-shadow: 0px 5px #BF0413;
     border: none;
     color: white;
     padding: 8px;
@@ -355,16 +355,17 @@ label {
 #classes #user-bb {
     align-items: center;
     text-align: center;
-    padding: 8px;
     margin-left: 10px;
-    box-shadow: 0px 3px green;
-    -webkit-box-shadow: 0px 3px green;
-    -moz-box-shadow: 0px 3px green;
+    box-shadow: 0px 5px green;
+    -webkit-box-shadow: 0px 5px green;
+    -moz-box-shadow: 0px 5px green;
     margin-bottom: 0px;
 }
 @media (max-width: 550px) {
-    #classes #user-bb { margin-left: 0px; }
     #classes form { width: 50vw; }
+}
+@media (max-width: 394px) {
+    #classes #user-bb { margin-left: 0px; }
 }
 #classes #user-bb:hover {
     box-shadow: none;
@@ -455,6 +456,9 @@ label {
     position: relative;
     color: white;
     z-index: 100;
+}
+@media (max-width: 470px) {
+    #class .title {font-size: 1.1em;}
 }
 #class #between {
     margin-left: 10px;
@@ -773,5 +777,49 @@ table th {
 }
 #overview .class-btn:hover {
     background-color: black;
+}
+
+/* Privacy Terms */
+#privacy h1 {
+    text-decoration: overline;
+    font-size: 2.5em;
+}
+#privacy h2 {
+    font-size: 2em;
+}
+
+#privacy .form > div  {
+    width: 25em;
     color: white;
+}
+#privacy .form > div > div  > p {
+    color: white;
+    font-family: 'Maven Pro', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+#privacy .form {
+    height: 75vh;
+}
+#privacy .p-button {
+    margin-top: 3em;
+    width: 25em;
+}
+#privacy .p-button > a {
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4em;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 5px #0F2259;
+    transition: 200ms;
+    width: 25em;
+}
+#privacy .p-button > a:hover {
+    box-shadow: none;
+    background-color: #0F2259;
+}
+@media (max-width: 465px) {
+    #privacy .form > div > div > p {font-size: 1.0em;}
+    #privacy .form > div  {width: 20em;}
 }

@@ -42,7 +42,7 @@
                    </div>
                    <?php
                    if (isset($_SESSION['userID'])) {
-                        if ($_SESSION['userGRPID'] == 3) {
+                        if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
                             echo "<div>";
                             echo "<a class='c-add' id='user-bb' href='overview.php' name='user-bb'>User Overview</a>";
                             echo "</div>";

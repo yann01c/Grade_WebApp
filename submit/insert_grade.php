@@ -76,6 +76,12 @@ if(isset($_POST['submit'])) {
             $temp_name = $_FILES['fileToUpload']['tmp_name'][$i];
             // Target path
             $path_filename_ext[] = $target_dir.$filename[$i].".".$ext;
+            // Encrypt
+            //$fileData = file_get_contents($_FILES["fileToUpload"]["tmp_name"][$i]);
+            //$aes = new AES($fileData, $inputKey, $blockSize);
+            //$encData = $aes->encrypt();
+            //file_put_contents($path_filename_ext[$i], $encData);        
+            //echo $encData;
             // DB insert
             $dbfile[] = "upload/".$filename[$i].".".$ext;
             // Max size of files (byte)
