@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade - Register</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Grade | Privacy Terms</title>
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- IOS App Icon -->
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+
 </head>
 <body id="privacy">
     <div class="container">
@@ -14,7 +18,7 @@
             <div class="left-side">
             </div>
             <div class="right-side">
-            <img src="images/logo.png" class="logo" alt="logo"/>
+                <img src="images/logo.png" class="logo" alt="logo"/>
             </div>
         </div>
         <div class="main">
@@ -27,7 +31,7 @@
                         <h2>Cookies</h2>
                         <p>
                         We Are using Cookies on our website! The Cookies are only being used if you check the <span style="background-image:linear-gradient(transparent 20%, #0F2259 0px);">"Remember Me" Box</span> on the Login page.
-                        You're account will be remembered for <span style="background-image:linear-gradient(transparent 20%, #0F2259 0px);">7 days</span>, so you don't have to login everytime you use the Webapp. After you logout, the Cookies will be removed.
+                        Your account will be remembered for <span style="background-image:linear-gradient(transparent 20%, #0F2259 0px);">7 days</span>, so you don't have to login everytime you use the Webapp. After you logout, the Cookies will be removed.
                         </p>
                     </div>
                     <div>

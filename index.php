@@ -5,27 +5,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <title>Grade - Submit</title>
+    <title>Grade | Submit</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/png" href="images/logo.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
     <link rel="manifest" href="manifest.json">
 
-    <!-- IOS Icon (instead of manifest icon) -->
+    <!-- IOS Icon (instead of manifest icon)
     <link rel="apple-touch-icon" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/logo.png"> -->
+        
+    <!-- IOS App Icon -->
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
 
-    <!-- IOS Startup -->
+    <!-- IOS Startup SPLASH -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link href="images/splash/splash_2048x2732.png" sizes="2048x2732" rel="apple-touch-startup-image" />
-    <link href="images/splash/splash_1668x2224.png" sizes="1668x2224" rel="apple-touch-startup-image" />
-    <link href="images/splash/splash_1536x2048.png" sizes="1536x2048" rel="apple-touch-startup-image" />
-    <link href="images/splash/splash_1125x2436.png" sizes="1125x2436" rel="apple-touch-startup-image" />
-    <link href="images/splash/splash_1242x2208.png" sizes="1242x2208" rel="apple-touch-startup-image" />
-    <link href="images/splash/splash_750x1334.png" sizes="750x1334" rel="apple-touch-startup-image" />
-    <link href="images/splash/splash_640x1136.png" sizes="640x1136" rel="apple-touch-startup-image" />
+    <meta name="mobile-web-app-capable" content="yes">
 
+    <link rel="apple-touch-startup-image" href="images/splash/splash_1125x2436.png">
+
+    <!-- iPad Pro 12.9-inch -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_2048x2732.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1366px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_2732x2048.png">
+    <!-- iPad Pro 10.5-inch -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1112px) and (device-height: 834px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_1668x2224.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_2224x1668.png">
+    <!-- iPad Pro 9.7-inch, iPad Air 2, iPad Mini 4 -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_1536x2048.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_2048x1536.png">
+    <!-- iPhone X -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/splash/splash_1125x2436.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 812px) and (device-height: 375px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/splash/splash_2436x1125.png">
+    <!-- iPhone 6/6s Plus, iPhone 7/7s Plus, iPohne 8 Plus -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/splash/splash_1242x2208.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 736px) and (device-height: 414px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/splash/splash_2208x1242.png">
+    <!-- iPhone 6/6s, iPhone 7, iPhone 8 -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_750x1334.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 667px) and (device-height: 375px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_1334x750.png">
+    <!-- iPhone SE -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_640x1136.png">
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 568px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_1136x640.png">
+    
 </head>
 <body id="index">
     <div class="container">
@@ -75,7 +96,7 @@
                         <label for="s_date">Date</label><br>
                         <input type="date" name="s_date">
                     </div>
-                    <div>
+                    <div style="margin-top: 0.6em;">
                         <label for="s_weighting">Weighting</label><br>
                         <select name="s_weighting">
                             <option value="">&#8595</option>
@@ -85,7 +106,6 @@
                             <option value="0.75">75%</option>
                             <option value="1">100%</option>
                         </select>
-                        <!--<input type="number" step="0.01" name="s_weighting" placeholder="%">-->
                     </div>
                     <div>
                         <label for="s_description">Description</label><br>
@@ -98,30 +118,24 @@
             // Error Handler
             if (isset($_GET['error'])) {
                 if ($_GET['error'] == 'wrongext') {
-                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Extension Invalid!</p>";
                     $message = "Extension Invalid";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'empty') {
-                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Missing fields!</p></div>";
                     $message = "Missing fields!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'weighting') {
-                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Weighting Invalid!</p></div>";
                     $message = "Weighting Invalid!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'grade') {
-                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:red;'>Grade Invalid!</p></div>";
                     $message = "Grade Invalid!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'exist') {
-                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:blue;'>File already exists!</p></div>";
                 }
                 else if ($_GET['error'] == 'sql') {
-                    //echo "<div class='submitteddiv'><p class='submit-handler'style='color:orange;'>SQlite Error</p></div>";
                     $message = "SQlite Error!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
@@ -129,7 +143,6 @@
             // Info Handler
             if (isset($_GET['info'])) {
                 if ($_GET['info'] == 'success') {
-                    //echo "<div class='submitteddiv'><p class='submit-handler' style='color:lightgreen;'>Successfully Submitted Grade!</p></div>";
                     $message = "Successfully submitted Grade!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }

@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade - Overview</title>
+    <title>Grade | Overview</title>
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- IOS App Icon -->
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+
 </head>
 <body id="overview">
     <div class="container">
@@ -47,6 +52,10 @@
             <div class="form">
                 <div>
                     <?php include "overview/select_classes_bb.php"; ?>
+
+                </div>
+                <div class="bck-btn" style="margin-top:2em;">
+                    <a href="classes.php">Back</a>
                 </div>
             </div>
         </div>

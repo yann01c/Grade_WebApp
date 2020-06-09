@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade - Register</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Grade | Register</title>
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
     <link rel="stylesheet" href="css/account.css">
+
+    <!-- IOS App Icon -->
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+
 </head>
 <body id="register">
     <div class="container">
@@ -63,28 +67,36 @@
             <?php 
                 if(isset($_GET['error'])) {
                     if($_GET['error'] == "emptyfields") {
-                        echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Missing fields!</p></div>";
+                        $message = "Empty fields!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                     }
                     else if ($_GET['error'] == "invalidgroup") {
-                        echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Select a group!</p></div>";
+                        $message = "Select a Group!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                     }
                     else if ($_GET['error'] == "invalidmailusername") {
-                        echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Select a valid E-Mail and Username!</p></div>";
+                        $message = "Invalid Username!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                     }
                     else if ($_GET['error'] == "invalidmail") {
-                        echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Select a valid E-Mail!</p></div>";
+                        $message = "Invalid Mail!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                     }
                     else if ($_GET['error'] == "invalidusername") {
-                        echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Select a valid Username! (a-z | A-Z | 0-9)</p></div>";
+                        $message = "Invalid Username!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                     }
                     else if ($_GET['error'] == "passwordcheck") {
-                        echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Passwords do not match!</p></div>";
+                        $message = "Passwords not Matching!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                     }
                     else if ($_GET['error'] == "mailtakens") {
-                        echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>E-Mail already taken!</p></div>";
+                        $message = "Mail already taken!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                     }
                     else if ($_GET['error'] == "usertaken") {
-                        echo "<div class='submitteddiv'><p class='error-handler'style='color:red;'>Username already taken!</p></div>";
+                        $message = "Username already taken!";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
                     }
                 }
             ?>

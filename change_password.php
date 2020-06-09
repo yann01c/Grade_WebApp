@@ -4,10 +4,14 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade - Change PW</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Grade | Change PW</title>
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
     <link rel="stylesheet" href="css/account.css">
     <link rel="manifest" href="manifest.json">
+    
+    <!-- IOS App Icon -->
+    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+
 </head>
 <body id="change">
     <div style="position:absolute;top:5em;width:100%;display:flex;justify-content:center;">
