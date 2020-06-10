@@ -189,6 +189,7 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
+    <button class="add-button">Add to home screen</button>
     <script src="js/a2hs/addtohomescreen.js"></script>
     <script>addToHomescreen();</script>
     <script src="js/a2hs/register.js"></script>
@@ -214,6 +215,5 @@
     }
     });
     </script>
-    <button class="add-button">Add to home screen</button>
 </body>
 </html>
