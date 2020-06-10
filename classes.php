@@ -6,11 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade | Classes</title>
-    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+    <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/main.css">
 
+    <link rel="manifest" href="manifest.json">
+
     <!-- IOS App Icon -->
-    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/iphone/icon_iphone_black.png">
 
 </head>
 <body id="classes">

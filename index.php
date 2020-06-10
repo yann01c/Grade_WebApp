@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>Grade | Submit</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+    <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
+    
     <link rel="manifest" href="manifest.json">
 
     <!-- IOS Icon (instead of manifest icon)
@@ -17,7 +18,7 @@
     <link rel="apple-touch-icon" sizes="167x167" href="images/logo.png"> -->
         
     <!-- IOS App Icon -->
-    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/iphone/icon_iphone_black.png">
 
     <!-- IOS Startup SPLASH -->
     <meta name="apple-mobile-web-app-capable" content="yes">

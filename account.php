@@ -6,18 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade | Account</title>
-    <link rel="icon" type="image/png" href="images/icons/icon_iphone_orange.png">
+    <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/account.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
     <link rel="manifest" href="manifest.json">
 
-    <!-- IOS Icon (instead of manifest icon) 
-    <link rel="apple-touch-icon" href="images/icons/icon_iphone_57x57.png">-->
-    <!-- IPHONE -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon_iphone_orange.png">
-    <!-- IPAD 
-    <link rel="apple-touch-icon" sizes="72x72" href="images/logo.png">-->
+    <!-- IOS Icon (instead of manifest icon)
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/logo.png"> -->
+        
+    <!-- IOS App Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/iphone/icon_iphone_black.png">
 
     <!-- IOS Startup SPLASH -->
     <meta name="apple-mobile-web-app-capable" content="yes" />

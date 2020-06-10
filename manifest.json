@@ -3,8 +3,8 @@
   "description": "SPIE ICS Apprentice Grade App",
   "display": "fullscreen",
   "icons": [{
-    "src": "images/icons/icon_iphone_orange.png",
-    "sizes": "180x180",
+    "src": "images/icons/android/icon_android_black.png",
+    "sizes": "360x360",
     "type": "image/png"
   }],
   "name": "Grade WebApp",

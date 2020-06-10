@@ -5,8 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade - <?php include 'class/select_class.php'; ?></title>
-    <link rel="icon" type="image/png" href="images/logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/main.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- IOS App Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/iphone/icon_iphone_black.png">
+
 </head>
 <body id="class">
     <div class="container">
