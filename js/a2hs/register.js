@@ -2,7 +2,7 @@
 
 if('serviceWorker' in navigator) {
     navigator.serviceWorker
-             .register('js/a2hs/sw.js')
+             .register('service-worker.js')
              .then(function() { console.log('Service Worker Registered'); });
   }
 
