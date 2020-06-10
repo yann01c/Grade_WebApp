@@ -151,7 +151,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
             <caption sytle='color:white;'></caption>
             <thead>
             <tr>
-                <th scope='col' style='color:black;'>Grade</th>
+                <th scope='col'>Grade</th>
                 <th scope='col'>Date</th>
                 <th scope='col'>Weighting</th>
                 <th scope='col'>Description</th>

@@ -2,9 +2,25 @@
   "background_color": "black",
   "description": "SPIE ICS Apprentice Grade App",
   "display": "fullscreen",
-  "icons": [{
+  "icons": [
+    {
     "src": "images/icons/android/icon_android_black.png",
-    "sizes": "360x360",
+    "sizes": "48x48",
+    "type": "image/png"
+  },
+  {
+    "src": "images/icons/android/icon_android_black.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  },
+  {
+    "src": "images/icons/android/icon_android_black.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  },
+  {
+    "src": "images/icons/android/icon_android_black.png",
+    "sizes": "192x192",
     "type": "image/png"
   }],
   "name": "Grade WebApp",

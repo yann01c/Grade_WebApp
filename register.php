@@ -49,7 +49,7 @@
 
                     $gdisplay = $row['group'];
 
-                    if (empty($group)) {
+                    if (empty($group) || $group == "-") {
                         $gdisplay = "&#8595";
                     }
                 } ?>

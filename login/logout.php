@@ -5,5 +5,5 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['identifier'])) {
     session_start();
     session_unset();
     session_destroy();
-    header("Location: ../account.php");
+    header("Location: ../account.php?info=logout");
 }
