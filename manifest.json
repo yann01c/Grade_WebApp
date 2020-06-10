@@ -2,6 +2,11 @@
   "background_color": "black",
   "description": "SPIE ICS Apprentice Grade App",
   "display": "fullscreen",
+  "icons": [{
+    "src": "images/icons/icon_iphone_orange.png",
+    "sizes": "180x180",
+    "type": "image/png"
+  }],
   "name": "Grade WebApp",
   "short_name": "SPIE Grades",
   "start_url": "index.php"

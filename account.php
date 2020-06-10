@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade | Account</title>
-    <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
+    <link rel="icon" type="image/png" href="images/icons/icon_iphone_orange.png">
     <link rel="stylesheet" href="css/account.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
@@ -15,7 +15,7 @@
     <!-- IOS Icon (instead of manifest icon) 
     <link rel="apple-touch-icon" href="images/icons/icon_iphone_57x57.png">-->
     <!-- IPHONE -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon_180x180_dynamic.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon_iphone_orange.png">
     <!-- IPAD 
     <link rel="apple-touch-icon" sizes="72x72" href="images/logo.png">-->
 
@@ -83,6 +83,11 @@
             }
             ?>
             <div class="form">
+            <?php if (isset($_GET['uid']) && !empty($_GET['uid'])) {
+                        $uidvalue = $_GET['uid'];
+                    } else {
+                        $uidvalue = "";
+            } ?>
             <?php
                 if (isset($_SESSION['userID'])) {
                     $uid = $_SESSION['userUID'];
@@ -115,15 +120,15 @@
                     echo '<form action="login/check_login.php" method="post">
                     <div>
                         <label for="a-username">Username</label><br>
-                        <input type="text" step="0.1" name="a-username" value="">
+                        <input type="text" step="0.1" name="a-username"'; echo "value='$uidvalue'>
                     </div>
                     <div>
-                        <label for="a-password">Password</label><br>
-                        <input type="password" name="a-password" value="">
+                        <label for='a-password'>Password</label><br>
+                        <input type='password' name='a-password' value=''>
                     </div>
                     <div>
-                        <a href="#" id="a-float">Forgot Password?</a>
-                    </div>';
+                        <a href='#' id='a-float'>Forgot Password?</a>
+                    </div>";
                     //echo '<div>
                       //  <a href="register.php">Sign Up</a>
                     //</div>';

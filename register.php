@@ -33,13 +33,31 @@
         <div class="main">
             <div class="form">
                 <form action="login/insert_register.php" method="post">
+                <?php if (isset($_GET['r-uid']) || isset($_GET['r-email']) || isset($_GET['r-group'])) {
+                    $uid = $_GET['r-uid'];
+                    $email = $_GET['r-email'];
+                    $group = $_GET['r-group'];
+
+                    $db = new SQLite3('sqlite/webapp.db');
+                    
+                    $sql = $db->prepare("SELECT * FROM 'group' WHERE group_id = :grpid");
+                    $sql->bindValue(':grpid',$group);
+                    $result = $sql->execute();
+                    $row = $result->fetchArray();
+
+                    $gdisplay = $row['group'];
+
+                    if (empty($group)) {
+                        $gdisplay = "&#8595";
+                    }
+                } ?>
                     <div>
                         <label for="r-uid">Username</label><br>
-                        <input type="text" name="r-uid">
+                        <input value="<?php echo $uid; ?>" type="text" name="r-uid">
                     </div>
                     <div>
                         <label for="r-email">E-Mail</label><br>
-                        <input type="email" name="r-email">
+                        <input value="<?php echo $email; ?>" type="email" name="r-email">
                     </div>
                     <div>
                         <label for="r-pwd">Password</label><br>
@@ -52,7 +70,7 @@
                     <div>
                         <label for="r-group">Group</label><br>
                         <select name="r-group" id="r-group">
-                            <option value="-">&#8595</option>
+                            <option value="<?php echo $group; ?>"><?php echo $gdisplay; ?></option>
                             <?php include 'group/select_group.php'; ?>
                         </select>
                     </div>

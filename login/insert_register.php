@@ -11,7 +11,7 @@ if(isset($_POST['register'])) {
 
     // Check if any variable is empty
     if (empty($username) || empty($email) || empty($passwd) || empty($rpasswd)) {
-        header("Location: ../register.php?error=emptyfields&r-uid=".$username."&r-email=".$email);
+        header("Location: ../register.php?error=emptyfields&r-uid=".$username."&r-email=".$email."&r-group=".$group);
         exit();
     }
 
@@ -36,12 +36,13 @@ if(isset($_POST['register'])) {
         header("Location: ../register.php?error=passwordcheck&r-uid=".$username."&r-email=".$email);
         exit();
     }
-
+    
     // Check if group has been selected
     else if ($group == "-") {
         header("Location: ../register.php?error=invalidgroup");
         exit();
     }
+
 
     // Check if mail exists
     $mail = $db->prepare("SELECT email FROM login WHERE email=:mail");

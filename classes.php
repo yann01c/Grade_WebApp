@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include "login/not_logged.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,16 +29,12 @@
             </div>
             <div class="right-side">
             <img src="images/logo.png" class="logo" alt="logo"/>
-            <?php 
-                if (isset($_SESSION['userID'])) {
-                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
-                } else {
-                    // Redirect to login page if no active session
-		            header("Location: account.php");
-                }
-            ?>
             </div>
         </div>
+        <?php if (isset($_SESSION['userID'])) {
+                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
+                }
+                ?>
         <div class="main">
             <div class="form">
                 <div class="class-center">

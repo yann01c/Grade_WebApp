@@ -17,8 +17,20 @@ if(isset($_POST['submit'])) {
     }
 
     // Check for missing fields
-    if (empty($grade) || empty($date) || empty($weighting) || empty($class)) {
-        header("Location: ../index.php?error=empty");
+    if (empty($grade)) {
+        header("Location: ../index.php?error=empty&d=$date&w=$weighting&c=$class");
+        exit();
+    }
+    else if (empty($date)) {
+        header("Location: ../index.php?error=empty&g=$grade&w=$weighting&c=$class");
+        exit();
+    }
+    else if (empty($weighting)) {
+        header("Location: ../index.php?error=empty&g=$grade&d=$date&c=$class");
+        exit();
+    }
+    else if (empty($class)) {
+        header("Location: ../index.php?error=empty&g=$grade&d=$date&w=$weighting");
         exit();
     }
 
@@ -30,7 +42,7 @@ if(isset($_POST['submit'])) {
 
     // Check if grade is valid
     else if ($grade > 6.0 || $grade < 0) {
-        header("Location: ../index.php?error=grade");
+        header("Location: ../index.php?error=grade?d=$date?w=$weighting?c=$class");
         exit();
     }
 

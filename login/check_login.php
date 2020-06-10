@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
 
                 // Password does not match
                 if ($pwdCheck == false) {
-                    header("Location: ../account.php?error=wrongpassword");
+                    header("Location: ../account.php?error=wrongpassword&uid=$username");
                     exit();
                 }
 

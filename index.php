@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include "classes/db_classes.php"; ?>
+<?php include "login/not_logged.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +20,7 @@
     <link rel="icon" type="image/png" href="images/icons/icon_180x180_dynamic.png">
 
     <!-- IOS Startup SPLASH -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 
     <link rel="apple-touch-startup-image" href="images/splash/splash_1125x2436.png">
@@ -46,7 +46,6 @@
     <!-- iPhone SE -->
     <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_640x1136.png">
     <link rel="apple-touch-startup-image" media="screen and (device-width: 568px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_1136x640.png">
-    
 </head>
 <body id="index">
     <div class="container">
@@ -64,15 +63,11 @@
             </div>
             <div class="right-side">
                 <a href="secret.php"><img src="images/logo.png" class="logo" alt="logo"/></a>
-            <?php
-                if (isset($_SESSION['userID'])) {
-                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
-                } else {
-                    // Redirect to login page if no active session
-                    header("Location: account.php");
-                }
-            ?>
             </div>
+            <?php if (isset($_SESSION['userID'])) {
+                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
+                }
+                ?>
         </div>
         <div class="main">
             <div class="form">
@@ -84,25 +79,49 @@
                     <div class="float">
                         <label for="s_class">Class</label><br>
                         <select id="s-class" name="s_class">
-                            <option value="">&#8595</option>
+                        <?php if (isset($_GET['c']) && !empty($_GET['c'])) {
+                                $cvalue = $_GET['c'];
+                             } else {
+                                 $cvalue = "&#8595";
+                             } ?>
+                            <option value="<?php echo $cvalue; ?>"><?php echo $cvalue; ?></option>
                             <?php include 'submit/select_s_classes.php';?>
                         </select>
                     </div>
                     <div>
+                    <?php if (isset($_GET['g']) && !empty($_GET['g'])) {
+                            $gvalue = $_GET['g'];
+                        } else {
+                            $gvalue = "";
+                    } ?>
                         <label for="s_grade">Grade</label><br>
-                        <input type="number" step="0.1" name="s_grade">
+                        <input value="<?php echo $gvalue; ?>" type="number" step="0.1" name="s_grade">
                     </div>
                     <div class="float">
+                    <?php if (isset($_GET['d']) && !empty($_GET['d'])) {
+                            $dvalue = $_GET['d'];
+                        } else {
+                            $dvalue = "";
+                    } ?>
                         <label for="s_date">Date</label><br>
-                        <input type="date" name="s_date">
+                        <input value="<?php echo $dvalue; ?>" type="date" name="s_date">
                     </div>
                     <div style="margin-top: 0.6em;">
                         <label for="s_weighting">Weighting</label><br>
                         <select name="s_weighting">
-                            <option value="">&#8595</option>
+                        <?php if (isset($_GET['w']) && !empty($_GET['w'])) {
+                                $wvalue = $_GET['w'];
+                                $wdisplay = ($_GET['w'] * 100)."%";
+                             } else {
+                                 $wvalue = "";
+                                 $wdisplay = "&#8595";
+                             } ?>
+                            <option value="<?php echo $wvalue; ?>"><?php echo $wdisplay; ?></option>
                             <option value="0.0">0%</option>
                             <option value="0.25">25%</option>
+                            <option value="0.33">33%</option>
                             <option value="0.5">50%</option>
+                            <option value="0.66">66%</option>
                             <option value="0.75">75%</option>
                             <option value="1">100%</option>
                         </select>
