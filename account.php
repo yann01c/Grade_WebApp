@@ -9,12 +9,12 @@
     <title>Grade | Account</title>
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/account.css">
-    <link rel="stylesheet" href="css/addtohomescreen.css">
+    <!--<link rel="stylesheet" href="css/addtohomescreen.css">-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
     <link rel="manifest" href="manifest.json">
 
-    <!-- IOS App Icons (instead of manifest icon) -->
+    <!-- IOS App Icons (instead of manifest icon) --
     <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/iphone/generated/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/iphone/generated/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/iphone/generated/apple-icon-72x72.png">
@@ -23,10 +23,10 @@
     <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/iphone/generated/apple-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/iphone/generated/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/iphone/generated/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/iphone/generated/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/iphone/generated/apple-icon-180x180.png">-->
         
-    <!-- IOS App Icon --
-    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/iphone/icon_iphone_black.png">-->
+    <!-- IOS App Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/iphone/icon_iphone_black.png">
 
     <!-- IOS Startup SPLASH -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -189,8 +189,9 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
-    <script src="js/addtohomescreen.js"></script>
-    <script>addToHomescreen();</script>
+    <!--<script src="js/a2hs/addtohomescreen.js"></script>
+    <script>addToHomescreen();</script>-->
+    <script src="js/a2hs/register.js"></script>
     <script src="js/install.js"></script>
     <script src="js/change.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
@@ -213,5 +214,6 @@
     }
     });
     </script>
+    <button class="add-button">Add to home screen</button>
 </body>
 </html>
