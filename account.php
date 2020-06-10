@@ -9,7 +9,7 @@
     <title>Grade | Account</title>
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/account.css">
-    <!--<link rel="stylesheet" href="css/addtohomescreen.css">-->
+    <link rel="stylesheet" href="css/addtohomescreen.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
     <link rel="manifest" href="manifest.json">
@@ -189,8 +189,8 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
-    <!--<script src="js/a2hs/addtohomescreen.js"></script>
-    <script>addToHomescreen();</script>-->
+    <script src="js/a2hs/addtohomescreen.js"></script>
+    <script>addToHomescreen();</script>
     <script src="js/a2hs/register.js"></script>
     <script src="js/install.js"></script>
     <script src="js/change.js"></script>
@@ -214,6 +214,6 @@
     }
     });
     </script>
-    <button id="add-button">Add to home screen</button>
+    <button class="add-button">Add to home screen</button>
 </body>
 </html>
