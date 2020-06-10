@@ -46,6 +46,10 @@ if(isset($_POST['submit'])) {
         exit();
     }
 
+    if (empty($description)) {
+        $description = "-";
+    }
+    
     // File array
     $filearray = array();
     $path_filename_ext = array();
