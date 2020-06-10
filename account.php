@@ -214,6 +214,6 @@
     }
     });
     </script>
-    <button class="add-button">Add to home screen</button>
+    <button id="add-button">Add to home screen</button>
 </body>
 </html>
