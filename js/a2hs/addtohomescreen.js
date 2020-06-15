@@ -44,7 +44,7 @@ ath.intl = {
 	},
 
 	de_de: {
-		ios: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, tippen Sie auf %icon und dann <strong>Zum Home-Bildschirm</strong>.',
+		ios: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, tippen Sie auf 📤 und dann <strong>Zum Home-Bildschirm</strong>.',
 		android: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, öffnen Sie das Menü und tippen dann auf <strong>Zum Startbildschirm hinzufügen</strong>. <small>Wenn Ihr Gerät eine Menütaste hat, lässt sich das Browsermenü über diese öffnen. Ansonsten tippen Sie auf %icon.</small>'
 	},
 
@@ -59,7 +59,7 @@ ath.intl = {
 	},
 
 	en_us: {
-		ios: 'To add this web app to the home screen: tap %icon and then <strong>Add to Home Screen</strong>.',
+		ios: 'To add this web app to the home screen: tap 📤 and then <strong>Add to Home Screen</strong>.',
 		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
 	},
 

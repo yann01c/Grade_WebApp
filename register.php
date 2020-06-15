@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="right-side">
-            <img src="images/logo.png" class="logo" alt="logo"/>
+                <a href="index.php"><img src="images/logo.png" class="logo" alt="logo"/></a>
             </div>
         </div>
         <div class="main">

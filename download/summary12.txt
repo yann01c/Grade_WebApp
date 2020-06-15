@@ -1,0 +1,1 @@
+ID: 1 | GRADE: 5.6 | WEIGHTING: 66% | DATE: 2020-06-24 | DESCRIPTION: 5ffafaf | CLASS: Mathematik | USER: test

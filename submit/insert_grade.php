@@ -144,11 +144,13 @@ if(isset($_POST['submit'])) {
     $db->exec('PRAGMA journal_mode = wal;');
 
     // SQL insert into table "grade"
-    $sql = $db->prepare("SELECT class_id from class WHERE class='$class'");
+    $userID = $_SESSION['userID'];
+    $sql = $db->prepare("SELECT * from class WHERE class = :iclass AND fk_user = :user");
+    $sql->bindValue(':iclass',$class);
+    $sql->bindValue(':user',$userID);
     $r = $sql->execute();
     $row = $r->fetchArray();
     $fkclass = $row['class_id'];
-    $userID = $_SESSION['userID'];
     $sqlg = $db->prepare("INSERT INTO grade (grade,date,weighting,description,fk_class,fk_user) VALUES (:grade,:date,:weighting,:des,:fkclass,:userid)");
 
     // Check if SQL statement is valid (works)

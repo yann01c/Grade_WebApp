@@ -29,7 +29,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     }
 
     // Prepare SELECT statement for table "class"
-    $sqlfk = $db->prepare("SELECT class_id FROM class WHERE class = :class");
+    $sqlfk = $db->prepare("SELECT * FROM class WHERE class = :class AND fk_user = :user");
     // If statement runs into an error
     if (!$sqlfk) {
         echo "<p style='color:orange;font-weight:bold;'>SQLite Error</p>";
@@ -38,6 +38,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
 
     // Bind & Execute
     $sqlfk->bindValue(':class',$class);
+    $sqlfk->bindValue(':user',$userID);
     $r = $sqlfk->execute();
     $rr = $r->fetchArray();
     $fkclass = $rr['class_id'];
@@ -73,10 +74,10 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $sqlfilegrade->bindValue(':file_grade',$grade_id);
         $rfg = $sqlfilegrade->execute();
 
-        $downloadpath = "download/summary$grade_id.txt";
+        $downloadpath = "download/summary$grade_id$userID.txt";
 
         if (!file_exists($downloadpath)) {
-            $myfile = fopen("download/summary$grade_id.txt", "w");
+            $myfile = fopen("download/summary$grade_id$userID.txt", "w");
             $txt = "ID: ".$grade_id." | GRADE: ".$row['grade']." | WEIGHTING: ".$wfile."%"." | DATE: ".$row['date']." | DESCRIPTION: ".$row['description']." | CLASS: ".$class." | USER: ".$_SESSION['userUID'];        
             fwrite($myfile, $txt);
             fclose($myfile);
