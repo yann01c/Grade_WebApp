@@ -189,12 +189,11 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
-    <p>Current permission status is <b id="status">unavailable</b>.</p>
-
+    <!--<p>Current permission status is <b id="status">unavailable</b>.</p>
     <p><button onclick="requestPermission()">Request permission</button></p>
     <p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
     <p><button onclick="persistentNotification()">Persistent notification</button></p>
-    <!--<button class="add-button">Add to home screen</button>
+    <button class="add-button">Add to home screen</button>
     <script src="js/a2hs/addtohomescreen.js"></script>
     <script>addToHomescreen();</script>-->
     <script src="js/a2hs/register.js"></script>
@@ -219,6 +218,35 @@
         "href": "privacy.php"
     }
     });
+    </script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+    <!-- Cloud Messaging -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-messaging.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBjPJNwievjegh9Ogc0yNoeZyDxnuZLXDE",
+        authDomain: "grade-4e3c5.firebaseapp.com",
+        databaseURL: "https://grade-4e3c5.firebaseio.com",
+        projectId: "grade-4e3c5",
+        storageBucket: "grade-4e3c5.appspot.com",
+        messagingSenderId: "309645648164",
+        appId: "1:309645648164:web:f550d583abefc6dc4dd3b1",
+        measurementId: "G-JFMQMKLW0R"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
     </script>
 </body>
 </html>
