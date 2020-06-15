@@ -74,10 +74,10 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $sqlfilegrade->bindValue(':file_grade',$grade_id);
         $rfg = $sqlfilegrade->execute();
 
-        $downloadpath = "download/summary$grade_id$userID.txt";
+        $downloadpath = "download/summary$grade_id$userID.csv";
 
         if (!file_exists($downloadpath)) {
-            $myfile = fopen("download/summary$grade_id$userID.txt", "w");
+            $myfile = fopen("download/summary$grade_id$userID.csv", "w");
             $txt = "ID: ".$grade_id." | GRADE: ".$row['grade']." | WEIGHTING: ".$wfile."%"." | DATE: ".$row['date']." | DESCRIPTION: ".$row['description']." | CLASS: ".$class." | USER: ".$_SESSION['userUID'];        
             fwrite($myfile, $txt);
             fclose($myfile);

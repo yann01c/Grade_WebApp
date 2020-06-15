@@ -25,5 +25,6 @@
   }],
   "name": "Grade WebApp",
   "short_name": "SPIE Grades",
-  "start_url": "index.php"
+  "start_url": "index.php",
+  "gcm_sender_id": "309645648164"
 }
