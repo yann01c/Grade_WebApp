@@ -1,2 +1,0 @@
-ID: 4 | GRADE: 4.5 | WEIGHTING: 100% | DATE: 2020-06-24 | DESCRIPTION: auehaueaue
- | CLASS: Mathematik | USER: test
