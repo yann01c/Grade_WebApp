@@ -6,12 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $db = new SQLite3('../sqlite/webapp.db');
         
         $userID = $_SESSION['userID'];
-        $groupID = $_SESSION['userGRPID'];
 
-        $check = $db->prepare("SELECT class FROM class WHERE class = :class AND fk_user = :userid AND fk_group = :fkg");
+        $check = $db->prepare("SELECT class FROM class WHERE class = :class AND fk_user = :userid");
         $check->bindValue(':class',$class);
         $check->bindValue(':userid',$userID);
-        $check->bindValue(':fkg',$groupID);
         $rcheck = $check->execute();
         $acheck = $rcheck->fetchArray();
         if ($acheck['class'] == $class) {
@@ -21,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $txt = "Class added: ".$class;
             echo $txt;
-            $db->exec("INSERT INTO class (class,fk_user,fk_group) VALUES ('$class','$userID','$groupID')");
+            $db->exec("INSERT INTO class (class,fk_user) VALUES ('$class','$userID')");
         }
     }
         

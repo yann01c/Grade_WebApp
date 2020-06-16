@@ -34,12 +34,6 @@ if(isset($_POST['submit'])) {
         exit();
     }
 
-    // Check if weighting is valid
-    //else if ($weighting > 2.0 || $weighting < 0) {
-    //    header("Location: ../index.php?error=weighting");
-    //    exit();
-    //}
-
     // Check if grade is valid
     else if ($grade > 6.0 || $grade < 0) {
         header("Location: ../index.php?error=grade?d=$date?w=$weighting?c=$class");
@@ -56,7 +50,7 @@ if(isset($_POST['submit'])) {
     // Target directory var
     $target_dir = "../upload/";
     // Allowed extensions array
-    $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG");
+    $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png");
 
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
@@ -188,7 +182,7 @@ if(isset($_POST['submit'])) {
         //}
 
         // Success message
-        header("Location: ../index.php?info=success");
+        header("Location: ../index.php?info=success&grade=$grade&class=$class");
         exit();
     }
 }

@@ -1,5 +1,7 @@
 <?php session_start(); ?>
 <?php include "login/not_logged.php";?>
+<?php include "classes/db_classes.php";?>
+<?php include "submit/db_grade.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,7 +165,7 @@
             // Info Handler
             if (isset($_GET['info'])) {
                 if ($_GET['info'] == 'success') {
-                    $message = "Successfully submitted Grade!";
+                    $message = "Grade ".$_GET['grade']." - Successfully submitted to ".$_GET['class']."!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
             }

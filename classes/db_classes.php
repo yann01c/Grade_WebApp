@@ -4,8 +4,5 @@
         class_id INTEGER PRIMARY KEY,
         class varchar(50) NOT NULL,
         fk_user INTEGER,
-        fk_group INTEGER,
         FOREIGN KEY (fk_user)
-            REFERENCES login (user_id),
-        FOREIGN KEY (fk_group)
-            REFERENCES "group" (group_id))');
+            REFERENCES login (user_id))');

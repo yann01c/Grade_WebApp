@@ -11,15 +11,13 @@
     $sql->bindValue(':userid',$userID);
     $r = $sql->execute();
     $fk = $r->fetchArray();
-    $fkgroup = $fk['fk_group'];
 
     // Get all Classes with group_id = $fkgroup
-    $sql2 = $db->prepare("SELECT * FROM class WHERE fk_group = :fkg AND fk_user = :userid");
+    $sql2 = $db->prepare("SELECT * FROM class WHERE fk_user = :userid");
     if (!$sql2) {
         echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 2</p>";
         exit();
     }
-    $sql2->bindValue(':fkg',$fkgroup);
     $sql2->bindValue(':userid',$userID);
     $result = $sql2->execute();
 
