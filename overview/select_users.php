@@ -1,7 +1,7 @@
 <?php
     $db = new SQLite3('sqlite/webapp.db');
 
-    $sql = $db->prepare("SELECT * FROM login WHERE fk_group != 3");
+    $sql = $db->prepare("SELECT * FROM login WHERE fk_group != 3 OR fk_group != 4");
     $result = $sql->execute();
 
     while($row = $result->fetchArray(SQLITE3_ASSOC)) {
