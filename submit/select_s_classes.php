@@ -1,4 +1,8 @@
 <?php    
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+
     $db = new SQLite3('sqlite/webapp.db');
 
     // Get fk_group ID
