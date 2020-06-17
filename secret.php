@@ -24,6 +24,7 @@
     <div id="secret_cont">
         <div id="secret_main">
         <form action="login/change_pw.php" method="POST">
+            <?php include "secret/images.php"; ?>
             <br><a id="change-bck" href="index.php">Back</a>
         </form>
         </div>

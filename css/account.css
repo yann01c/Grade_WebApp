@@ -509,7 +509,7 @@ span {
 #secret #secret_cont {
     height: 100vh;
     min-height: 100%;
-    background-color: #0F2259;
+    background-color: black;
     /*background-image: url("../images/wp_blur.png");
     background-size: cover;
     background-repeat: no-repeat;*/
@@ -520,7 +520,7 @@ span {
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: #0F2259;
+    background-color: black;
 }
 .add-button {
     position: absolute;
