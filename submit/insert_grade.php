@@ -44,6 +44,14 @@ if(isset($_POST['submit'])) {
         $description = "-";
     }
     
+    $tfile = $_FILES['fileToUpload']['name'];
+    $tpath = pathinfo($tfile);
+    $text = $tpath['extension'];
+    echo "T-EXTENSION: ".$text;
+    echo "T-NAME: ".$_FILES['fileToUpload']['name'];
+    echo "T-TMPNAME: ".$_FILES['fileToUpload']['tmp_name'];
+    echo "T-TYPE: ".$_FILES['fileToUpload']['type'];
+
     // File array
     $filearray = array();
     $path_filename_ext = array();
@@ -59,10 +67,6 @@ if(isset($_POST['submit'])) {
             $db->busyTimeout(5000);
             $db->exec('PRAGMA journal_mode = wal;');
             $dbfile = "No Image!";
-            $tfile = $_FILES['fileToUpload']['name'];
-            $tpath = pathinfo($tfile);
-            $text = $tpath['extension'];
-            echo "T-EXTENSION: ".$text;
             echo $dbfile;
             $sqlfile2 = $db->prepare("INSERT INTO file (filename) VALUES (:files)");
             $sqlfile2->bindValue(':files', $dbfile);
