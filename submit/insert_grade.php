@@ -64,6 +64,7 @@ if(isset($_POST['submit'])) {
             $sqlfile2->bindValue(':files', $dbfile);
             $finish2 = $sqlfile2->execute();
             $db->close();
+            echo "NO IMAGE";
             break;
         } else {
             $db = new SQLite3('../sqlite/webapp.db');
@@ -82,6 +83,7 @@ if(isset($_POST['submit'])) {
             echo "<h1>".$filename[$i]."</h1>";
             // File extension
             $ext = $path['extension'];
+            echo "EXTENSION: ".$ext;
             // Temp path
             $temp_name = $_FILES['fileToUpload']['tmp_name'][$i];
             // Target path
@@ -182,7 +184,8 @@ if(isset($_POST['submit'])) {
         //}
 
         // Success message
-        header("Location: ../index.php?info=success&grade=$grade&class=$class");
-        exit();
+        //header("Location: ../index.php?info=success&grade=$grade&class=$class");
+        //exit();
+        echo "finished";
     }
 }
