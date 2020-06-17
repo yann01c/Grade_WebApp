@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
     // Target directory var
     $target_dir = "../upload/";
     // Allowed extensions array
-    $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png");
+    $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "heic");
 
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
