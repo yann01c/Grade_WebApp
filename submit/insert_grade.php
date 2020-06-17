@@ -190,8 +190,8 @@ if(isset($_POST['submit'])) {
         }
 
         // Success message
-        //header("Location: ../index.php?info=success&grade=$grade&class=$class");
-        //exit();
+        header("Location: ../index.php?info=success&grade=$grade&class=$class");
+        exit();
         echo "finished";
     }
 }
