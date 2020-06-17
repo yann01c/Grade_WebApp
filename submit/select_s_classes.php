@@ -1,6 +1,4 @@
-<?php
-    session_start();
-    
+<?php    
     $db = new SQLite3('sqlite/webapp.db');
 
     // Get fk_group ID
