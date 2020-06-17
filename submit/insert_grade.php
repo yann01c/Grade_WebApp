@@ -55,9 +55,31 @@ if(isset($_POST['submit'])) {
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
         if(!is_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i])) {
+
+            switch($HTTP_POST_FILES['fileToUpload']['error']){
+                case 0: //no error; possible file attack!
+                  echo "There was a problem with your upload.";
+                  break;
+                case 1: //uploaded file exceeds the upload_max_filesize directive in php.ini
+                  echo "The file you are trying to upload is too big.";
+                  break;
+                case 2: //uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the html form
+                  echo "The file you are trying to upload is too big.";
+                  break;
+                case 3: //uploaded file was only partially uploaded
+                  echo "The file you are trying upload was only partially uploaded.";
+                  break;
+                case 4: //no file was uploaded
+                  echo "You must select an image for upload.";
+                  break;
+                default: //a default error, just in case!  :)
+                  echo "There was a problem with your upload.";
+                  break;
+
             $db = new SQLite3('../sqlite/webapp.db');
             $db->busyTimeout(5000);
             $db->exec('PRAGMA journal_mode = wal;');
+
             $dbfile = "No Image!";
 
             $tfile = $_FILES['fileToUpload']['name'][$i];
