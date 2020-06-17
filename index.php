@@ -143,6 +143,10 @@
                     $message = "Extension Invalid";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
+                else if ($_GET['error'] == 'toobig') {
+                    $message = "File must be smaller than 10MB!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
+                }
                 else if ($_GET['error'] == 'empty') {
                     $message = "Missing fields!";
                     echo "<script type='text/javascript'>alert('$message');</script>";

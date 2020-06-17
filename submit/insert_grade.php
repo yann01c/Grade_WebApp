@@ -45,7 +45,6 @@ if(isset($_POST['submit'])) {
     }
 
     // File array
-    $filearray = array();
     $path_filename_ext = array();
     // Target directory var
     $target_dir = "../upload/";
@@ -54,48 +53,9 @@ if(isset($_POST['submit'])) {
 
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
-        if(!is_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i])) {
+        if(is_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i])) {
 
-            switch($HTTP_POST_FILES['fileToUpload']['error']){
-                case 0: //no error; possible file attack!
-                  echo "There was a problem with your upload.";
-                  break;
-                case 1: //uploaded file exceeds the upload_max_filesize directive in php.ini
-                  echo "The file you are trying to upload is too big.";
-                  break;
-                case 2: //uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the html form
-                  echo "The file you are trying to upload is too big.";
-                  break;
-                case 3: //uploaded file was only partially uploaded
-                  echo "The file you are trying upload was only partially uploaded.";
-                  break;
-                case 4: //no file was uploaded
-                  echo "You must select an image for upload.";
-                  break;
-                default: //a default error, just in case!  :)
-                  echo "There was a problem with your upload.";
-                  break;
-
-            $db = new SQLite3('../sqlite/webapp.db');
-            $db->busyTimeout(5000);
-            $db->exec('PRAGMA journal_mode = wal;');
-
-            $dbfile = "No Image!";
-
-            $tfile = $_FILES['fileToUpload']['name'][$i];
-            $tpath = pathinfo($tfile);
-            $text = $tpath['extension'];
-            echo "T-EXTENSION: ".$text;
-            echo "T-NAME: ".$_FILES['fileToUpload']['name'][$i];
-            echo "T-TMPNAME: ".$_FILES['fileToUpload']['tmp_name'][$i];
-            echo "T-TYPE: ".$_FILES['fileToUpload']['type'][$i];
-
-            echo $dbfile;
-            $sqlfile2 = $db->prepare("INSERT INTO file (filename) VALUES (:files)");
-            $sqlfile2->bindValue(':files', $dbfile);
-            $finish2 = $sqlfile2->execute();
-            $db->close();
-        } else {
+            // File(s) uploaded
             $db = new SQLite3('../sqlite/webapp.db');
             $db->busyTimeout(5000);
             $db->exec('PRAGMA journal_mode = wal;');
@@ -117,16 +77,16 @@ if(isset($_POST['submit'])) {
             $temp_name = $_FILES['fileToUpload']['tmp_name'][$i];
             // Target path
             $path_filename_ext[] = $target_dir.$filename[$i].".".$ext;
-            // Encrypt
-            //$fileData = file_get_contents($_FILES["fileToUpload"]["tmp_name"][$i]);
-            //$aes = new AES($fileData, $inputKey, $blockSize);
-            //$encData = $aes->encrypt();
-            //file_put_contents($path_filename_ext[$i], $encData);        
-            //echo $encData;
             // DB insert
             $dbfile[] = "upload/".$filename[$i].".".$ext;
             // Max size of files (byte)
-            $maxSize = 0;
+            $maxSize = 10000000;
+
+            // Check if file is not bigger than 10 MB
+            if ($filesize >= $maxSize) {
+                header("Location: ../index.php?error=toobig");
+                exit();
+            }
 
             // Check if extension is allowed
             if (!empty($ext)) {
@@ -136,12 +96,6 @@ if(isset($_POST['submit'])) {
                     exit();
                 }
             }
-
-            // Check if file already exists
-            //if (file_exists($path_filename_ext[$i])) {
-            //    header("Location: ../index.php?error=exist");
-            //    exit();
-            //}
 
             // Move file(s) in /upload directory with the right permissions
             move_uploaded_file($temp_name,$path_filename_ext[$i]);
@@ -160,6 +114,28 @@ if(isset($_POST['submit'])) {
             $idfiles[$i] = $idfrow[0];
             $check = 1;
             echo "FILE ID's = ".$idfiles[$i];
+            $db->close();
+        } else {
+
+            // No file(s) uploaded
+            $db = new SQLite3('../sqlite/webapp.db');
+            $db->busyTimeout(5000);
+            $db->exec('PRAGMA journal_mode = wal;');
+
+            $dbfile = "No Image!";
+
+            $tfile = $_FILES['fileToUpload']['name'][$i];
+            $tpath = pathinfo($tfile);
+            $text = $tpath['extension'];
+            echo "T-EXTENSION: ".$text;
+            echo "T-NAME: ".$_FILES['fileToUpload']['name'][$i];
+            echo "T-TMPNAME: ".$_FILES['fileToUpload']['tmp_name'][$i];
+            echo "T-TYPE: ".$_FILES['fileToUpload']['type'][$i];
+
+            echo $dbfile;
+            $sqlfile2 = $db->prepare("INSERT INTO file (filename) VALUES (:files)");
+            $sqlfile2->bindValue(':files', $dbfile);
+            $finish2 = $sqlfile2->execute();
             $db->close();
         }
     }
@@ -201,16 +177,17 @@ if(isset($_POST['submit'])) {
         $check = 1;
         $i = 0;
         $a = $total_files;
-        while ($a != $i) {
-            $file_grade = $db->prepare("INSERT INTO file_grade (fk_grade,fk_file) VALUES (:gradeid,:fileid)");
-            $file_grade->bindValue(':gradeid',$idgrade);
-            $file_grade->bindValue(':fileid',$idfiles[$i]);
-            $file_result = $file_grade->execute();
-            $i++;
+
+        if ($dbfile != "No Image!") {
+            while ($a != $i) {
+                $file_grade = $db->prepare("INSERT INTO file_grade (fk_grade,fk_file) VALUES (:gradeid,:fileid)");
+                $file_grade->bindValue(':gradeid',$idgrade);
+                $file_grade->bindValue(':fileid',$idfiles[$i]);
+                $file_result = $file_grade->execute();
+                $i++;
+                echo "  FILE_GRADE  ";
+            }
         }
-        //} else {
-        //    echo "Check = FALSE";
-        //}
 
         // Success message
         //header("Location: ../index.php?info=success&grade=$grade&class=$class");
