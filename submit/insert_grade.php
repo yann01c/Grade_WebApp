@@ -43,14 +43,6 @@ if(isset($_POST['submit'])) {
     if (empty($description)) {
         $description = "-";
     }
-    
-    $tfile = $_FILES['fileToUpload']['name'];
-    $tpath = pathinfo($tfile);
-    $text = $tpath['extension'];
-    echo "T-EXTENSION: ".$text;
-    echo "T-NAME: ".$_FILES['fileToUpload']['name'];
-    echo "T-TMPNAME: ".$_FILES['fileToUpload']['tmp_name'];
-    echo "T-TYPE: ".$_FILES['fileToUpload']['type'];
 
     // File array
     $filearray = array();
@@ -67,12 +59,20 @@ if(isset($_POST['submit'])) {
             $db->busyTimeout(5000);
             $db->exec('PRAGMA journal_mode = wal;');
             $dbfile = "No Image!";
+
+            $tfile = $_FILES['fileToUpload']['name'][$i];
+            $tpath = pathinfo($tfile);
+            $text = $tpath['extension'];
+            echo "T-EXTENSION: ".$text;
+            echo "T-NAME: ".$_FILES['fileToUpload']['name'][$i];
+            echo "T-TMPNAME: ".$_FILES['fileToUpload']['tmp_name'][$i];
+            echo "T-TYPE: ".$_FILES['fileToUpload']['type'][$i];
+
             echo $dbfile;
             $sqlfile2 = $db->prepare("INSERT INTO file (filename) VALUES (:files)");
             $sqlfile2->bindValue(':files', $dbfile);
             $finish2 = $sqlfile2->execute();
             $db->close();
-            break;
         } else {
             $db = new SQLite3('../sqlite/webapp.db');
             $db->busyTimeout(5000);
