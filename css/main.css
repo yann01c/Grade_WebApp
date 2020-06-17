@@ -650,13 +650,13 @@ table th {
 #class #absolutecenter {
     display: none;
     bottom: 0;
-    height: 100%;
+    height: auto;
     left: 0;
     margin: auto;
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: auto;
     z-index: 1000;
     background-repeat: no-repeat;
     background-size: cover;

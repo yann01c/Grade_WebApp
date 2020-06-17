@@ -84,7 +84,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         }
 
         $image[] = array();
-        //$sqlimg = $db->prepare("SELECT * ")
+
         while($afg = $rfg->fetchArray(SQLITE3_ASSOC)) {
             $imgcheck = 1;
 
@@ -169,7 +169,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
                     <td class='td$count' data-label='Screenshots' style='display: none; position: absolute;'>"; if ($imgcheck == 0) {
                         echo "-";
                     } else {
-                        for ($i = 1; $i <= $a ; $i++) {
+                        for ($i = 2; $i <= $a ; $i++) {
                             echo $imgstyle;
                             echo $image[$i];
                         }
