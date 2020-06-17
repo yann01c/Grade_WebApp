@@ -63,7 +63,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     $imgcheck = 0;
     $e = 0;
 
-    // Select every grade in grade and display it in "option" element in HTML (WHILE statement returns)
+    // Select grades
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
         $grade_id = $row['grade_id'];
         $wfile = $row['weighting'] * 100;
@@ -88,23 +88,23 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         while($afg = $rfg->fetchArray(SQLITE3_ASSOC)) {
             $imgcheck = 1;
 
+            $imgid = $afg['fk_file'];
+
             $sqlfile = $db->prepare("SELECT * FROM file WHERE file_id = :fk_file");
-            $sqlfile->bindValue(':fk_file',$afg['fk_file']);
+            $sqlfile->bindValue(':fk_file',$imgid);
             $res = $sqlfile->execute();
             $filea = $res->fetchArray();
 
             $i++;
 
             // Array error fix
-            if (empty($filea['filename'])) {
+            if (empty($filea['filename']) || $filea['filename'] == "No Image!") {
                 $path = "";
             } else {
                 $path = $filea['filename'];
             }
-
-            $imgid = $afg['fk_file'];
     
-            if (empty($filea['filename'])) {
+            if (empty($filea['filename']) || $filea['filename'] == "No Image!") {
                 $imgcheck = 0;
             } else {
                 $imgstyle = "<style>#$imgid:hover { translate: scale(1.2);}</style>";
