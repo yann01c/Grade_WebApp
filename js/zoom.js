@@ -2,7 +2,7 @@
 function zoom(id) {
 
     // Input field id (upload in value)
-    inputid = "imginput"+id;
+    inputid = "path"+id;
     // Get value from input (upload/...)
     imginput = document.getElementById(inputid).value;
     // Get absolute div (container)
