@@ -5,10 +5,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $db = new SQLite3('../sqlite/webapp.db');
         
+        $new_class = preg_replace("/\s+/", "", $class);
+
+
         $userID = $_SESSION['userID'];
 
         $check = $db->prepare("SELECT class FROM class WHERE class = :class AND fk_user = :userid");
-        $check->bindValue(':class',$class);
+        $check->bindValue(':class',$new_class);
         $check->bindValue(':userid',$userID);
         $rcheck = $check->execute();
         $acheck = $rcheck->fetchArray();
@@ -17,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo $txt;
             exit();
         } else {
-            $txt = "Class added: ".$class;
+            $txt = "Class added: ".$new_class;
             echo $txt;
-            $db->exec("INSERT INTO class (class,fk_user) VALUES ('$class','$userID')");
+            $db->exec("INSERT INTO class (class,fk_user) VALUES ('$new_class','$userID')");
         }
     }
         

@@ -8,6 +8,7 @@ if(isset($_POST['submit'])) {
     $weighting = $_POST['s_weighting'];
     $description = $_POST['s_description'];
     $class = $_POST['s_class'];
+    echo "CLASS = ".$class;
 
     $check = 0;
 
@@ -190,7 +191,7 @@ if(isset($_POST['submit'])) {
         }
 
         // Success message
-        header("Location: ../index.php?info=success&grade=$grade&class=$class");
+        header("Location: ../index.php?info=success&grade=$grade&class=$new_class");
         exit();
         echo "finished";
     }
