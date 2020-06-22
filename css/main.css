@@ -677,6 +677,8 @@ table th {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    max-width: 100em;
+    max-height: 100em;
 }
 #class #close  {
     font-size: 4em;

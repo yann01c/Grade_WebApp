@@ -27,7 +27,7 @@
         <div id="secret_main">
         <form action="#" method="POST">
             <a class="secret-back" href="index.php">Back</a>
-            <div class="grid-wrapper">
+            <div class="wrapper">
                 <?php include "secret/images.php"; ?>        
             </div>
         </form>

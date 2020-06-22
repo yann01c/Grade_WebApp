@@ -512,13 +512,13 @@ span {
     background-color: black;
 }
 #secret #secret_cont {
-    height: 100vh;
+    height: 20vh;
     width: 100%;
     background-color: black;
 }
 #secret #secret_main {
-    height: 100%;
-    width: auto;
+}
+#secret form {
 }
 .secret-back {
     margin-left: 20px;
@@ -555,6 +555,8 @@ span {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    max-width: 100em;
+    max-height: 100em;
 }
 #secret #close  {
     font-size: 4em;
@@ -596,4 +598,7 @@ span {
     background-color: black;
     height: 6.5em;
     width: 100%;
+}
+#secret .wrapper {
+    height: 10em;
 }
