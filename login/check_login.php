@@ -4,7 +4,9 @@ if (isset($_POST['login'])) {
     // POST vars
     $username = $_POST['a-username'];
     $password = $_POST['a-password'];
-    $remember = $_POST['remember'];
+    if(!empty($_POST['remember'])) {
+        $remember = $_POST['remember'];
+    }
 
     // Check if fields are missing
     if (empty($username) || empty($password)) {

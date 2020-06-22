@@ -51,7 +51,6 @@
     <link rel="apple-touch-startup-image" media="screen and (device-width: 568px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_1136x640.png">
 </head>
 <body id="index">
-<a href="secret.php">Gallery</a>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">

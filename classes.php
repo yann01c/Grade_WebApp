@@ -43,6 +43,9 @@
                     <div id="c-add-cont">
                         <button onclick="newClass()" type="button" id="c-add" class="c-add">Add new Class</button>
                    </div>
+                   <div>
+                        <a class='c-add' id='g-btn' href='secret.php' name='g-btn'>Image Gallery</a>
+                   </div>
                    <?php
                    if (isset($_SESSION['userID'])) {
                         if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {

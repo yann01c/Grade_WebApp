@@ -16,12 +16,20 @@
 </head>
 <body id="secret">
     <div id="secret_cont">
+        <div style="display:flex;justify-content:center;text-align: center;">
+            <div class="header">
+                <h1>Gallery</h1>
+                <p>
+                    You can find every image you ever uploaded on this page.        
+                </p>
+            </div>
+        </div>
         <div id="secret_main">
-        <form action="login/change_pw.php" method="POST">
+        <form action="#" method="POST">
+            <a class="secret-back" href="index.php">Back</a>
             <div class="grid-wrapper">
                 <?php include "secret/images.php"; ?>        
             </div>
-            <!--<br><a id="change-bck" href="index.php">Back</a>-->
         </form>
         </div>
         <div id="absolutecenter">
@@ -32,7 +40,7 @@
             </div>
         </div>
     </div>
-    <script src="js/zoom.js"></script>
+    <script src="js/zoom_gallery.js"></script>
 </body>
 </html>
 

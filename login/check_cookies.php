@@ -6,10 +6,10 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['identifier'])) {
         if ($_GET['cookie'] == "unset") {
             setcookie("username","",time() -3600);
             setcookie("identifier","",time() -3600);
-            session_start();
+            if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}            
             session_unset();
             session_destroy();
-            header("Location: account.php?info=logout");
+            header("Location: account.php?info=logout");s
             exit();
         } else {
             header("Location: account.php");

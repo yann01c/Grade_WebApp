@@ -309,6 +309,7 @@ label {
     -moz-box-shadow: none;
 }
 #classes .c-add {
+    width: 7em;
     float: left;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.1);
@@ -352,16 +353,31 @@ label {
     text-align: center;
     width: 16em;
 } 
+#classes #g-btn {
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 5px #0F2259;
+    -webkit-box-shadow: 0px 5px #0F2259;
+    -moz-box-shadow: 0px 5px #0F2259;
+}
+#classes #g-btn:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background-color: #0F2259;
+}
 #classes #user-bb {
     align-items: center;
     text-align: center;
     box-shadow: 0px 5px green;
     -webkit-box-shadow: 0px 5px green;
     -moz-box-shadow: 0px 5px green;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 @media (max-width: 550px) {
     #classes form { width: 50vw; }
+}
+@media (max-width: 565px) {
 }
 @media (max-width: 394px) {
     #classes #user-bb { margin-left: 0px; }
