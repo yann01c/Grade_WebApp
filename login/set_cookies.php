@@ -29,10 +29,10 @@ if (isset($_GET['uid'])) {
     $group = $result->fetchArray();
 
     // Back to account with cookies set
-    header("Location: ../account.php?login=success&cookie=set");
+    header("Location: ../account.php?login=success");
     exit();
 
 } else {
-    header("Location: ../account.php");
+    header("Location: ../account.php?login=failed");
     exit();
 }

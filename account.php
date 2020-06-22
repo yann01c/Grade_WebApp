@@ -89,7 +89,7 @@
         </div>
         <div class="main">
         <?php
-            if (isset($_GET['login'])) {
+            if (isset($_GET['login']) == "success" || isset($_GET['cookie']) == "set") {
                 //echo '<div class="successdiv"><p class="successtext">Successfully logged in!</p></div>';
                 $message = "Welcome, ".$_SESSION['userUID'];
                 echo "<script type='text/javascript'>alert('$message');</script>";
