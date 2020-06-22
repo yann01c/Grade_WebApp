@@ -517,6 +517,8 @@ span {
     background-color: black;
 }
 #secret #secret_main {
+    display: flex;
+    justify-content: center;
 }
 #secret form {
 }
@@ -599,6 +601,9 @@ span {
     height: 6.5em;
     width: 100%;
 }
-#secret .wrapper {
-    height: 10em;
+#secret .wrapper > img {
+    transition: 200ms;
+}
+#secret .wrapper > img:hover {
+    transform: scale(1.1);
 }

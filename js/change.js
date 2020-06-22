@@ -16,9 +16,9 @@ function edit() {
     imail.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
     sgroup.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
     editbtn.disabled = true;
+    sgroup.disabled = true;
     iuid.disabled = false;
     imail.disabled = false;
-    sgroup.disabled = false;
 }
 async function cancel() {
     savebtn.style.visibility = 'hidden';

@@ -17,12 +17,12 @@
     $fk = $r->fetchArray();
 
     // Get all Classes with group_id = $fkgroup
-    $sql2 = $db->prepare("SELECT * FROM class WHERE fk_user = :userid");
+    $sql2 = $db->prepare("SELECT * FROM class WHERE fk_user = :user");
     if (!$sql2) {
         echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 2</p>";
         exit();
     }
-    $sql2->bindValue(':userid',$userID);
+    $sql2->bindValue(':user',$userID);
     $result = $sql2->execute();
 
     // Select every class in class with the right group id and display it in "option" element in HTML
