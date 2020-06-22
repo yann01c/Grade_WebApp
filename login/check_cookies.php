@@ -9,7 +9,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['identifier'])) {
             if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}            
             session_unset();
             session_destroy();
-            header("Location: account.php?info=logout");s
+            header("Location: account.php?info=logout");
             exit();
         } else {
             header("Location: account.php");
