@@ -29,8 +29,13 @@
                 </div>
             </div>
             <div class="right-side">
+                <a href="index.php"><img src="images/logo.png" class="logo" alt="logo"/></a>
             </div>
         </div>
+        <?php if (isset($_SESSION['userID'])) {
+                    echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';
+                }
+        ?>
         <div class="main">
                 <form action='#' method='GET' id='user-form'>
                     <div id='user-div'>
