@@ -55,7 +55,7 @@ if(isset($_POST['submit'])) {
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
         if(is_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i])) {
-
+            $userID = $_SESSION['userID'];
             // File(s) uploaded
             $db = new SQLite3('../sqlite/webapp.db');
             $db->busyTimeout(5000);
@@ -104,8 +104,9 @@ if(isset($_POST['submit'])) {
 
             $idfiles[] = array();
 
-            $sqlfile = $db->prepare("INSERT INTO file (filename) VALUES (:file)");
+            $sqlfile = $db->prepare("INSERT INTO file (filename,fk_user) VALUES (:file,:fkuser)");
             $sqlfile->bindValue(':file', $dbfile[$i]);
+            $sqlfile->bindValue(':fkuser', $userID);
             $finish = $sqlfile->execute();
 
             $sqlids = $db->prepare("SELECT MAX(file_id) FROM file");
@@ -146,7 +147,6 @@ if(isset($_POST['submit'])) {
     $db->exec('PRAGMA journal_mode = wal;');
 
     // SQL insert into table "grade"
-    $userID = $_SESSION['userID'];
     $sql = $db->prepare("SELECT * from class WHERE class = :iclass AND fk_user = :user");
     $sql->bindValue(':iclass',$class);
     $sql->bindValue(':user',$userID);
