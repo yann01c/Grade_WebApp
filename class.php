@@ -57,10 +57,19 @@
                             <?php include 'class/select_grade.php'; ?>
                     </div>
                 <div id='imgdiv' style='width:100%;position:absolute;display:flex;justify-content:center;'></div>
-                <div class="bck-btn">
-                    <a href="classes.php" style="margin-right:10px;">Back</a>
-                    <a href="index.php">Submit</a>
-                </div>
+                <?php
+                    if (isset($_POST['who']) == "bb") {
+                       echo '<div class="bck-btn">
+                        <a href="overview.php" style="margin-right:10px;">Back</a>
+                        <a href="classes.php">Classes</a>
+                        </div>';
+                    } else {
+                        echo '<div class="bck-btn">
+                        <a href="classes.php" style="margin-right:10px;">Back</a>
+                        <a href="index.php">Submit</a>
+                        </div>';
+                    }
+                ?>
             </div>
         </div>
         <div class="footer">

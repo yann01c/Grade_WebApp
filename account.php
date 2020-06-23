@@ -219,17 +219,17 @@
     });
     </script>
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
+     Add Firebase products that you want to use
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    The core Firebase JS SDK is always required and must be listed first
     <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
 
-    <!-- Cloud Messaging -->
+     Cloud Messaging
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-messaging.js"></script>
 
     <script>
@@ -246,6 +246,6 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    </script>
+    </script>-->
 </body>
 </html>
