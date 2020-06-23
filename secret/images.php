@@ -40,6 +40,6 @@ for ($f = 1; $f <= $a; $f++) {
     $irow = $iresult->fetchArray();
 
     $path = $irow['filename'];
-    echo "<img src='$path' id='$c' style='padding:0;cursor:pointer;' onclick='zoom(this.id)'>";
+    echo "<img src='$path' id='$c' style='padding:;cursor:pointer;' onclick='zoom(this.id)'>";
     echo "<input value='$path' id='path$c' style='position:absolute;display:none;'>";
 }
