@@ -30,7 +30,7 @@
             <div class="wrapper">
                 <?php include "secret/images.php"; ?>        
             </div>
-        </form>
+        <!--</form>-->
         </div>
         <div id="absolutecenter">
             <div id="close" onclick="unzoom()">
