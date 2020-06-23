@@ -1,7 +1,5 @@
 <?php session_start(); ?>
 <?php include "login/not_logged.php";?>
-<?php include "classes/db_classes.php";?>
-<?php include "submit/db_grade.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
