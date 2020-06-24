@@ -117,6 +117,7 @@ if(isset($_POST['submit'])) {
             $check = 1;
             echo "FILE ID's = ".$idfiles[$i];
             $db->close();
+            
         } else {
 
             // No file(s) uploaded
@@ -129,7 +130,7 @@ if(isset($_POST['submit'])) {
             $tfile = $_FILES['fileToUpload']['name'][$i];
             $tpath = pathinfo($tfile);
             $text = $tpath['extension'];
-            
+
             echo "################";
             echo "T-EXTENSION: ".$text;
             echo "T-NAME: ".$_FILES['fileToUpload']['name'][$i];

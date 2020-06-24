@@ -40,24 +40,23 @@
         <div class="main">
             <div class="form">
                 <div class="class-center">
-                    <div id="c-add-cont">
-                        <button onclick="newClass()" type="button" id="c-add" class="c-add">Add new Class</button>
-                   </div>
-                   <div>
-                        <a class='c-add' id='g-btn' href='secret.php' name='g-btn'>Image Gallery</a>
-                   </div>
-                   <?php
-                   if (isset($_SESSION['userID'])) {
-                        if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
-                            echo "<div>";
-                            echo "<a class='c-add' id='user-bb' href='overview.php' name='user-bb'>User Overview</a>";
-                            echo "</div>";
+                    <div class="dropdown">
+                        <button onclick="dropdown()" id="drpbtn" class="dropdown-btn">Actions</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="newClass()" type="button">Add new Class</button>
+                            <a id='g-btn' href='secret.php' name='g-btn'>Image Gallery</a>
+                        <?php
+                        if (isset($_SESSION['userID'])) {
+                            if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
+                                echo "<a id='user-bb' href='overview.php' name='user-bb'>User Overview</a>";
+                            } else {
+                            }
                         } else {
+                            header("Location: account.php");
                         }
-                    } else {
-                        header("Location: account.php");
-                   }
-                   ?>
+                        ?>
+                        </div>
+                    </div>
                    <?php
                         if (isset($_GET['user-preview'])) {
                             if ($_SESSION['userGRPID'] == 3) {
@@ -81,5 +80,6 @@
     </div>
     <script src="js/zoom.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/dropdown.js"></script>
 </body>
 </html>

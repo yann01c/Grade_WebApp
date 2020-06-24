@@ -308,30 +308,6 @@ label {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 }
-#classes .c-add {
-    width: 7em;
-    float: left;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.1);
-    font-family: 'Iceland', cursive;
-    box-shadow: 0px 5px #BF0413;
-    -webkit-box-shadow: 0px 5px #BF0413;
-    -moz-box-shadow: 0px 5px #BF0413;
-    border: none;
-    color: white;
-    padding: 8px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    font-size: 1.3em;
-    transition: all 200ms;
-}
-#classes .c-add:hover {
-    background-color: #BF0413;
-    color: white;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-}
 #classes .user-dropdown {
     background-color: rgba(255, 255, 255, 0.1);
     font-family: 'Iceland', cursive;
@@ -353,42 +329,6 @@ label {
     text-align: center;
     width: 16em;
 } 
-#classes #g-btn {
-    padding: 8px;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0px 5px #0F2259;
-    -webkit-box-shadow: 0px 5px #0F2259;
-    -moz-box-shadow: 0px 5px #0F2259;
-}
-#classes #g-btn:hover {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    background-color: #0F2259;
-}
-#classes #user-bb {
-    align-items: center;
-    text-align: center;
-    box-shadow: 0px 5px green;
-    -webkit-box-shadow: 0px 5px green;
-    -moz-box-shadow: 0px 5px green;
-    margin-bottom: 10px;
-}
-@media (max-width: 550px) {
-    #classes form { width: 50vw; }
-}
-@media (max-width: 565px) {
-}
-@media (max-width: 394px) {
-    #classes #user-bb { margin-left: 0px; }
-}
-#classes #user-bb:hover {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    background-color: green;
-}
 #classes .user-form {
     display: flex;
     justify-content: left;
@@ -852,3 +792,91 @@ table th {
     #privacy .form > div > div > p {font-size: 1.0em;}
     #privacy .form > div  {width: 20em;}
 }
+
+
+
+#classes .dropdown- {
+    color: white;
+    height: 1em;
+    content: "hey";
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+#classes .dropdown- {
+    height: 0;
+    text-decoration: none;
+    font-family: 'Iceland', cursive;
+    transition: all 300ms;
+    display: none;
+}
+#classes .dropdown-:hover .dropdown- {
+    display: block;
+    
+}
+
+
+ /* Dropdown Button */
+.dropdown-btn {
+    box-shadow: 0px 5px #0F2259;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px;
+    align-items: center;
+    font-size: 1.3em;
+    border: none;
+    cursor: pointer;
+    transition: all 200ms;
+    font-family: 'Iceland', cursive;
+}
+
+/* Dropdown button on hover & focus */
+.dropdown-btn:hover, .dropdown-btn:focus {
+    background-color: #0F2259;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-bottom: 10em;
+    display: none;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    font-family: 'Maven Pro', sans-serif;
+    color: black;
+    padding: 14px 18px;
+    font-size: 1em;
+    text-decoration: none;
+    display: block;
+    /* border-top: 1px solid #0F2259; */
+    transition: all 200ms;
+}
+.dropdown-content button {
+    cursor: pointer;
+    color: black;
+    font-family: 'Maven Pro', sans-serif;
+    text-align: start;
+    border: none;
+    font-size: 1em;
+    padding: 14px 18px;
+    text-decoration: none;
+    display: block;
+    min-width: 160px;
+    transition: all 200ms;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content button:hover {background-color: #ddd;}
