@@ -41,7 +41,7 @@
             <div class="form">
                 <div class="class-center">
                     <div class="dropdown">
-                        <button onclick="dropdown()" id="drpbtn" class="dropdown-btn">Actions <div id="arrow" class="dropdown-arrow">&#11206;</div></button>
+                        <button onclick="dropdown()" id="drpbtn" class="dropdown-btn">Actions <div id="arrow" class="dropdown-arrow">&#709;</div></button>
                         <div id="myDropdown" class="dropdown-content">
                             <button onclick="newClass()" type="button">Add new Class</button>
                             <a id='g-btn' href='secret.php' name='g-btn' style="border-top: 1px solid black;">Image Gallery</a>
