@@ -51,6 +51,7 @@ if(isset($_POST['submit'])) {
     $target_dir = "../upload/";
     // Allowed extensions array
     $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "HEIF", "heic", "HEIC");
+    error_log("TEST LOG", 3, "/var/www/grade/log/php.log");
 
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
@@ -85,8 +86,7 @@ if(isset($_POST['submit'])) {
 
             // Check if file is not bigger than 10 MB
             if ($filesize >= $maxSize) {
-                error_log("FILESIZE!!".$filesize."||".$maxSize, 1, "yannic.haas@spie.com",
-                "Subject: Foo\nFrom: yannic.haas@spie.com\n");
+                error_log("FILESIZE: ".$filesize."||".$maxSize, 3, "/var/www/grade/log/php.log");
                 header("Location: ../index.php?error=toobig");
                 exit();
             }
