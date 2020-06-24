@@ -799,14 +799,14 @@ table th {
 .dropdown-btn {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    padding: 11px;
+    padding: 8px;
     align-items: center;
     font-size: 1.4em;
     border: none;
     cursor: pointer;
     transition: all 200ms ease-in-out;
     font-family: 'Iceland', cursive;
-    border-top: 5px solid #0F2259;
+    border-top: 5px solid black;
 }
 
 /* Dropdown button on hover & focus */

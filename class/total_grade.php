@@ -34,6 +34,6 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         while ($row = $result->fetchArray()) {
                 $total += 1;
         }
-        echo "<p class='title'>Total grades: ".$total."</p>";
+        echo "<p class='title''>Total grades: <span style=''>".$total."</span></p>";
 }
 ?>
