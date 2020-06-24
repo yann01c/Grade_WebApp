@@ -58,9 +58,9 @@ if(isset($_POST['submit'])) {
     $test4 = $_FILES['fileToUpload']['type'][0];
 
     error_log("|", 3, "/var/www/grade/log/php.log");
-    error_log("Name: ".$test, 3, "/var/www/grade/log/php.log");
-    error_log("TMP Name: ".$test2, 3, "/var/www/grade/log/php.log");
-    error_log("Size: ".$test3, 3, "/var/www/grade/log/php.log");
+    error_log("Name: ".$test." ", 3, "/var/www/grade/log/php.log");
+    error_log("TMP Name: ".$test2." ", 3, "/var/www/grade/log/php.log");
+    error_log("Size: ".$test3." ", 3, "/var/www/grade/log/php.log");
     error_log("Type: ".$test4, 3, "/var/www/grade/log/php.log");
     error_log("|\n", 3, "/var/www/grade/log/php.log");
 
