@@ -44,7 +44,7 @@
                         <button onclick="dropdown()" id="drpbtn" class="dropdown-btn">Actions</button>
                         <div id="myDropdown" class="dropdown-content">
                             <button onclick="newClass()" type="button">Add new Class</button>
-                            <a id='g-btn' href='secret.php' name='g-btn'>Image Gallery</a>
+                            <a id='g-btn' href='secret.php' name='g-btn' style="border-top: 1px dotted black;">Image Gallery</a>
                         <?php
                         if (isset($_SESSION['userID'])) {
                             if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
