@@ -50,7 +50,7 @@ if(isset($_POST['submit'])) {
     // Target directory var
     $target_dir = "../upload/";
     // Allowed extensions array
-    $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "heic");
+    $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "HEIF", "heic", "HEIC");
 
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
@@ -129,10 +129,13 @@ if(isset($_POST['submit'])) {
             $tfile = $_FILES['fileToUpload']['name'][$i];
             $tpath = pathinfo($tfile);
             $text = $tpath['extension'];
+            
+            echo "################";
             echo "T-EXTENSION: ".$text;
             echo "T-NAME: ".$_FILES['fileToUpload']['name'][$i];
             echo "T-TMPNAME: ".$_FILES['fileToUpload']['tmp_name'][$i];
             echo "T-TYPE: ".$_FILES['fileToUpload']['type'][$i];
+            echo "################";
 
             echo $dbfile;
             $sqlfile2 = $db->prepare("INSERT INTO file (filename) VALUES (:files)");
@@ -142,6 +145,8 @@ if(isset($_POST['submit'])) {
         }
     }
     
+    $userID = $_SESSION['userID'];
+
     $db = new SQLite3('../sqlite/webapp.db');
     $db->busyTimeout(5000);
     $db->exec('PRAGMA journal_mode = wal;');
@@ -179,16 +184,15 @@ if(isset($_POST['submit'])) {
         $i = 0;
         $a = $total_files;
 
-        if ($dbfile != "No Image!") {
-            while ($a != $i) {
-                $file_grade = $db->prepare("INSERT INTO file_grade (fk_grade,fk_file) VALUES (:gradeid,:fileid)");
-                $file_grade->bindValue(':gradeid',$idgrade);
-                $file_grade->bindValue(':fileid',$idfiles[$i]);
-                $file_result = $file_grade->execute();
-                $i++;
-                echo "  FILE_GRADE  ";
-            }
+        while ($a != $i) {
+            $file_grade = $db->prepare("INSERT INTO file_grade (fk_grade,fk_file) VALUES (:gradeid,:fileid)");
+            $file_grade->bindValue(':gradeid',$idgrade);
+            $file_grade->bindValue(':fileid',$idfiles[$i]);
+            $file_result = $file_grade->execute();
+            $i++;
+            echo "  FILE_GRADE  ";
         }
+    
 
         // Success message
         header("Location: ../index.php?info=success&grade=$grade&class=$class");
