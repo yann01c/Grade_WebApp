@@ -52,6 +52,8 @@ if(isset($_POST['submit'])) {
     // Allowed extensions array
     $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "HEIF", "heic", "HEIC");
 
+    error_log("ACHTUNG: ".$_FILES['fileToUpload']);
+
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
         if(is_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i])) {
@@ -117,7 +119,7 @@ if(isset($_POST['submit'])) {
             $check = 1;
             echo "FILE ID's = ".$idfiles[$i];
             $db->close();
-            
+
         } else {
 
             // No file(s) uploaded

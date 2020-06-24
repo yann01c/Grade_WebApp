@@ -142,7 +142,7 @@
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'toobig') {
-                    $message = "File must be smaller than 10MB!";
+                    $message = "File(s) must be smaller than 10MB!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == 'empty') {
