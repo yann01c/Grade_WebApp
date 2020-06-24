@@ -51,7 +51,17 @@ if(isset($_POST['submit'])) {
     $target_dir = "../upload/";
     // Allowed extensions array
     $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "HEIF", "heic", "HEIC");
+
+    $test = $_FILES['fileToUpload']['name'];
+    $test2 = $_FILES['fileToUpload']['tmp_name'];
+    $test3 = $_FILES['fileToUpload']['size'];
+    $test4 = $_FILES['fileToUpload']['type'];
+
     error_log("TEST LOG", 3, "/var/www/grade/log/php.log");
+    error_log("Name: ".$test, 3, "/var/www/grade/log/php.log");
+    error_log("TMP Name: ".$test2, 3, "/var/www/grade/log/php.log");
+    error_log("Size: ".$test3, 3, "/var/www/grade/log/php.log");
+    error_log("Type: ".$test4, 3, "/var/www/grade/log/php.log");
 
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
