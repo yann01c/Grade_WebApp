@@ -604,9 +604,9 @@ span {
     transition: 200ms;
     width: 100% !important;
     height: auto !important;
+    transform: scale(0.9);
 }
 #secret .wrapper > img:hover {
-    transform: scale(0.9);
 }
 #secret .wrapper {
     /* Prevent vertical gaps */
