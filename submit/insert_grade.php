@@ -52,10 +52,10 @@ if(isset($_POST['submit'])) {
     // Allowed extensions array
     $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "HEIF", "heic", "HEIC");
 
-    $test = $_FILES['fileToUpload']['name'];
-    $test2 = $_FILES['fileToUpload']['tmp_name'];
-    $test3 = $_FILES['fileToUpload']['size'];
-    $test4 = $_FILES['fileToUpload']['type'];
+    $test = $_FILES['fileToUpload']['name'][0];
+    $test2 = $_FILES['fileToUpload']['tmp_name'][0];
+    $test3 = $_FILES['fileToUpload']['size'][0];
+    $test4 = $_FILES['fileToUpload']['type'][0];
 
     error_log("TEST LOG", 3, "/var/www/grade/log/php.log");
     error_log("Name: ".$test, 3, "/var/www/grade/log/php.log");
