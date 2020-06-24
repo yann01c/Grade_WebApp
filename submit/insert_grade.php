@@ -94,9 +94,9 @@ if(isset($_POST['submit'])) {
             // DB insert
             $dbfile[] = "upload/".$filename[$i].".".$ext;
             // Max size of files (byte)
-            $maxSize = 10000000;
+            $maxSize = 50000000;
 
-            // Check if file is not bigger than 10 MB
+            // Check if file is not bigger than 50 MB
             if ($filesize >= $maxSize) {
                 error_log("FILESIZE: ".$filesize."||".$maxSize, 3, "/var/www/grade/log/php.log");
                 header("Location: ../index.php?error=toobig");
