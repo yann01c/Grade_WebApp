@@ -52,8 +52,6 @@ if(isset($_POST['submit'])) {
     // Allowed extensions array
     $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "HEIF", "heic", "HEIC");
 
-    error_log("ACHTUNG: ".$_FILES['fileToUpload']);
-
     // For loop for multiple files
     for ($i = 0; $i < $total_files; $i++) {
         if(is_uploaded_file($_FILES['fileToUpload']['tmp_name'][$i])) {
@@ -87,6 +85,8 @@ if(isset($_POST['submit'])) {
 
             // Check if file is not bigger than 10 MB
             if ($filesize >= $maxSize) {
+                error_log("FILESIZE!!".$filesize."||".$maxSize, 1, "yannic.haas@spie.com",
+                "Subject: Foo\nFrom: yannic.haas@spie.com\n");
                 header("Location: ../index.php?error=toobig");
                 exit();
             }
@@ -164,6 +164,7 @@ if(isset($_POST['submit'])) {
     $sqlg = $db->prepare("INSERT INTO grade (grade,date,weighting,description,fk_class,fk_user) VALUES (:grade,:date,:weighting,:des,:fkclass,:userid)");
 
     // Check if SQL statement is valid (works)
+
     if (!$sql) {
         header("Location: ../index.php?error=sql");
         exit();
@@ -186,14 +187,16 @@ if(isset($_POST['submit'])) {
         $check = 1;
         $i = 0;
         $a = $total_files;
-
-        while ($a != $i) {
-            $file_grade = $db->prepare("INSERT INTO file_grade (fk_grade,fk_file) VALUES (:gradeid,:fileid)");
-            $file_grade->bindValue(':gradeid',$idgrade);
-            $file_grade->bindValue(':fileid',$idfiles[$i]);
-            $file_result = $file_grade->execute();
-            $i++;
-            echo "  FILE_GRADE  ";
+        
+        if ($dbfile != "No Image!") {
+            while ($a != $i) {
+                $file_grade = $db->prepare("INSERT INTO file_grade (fk_grade,fk_file) VALUES (:gradeid,:fileid)");
+                $file_grade->bindValue(':gradeid',$idgrade);
+                $file_grade->bindValue(':fileid',$idfiles[$i]);
+                $file_result = $file_grade->execute();
+                $i++;
+                echo "  FILE_GRADE  ";
+            }
         }
     
 
