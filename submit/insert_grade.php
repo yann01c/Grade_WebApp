@@ -135,10 +135,6 @@ if(isset($_POST['submit'])) {
 
             $dbfile = "No Image!";
 
-            $tfile = $_FILES['fileToUpload']['name'][$i];
-            $tpath = pathinfo($tfile);
-            $text = $tpath['extension'];
-
             // File debugging
 
             // echo "################";
@@ -169,7 +165,7 @@ if(isset($_POST['submit'])) {
     $r = $sql->execute();
     $row = $r->fetchArray();
     $fkclass = $row['class_id'];
-    $sqlg = $db->prepare("INSERT INTO grade (grade,date,weighting,description,timestamp,fk_class,fk_user) VALUES (:grade,:date,:weighting,:des,date('now'),:fkclass,:userid)");
+    $sqlg = $db->prepare("INSERT INTO grade (grade,date,weighting,description,timestamp,fk_class,fk_user,deleted) VALUES (:grade,:date,:weighting,:des,date('now'),:fkclass,:userid,'false')");
 
     if (!$sql) {
         header("Location: ../index.php?error=sql");

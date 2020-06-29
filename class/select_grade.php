@@ -44,7 +44,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     $fkclass = $rr['class_id'];
 
     // Prepare SELECT statement for table "grade"
-    $sql = $db->prepare("SELECT * FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
+    $sql = $db->prepare("SELECT * FROM grade WHERE fk_user = :userid AND fk_class = :fkclass AND deleted != 'true'");
     // If statement runs into an error
     if (!$sql) {
         header("Location: class.php?error=sql");

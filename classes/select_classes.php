@@ -23,7 +23,7 @@
         $class_id = $row['class_id'];
 
         // Count grades
-        $sqlt = $db->prepare("SELECT grade FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
+        $sqlt = $db->prepare("SELECT grade FROM grade WHERE fk_user = :userid AND fk_class = :fkclass AND deleted != 'true'");
         $sqlt->bindValue(':userid',$userID);
         $sqlt->bindValue(':fkclass',$class_id);
         $resultt = $sqlt->execute();

@@ -27,7 +27,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     $classid = $class['class_id'];
 
     // Count grades
-    $sql = $db->prepare("SELECT grade FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
+    $sql = $db->prepare("SELECT grade FROM grade WHERE fk_user = :userid AND fk_class = :fkclass AND deleted != 'true'");
     $sql->bindValue(':userid',$userID);
     $sql->bindValue(':fkclass',$classid);
     $result = $sql->execute();

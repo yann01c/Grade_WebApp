@@ -18,29 +18,24 @@
         $date1 = $row['timestamp'];
 
         // Check if grade is not older than 7 days (if true, it won't delete the grade)
-        if (strtotime($date1) < strtotime('-7 day')) {
+        if (strtotime($date1) < strtotime('-7 day') && !empty($row['timestamp'])) {
             header("Location: ../class.php?c1-class=$class&old=true");
             exit();
         } else {
-            $sql = $db->prepare("DELETE FROM grade WHERE grade_id = :id AND fk_user = :user");
+            $sql = $db->prepare("UPDATE grade SET deleted = 'true' WHERE grade_id = :grid AND fk_user = :userid");
             if(!$sql) {
                 header("Location: ../class.php?error=sqlerror");
                 exit();
             } else {
-                // Update file_grade to prevent not matching images
-                $sql->bindValue(':id',$gradeID);
-                $sql->bindValue(':user',$userID);
+                $sql->bindValue(':grid',$gradeID);
+                $sql->bindValue(':userid',$userID);
                 $result = $sql->execute();
-        
-                $fsql = $db->prepare("UPDATE file_grade SET fk_grade = 0 WHERE fk_grade = :gradeid");
-                $fsql->bindValue(':gradeid', $gradeID);
-                $fresult = $fsql->execute();
         
                 header("Location: ../class.php?c1-class=$class");
                 exit();
             }
         }
-    } else { // When accessed manually, send user back to signup page
+    } else { // When accessed manually, send user back
         header("Location: ../index.php");
         exit();
     }
