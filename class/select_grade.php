@@ -135,6 +135,12 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $weighting = $row['weighting'] * 100;
         $userID = $_SESSION['userID'];
 
+        if (empty($row['timestamp'])) {
+            $timestamp = "-";
+        } else {
+            $timestamp = $row['timestamp'];
+        }
+
         $style = '<style type="text/css">.class-grade'.$count.'{color:'.$color.'; font-weight: bold;}</style>';
         echo $style;
 
