@@ -10,8 +10,6 @@ if(isset($_POST['submit'])) {
     $class = $_POST['s_class'];
     echo "CLASS = ".$class;
 
-    $check = 0;
-
     // Count files
     if (isset($_FILES['fileToUpload']['name'])) { 
         $total_files = count($_FILES['fileToUpload']['name']);
@@ -34,22 +32,20 @@ if(isset($_POST['submit'])) {
         header("Location: ../index.php?error=empty&g=$grade&d=$date&w=$weighting");
         exit();
     }
-
+    else if (empty($description)) {
+        $description = "-";
+    }
     // Check if grade is valid
     else if ($grade > 6.0 || $grade < 0) {
         header("Location: ../index.php?error=grade?d=$date?w=$weighting?c=$class");
         exit();
     }
 
-    if (empty($description)) {
-        $description = "-";
-    }
-
     // File array
     $path_filename_ext = array();
     // Target directory var
     $target_dir = "../upload/";
-    // Allowed extensions array
+    // Allowed extensions array (heif & heic are iphone image extensions)
     $ext_arrays = array("jpg", "JPG", "jpeg", "JPEG", "PNG", "png", "heif", "HEIF", "heic", "HEIC");
 
     $test = $_FILES['fileToUpload']['name'][0];
@@ -57,12 +53,14 @@ if(isset($_POST['submit'])) {
     $test3 = $_FILES['fileToUpload']['size'][0];
     $test4 = $_FILES['fileToUpload']['type'][0];
 
-    error_log("|", 3, "/var/www/grade/log/php.log");
-    error_log("Name: ".$test." ", 3, "/var/www/grade/log/php.log");
-    error_log("TMP Name: ".$test2." ", 3, "/var/www/grade/log/php.log");
-    error_log("Size: ".$test3." ", 3, "/var/www/grade/log/php.log");
-    error_log("Type: ".$test4, 3, "/var/www/grade/log/php.log");
-    error_log("|\n", 3, "/var/www/grade/log/php.log");
+    // File debugging
+    
+    // error_log("|", 3, "/var/www/grade/log/php.log");
+    // error_log("Name: ".$test." ", 3, "/var/www/grade/log/php.log");
+    // error_log("TMP Name: ".$test2." ", 3, "/var/www/grade/log/php.log");
+    // error_log("Size: ".$test3." ", 3, "/var/www/grade/log/php.log");
+    // error_log("Type: ".$test4, 3, "/var/www/grade/log/php.log");
+    // error_log("|\n", 3, "/var/www/grade/log/php.log");
 
 
     // For loop for multiple files
@@ -83,22 +81,20 @@ if(isset($_POST['submit'])) {
             $path = pathinfo($file);
             // Custom file name
             $filename[$i] = md5(uniqid(rand(), true));
-            echo "<h1>".$filename[$i]."</h1>";
             // File extension
             $ext = $path['extension'];
-            echo "EXTENSION: ".$ext;
             // Temp path
             $temp_name = $_FILES['fileToUpload']['tmp_name'][$i];
             // Target path
             $path_filename_ext[] = $target_dir.$filename[$i].".".$ext;
-            // DB insert
+            // DB insert var
             $dbfile[] = "upload/".$filename[$i].".".$ext;
-            // Max size of files (byte)
+            // Max size of files (byte,50MB)
             $maxSize = 50000000;
 
             // Check if file is not bigger than 50 MB
             if ($filesize >= $maxSize) {
-                error_log("FILESIZE: ".$filesize."||".$maxSize, 3, "/var/www/grade/log/php.log");
+                //error_log("FILESIZE: ".$filesize."||".$maxSize, 3, "/var/www/grade/log/php.log");
                 header("Location: ../index.php?error=toobig");
                 exit();
             }
@@ -128,8 +124,6 @@ if(isset($_POST['submit'])) {
             $idfrow = $idfres->fetchArray();
             
             $idfiles[$i] = $idfrow[0];
-            $check = 1;
-            echo "FILE ID's = ".$idfiles[$i];
             $db->close();
 
         } else {
@@ -145,14 +139,16 @@ if(isset($_POST['submit'])) {
             $tpath = pathinfo($tfile);
             $text = $tpath['extension'];
 
-            echo "################";
-            echo "T-EXTENSION: ".$text;
-            echo "T-NAME: ".$_FILES['fileToUpload']['name'][$i];
-            echo "T-TMPNAME: ".$_FILES['fileToUpload']['tmp_name'][$i];
-            echo "T-TYPE: ".$_FILES['fileToUpload']['type'][$i];
-            echo "################";
+            // File debugging
 
-            echo $dbfile;
+            // echo "################";
+            // echo "T-EXTENSION: ".$text;
+            // echo "T-NAME: ".$_FILES['fileToUpload']['name'][$i];
+            // echo "T-TMPNAME: ".$_FILES['fileToUpload']['tmp_name'][$i];
+            // echo "T-TYPE: ".$_FILES['fileToUpload']['type'][$i];
+            // echo "################";
+            // echo $dbfile;
+
             $sqlfile2 = $db->prepare("INSERT INTO file (filename) VALUES (:files)");
             $sqlfile2->bindValue(':files', $dbfile);
             $finish2 = $sqlfile2->execute();
@@ -173,16 +169,12 @@ if(isset($_POST['submit'])) {
     $r = $sql->execute();
     $row = $r->fetchArray();
     $fkclass = $row['class_id'];
-    $sqlg = $db->prepare("INSERT INTO grade (grade,date,weighting,description,fk_class,fk_user) VALUES (:grade,:date,:weighting,:des,:fkclass,:userid)");
-
-    // Check if SQL statement is valid (works)
+    $sqlg = $db->prepare("INSERT INTO grade (grade,date,weighting,description,timestamp,fk_class,fk_user) VALUES (:grade,:date,:weighting,:des,date('now'),:fkclass,:userid)");
 
     if (!$sql) {
         header("Location: ../index.php?error=sql");
         exit();
     } else {
-
-        // Bind values to prepare statement
         $sqlg->bindValue(':grade',$grade);
         $sqlg->bindValue(':date',$date);
         $sqlg->bindValue(':weighting',$weighting);
@@ -196,7 +188,6 @@ if(isset($_POST['submit'])) {
         $idrow = $idres->fetchArray();
         $idgrade = $idrow[0];
 
-        $check = 1;
         $i = 0;
         $a = $total_files;
         
@@ -207,14 +198,15 @@ if(isset($_POST['submit'])) {
                 $file_grade->bindValue(':fileid',$idfiles[$i]);
                 $file_result = $file_grade->execute();
                 $i++;
-                echo "  FILE_GRADE  ";
             }
         }
-    
 
         // Success message
         header("Location: ../index.php?info=success&grade=$grade&class=$class");
         exit();
-        echo "finished";
     }
+} else {
+    // Redirect when accessed manually
+    header("Location: account.php");
+    exit();
 }

@@ -1,8 +1,3 @@
-// Sleep (Wait) function
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 // Prompt, send data to insert_class.php
 function newClass() {
     var cprompt = prompt("Enter Classname:", "");
@@ -31,28 +26,4 @@ function invalidClass() {
     //serverResponse.innerHTML = "Invalid Classname!";
     alert("Invalid Classname!");
     location.reload();
-}
-
-// Change button text to selected class (Invisible when "-" is selected)
-function cbtnAppear() {
-    var cbutton = document.getElementById("c-btn");
-    var dropdown = document.getElementById("c1-class").value;
-    if(dropdown == "-") {
-        cbutton.style.display = "none";
-    } else {
-        cbutton.innerHTML = "-> " + dropdown;
-        cbutton.style.display = "flex";
-    }
-}
-
-// Change button text to selected grade (Invisible when "-" is selected)
-function cgradebtnAppear() {
-    var classbtn = document.getElementById("class-btn");
-    var cgradedropdown = document.getElementById("class-grades");
-    if(classdropdown == "-") {
-        classbtn.style.display = "none";
-    } else {
-        classbtn.innerHTML = "Go to " + clasdropdown;
-        classbtn.style.display = "flex";
-    }
 }

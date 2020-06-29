@@ -469,8 +469,6 @@ span {
     transition: 200ms;
     cursor: pointer;
 }
-#change form {
-}
 #change #change-btn:hover {
     background-color: white;
     color: black;
@@ -491,8 +489,6 @@ span {
     color: white;
     font-size: 1.4em;
     margin: 0;
-}
-#change #change-text_2 {
 }
 @media (max-width: 550px) { 
     #change #change_main > form > div > input { font-size: 0.9em;}
@@ -515,10 +511,6 @@ span {
     height: 20vh;
     width: 100%;
     background-color: black;
-}
-#secret #secret_main { 
-}
-#secret form {
 }
 .secret-back {
     margin-left: 20px;
@@ -605,8 +597,6 @@ span {
     width: 100% !important;
     height: auto !important;
     transform: scale(0.9);
-}
-#secret .wrapper > img:hover {
 }
 #secret .wrapper {
     /* Prevent vertical gaps */

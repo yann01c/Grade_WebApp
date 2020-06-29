@@ -1,4 +1,4 @@
-<?php    
+<?php
     if (session_status() !== PHP_SESSION_ACTIVE) {
         session_start();
     }
@@ -9,7 +9,7 @@
     $userID = $_SESSION['userID'];
     $sql = $db->prepare("SELECT fk_group FROM login WHERE user_id = :userid");
     if (!$sql) {
-        echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 1</p>";
+        header("Location: class.php?error=sql");
         exit();
     }
     $sql->bindValue(':userid',$userID);
@@ -19,9 +19,10 @@
     // Get all Classes with group_id = $fkgroup
     $sql2 = $db->prepare("SELECT * FROM class WHERE fk_user = :user");
     if (!$sql2) {
-        echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 2</p>";
+        header("Location: class.php?error=sql");
         exit();
     }
+    
     $sql2->bindValue(':user',$userID);
     $result = $sql2->execute();
 

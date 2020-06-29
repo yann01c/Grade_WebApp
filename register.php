@@ -15,6 +15,10 @@
 
 </head>
 <body id="register">
+<?php if($_SESSION['userGRPID'] != 3 && $_SESSION['userGRPID'] != 4) {
+    header("Location: account.php");
+    exit();
+} ?>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -39,6 +43,10 @@
                     $uid = $_GET['r-uid'];
                     $email = $_GET['r-email'];
                     $group = $_GET['r-group'];
+
+                    if (empty($group)) {
+                        $group = "-";
+                    }
 
                     $db = new SQLite3('sqlite/webapp.db');
                     
@@ -72,7 +80,7 @@
                     <div>
                         <label for="r-group">Group</label><br>
                         <select name="r-group" id="r-group">
-                            <option value="<?php echo $group; ?>"><?php echo $gdisplay; ?></option>
+                            <option value="<?php echo $group; ?>"><?php echo "-"; ?></option>
                             <?php include 'group/select_group.php'; ?>
                         </select>
                     </div>
@@ -125,6 +133,5 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
-    <script src="js/account.js"></script>
 </body>
 </html>

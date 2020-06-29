@@ -6,66 +6,33 @@
     // Get all Classes with group_id = $fkgroup
     $sql2 = $db->prepare("SELECT * FROM class WHERE fk_user = :userid");
     if (!$sql2) {
-        echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 2</p>";
+        header("Location: class.php?error=sql");
         exit();
     }
     $sql2->bindValue(':userid',$userID);
     $result = $sql2->execute();
 
     $count = 0;
-    $i = 0;
 
     // Select every class in class with the right group id and display it in Table
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
-        //$btn = "Go to ".$row['class'];
+        
         $count++;
+
         $class = $row['class'];
         $class_id = $row['class_id'];
-
-        $average = $db->prepare("SELECT * FROM grade WHERE fk_user = :fk_user AND fk_class = :fk_class");
-        $average->bindValue('fk_user',$userID);
-        $average->bindValue(':fk_class',$class_id);
-        $aresult = $average->execute();
-
-        while($arow = $aresult->fetchArray(SQLITE3_ASSOC)) {
-            //$w = $arow['weighting'] * 100;
-            $i++;
-            $newgrades[] = array();
-            $newweighting[] = array();
-            $newgrades[] = $arow['grade'] * ($arow['weighting'] * 100);
-            $newweighting[$i] = ($arow['weighting'] * 100) + ($arow['weighting'] * 100);
-        }
-
-        if (empty($newgrades)) {
-            $avfinish = "No Grades yet!";
-        } else {
-            $avweighting = array_sum($newweighting);
-            //$avcount = count($newgrades);
-            $avgrade = array_sum($newgrades);
-            $avfinish = $avgrade / $avweighting;
-            unset($avgrades);
-            unset($avweighting);
-        }
 
         // Count grades
         $sqlt = $db->prepare("SELECT grade FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
         $sqlt->bindValue(':userid',$userID);
         $sqlt->bindValue(':fkclass',$class_id);
         $resultt = $sqlt->execute();
+
         $total = 0;
+
         while ($rowt = $resultt->fetchArray()) {
                 $total += 1;
         }
-        //$newgrades[] = array();
-
-        //$i++;
-        //$newgrades[$i] =  $arow['grade'] * $arow['weighting'];
-
-        //foreach ($grades as $value) {
-        //    $newgrades[] = $value * $arow['weighting'];
-        //}
-
-        //$av = array_product($newgrades);
         echo "<form id='form$count' action='class.php' method='GET'>";
         echo "<table>
             <caption></caption>

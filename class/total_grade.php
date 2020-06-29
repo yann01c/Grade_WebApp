@@ -10,6 +10,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $class = $_POST['c1-class'];
     }
 
+    // Check if request was made from group "Berufsbildner"
     if (isset($_POST['user-pre'])) {
         $userID = $_POST['bbid'];
     } else {
@@ -18,22 +19,22 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
 
     $db = new SQLite3('sqlite/webapp.db');
 
-        // SELECT class ID
-        $sqlclass = $db->prepare("SELECT class_id FROM class WHERE class = :class");
-        $sqlclass->bindValue(':class',$class);
-        $res = $sqlclass->execute();
-        $class = $res->fetchArray();
-        $classid = $class['class_id'];
+    // SELECT class ID
+    $sqlclass = $db->prepare("SELECT class_id FROM class WHERE class = :class");
+    $sqlclass->bindValue(':class',$class);
+    $res = $sqlclass->execute();
+    $class = $res->fetchArray();
+    $classid = $class['class_id'];
 
-        // Count grades
-        $sql = $db->prepare("SELECT grade FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
-        $sql->bindValue(':userid',$userID);
-        $sql->bindValue(':fkclass',$classid);
-        $result = $sql->execute();
-        $total = 0;
-        while ($row = $result->fetchArray()) {
-                $total += 1;
-        }
-        echo "<p class='title''>Total grades: <span style=''>".$total."</span></p>";
+    // Count grades
+    $sql = $db->prepare("SELECT grade FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
+    $sql->bindValue(':userid',$userID);
+    $sql->bindValue(':fkclass',$classid);
+    $result = $sql->execute();
+    $total = 0;
+    while ($row = $result->fetchArray()) {
+            $total += 1;
+    }
+    echo "<p class='title''>Total grades: <span style=''>".$total."</span></p>";
 }
 ?>

@@ -6,6 +6,7 @@
         date DATE,
         weighting INTEGER,
         description TEXT,
+        timestamp DATE,
         fk_user INTEGER,
         fk_class INTEGER,
         FOREIGN KEY (fk_user)

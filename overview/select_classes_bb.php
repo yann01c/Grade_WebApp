@@ -6,7 +6,7 @@ if (isset($_GET['user-preview'])) {
     $userID = $_GET['user-preview'];
     $sql = $db->prepare("SELECT * FROM login WHERE user_id = :userid");
     if (!$sql) {
-        echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 1</p>";
+        header("Location: classes.php?error=sql");
         exit();
     }
     $sql->bindValue(':userid',$userID);
@@ -18,13 +18,11 @@ if (isset($_GET['user-preview'])) {
     // Get all Classes with group_id = $fkgroup
     $sql2 = $db->prepare("SELECT * FROM class WHERE fk_user = :id");
     if (!$sql2) {
-        echo "<p style='color:orange;font-weight:bold;font-size:1.5em;'>SQLite Error 2</p>";
+        header("Location: classes.php?error=sql");
         exit();
     }
     $sql2->bindValue(':id',$userID);
     $result = $sql2->execute();
-
-    $count = 0;
 
     // Select every class in class with the right group id and display it in Table
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {

@@ -36,21 +36,23 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['identifier'])) {
         $result = $sql->execute();
         $group = $result->fetchArray();
 
-        // Start session
+        // Start sessions
         $_SESSION['userID'] = $row['user_id'];
         $_SESSION['userUID'] = $row['username'];
         $_SESSION['userMAIL'] = $row['email'];
         $_SESSION['userGRP'] = $group['group'];
         $_SESSION['userGRPID'] = $group['group_id'];
-        
-        // Cookie status (COOKIE)
-        //echo "<p style='position:absolute;color:white;padding:8px;margin:0;'>COOKIES FOUND</p>";
 
     // Cookie identifier / username does not match with db identifier / username
     } else {
+        setcookie("username","",time() -3600);
+        setcookie("identifier","",time() -3600);
+        session_unset();
+        session_destroy();
+        header("Location: account.php?info=logout");
+        exit();
     }
 
 // Cookie status (NO COOKIE)
 } else {
-    //echo "<p style='position:absolute;color:white;padding:8px;margin:0;'>NO COOKIES FOUND</p>";
 }

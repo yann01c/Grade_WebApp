@@ -32,7 +32,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     $sqlfk = $db->prepare("SELECT * FROM class WHERE class = :class AND fk_user = :user");
     // If statement runs into an error
     if (!$sqlfk) {
-        echo "<p style='color:orange;font-weight:bold;'>SQLite Error</p>";
+        header("Location: class.php?error=sql");
         exit();
     }
 
@@ -47,7 +47,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
     $sql = $db->prepare("SELECT * FROM grade WHERE fk_user = :userid AND fk_class = :fkclass");
     // If statement runs into an error
     if (!$sql) {
-        echo "<p style='color:orange;font-weight:bold;'>SQLite Error</p>";
+        header("Location: class.php?error=sql");
         exit();
     }
     // Bind & Execute
@@ -57,11 +57,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
 
     // Count / Check vars
     $count = 0;
-    $count2 = 0;
-    $check = 0;
-    $number = 0;
     $imgcheck = 0;
-    $e = 0;
 
     // Select grades
     while($row = $result->fetchArray(SQLITE3_ASSOC) ) {
@@ -138,10 +134,6 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $grade = $row['grade'];
         $weighting = $row['weighting'] * 100;
         $userID = $_SESSION['userID'];
-        $number = $number + 1;
-        $count2++;
-        $check = $check + 1;
-        $e++;
 
         $style = '<style type="text/css">.class-grade'.$count.'{color:'.$color.'; font-weight: bold;}</style>';
         echo $style;
@@ -157,6 +149,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
                 <th scope='col'>Weighting</th>
                 <th scope='col'>Description</th>
                 <th scope='col'>Screenshots</th>
+                <th scope='col'>Created</th>
                 <th scope='col'></th>
             </tr>
             </thead>";
@@ -174,7 +167,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
                             echo $image[$i];
                         }
                     }
-                    echo "</td>
+                    echo "</td><td class='td$count' data-label='Created' style='display: none; position: absolute;'>".$row['timestamp']."</td>
                     <td class='td'><a class='download-btn' href='$downloadpath' download>DOWNLOAD</a><button type='submit' class='trash-btn' name='delete_btn'>🗑️</button></td>
                 </tr>
             </tbody>

@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php include "login/not_logged.php";?>
+<?php include "submit/db_grade.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,43 +81,55 @@
                     <div class="float">
                         <label for="s_class">Class</label><br>
                         <select id="s-class" name="s_class">
-                        <?php if (isset($_GET['c']) && !empty($_GET['c'])) {
+                        <?php 
+                        // Set an arrow instead of nothing when empty & Autofill when error occures
+                        if (isset($_GET['c']) && !empty($_GET['c'])) {
                                 $cvalue = $_GET['c'];
                              } else {
                                  $cvalue = "&#8595";
-                             } ?>
+                             } 
+                        ?>
                             <option value="<?php echo $cvalue; ?>"><?php echo $cvalue; ?></option>
                             <?php include 'submit/select_s_classes.php';?>
                         </select>
                     </div>
                     <div>
-                    <?php if (isset($_GET['g']) && !empty($_GET['g'])) {
+                    <?php
+                    // Autofill when error occures
+                    if (isset($_GET['g']) && !empty($_GET['g'])) {
                             $gvalue = $_GET['g'];
                         } else {
                             $gvalue = "";
-                    } ?>
+                    } 
+                    ?>
                         <label for="s_grade">Grade</label><br>
                         <input value="<?php echo $gvalue; ?>" type="number" step="0.1" name="s_grade">
                     </div>
                     <div class="float">
-                    <?php if (isset($_GET['d']) && !empty($_GET['d'])) {
+                    <?php
+                    // Autofill when error occures
+                    if (isset($_GET['d']) && !empty($_GET['d'])) {
                             $dvalue = $_GET['d'];
                         } else {
                             $dvalue = "";
-                    } ?>
+                    } 
+                    ?>
                         <label for="s_date">Date</label><br>
                         <input value="<?php echo $dvalue; ?>" type="date" name="s_date">
                     </div>
                     <div style="margin-top: 0.6em;">
                         <label for="s_weighting">Weighting</label><br>
                         <select name="s_weighting">
-                        <?php if (isset($_GET['w']) && !empty($_GET['w'])) {
+                        <?php
+                        // Autofill when error occures
+                        if (isset($_GET['w']) && !empty($_GET['w'])) {
                                 $wvalue = $_GET['w'];
                                 $wdisplay = ($_GET['w'] * 100)."%";
-                             } else {
-                                 $wvalue = "";
-                                 $wdisplay = "&#8595";
-                             } ?>
+                            } else {
+                                $wvalue = "";
+                                $wdisplay = "&#8595";
+                            } 
+                            ?>
                             <option value="<?php echo $wvalue; ?>"><?php echo $wdisplay; ?></option>
                             <option value="0.0">0%</option>
                             <option value="0.25">25%</option>
@@ -177,6 +190,5 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
-    <script src="js/install.js"></script>
 </body>
 </html>

@@ -341,21 +341,6 @@ label {
     text-decoration: none;
     color: black;
 }
-/*
-#classes #classadded {
-    width: 9em;
-    position: absolute;
-    height: 3em;
-    color: green;
-    font-weight: bold;
-    font-size: 1.2em;
-    font-family: 'Iceland', cursive;
-}
-#classes #classadded_container {
-    display: flex;
-    justify-content: center;
-}
-*/
 #classes .class-center {
     position: relative;
 }
@@ -724,18 +709,17 @@ table th {
     width: 20em;
     padding: 8px;
     background-color: rgba(255, 255, 255, 0.1);
-    border: 3px solid black;
+    box-shadow: 0px 5px black;
     cursor: pointer;
     color: white;
+    border: none;
     font-size: 1.0em;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     transition: 200ms;
-}
-#overview .class-div {
-    
 }
 #overview .class-btn:hover {
     background-color: black;
+    box-shadow: none;
 }
 
 /* Privacy Terms */

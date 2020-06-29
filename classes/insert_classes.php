@@ -5,8 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $db = new SQLite3('../sqlite/webapp.db');
         
+        // Remove spaces to prevent errors
         $new_class = preg_replace("/\s+/", "", $class);
-
 
         $userID = $_SESSION['userID'];
 
@@ -16,19 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $rcheck = $check->execute();
         $acheck = $rcheck->fetchArray();
         if ($acheck['class'] == $class) {
-            $txt = "Class already exists!";
-            echo $txt;
+            echo "Class already exists!";
             exit();
         } else {
-            $txt = "Class added: ".$new_class;
-            echo $txt;
+            echo "Class added: ".$new_class;
             $db->exec("INSERT INTO class (class,fk_user) VALUES ('$new_class','$userID')");
         }
     }
-        
-        //$sql = $db->prepare("SELECT fk_group FROM login WHERE user_id = :userid");
-        //$sql->bindValue(':userid',$userID);
-        //$r = $sql->execute();
-        //$row = $r->fetchArray();
-        //$fkgroup = $row['fk_group'];
 }

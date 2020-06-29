@@ -6,15 +6,13 @@ if(isset($_POST['register'])) {
     $rpasswd = $_POST['r-rpwd'];
     $group = $_POST['r-group'];
 
-    // Open DB
     $db = new SQLite3('../sqlite/webapp.db');
 
-    // Check if any variable is empty
+    // Check if fields are missing
     if (empty($username) || empty($email) || empty($passwd) || empty($rpasswd)) {
         header("Location: ../register.php?error=emptyfields&r-uid=".$username."&r-email=".$email."&r-group=".$group);
         exit();
     }
-
     // Check if mail and username are valid
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         header("Location: ../register.php?error=invalidmailusername");
@@ -30,19 +28,16 @@ if(isset($_POST['register'])) {
         header("Location: ../register.php?error=invalidusername&r-email=".$email);
         exit();
     }
-
     // Check if passwords match
     else if ($passwd !== $rpasswd) {
         header("Location: ../register.php?error=passwordcheck&r-uid=".$username."&r-email=".$email);
         exit();
     }
-    
-    // Check if group has been selected
-    else if ($group == "-") {
-        header("Location: ../register.php?error=invalidgroup");
+    // No group selected
+    else if ($group == "") {
+        header("Location: ../register.php?error=invalidgroup&r-uid=".$username."&r-email=".$email);
         exit();
     }
-
 
     // Check if mail exists
     $mail = $db->prepare("SELECT email FROM login WHERE email=:mail");
@@ -63,13 +58,13 @@ if(isset($_POST['register'])) {
     $sql->bindValue(':uid',$username);
     $r = $sql->execute();
 
-    $number_of_rows = 0;
+    $n_rows2 = 0;
 
     // Check number of rows
     while ($row = $r->fetchArray()) {
-        $number_of_rows += 1;
+        $n_rows2 += 1;
     }
-    if ($number_of_rows == 1) { // = 1 -> Username already taken - go back to signup page
+    if ($n_rows2 == 1) { // = 1 -> Username already taken - go back to signup page
         header("Location: ../register.php?error=usertaken");
         exit();
     } else { // = 0 -> Username not taken - Insert cred into DB
@@ -80,9 +75,10 @@ if(isset($_POST['register'])) {
         $sql->bindValue(':pwd',$passwordHashed);
         $sql->bindValue(':group',$group);
         $r = $sql->execute();
+        $db->close();
         header("Location: ../account.php?signup=success");
+        exit();
     }
-    $db->close();
 } else { // When accessed manually, send user back to signup page
     header("Location: ../register.php");
     exit();

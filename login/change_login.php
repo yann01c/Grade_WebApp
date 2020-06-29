@@ -86,7 +86,6 @@ if(isset($_POST['change'])) {
         $sql->bindValue(':group',$group);
         $sql->bindValue(':userid',$userID);
         $result = $sql->execute();
-        echo "Updated!";
         session_start();
         session_unset();
         session_destroy();
