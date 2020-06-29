@@ -124,6 +124,7 @@ label {
     font-size: 1em;
     width: 10em;
     border: 1px solid black;
+    -webkit-border: 1px solid black;
     color: white;
     opacity: 1;
     padding: 5px;
