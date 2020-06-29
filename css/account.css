@@ -30,6 +30,7 @@ body {
     height: auto;
 }
 select {
+    -webkit-appearance: none;
     border: 1px solid black;
 }
 textarea {
@@ -352,6 +353,7 @@ span {
     background-color: transparent;
 }
 .account-logged {
+    -webkit-appearance: none;
     margin: 0;
     padding: 0;
     margin-bottom: 2em;
