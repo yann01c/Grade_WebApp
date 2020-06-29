@@ -114,6 +114,7 @@ label {
     text-shadow: 2px 2px 0 black;
 }
 #index .form > form > div > input {
+    -webkit-appearance: none;
     background-color: rgba(255, 255, 255, 0.1);
     margin-top: 10px;
     font-size: 1em;
@@ -133,6 +134,7 @@ label {
     background-color: transparent;
 }
 #index .form > form > div > select {
+    -webkit-appearance: none;
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
     height: 30.8px;
