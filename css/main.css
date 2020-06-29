@@ -130,8 +130,8 @@ label {
     padding: 5px;
     height: 1.3em;
     transition: 200ms;
-    box-shadow: 0px 3px #0F2259;
-    -webkit-box-shadow: 0px 3px #0F2259;
+    /*box-shadow: 0px 3px #0F2259;
+    -webkit-box-shadow: 0px 3px #0F2259;*/
     font-family: 'Maven Pro', sans-serif;
 }
 #index .form > form > div > input:focus {
