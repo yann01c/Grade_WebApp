@@ -127,7 +127,6 @@ label {
     transition: 200ms;
     box-shadow: 0px 3px #0F2259;
     -webkit-box-shadow: 0px 3px #0F2259;
-    -moz-box-shadow: 0px 3px #0F2259;
     font-family: 'Maven Pro', sans-serif;
 }
 #index .form > form > div > input:focus {
@@ -144,9 +143,6 @@ label {
     font-size: 1em;
     padding: 5px;
     border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     transition: 200ms;
     box-shadow: 0px 3px #0F2259;
 }
@@ -154,6 +150,7 @@ label {
     color: black;
 }
 #index .form > form > div > textarea {
+    -webkit-appearance: none;
     background-color: rgba(255, 255, 255, 0.1);
     font-family: 'Maven Pro', sans-serif;
     margin-top: 10px;
@@ -165,7 +162,6 @@ label {
     transition: 200ms;
     box-shadow: 0px 3px #0F2259;
     -webkit-box-shadow: 0px 3px #0F2259;
-    -moz-box-shadow: 0px 3px #0F2259;
     color: white;
 }
 #index .form > form > div > textarea:focus {
@@ -182,7 +178,6 @@ label {
     color: white;
     box-shadow: 0px 5px #BF0413;
     -webkit-box-shadow: 0px 5px #BF0413;
-    -moz-box-shadow: 0px 5px #BF0413;
     border: none;
 }
 #index .form > form > button:hover {
