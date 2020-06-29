@@ -164,7 +164,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
                     <td class='class-grade$count' id='$count' onclick='collapse(this.id)' style='cursor:pointer;display:block;color: $color;' data-label='Grade'>".$row['grade']."</td>
                     <td class='td$count' data-label='Date' style='display: none; position: absolute;'>".$row['date']."</td>
                     <td class='td$count' data-label='Weighting' style='display: none; position: absolute;'>".$weighting."%"."</td>
-                    <td class='td$count' data-label='Description' style='display: none; position: absolute;'>".$row['description']."</td>
+                    <td class='td$count' data-label='Description' style='display: none; position: absolute;'>".$timestamp."</td>
                     <td class='td$count' data-label='Screenshots' style='display: none; position: absolute;'>"; if ($imgcheck == 0) {
                         echo "-";
                     } else {
