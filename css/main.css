@@ -171,6 +171,10 @@ label {
 #index .form > form > div > textarea:focus {
     background-color: transparent;
 }
+input[type="date"] {
+    display: block;
+    -webkit-appearance: textfield;
+}
 #index .form > form > button {
     background-color: rgba(255, 255, 255, 0.1);
     font-family: 'Iceland', cursive;
