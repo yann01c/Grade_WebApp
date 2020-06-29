@@ -182,6 +182,7 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
+    <button class="add-button">Add to home screen</button>
     <!--<p>Current permission status is <b id="status">unavailable</b>.</p>
     <p><button onclick="requestPermission()">Request permission</button></p>
     <p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
@@ -189,6 +190,7 @@
     <button class="add-button">Add to home screen</button>
     <script src="js/a2hs/addtohomescreen.js"></script>
     <script>addToHomescreen();</script>-->
+    <script src="html/js/a2hs/a2hsbtn.js"></script>
     <script src="js/a2hs/register.js"></script>
     <script src="js/change.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
