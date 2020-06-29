@@ -243,7 +243,7 @@ label {
     #index .form > form > div > textarea {width: 21.7em; font-size: 1em;}
     #index .form > form > div > input {width: 9em; font-size: 0.9em;}
     #index .form > form > div > input#fileToUpload {width: 23.5em;}
-    #index .form > form > div > select {width: 9.4em; font-size: 0.9em;}
+    #index .form > form > div > select {width: 9.7em; font-size: 0.9em;}
 }
 /* Logo & Logged In disapear */
 @media (max-width: 1150px) {
