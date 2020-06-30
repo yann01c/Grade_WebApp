@@ -76,7 +76,7 @@ if(isset($_POST['change'])) {
             $nn_rows = 1;
         }
     }
-    if ($nn_rows == 1) { // = 1 -> Username already taken - go back to signup page
+    if ($nn_rows == 1 || $nn_rows > 1) { // = 1 -> Username already taken - go back to signup page
         header("Location: ../account.php?error=usertaken");
         exit();
     } else {
