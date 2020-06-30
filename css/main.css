@@ -655,6 +655,7 @@ table th {
     justify-content: center;
 }
 #overview .user-dropdown {
+    -webkit-appearance: none;
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
     height: 30.8px;
