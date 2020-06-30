@@ -82,7 +82,6 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $image[] = array();
 
         while($afg = $rfg->fetchArray(SQLITE3_ASSOC)) {
-            $imgcheck = 1;
 
             $imgid = $afg['fk_file'];
 
@@ -103,6 +102,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
             if (empty($filea['filename']) || $filea['filename'] == "No Image!") {
                 $imgcheck = 0;
             } else {
+                $imgcheck = 1;
                 $imgstyle = "<style>#$imgid:hover { translate: scale(1.2);}</style>";
                 $image[$i] = "<img src='$path' class='small-image' id='$imgid' style='width:30px;height:30px;margin-left:10px;cursor:pointer;' onclick='zoom(this.id)' alt='No Image'>";
             }
