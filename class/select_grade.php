@@ -144,7 +144,7 @@ if (isset($_GET['c1-class']) || isset($_POST['c1-class']) || isset($_POST['user-
         $style = '<style type="text/css">.class-grade'.$count.'{color:'.$color.'; font-weight: bold;}</style>';
         echo $style;
 
-        // Echo tables with content
+        // Echo table with content
         echo "<form action='class/delete_grade.php' method='post'>";
         echo "<table>
             <caption sytle='color:white;'></caption>
