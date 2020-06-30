@@ -465,19 +465,19 @@ span {
     #change .change-text { font-size: 1em; }
 }
 
-/* SECRET */
+/* gallery */
 
-#secret body,html {
+#gallery body,html {
     margin: 0;
     padding: 0;
     background-color: black;
 }
-#secret #secret_cont {
+#gallery #gallery_cont {
     height: 20vh;
     width: 100%;
     background-color: black;
 }
-.secret-back {
+.gallery-back {
     margin-left: 20px;
     margin-top: 8em;
     margin-bottom: 20px;
@@ -492,13 +492,13 @@ span {
     color: white;
     transition: 200ms;
 }
-.secret-back:hover {
+.gallery-back:hover {
     background-color: #BF0413;
     color: white;
     box-shadow: none;
 }
 
-#secret #absolutecenter {
+#gallery #absolutecenter {
     display: none;
     bottom: 0;
     height: auto;
@@ -515,7 +515,7 @@ span {
     max-width: 100em;
     max-height: 100em;
 }
-#secret #close  {
+#gallery #close  {
     font-size: 4em;
     color: #BF0413;
     padding: 20px;
@@ -526,17 +526,17 @@ span {
     z-index: 1001;
     transition: 200ms;
 }
-#secret #close:hover {
+#gallery #close:hover {
     color: white;
 }
-#secret #download {
+#gallery #download {
     padding: 20px;
     margin-left: 0;
 }
-#secret .a-download:hover {
+#gallery .a-download:hover {
     color: white;
 }
-#secret .a-download {
+#gallery .a-download {
     transform: rotate(180deg);
     text-decoration: none;
     font-size: 4em;
@@ -547,7 +547,7 @@ span {
     z-index: 1001;
     transition: 200ms;
 }
-#secret .header {
+#gallery .header {
     font-size: 2vh;
     align-items: center;
     position: fixed;
@@ -557,7 +557,7 @@ span {
     width: 100%;
     z-index: 100;
 }
-#secret .wrapper > img {
+#gallery .wrapper > img {
     transition: 200ms;
     width: 100% !important;
     height: auto !important;
@@ -565,7 +565,7 @@ span {
 }
 
 /* Grid Responsive */
-#secret .wrapper {
+#gallery .wrapper {
     /* Prevent vertical gaps */
     line-height: 0;
         
@@ -577,28 +577,28 @@ span {
     column-gap:           0px; 
 }
 @media (max-width: 1200px) {
-    #secret .wrapper {
+    #gallery .wrapper {
     -moz-column-count:    4;
     -webkit-column-count: 4;
     column-count:         4;
     }
 }
   @media (max-width: 1000px) {
-    #secret .wrapper {
+    #gallery .wrapper {
     -moz-column-count:    3;
     -webkit-column-count: 3;
     column-count:         3;
     }
 }
   @media (max-width: 800px) {
-    #secret .wrapper {
+    #gallery .wrapper {
     -moz-column-count:    2;
     -webkit-column-count: 2;
     column-count:         2;
     }
 }
   @media (max-width: 400px) {
-    #secret .wrapper {
+    #gallery .wrapper {
     -moz-column-count:    1;
     -webkit-column-count: 1;
     column-count:         1;
@@ -609,3 +609,56 @@ span {
     top: 1px;
     left: 1px;
   }
+
+/* Grades */
+
+#grades body,html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+#grades #grades_cont {
+    height: 20vh;
+    width: 100%;
+    background-color: #ddd;
+}
+/* Table */
+#grades table {
+    color: black;
+    border-spacing: 0;
+    width: 100%;
+    /* border: 1px solid silver; */
+    background-color: #ddd;
+}
+#grades .grades_wrapper {
+    /* overflow-x: scroll; */
+}
+#grades th {
+    font-size: 1.4em;
+    cursor: pointer;
+    font-family: 'Iceland', cursive;
+
+}
+#grades th, td {
+    text-align: left;
+    padding: 16px;
+}
+#grades td {
+    font-family: 'Maven Pro', sans-serif;
+}
+#grades tr:nth-child(even) {
+    background-color: silver;
+}
+/* #grades .gradetable {
+    width: 5em;
+}
+#grades .weightingtable {
+    width: 5em;
+} */
+#grades .idtable {
+    width: 1em;
+}
+@media screen and (max-width: 1000px) {
+    #grades th { font-size: 1.2em; }
+    #grades td { font-size: 0.7em; }
+}

@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade | Gallery</title>
+    <title>Grades | Gallery</title>
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/account.css">
 
@@ -14,8 +14,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/iphone/icon_iphone_black.png">
 
 </head>
-<body id="secret">
-    <div id="secret_cont">
+<body id="gallery">
+    <div id="gallery_cont">
         <div style="display:flex;justify-content:center;text-align: center;">
             <div class="header">
                 <h1>Gallery</h1>
@@ -24,11 +24,11 @@
                 </p>
             </div>
         </div>
-        <div id="secret_main">
+        <div id="gallery_main">
         <form action="#" method="POST">
-            <a class="secret-back" href="index.php">Back</a>
+            <a class="gallery-back" href="index.php">Back</a>
             <div class="wrapper">
-                <?php include "secret/images.php"; ?>        
+                <?php include "all/images.php"; ?>        
             </div>
         </div>
         <div id="absolutecenter">

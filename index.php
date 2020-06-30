@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <title>Grade | Submit</title>
+    <title>Grades | Submit</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     
@@ -64,7 +64,7 @@
                 </div>
             </div>
             <div class="right-side">
-                <a href="secret.php"><img src="images/logo.png" class="logo" alt="logo"/></a>
+                <a href="gallery.php"><img src="images/logo.png" class="logo" alt="logo"/></a>
             </div>
             <?php if (isset($_SESSION['userID'])) {
                     echo '<a href="account.php" class="userlogged">'.$_SESSION['userUID'].'</a>';

@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade | Change PW</title>
+    <title>Grades | Change PW</title>
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/account.css">
     

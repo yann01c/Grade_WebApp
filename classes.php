@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade | Classes</title>
+    <title>Grades | Classes</title>
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/main.css">
 
@@ -44,7 +44,8 @@
                         <button onclick="dropdown()" id="drpbtn" class="dropdown-btn">Actions</button>
                         <div id="myDropdown" class="dropdown-content">
                             <button onclick="newClass()" type="button" style="font-weight:bold;">Add new Class</button>
-                            <a id='g-btn' href='secret.php' name='g-btn' style="border-top: 1px solid silver;">Image Gallery</a>
+                            <a id='g-btn' href='gallery.php' name='g-btn' style="border-top: 1px solid silver;">Image Gallery</a>
+                            <a id='gr-btn' href='grades.php' name='gr-btn'>All Grades</a>
                         <?php
                         if (isset($_SESSION['userID'])) {
                             if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
