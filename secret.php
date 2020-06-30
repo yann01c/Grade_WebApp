@@ -18,7 +18,6 @@
     <div id="secret_cont">
         <div style="display:flex;justify-content:center;text-align: center;">
             <div class="header">
-            <!-- <img src="images/ball.gif" alt="ball" style="z-index: -1;width: 8em;height: 10vh; position: absolute;left: 1em; top: 0.7em;"> -->
                 <h1>Gallery</h1>
                 <p>
                     You can find every image you ever uploaded on this page.        

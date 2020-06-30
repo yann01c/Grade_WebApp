@@ -760,18 +760,15 @@ table th {
 
  /* Dropdown Button */
 .dropdown-btn {
-    -webkit-box-shadow: 0px 0px 14px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 14px -8px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 14px -8px rgba(0,0,0,0.75);
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    padding: 8px;
+    padding: 5px;
     align-items: center;
     font-size: 1.4em;
     border: none;
     cursor: pointer;
-    -webkit-transition: all 200ms ease-in-out;
-    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
     font-family: 'Iceland', cursive;
 }
 
@@ -780,7 +777,6 @@ table th {
     background-color: rgba(255, 255, 255, 0.2);
 }
 .dropdown-btn:focus {
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .dropdown-arrow {

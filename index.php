@@ -86,7 +86,7 @@
                         if (isset($_GET['c']) && !empty($_GET['c'])) {
                                 $cvalue = $_GET['c'];
                              } else {
-                                 $cvalue = "&#8595";
+                                 $cvalue = "-";
                              } 
                         ?>
                             <option value="<?php echo $cvalue; ?>"><?php echo $cvalue; ?></option>
@@ -127,7 +127,7 @@
                                 $wdisplay = ($_GET['w'] * 100)."%";
                             } else {
                                 $wvalue = "";
-                                $wdisplay = "&#8595";
+                                $wdisplay = "-";
                             } 
                             ?>
                             <option value="<?php echo $wvalue; ?>"><?php echo $wdisplay; ?></option>
