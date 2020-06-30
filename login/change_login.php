@@ -73,7 +73,7 @@ if(isset($_POST['change'])) {
     while ($row = $r->fetchArray()) {
         $nn_rows += 1;
         if ($username == $row['username']) {
-            $nn_rows = 0;
+            $nn_rows = 1;
         }
     }
     if ($nn_rows == 1) { // = 1 -> Username already taken - go back to signup page
