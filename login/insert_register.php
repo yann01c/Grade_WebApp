@@ -1,6 +1,7 @@
 <?php
 if(isset($_POST['register'])) {
-    $username = $_POST['r-uid'];
+    $usern1 = $_POST['r-uid'];
+    $username = filter_var($usern1, FILTER_SANITIZE_STRING);
     $email = $_POST['r-email'];
     $passwd = $_POST['r-pwd'];
     $rpasswd = $_POST['r-rpwd'];

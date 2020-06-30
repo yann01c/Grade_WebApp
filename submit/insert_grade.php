@@ -7,6 +7,7 @@ if(isset($_POST['submit'])) {
     $date = $_POST['s_date'];
     $weighting = $_POST['s_weighting'];
     $description = $_POST['s_description'];
+    $desc = filter_var($description, FILTER_SANITIZE_STRING);
     $class = $_POST['s_class'];
     echo "CLASS = ".$class;
 
@@ -32,8 +33,8 @@ if(isset($_POST['submit'])) {
         header("Location: ../index.php?error=empty&g=$grade&d=$date&w=$weighting");
         exit();
     }
-    else if (empty($description)) {
-        $description = "-";
+    else if (empty($desc)) {
+        $desc = "-";
     }
     // Check if grade is valid
     else if ($grade > 6.0 || $grade < 0) {
@@ -174,7 +175,7 @@ if(isset($_POST['submit'])) {
         $sqlg->bindValue(':grade',$grade);
         $sqlg->bindValue(':date',$date);
         $sqlg->bindValue(':weighting',$weighting);
-        $sqlg->bindValue(':des',$description);
+        $sqlg->bindValue(':des',$desc);
         $sqlg->bindValue(':fkclass',$fkclass);
         $sqlg->bindValue(':userid',$userID);
         $result = $sqlg->execute();
