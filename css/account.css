@@ -338,6 +338,7 @@ span {
     background-color: transparent;
 }
 .input-logged {
+    -webkit-appearance: none;
     color: white;
     border: none;
     background-color: rgba(255, 255, 255, 0.3);
@@ -345,6 +346,7 @@ span {
     padding: 5px;
     font-size: 1em;
     height: 1.3em;
+    -webkit-transition: 200ms;
     transition: 200ms;
     box-shadow: 0px 3px #0F2259;
     font-family: 'Maven Pro', sans-serif;
@@ -385,6 +387,7 @@ span {
     margin: 0 10px 0 0;
     padding: 0 15px 0 0;
     text-decoration: none;
+    -webkit-transition: color 150ms;
     transition: color 150ms;
 }
 
@@ -392,10 +395,10 @@ span {
 #change #change_cont {
     height: 100vh;
     min-height: 100%;
-    background-color: #0F2259;
-    /*background-image: url("../images/wp_blur.png");
+    /*background-color: #0F2259;*/
+    background-image: url("../images/wp_blur.png");
     background-size: cover;
-    background-repeat: no-repeat;*/
+    background-repeat: no-repeat;
 }
 #change #change_main {
     display: flex;
@@ -403,7 +406,9 @@ span {
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: #0F2259;
+    background-image: url("../images/wp_blur.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #change #change_main > form > div > input {
     width: 20em;
@@ -418,8 +423,8 @@ span {
     color: white;
 }
 #change #change-btn {
-    width: 20.4em;
-    padding: 8px;
+    width: 20.5em;
+    padding: 6px;
     border: none;
     margin-top: 5px;
     font-size: 1.1em;
@@ -434,8 +439,9 @@ span {
 }
 #change #change-bck {
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.8em;
     color: black;
+    -webkit-transition: 200ms;
     transition: 200ms;
 }
 #change #change-bck:hover {
@@ -444,19 +450,19 @@ span {
 }
 #change .change-text {
     position:relative;
-    background-image:linear-gradient(transparent 60%,  black 0px);
+    background-image:linear-gradient(transparent 60%, #0F2259 0px);
     color: white;
-    font-size: 1.4em;
+    font-size: 1.8em;
     margin: 0;
 }
-@media (max-width: 550px) { 
+@media (max-width: 700px) { 
     #change #change_main > form > div > input { font-size: 0.9em;}
     #change #change_main > form > div > label { font-size: 1.3em;}
     #change #change-btn { font-size: 0.9em; }
-    #change .change-text { font-size: 1.1em; }
+    #change .change-text { font-size: 1.2em; }
 }
 @media (max-width: 450px) { 
-    #change .change-text { font-size: 0.9em; }
+    #change .change-text { font-size: 1em; }
 }
 
 /* SECRET */
