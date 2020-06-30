@@ -665,8 +665,8 @@ table th {
     font-size: 1em;
     padding: 5px;
     border: none;
-    -webkit-transition: 200ms;
-    transition: 200ms;
+    -webkit-transition: 200ms ease-in-out;
+    transition: 200ms ease-in-out;
     -webkit-box-shadow: 0px 3px #0F2259;
     -moz-box-shadow: 0px 3px #0F2259;
     box-shadow: 0px 3px #0F2259;

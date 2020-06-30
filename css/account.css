@@ -608,7 +608,7 @@ span {
     position: absolute;
     top: 1px;
     left: 1px;
-  }
+}
 
 /* Grades */
 
@@ -637,7 +637,6 @@ span {
     font-size: 1.4em;
     cursor: pointer;
     font-family: 'Iceland', cursive;
-
 }
 #grades th, td {
     text-align: left;
@@ -657,6 +656,8 @@ span {
 } */
 #grades .idtable {
     width: 1em;
+    text-align: center;
+    border-right: 1px solid black;
 }
 @media screen and (max-width: 1000px) {
     #grades th { font-size: 1.2em; }

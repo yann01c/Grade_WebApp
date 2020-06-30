@@ -27,7 +27,7 @@
         <div id="grades_main">
         <form action="#" method="POST">
             <div class="grades_wrapper">
-                <table class="grades_table">
+                <table class="grades_table" id="gradestable">
                     <tr>
                         <th onclick='sortTable(0)' class='idtable'>ID</th>
                         <th onclick='sortTable(1)' class='gradetable'>Grade</th>
@@ -50,6 +50,7 @@
             </div>
         </div> -->
     </div>
+    <script src="js/sort.js"></script>
 </body>
 </html>
 
