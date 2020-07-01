@@ -674,6 +674,7 @@ span {
 @media screen and (max-width: 1000px) {
     #grades th { font-size: 1.2em; }
     #grades td { font-size: 0.7em; }
+    #grades table { width: 50em; }
 }
 .grades-back {
     margin-left: 20px;
