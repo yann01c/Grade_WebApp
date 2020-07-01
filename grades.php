@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +15,7 @@
 
 </head>
 <body id="grades">
+<script>alert("You can sort the table by clicking on the column name!");</script>
     <div id="grades_cont">
         <!-- <div style="display:flex;justify-content:center;text-align: center;">
             <div class="grades_header">
@@ -33,14 +34,15 @@
                         <th onclick='sortTable(1)' class='gradetable'>Grade</th>
                         <th onclick='sortTable(2)'>Date</th>
                         <th onclick='sortTable(3)' class='weightingtable'>Weighting</th>
-                        <th onclick='sortTable(4)'>Description</th>
-                        <th onclick='sortTable(5)'>Created / Deleted</th>
-                        <th onclick='sortTable(6)'>Class</th>
+                        <!-- <th onclick='sortTable(4)'>Description</th> -->
+                        <th onclick='sortTable(4)'>Created / Deleted</th>
+                        <th onclick='sortTable(5)'>Class</th>
                     </tr>
                     <?php include 'all/allgrades.php'; ?>
                 </table>
             </div>
-            <a class="gallery-back" href="index.php">Back</a>
+        </form>
+        <div style="width:100%;display:flex;justify-content:center;"><a class="grades-back" href="index.php">Back</a></div>
         </div>
         <!-- <div id="absolutecenter">
             <div id="close" onclick="unzoom()">

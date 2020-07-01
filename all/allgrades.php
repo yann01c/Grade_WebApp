@@ -36,7 +36,6 @@ while ($row = $result->fetchArray()) {
         <td class='gradetable'>$grade</td>
         <td>$date</td>
         <td class='weightingtable'>$weighting%</td>
-        <td>$description</td>
         <td>$created / $deleted</td>
         <td>$class</td>
     </tr>

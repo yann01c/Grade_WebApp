@@ -132,7 +132,7 @@
                     echo '<form action="login/check_login.php" method="post">
                     <div>
                         <label for="a-username">Username</label><br>
-                        <input type="text" step="0.1" name="a-username"'; echo "value='$uidvalue'>
+                        <input type="text" name="a-username"'; echo "value='$uidvalue'>
                     </div>
                     <div>
                         <label for='a-password'>Password</label><br>

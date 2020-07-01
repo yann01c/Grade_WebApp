@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="gbody">
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/icons/iphone/icon_iphone_black.png">
 
 </head>
-<body id="gallery">
+<body id="gallery" class="gbody">
     <div id="gallery_cont">
         <div style="display:flex;justify-content:center;text-align: center;">
             <div class="header">

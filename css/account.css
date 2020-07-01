@@ -467,6 +467,10 @@ span {
 
 /* gallery */
 
+.gbody {
+    background-color: black;
+
+}
 #gallery body,html {
     margin: 0;
     padding: 0;
@@ -611,11 +615,14 @@ span {
 }
 
 /* Grades */
-
+#grades form {
+    display: flex;
+    justify-content: center;
+}
 #grades body,html {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: white;
 }
 #grades #grades_cont {
     height: 20vh;
@@ -624,13 +631,18 @@ span {
 }
 /* Table */
 #grades table {
+    overflow-x: auto;
     color: black;
     border-spacing: 0;
-    width: 100%;
+    width: 100vw;
     /* border: 1px solid silver; */
     background-color: #ddd;
 }
 #grades .grades_wrapper {
+    border: 1px solid silver;
+    -webkit-box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.31);
+    box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.31);
     /* overflow-x: scroll; */
 }
 #grades th {
@@ -646,7 +658,7 @@ span {
     font-family: 'Maven Pro', sans-serif;
 }
 #grades tr:nth-child(even) {
-    background-color: silver;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 /* #grades .gradetable {
     width: 5em;
@@ -657,9 +669,29 @@ span {
 #grades .idtable {
     width: 1em;
     text-align: center;
-    border-right: 1px solid black;
+    border-right: 1px solid silver;
 }
 @media screen and (max-width: 1000px) {
     #grades th { font-size: 1.2em; }
     #grades td { font-size: 0.7em; }
+}
+.grades-back {
+    margin-left: 20px;
+    margin-top: 8em;
+    margin-bottom: 20px;
+    display: inline-block;
+    background-color: black;
+    text-decoration: none;
+    font-size: 1.6em;
+    font-family: 'Iceland', cursive;
+    padding: 10px;
+    border: none;
+    box-shadow: 0px 5px #BF0413;
+    color: white;
+    transition: 200ms;
+}
+.grades-back:hover {
+    background-color: #BF0413;
+    color: white;
+    box-shadow: none;
 }
