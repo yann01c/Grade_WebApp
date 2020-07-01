@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <?php include "login/not_logged.php";?>
-<?php include "submit/db_grade.php";?>
+<?php include "login/db_token.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

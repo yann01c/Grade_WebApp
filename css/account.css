@@ -465,6 +465,101 @@ span {
     #change .change-text { font-size: 1em; }
 }
 
+/* RESET PASSWORD */
+#reset #reset_cont {
+    height: 100vh;
+    min-height: 100%;
+    background-color: black;
+    /* background-image: url("../images/wp_blur.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+#reset #reset_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    /* background-image: url("../images/wp_blur.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+#reset #reset_main > form > div > input {
+    width: 20em;
+    padding: 4px;
+    border: none;
+    font-size: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    color: white;
+    background-color: black;
+    font-family: 'Maven Pro', sans-serif;
+
+}
+#reset #reset_main > form > div > input:focus ~ .reset-border {
+    width: 0%;
+}
+#reset #reset_main > form > div > label {
+    font-size: 1.7em;
+    color: white;
+}
+#reset #reset-btn {
+    width: 50%;
+    padding:6px;
+    border: none;
+    font-size: 1.3em;
+    color: black;
+    background-color: white;
+    transition: 200ms;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 5%;
+    font-family: 'Iceland', cursive;
+}
+#reset #reset-btn:hover {
+    border-radius: 10px;
+}
+#reset #reset-bck {
+    width: 45%;
+    margin-right: 5%;
+    background-color: white;
+    padding: 6px;
+    border: none;
+    font-size: 1.3em;
+    color: black;
+    background-color: white;
+    transition: 200ms;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Iceland', cursive;
+}
+#reset #reset-bck:hover {
+    border-radius: 10px;
+}
+#reset .reset-border {
+    transition: 300ms;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+}
+#reset .reset-text {
+    position:relative;
+    background-image:linear-gradient(transparent 60%, black 0px);
+    color: white;
+    font-size: 1.8em;
+    margin: 0;
+}
+@media (max-width: 700px) { 
+    #reset #reset_main > form > div > input { font-size: 0.9em;}
+    #reset #reset_main > form > div > label { font-size: 1.3em;}
+}
+@media (max-width: 450px) { 
+}
+
+
 /* gallery */
 
 .gbody {

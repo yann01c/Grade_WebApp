@@ -15,16 +15,7 @@
 
 </head>
 <body id="grades">
-<script>alert("You can sort the table by clicking on the column name!");</script>
     <div id="grades_cont">
-        <!-- <div style="display:flex;justify-content:center;text-align: center;">
-            <div class="grades_header">
-                <h1>Gallery</h1>
-                <p>
-                    You can find every image you ever uploaded on this page.        
-                </p>
-            </div>
-        </div> -->
         <div id="grades_main">
         <form action="#" method="POST">
             <div class="grades_wrapper">
@@ -44,15 +35,9 @@
         </form>
         <div style="width:100%;display:flex;justify-content:center;"><a class="grades-back" href="index.php">Back</a></div>
         </div>
-        <!-- <div id="absolutecenter">
-            <div id="close" onclick="unzoom()">
-                ✕
-            </div>
-            <div id="download">
-            </div>
-        </div> -->
     </div>
     <script src="js/sort.js"></script>
+    <script>alert("You can sort the table by clicking on the column name!");</script>
 </body>
 </html>
 
