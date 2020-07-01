@@ -33,9 +33,9 @@
                         <th onclick='sortTable(0)' class='idtable'>ID</th>
                         <th onclick='sortTable(1)' class='gradetable'>Grade</th>
                         <th onclick='sortTable(2)'>Date</th>
-                        <th onclick='sortTable(3)' class='weightingtable'>Weighting</th>
+                        <th onclick='sortTable(3)' class='weightingtable'>%</th>
                         <!-- <th onclick='sortTable(4)'>Description</th> -->
-                        <th onclick='sortTable(4)'>Created / Deleted</th>
+                        <th onclick='sortTable(4)'>Status</th>
                         <th onclick='sortTable(5)'>Class</th>
                     </tr>
                     <?php include 'all/allgrades.php'; ?>
