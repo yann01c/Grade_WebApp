@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_POST['reset-password'])) {
 
     $mail = $_POST['email'];
@@ -68,6 +67,7 @@ if (isset($_POST['reset-password'])) {
 }
 
 if (isset($_POST['new-password'])) {
+    session_start();
     $new1 = $_POST['new1'];
     $new2 = $_POST['new2'];
     $userid = $_SESSION['userID'];
