@@ -62,36 +62,37 @@ if (isset($_POST['reset-password'])) {
         header("Location: ../pending.php?email=$email");
         exit();
     }
-
-
 }
 
 if (isset($_POST['new-password'])) {
-    session_start();
     $new1 = $_POST['new1'];
     $new2 = $_POST['new2'];
-    $userid = $_SESSION['userID'];
+    $passed_token = $_POST['passed_token'];
     
     $db = new SQLite3('../sqlite/webapp.db');
 
     if (empty($new1) || empty($new2)) {
-        header("Location: new_password?token=$token&error=empty");
+        header("Location: new_password?token=$passed_token&error=empty");
         exit();
     }
     if ($new1 != $new2) {
-        header("Location: new_password?token=$token&error=notmatching");
+        header("Location: new_password?token=$passed_token&error=notmatching");
         exit();
     }
 
+    $ksql = $db->prepare("SELECT * FROM token WHERE token = :token");
+    $ksql->bindValue(':token',$passed_token);
+    $kresult = $ksql->execute();
+    $krow = $kresult->fetchArray();
+
     $passwordHashed = password_hash($new2, PASSWORD_DEFAULT);
 
-    $sql1 = $db->prepare("UPDATE login SET passwd = :newpw WHERE user_id = :id");
+    $sql1 = $db->prepare("UPDATE login SET passwd = :newpw WHERE email = :themail");
     $sql1->bindValue(':newpw',$passwordHashed);
-    $sql1->bindValue(':id',$userid);
+    $sql1->bindValue(':themail',$krow['email']);
     $result1 = $sql1->execute();
     $row1 = $result1->fetchArray();
 
     header("Location: ../account.php?success=newpw");
     exit();
-
 }

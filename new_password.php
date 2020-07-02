@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=2, maximum-scale=1, user-scalable=0"/>
     <title>Grades | New PW</title>
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
@@ -38,6 +38,7 @@
                 <div style="display:flex;">
                     <button id="new-btn" name="new-password" type="submit">Change</button>
                 </div>
+                <input type="text" style="display:none;position:absolute;" name="passed_token" value="<?php echo $_GET['token']; ?>">
             </form>
         </div>
     </div>
