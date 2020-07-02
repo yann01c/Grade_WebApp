@@ -23,9 +23,9 @@ if (isset($_GET['token'])) {
     $date = $row['timestamp'];
 
     if (strtotime($date) < strtotime('-900 seconds') && !empty($date)) { 
-        alert("Token Valid!");
-    } else {
         header("Location: account.php?error=expired");
         exit();
+    } else {
+        alert("Token Valid!");
     }   
 }
