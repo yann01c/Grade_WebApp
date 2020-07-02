@@ -35,7 +35,7 @@ if (isset($_POST['reset-password'])) {
         if (empty($crow['token']) && empty($crow['email'])) {
             $token = md5(uniqid(rand(), true));
 
-            $tsql = $db->prepare("INSERT INTO token (email,token,timestamp) VALUES (:email,:token,datetime('now'))");
+            $tsql = $db->prepare("INSERT INTO token (email,token,timestamp) VALUES (:email,:token,datetime('now','localtime'))");
             $tsql->bindValue(':email',$row['email']);
             $tsql->bindValue(':token',$token);
 
@@ -43,7 +43,7 @@ if (isset($_POST['reset-password'])) {
         } else {
             $token = md5(uniqid(rand(), true));
 
-            $usql = $db->prepare("UPDATE token SET token = :newtoken, timestamp = datetime('now') WHERE email = :newemail");
+            $usql = $db->prepare("UPDATE token SET token = :newtoken, timestamp = datetime('now','localtime') WHERE email = :newemail");
             $usql->bindValue(':newtoken',$token);
             $usql->bindValue(':newemail',$row['email']);
             
