@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_POST['reset-password'])) {
 
     $mail = $_POST['email'];
@@ -11,8 +10,6 @@ if (isset($_POST['reset-password'])) {
 
     $email = filter_var($mail, FILTER_SANITIZE_STRING);
     
-    $userid = $_SESSION['userID'];
-
     $db = new SQLite3('../sqlite/webapp.db');
 
     $sql = $db->prepare("SELECT * FROM login WHERE email = :mail");
