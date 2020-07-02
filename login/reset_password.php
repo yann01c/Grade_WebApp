@@ -1,5 +1,5 @@
 <?php
-use PHPMailer\PHPMailer\PHPmMailer;
+use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Execption;
 
@@ -61,7 +61,7 @@ if (isset($_POST['reset-password'])) {
 
         // Send mail
         $to = $row['email'];
-        $subject = "Reset your Password, ".$username;
+        $subject = "Reset your Password, " + $username;
         $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/new_password.php?token=$token'>RESET</a>";
 
         $mail = new PHPMailer(true);
@@ -69,12 +69,14 @@ if (isset($_POST['reset-password'])) {
         try {
             // Server
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->SMTPSecure = false;
+            $mail->SMTPAutoTLS = false;
             $mail->isSMTP();
-            $mail->Host      = '100.100.125.35';
+            $mail->Host      = '100.100.101.25';
             $mail->Port      = 25;
 
             // Recipients
-            $mail->setFrom('grades@spie.ch','Mailer');
+            $mail->setFrom('grades@spie.ch','Grades-Mailer');
             $mail->addAddress($to,$username);
 
             // Content
