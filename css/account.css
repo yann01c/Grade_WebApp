@@ -451,6 +451,8 @@ span {
     border-radius: 15px;
 }
 #change #change-bck {
+    -webkit-appearance: none;
+    appearance: none;
     width: 45%;
     margin-right: 5%;
     padding: 6px;
@@ -542,6 +544,8 @@ span {
     border-radius: 15px;
 }
 #reset #reset-bck {
+    -webkit-appearance: none;
+    appearance: none;
     width: 45%;
     margin-right: 5%;
     background-color: white;
@@ -579,6 +583,8 @@ span {
 }
 
 #pending #pending-bck {
+    -webkit-appearance: none;
+    appearance: none;
     width: 80%;
     margin-left: 10%;
     background-color: black;

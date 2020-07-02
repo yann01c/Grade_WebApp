@@ -162,8 +162,12 @@
                     $message = "Successfully logged out!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
-                else if ($_GET['info'] == "changed") {
-                    $message = "Successfully changed Password!";
+                else if ($_GET['info'] == "changed" ) {
+                    $message = "Successfully changed your Password!";
+                    echo "<script type='text/javascript'>alert('$message');</script>";
+                }
+                else if ($_GET['success'] == "newpw") {
+                    $message = "Successfully changed your Password!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
             }
