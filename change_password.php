@@ -26,18 +26,23 @@
         <form action="login/change_pw.php" method="POST">
             <div> 
                 <label for="old">Old Password</label><br>
-                <input name="old" type="password">
+                <input class="test" name="old" type="password">
+                <div class="change-border"></div>
             </div>
             <div>
                 <label for="new1">New Password</label><br>
-                <input name="new1" type="password">     
+                <input class="test" name="new1" type="password">
+                <div class="change-border"></div>
             </div>
             <div>
                 <label for="new2">Repeat Password</label><br>
-                <input name="new2" type="password">     
+                <input class="test" name="new2" type="password">
+                <div class="change-border"></div>     
             </div>
-            <button id="change-btn" name="changepw" type="submit">Change</button>
-            <br><a id="change-bck" href="index.php">Back</a>
+            <div style="display:flex;">
+                <input id="change-bck" type="button" onclick="location.href='account.php';" value="Back">
+                <button id="change-btn" name="changepw" type="submit">Change</button>
+            </div>
         </form>
         <?php include "login/change_pw.php"; ?>
         </div>

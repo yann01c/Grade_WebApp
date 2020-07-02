@@ -396,69 +396,88 @@ span {
     height: 100vh;
     min-height: 100%;
     /*background-color: #0F2259;*/
-    background-image: url("../images/wp_blur.png");
+    /* background-image: url("../images/wp_blur.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background-color: black;
 }
 #change #change_main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
     width: 100%;
-    background-image: url("../images/wp_blur.png");
+    background-color: black;
+    /* background-image: url("../images/wp_blur.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
-#change #change_main > form > div > input {
+#change #change_main > form > div > .test {
+    background-color: transparent;
+    color: white;
     width: 20em;
-    padding: 4px;
-    border: none;
+    padding: 6px;
     font-size: 1.1em;
     margin-top: 10px;
+}
+#change #change_main > form > div > .test:focus ~ .change-border {
+    width:0;
+}
+#change .change-border {
+    transition: 300ms;
+    width: 100%;
     margin-bottom: 10px;
+    height: 3px;
+    background-color: white;
 }
 #change #change_main > form > div > label {
     font-size: 1.7em;
     color: white;
 }
 #change #change-btn {
-    width: 20.5em;
+    width: 45%;
+    margin-left: 5%;
     padding: 6px;
     border: none;
-    margin-top: 5px;
-    font-size: 1.1em;
-    color: white;
-    background-color: black;
+    margin-top: 20px;
+    font-size: 1.4em;
+    color: black;
+    background-color: white;
     transition: 200ms;
     cursor: pointer;
+    font-family: 'Iceland', cursive;
 }
 #change #change-btn:hover {
-    background-color: white;
-    color: black;
+    border-radius: 15px;
 }
 #change #change-bck {
-    text-decoration: none;
-    font-size: 1.8em;
+    width: 45%;
+    margin-right: 5%;
+    padding: 6px;
+    border: none;
+    margin-top: 20px;
+    font-size: 1.4em;
     color: black;
+    background-color: white;
     -webkit-transition: 200ms;
     transition: 200ms;
+    cursor: pointer;
+    font-family: 'Iceland', cursive;
 }
 #change #change-bck:hover {
-    color: blue;
-    margin-left: 10px;
+    border-radius: 15px;
 }
 #change .change-text {
     position:relative;
-    background-image:linear-gradient(transparent 60%, #0F2259 0px);
-    color: white;
+    background-image:linear-gradient(transparent 60%, transparent 0px);
+    color: silver;
     font-size: 1.8em;
     margin: 0;
 }
 @media (max-width: 700px) { 
-    #change #change_main > form > div > input { font-size: 0.9em;}
+    #change #change_main > form > div > .test { font-size: 0.9em;}
     #change #change_main > form > div > label { font-size: 1.3em;}
-    #change #change-btn { font-size: 0.9em; }
+    /* #change #change-btn { font-size: 0.9em; } */
     #change .change-text { font-size: 1.2em; }
 }
 @media (max-width: 450px) { 
@@ -520,7 +539,7 @@ span {
     font-family: 'Iceland', cursive;
 }
 #reset #reset-btn:hover {
-    border-radius: 10px;
+    border-radius: 15px;
 }
 #reset #reset-bck {
     width: 45%;
@@ -537,7 +556,7 @@ span {
     font-family: 'Iceland', cursive;
 }
 #reset #reset-bck:hover {
-    border-radius: 10px;
+    border-radius: 15px;
 }
 #reset .reset-border {
     transition: 300ms;
@@ -557,6 +576,24 @@ span {
     #reset #reset_main > form > div > label { font-size: 1.3em;}
 }
 @media (max-width: 450px) { 
+}
+
+#pending #pending-bck {
+    width: 80%;
+    margin-left: 10%;
+    background-color: black;
+    font-size: 1.3em;
+    color: white;
+    padding: 6px;
+    transition: 200ms;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 2em;
+    z-index: 1000;
+    font-family: 'Iceland', cursive;
+}
+#pending #pending-bck:hover {
+    border-radius: 15px;
 }
 
 
@@ -790,4 +827,29 @@ span {
     background-color: #BF0413;
     color: white;
     box-shadow: none;
+}
+/* @keyframes pend {
+    0% {width: 0em;}
+    25% {width: 17em;}
+    50% {width: 0em;}
+    75% {width: 17em;}
+    100% {width: 0em;}
+} */
+.pending {
+    height: 5px;
+    width: 20em;
+    background-color: black;
+}
+.outer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner {
+    width: 17em;
+    height: 1em;
+    display: flex;
+    justify-content: center;
 }

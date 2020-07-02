@@ -15,13 +15,12 @@ if (isset($_POST['reset-password'])) {
 
     $db = new SQLite3('../sqlite/webapp.db');
 
-    $sql = $db->prepare("SELECT * FROM login WHERE user_id = :user AND email = :mail");
+    $sql = $db->prepare("SELECT * FROM login WHERE email = :mail");
     if (!$sql) {
         header("Location: ../account.php?error=sql");
         exit();
     } else {
         $sql->bindValue(':mail',$email);
-        $sql->bindValue(':user',$userid);
         $result = $sql->execute();
         $row = $result->fetchArray();
 

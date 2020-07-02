@@ -139,7 +139,7 @@
                         <input type='password' name='a-password' value=''>
                     </div>
                     <div>
-                        <a href='#' id='a-float'>Forgot Password?</a>
+                        <a href='reset.php' id='a-float'>Forgot Password?</a>
                     </div>";
                     //echo '<div>
                       //  <a href="register.php">Sign Up</a>
