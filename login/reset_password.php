@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPmMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Execption;
 
-require '../phpmailer/src/Exeption.php';
+require '../phpmailer/src/Exception.php';
 require '../phpmailer/src/PHPMailer.php';
 require '../phpmailer/src/SMTP.php';
 
