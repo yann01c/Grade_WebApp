@@ -1,4 +1,12 @@
 <?php
+use PHPMailer\PHPMailer\PHPmMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Execption;
+
+require '../phpmailer/src/Exeption.php';
+require '../phpmailer/src/PHPMailer.php';
+require '../phpmailer/src/SMTP.php';
+
 if (isset($_POST['reset-password'])) {
 
     $mail = $_POST['email'];
@@ -53,7 +61,37 @@ if (isset($_POST['reset-password'])) {
 
         // Send mail
         $to = $row['email'];
-        $subject = "Reset your Password on GRADES";
+        $subject = "Reset your Password, ".$username;
+        $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/new_password.php?token=$token'>RESET</a>";
+
+        $mail = new PHPMailer(true);
+
+        try {
+            // Server
+            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->isSMTP();
+            $mail->Host      = '100.100.125.35';
+            $mail->Port      = 25;
+
+            // Recipients
+            $mail->setFrom('grades@spie.ch','Mailer');
+            $mail->addAddress($to,$username);
+
+            // Content
+            $mail->isHTML(true);
+            $mail->Subject = $username;
+            $mail->Body    = $msg;
+            $mail->AltBody = $msg;
+
+            $mail->send();
+        
+            echo 'Message has been sent';
+        
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+
+
         $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/new_password.php?token=$token'>RESET</a>";
         $msg = wordwrap($msg,70);
         $headers = "From: grades@spie.ch";
