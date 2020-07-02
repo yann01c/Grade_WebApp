@@ -92,13 +92,13 @@ if (isset($_POST['reset-password'])) {
         }
 
 
-        $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/new_password.php?token=$token'>RESET</a>";
-        $msg = wordwrap($msg,70);
-        $headers = "From: grades@spie.ch";
+        // $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/new_password.php?token=$token'>RESET</a>";
+        // $msg = wordwrap($msg,70);
+        // $headers = "From: grades@spie.ch";
         
-        mail($to, $subject, $msg, $headers);
-        header("Location: ../pending.php?email=$email");
-        exit();
+        // mail($to, $subject, $msg, $headers);
+        // header("Location: ../pending.php?email=$email");
+        // exit();
     }
 }
 
