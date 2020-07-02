@@ -13,7 +13,7 @@
         <div class="inner">
             <div>
                 <div>
-                    <p style="margin-top:0;width:100%;display:flex;justify-content:center;color: black;font-size:1.3em;"><?php echo $_GET['email']; ?></p>
+                    <p style="margin-top:0;width:100%;display:flex;justify-content:center;color: black;font-size:1.3em;font-family: 'Maven Pro', sans-serif;"><?php echo $_GET['email']; ?></p>
                 </div>
                 <div class="pending"></div>
                 <input id="pending-bck" type="button" onclick="location.href='account.php'" value="Home">
