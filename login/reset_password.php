@@ -99,8 +99,8 @@ if (isset($_POST['reset-password'])) {
         // $headers = "From: grades@spie.ch";
         
         // mail($to, $subject, $msg, $headers);
-        // header("Location: ../pending.php?email=$email");
-        // exit();
+        header("Location: ../pending.php?email=$email");
+        exit();
     }
 }
 
