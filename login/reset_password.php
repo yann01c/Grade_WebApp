@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST['reset-password'])) {
 
     $mail = $_POST['email'];
@@ -26,31 +27,71 @@ if (isset($_POST['reset-password'])) {
             exit();
         }
 
-        $token = md5(uniqid(rand(), true));
+        $check = $db->prepare("SELECT * FROM token WHERE email = :m");
+        $check->bindValue(":m",$row['email']);
+        $cresult = $check->execute();
+        $crow = $cresult->fetchArray();
 
-        $tsql = $db->prepare("INSERT INTO token (email,token) VALUES (:email,:token)");
-        $tsql->bindValue(':email',$row['email']);
-        $tsql->bindValue('token',$token);
+        if (empty($crow['token']) && empty($crow['email'])) {
+            $token = md5(uniqid(rand(), true));
 
-        $tresult = $tsql->execute();
+            $tsql = $db->prepare("INSERT INTO token (email,token,timestamp) VALUES (:email,:token,datetime('now'))");
+            $tsql->bindValue(':email',$row['email']);
+            $tsql->bindValue(':token',$token);
+
+            $tresult = $tsql->execute();
+        } else {
+            $token = md5(uniqid(rand(), true));
+
+            $usql = $db->prepare("UPDATE token SET token = :newtoken, timestamp = datetime('now') WHERE email = :newemail");
+            $usql->bindValue(':newtoken',$token);
+            $usql->bindValue(':newemail',$row['email']);
+            
+            $uresult = $usql->execute();
+        }
 
         $username = $row['username'];
 
         // Send mail
         $to = $row['email'];
         $subject = "Reset your Password on GRADES";
-        $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/reset.php?token=$token'>RESET</a>";
+        $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/new_password.php?token=$token'>RESET</a>";
         $msg = wordwrap($msg,70);
-        $headers = "From: info@grades.ch";
+        $headers = "From: grades@spie.ch";
         
         mail($to, $subject, $msg, $headers);
         header("Location: ../pending.php?email=$email");
-
+        exit();
     }
 
 
-} else {
-    // If accessed manually
-    header("Location: ../account.php");
+}
+
+if (isset($_POST['new-password'])) {
+    $new1 = $_POST['new1'];
+    $new2 = $_POST['new2'];
+    $userid = $_SESSION['userID'];
+    
+    $db = new SQLite3('../sqlite/webapp.db');
+
+    if (empty($new1) || empty($new2)) {
+        header("Location: new_password?token=$token&error=empty");
+        exit();
+    }
+    if ($new1 != $new2) {
+        header("Location: new_password?token=$token&error=notmatching");
+        exit();
+    }
+
+    $passwordHashed = password_hash($new2, PASSWORD_DEFAULT);
+
+    $sql1 = $db->prepare("UPDATE login SET passwd = :newpw WHERE user_id = :id");
+    $sql1->bindValue(':newpw',$passwordHashed);
+    $sql1->bindValue(':id',$userid);
+    $result1 = $sql1->execute();
+    $row1 = $result1->fetchArray();
+
+    header("Location: ../account.php?success=newpw");
     exit();
+
 }

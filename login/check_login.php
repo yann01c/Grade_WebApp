@@ -61,7 +61,7 @@ if (isset($_POST['login'])) {
                     exit();
                 }
             } else {
-                header("Location: ../account.php?error=nouser");
+                header("Location: ../account.php?error=wrongpassword");
                 exit();
             }
         }

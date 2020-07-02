@@ -3,4 +3,5 @@
     $db->exec('CREATE TABLE IF NOT EXISTS token (
         token_id INTEGER PRIMARY KEY,
         email varchar(50),
-        token TEXT)');
+        token TEXT,
+        timestamp TEXT)');

@@ -22,11 +22,11 @@
         <form action="login/reset_password.php" method="POST">
             <div> 
                 <label for="email">Enter E-Mail to reset password</label><br>
-                <input name="email" type="email">
+                <input class="input" name="email" type="email">
                 <div class="reset-border"></div>
             </div>
             <div style="display:flex;">
-                <button id="reset-bck" href="index.php">Back</button>
+                <input id="reset-bck" onclick="location.href='account.php';" type="button" value="Back">
                 <button id="reset-btn" name="reset-password" type="submit">Send</button>
             </div>
         </form>

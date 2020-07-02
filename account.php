@@ -95,11 +95,6 @@
             }
             ?>
             <div class="form">
-            <?php if (isset($_GET['uid']) && !empty($_GET['uid'])) {
-                        $uidvalue = $_GET['uid'];
-                    } else {
-                        $uidvalue = "";
-            } ?>
             <?php
                 if (isset($_SESSION['userID'])) {
                     $uid = $_SESSION['userUID'];
@@ -132,15 +127,15 @@
                     echo '<form action="login/check_login.php" method="post">
                     <div>
                         <label for="a-username">Username</label><br>
-                        <input type="text" name="a-username"'; echo "value='$uidvalue'>
+                        <input type="text" name="a-username">
                     </div>
                     <div>
-                        <label for='a-password'>Password</label><br>
-                        <input type='password' name='a-password' value=''>
+                        <label for="a-password">Password</label><br>
+                        <input type="password" name="a-password" value="">
                     </div>
                     <div>
-                        <a href='reset.php' id='a-float'>Forgot Password?</a>
-                    </div>";
+                        <a href="reset.php" id="a-float">Forgot Password?</a>
+                    </div>';
                     //echo '<div>
                       //  <a href="register.php">Sign Up</a>
                     //</div>';
@@ -155,10 +150,6 @@
             if(isset($_GET['error'])) {
                 if($_GET['error'] == "wrongpassword") {
                     $message = "Wrong Password!";
-                    echo "<script type='text/javascript'>alert('$message');</script>";
-                }
-                else if ($_GET['error'] == "nouser") {
-                    $message = "User does not exist!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
                 else if ($_GET['error'] == "emptyfields") {

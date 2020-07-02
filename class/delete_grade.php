@@ -18,7 +18,7 @@
         $date1 = $row['timestamp'];
 
         // Check if grade is not older than 7 days (if true, it won't delete the grade)
-        if (strtotime($date1) < strtotime('-7 day') && !empty($row['timestamp'])) {
+        if (strtotime($date1) < strtotime('-7 day') && !empty($date1)) {
             header("Location: ../class.php?c1-class=$class&old=true");
             exit();
         } else {

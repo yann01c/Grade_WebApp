@@ -504,7 +504,7 @@ span {
     background-size: cover;
     background-repeat: no-repeat; */
 }
-#reset #reset_main > form > div > input {
+#reset #reset_main > form > div > .input {
     width: 20em;
     padding: 4px;
     border: none;
@@ -518,7 +518,7 @@ span {
     font-family: 'Maven Pro', sans-serif;
 
 }
-#reset #reset_main > form > div > input:focus ~ .reset-border {
+#reset #reset_main > form > div > .input:focus ~ .reset-border {
     width: 0%;
 }
 #reset #reset_main > form > div > label {
@@ -572,7 +572,7 @@ span {
     margin: 0;
 }
 @media (max-width: 700px) { 
-    #reset #reset_main > form > div > input { font-size: 0.9em;}
+    #reset #reset_main > form > div > .input { font-size: 0.9em;}
     #reset #reset_main > form > div > label { font-size: 1.3em;}
 }
 @media (max-width: 450px) { 
@@ -596,6 +596,81 @@ span {
     border-radius: 15px;
 }
 
+
+/* NEW PASSWORD */
+#new #new_cont {
+    height: 100vh;
+    min-height: 100%;
+    /*background-color: #0F2259;*/
+    /* background-image: url("../images/wp_blur.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background-color: black;
+}
+#new #new_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    width: 100%;
+    background-color: black;
+    /* background-image: url("../images/wp_blur.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+#new #new_main > form > div > .test {
+    background-color: transparent;
+    color: white;
+    width: 20em;
+    padding: 6px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+#new #new_main > form > div > .test:focus ~ .new-border {
+    width:0;
+}
+#new .new-border {
+    transition: 300ms;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 3px;
+    background-color: white;
+}
+#new #new_main > form > div > label {
+    font-size: 1.7em;
+    color: white;
+}
+#new #new-btn {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    margin-top: 20px;
+    font-size: 1.4em;
+    color: black;
+    background-color: white;
+    transition: 200ms;
+    cursor: pointer;
+    font-family: 'Iceland', cursive;
+}
+#new #new-btn:hover {
+    border-radius: 15px;
+}
+#new .new-text {
+    position:relative;
+    background-image:linear-gradient(transparent 60%, transparent 0px);
+    color: silver;
+    font-size: 1.8em;
+    margin: 0;
+}
+@media (max-width: 700px) { 
+    #new #new_main > form > div > .test { font-size: 0.9em;}
+    #new #new_main > form > div > label { font-size: 1.3em;}
+    /* #new #new-btn { font-size: 0.9em; } */
+    #new .new-text { font-size: 1.2em; }
+}
+@media (max-width: 450px) { 
+    #new .new-text { font-size: 1em; }
+}
 
 /* gallery */
 
