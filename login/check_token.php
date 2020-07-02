@@ -26,6 +26,6 @@ if (isset($_GET['token'])) {
         header("Location: account.php?error=expired");
         exit();
     } else {
-        alert("Token Valid!");
+        echo "Token Valid!";
     }   
 }
