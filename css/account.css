@@ -30,6 +30,7 @@ body {
     height: auto;
 }
 select {
+    border: none;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -38,6 +39,7 @@ textarea {
     appearance: none;
 }
 input {
+    border: none;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -392,6 +394,10 @@ span {
     -webkit-transition: color 150ms;
     transition: color 150ms;
 }
+#account .input-text > input {
+    -webkit-appearance: checkbox;
+    appearance: checkbox;
+}
 
 /* CHANGE PASSWORD */
 #change #change_cont {
@@ -450,6 +456,7 @@ span {
     font-family: 'Iceland', cursive;
 }
 #change #change-btn:hover {
+    -webkit-border-radius: 15px;
     border-radius: 15px;
 }
 #change #change-bck {
@@ -469,6 +476,7 @@ span {
     font-family: 'Iceland', cursive;
 }
 #change #change-bck:hover {
+    -webkit-border-radius: 15px;
     border-radius: 15px;
 }
 #change .change-text {
@@ -543,6 +551,7 @@ span {
     font-family: 'Iceland', cursive;
 }
 #reset #reset-btn:hover {
+    -webkit-border-radius: 15px;
     border-radius: 15px;
 }
 #reset #reset-bck {
@@ -562,6 +571,7 @@ span {
     font-family: 'Iceland', cursive;
 }
 #reset #reset-bck:hover {
+    -webkit-border-radius: 15px;
     border-radius: 15px;
 }
 #reset .reset-border {
@@ -585,6 +595,7 @@ span {
 }
 
 #pending #pending-bck {
+    border: none;
     -webkit-appearance: none;
     appearance: none;
     width: 80%;
@@ -601,6 +612,7 @@ span {
     font-family: 'Iceland', cursive;
 }
 #pending #pending-bck:hover {
+    -webkit-border-radius: 15px;
     border-radius: 15px;
 }
 
