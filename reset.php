@@ -32,5 +32,17 @@
         </form>
         </div>
     </div>
+<?php
+    if(isset($_GET['error'])) {
+        if($_GET['error'] == "empty") {
+            $message = "Empty Field!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        else if ($_GET['error'] == "notexist") {
+            $message = "No E-Mail found!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+}
+            ?>
 </body>
 </html>
