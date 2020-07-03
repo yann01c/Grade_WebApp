@@ -178,6 +178,12 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
+    <?php if(isset($_GET['logout'])) {
+        if ($_GET['logout'] == "complete") {
+            echo "<script>alert('Logout in 20 Seconds...');</script>";
+            echo "<script>setTimeout('location.href = 'account.php',20000);</script>";
+        }
+    } ?>
     <script src="js/a2hs/addtohomescreen.js"></script>
     <script>addToHomescreen();</script>
     <script src="js/a2hs/register.js"></script>
