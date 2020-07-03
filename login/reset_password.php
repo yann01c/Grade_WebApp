@@ -70,7 +70,7 @@ if (isset($_POST['reset-password'])) {
         // Send mail
         $to = $row['email'];
         $subject = "Reset your Password, $username!";
-        $msg = "Hello $username, you can reset your password here:\n\n<a href='10.123.123.123/new_password.php?token=$token'>RESET</a>\n\n-- This link is valid for 15 Minutes --";
+        $msg = "<h1 style='font-size: 1.6em;color:black;text-decoration: underline;'>Hello $username</h1>\n\n <p style='font-size: 1.1em;color:black;'>You can reset your password by clicking on the following link:</p>\n\n<a href='10.123.123.123/new_password.php?token=$token'>Reset Password</a>\n\n<p style='font-size: 0.7em;color:darkblue;'>-- This link is valid for 15 Minutes --</p>";
 
         $mail = new PHPMailer(true);
 
