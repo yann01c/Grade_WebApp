@@ -107,25 +107,19 @@ if (isset($_POST['reset-password'])) {
             $mail->isSMTP();
             $mail->Host      = '100.100.101.25';
             $mail->Port      = 25;
-
             // Recipients
             $mail->setFrom('info@grades.spie.ch','Grades-Mailer');
             $mail->addAddress($to,$username);
-
             // Content
             $mail->isHTML(true);
             $mail->Subject = $subject;
             $mail->Body    = $msg;
             $mail->AltBody = $msg;
-
             $mail->send();
-        
             echo 'Message has been sent';
-        
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-
         header("Location: ../pending.php?email=$email");
         exit();
     }
