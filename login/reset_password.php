@@ -57,12 +57,20 @@ if (isset($_POST['reset-password'])) {
             $uresult = $usql->execute();
         }
 
-        $username = $row['username'];
+        if (empty($row['username'])) {
+
+            $username = "-";
+
+        } else {
+
+            $username = $row['username'];
+
+        }
 
         // Send mail
         $to = $row['email'];
-        $subject = "Reset your Password, " + $username;
-        $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/new_password.php?token=$token'>RESET</a>";
+        $subject = "Reset your Password, $username!";
+        $msg = "Hello $username, you can reset your password here:\n\n<a href='10.123.123.123/new_password.php?token=$token'>RESET</a>\n\n-- This link is valid for 15 Minutes --";
 
         $mail = new PHPMailer(true);
 
@@ -93,12 +101,6 @@ if (isset($_POST['reset-password'])) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 
-
-        // $msg = "Hello ".$username.", you can reset your password here: <a href='10.123.123.123/new_password.php?token=$token'>RESET</a>";
-        // $msg = wordwrap($msg,70);
-        // $headers = "From: grades@spie.ch";
-        
-        // mail($to, $subject, $msg, $headers);
         header("Location: ../pending.php?email=$email");
         exit();
     }

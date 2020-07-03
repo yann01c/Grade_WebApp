@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grades - <?php include 'class/select_class.php'; ?></title>
+    <title>Grades - <?php if (isset($_POST['c1-class']) || (isset($_GET['c1-class']))) {
+                            include 'class/select_class.php';
+                        }
+                        if (isset($_POST['user-pre'])) {
+                            echo $_POST['bbuid']." | ".$_POST['c2-class'];} ?>
+    </title>
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/main.css">
 

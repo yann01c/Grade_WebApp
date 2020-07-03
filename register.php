@@ -15,10 +15,10 @@
 
 </head>
 <body id="register">
-<?php if($_SESSION['userGRPID'] != 3 && $_SESSION['userGRPID'] != 4) {
-    header("Location: account.php");
-    exit();
-} ?>
+<?php //if($_SESSION['userGRPID'] != 3 && $_SESSION['userGRPID'] != 4) {
+    //header("Location: account.php");
+    //exit();
+//} ?>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -60,6 +60,10 @@
                     if (empty($group) || $group == "-") {
                         $gdisplay = "&#8595";
                     }
+                } else {
+                    $uid = "";
+                    $email = "";
+                    $group = "";
                 } ?>
                     <div>
                         <label for="r-uid">Username</label><br>

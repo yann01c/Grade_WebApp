@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php include "login/not_logged.php";?>
-<?php include "login/db_token.php";?>
+<?php include "sqlite/create_db.php";?>
 
 <!DOCTYPE html>
 <html lang="en">

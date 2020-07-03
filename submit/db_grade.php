@@ -7,10 +7,10 @@
         weighting INTEGER,
         description TEXT,
         timestamp DATE,
+        deleted varchar(16),
         fk_user INTEGER,
         fk_class INTEGER,
         FOREIGN KEY (fk_user)
             REFERENCES login (user_id),
         FOREIGN KEY (fk_class)
             REFERENCES class (class_id))');
-?>
