@@ -76,14 +76,19 @@ if (isset($_POST['reset-password'])) {
         .container {
             width: 100%;
             height: 200vh;
-            align: center;
+            align-items: center;
+            display: flex;
+            justify-content-center;
+            background-color: black
         }
 
         .title {
+            color: white;
             font-size: 1.4em;
             text-shadow: 2px 2px black;
         }
         .text {
+            color: white;
             font-size: 1.0em;
         }
         .link {
@@ -116,9 +121,9 @@ if (isset($_POST['reset-password'])) {
             $mail->Body    = $msg;
             $mail->AltBody = $msg;
             $mail->send();
-            echo 'Message has been sent';
+            // echo 'Message has been sent';
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
         header("Location: ../pending.php?email=$email");
         exit();
