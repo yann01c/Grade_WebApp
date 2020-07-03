@@ -76,18 +76,14 @@ if (isset($_POST['reset-password'])) {
         .container {
             width: 100%;
             height: 200vh;
-            display: flex;
-            justify-content: conter;
             align: center;
         }
 
         .title {
             font-size: 1.4em;
-            color: white;
             text-shadow: 2px 2px black;
         }
         .text {
-            color: white;
             font-size: 1.0em;
         }
         .link {
