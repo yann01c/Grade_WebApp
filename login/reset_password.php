@@ -70,7 +70,36 @@ if (isset($_POST['reset-password'])) {
         // Send mail
         $to = $row['email'];
         $subject = "Reset your Password, $username!";
-        $msg = "<h1 style='font-size: 1.6em;color:black;text-decoration: underline;'>Hello $username</h1>\n\n <p style='font-size: 1.1em;color:black;'>You can reset your password by clicking on the following link:</p>\n\n<a href='10.123.123.123/new_password.php?token=$token'>Reset Password</a>\n\n<p style='font-size: 0.7em;color:darkblue;'>-- This link is valid for 15 Minutes --</p>";
+        $msg = "
+        <h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='10.123.123.123/new_password.php?token=$token'>Reset Password</a>\n\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p>
+        
+        <style>
+        .container {
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: conter;
+            align: center;
+            background-color: #0F2259;
+        }
+
+        .title {
+            font-size: 1.7em;
+            color: white;
+            text-shadow: 2px 2px black;
+        }
+        .text {
+            color: white;
+            font-size: 1.4em;
+        }
+        .link {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 2em;
+        }
+        </style>
+        ";
 
         $mail = new PHPMailer(true);
 
@@ -84,7 +113,7 @@ if (isset($_POST['reset-password'])) {
             $mail->Port      = 25;
 
             // Recipients
-            $mail->setFrom('grades@spie.ch','Grades-Mailer');
+            $mail->setFrom('info@grades.spie.ch','Grades-Mailer');
             $mail->addAddress($to,$username);
 
             // Content
