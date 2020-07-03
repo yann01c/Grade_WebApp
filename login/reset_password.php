@@ -75,31 +75,30 @@ if (isset($_POST['reset-password'])) {
         <style>
         .container {
             width: 100%;
-            height: 100vh;
+            height: 200vh;
             display: flex;
             justify-content: conter;
             align: center;
-            background-color: black;
         }
 
         .title {
-            font-size: 1.6em;
+            font-size: 1.4em;
             color: white;
             text-shadow: 2px 2px black;
         }
         .text {
             color: white;
-            font-size: 1.4em;
+            font-size: 1.0em;
         }
         .link {
             color: blue;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.4em;
+            font-size: 0.8em;
         }
         </style>
 
-        <div class='container'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='10.123.123.123/new_password.php?token=$token'>Reset Password</a>\n\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div>
+        <div class='container'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='10.123.123.123/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div>
         ";
 
         $mail = new PHPMailer(true);
