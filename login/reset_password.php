@@ -69,21 +69,21 @@ if (isset($_POST['reset-password'])) {
 
         // Send mail
         $to = $row['email'];
-        $subject = "Reset your Password, $username!";
+        $subject = "Reset your Password, $username";
         $msg = "
         
         <style>
         .container {
             width: 100%;
-            height: 50vh;
+            height: 100vh;
             display: flex;
             justify-content: conter;
             align: center;
-            background-color: #0F2259;
+            background-color: black;
         }
 
         .title {
-            font-size: 1.7em;
+            font-size: 1.6em;
             color: white;
             text-shadow: 2px 2px black;
         }
@@ -95,7 +95,7 @@ if (isset($_POST['reset-password'])) {
             color: blue;
             text-decoration: none;
             font-weight: bold;
-            font-size: 2em;
+            font-size: 1.4em;
         }
         </style>
 
@@ -119,7 +119,7 @@ if (isset($_POST['reset-password'])) {
 
             // Content
             $mail->isHTML(true);
-            $mail->Subject = $username;
+            $mail->Subject = $subject;
             $mail->Body    = $msg;
             $mail->AltBody = $msg;
 
