@@ -181,7 +181,9 @@
     <?php if(isset($_GET['logout'])) {
         if ($_GET['logout'] == "complete") {
             echo "<script>alert('Logout in 20 Seconds...');</script>";
+            header("Location: https://login-i-ng.xtra.netwatch.ch/auth/realms/MSP/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2Fgrades-i.spie.ch");
             echo "<script>setTimeout('location.href = 'account.php',20000);</script>";
+            
         }
     } ?>
     <script src="js/a2hs/addtohomescreen.js"></script>
