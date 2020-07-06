@@ -76,14 +76,17 @@ if (isset($_POST['reset-password'])) {
         .container {
             width: 100%;
             height: 200vh;
-            background-color: black;
+            background-image: url('../images/wp_blur.png');
+            background-size: cover;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .main {
             width: 50%;
-            height: 50vh;
+            height: 100vh;
+            opacity: 0.7;
             background-color: blue;
         }
         .title {
@@ -103,7 +106,7 @@ if (isset($_POST['reset-password'])) {
         }
         </style>
 
-        <div class='container'><div><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='10.123.123.123/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
+        <div class='container'><div class='main'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='10.123.123.123/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
         ";
 
         $mail = new PHPMailer(true);
@@ -122,10 +125,9 @@ if (isset($_POST['reset-password'])) {
             // Content
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';
-            $mail->MsgHTML($msg);
-            // $mail->Subject = $subject;
-            // $mail->Body    = $msg;
-            // $mail->AltBody = $msg;
+            $mail->Subject = $subject;
+            $mail->Body    = $msg;
+            $mail->AltBody = $msg;
             $mail->send();
             // echo 'Message has been sent';
         } catch (Exception $e) {
