@@ -64,8 +64,11 @@
 
 
 </head>
-<body id="account">
-    <div class="container">
+<body id="account" onload="myFunction()">
+<div id="div-loader">
+    <img style='width:100px;height:auto;' id="loader" src="images/logo.png" alt="'LOGO'">
+</div>
+    <div class="container" id="ac-wrap">
         <div class="nav-wrapper">
             <div class="left-side">
                 <div id="a-submit"  class="nav-link-wrapper">
@@ -206,5 +209,18 @@
     }
     });
     </script>
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("div-loader").style.display = "none";
+  document.getElementById("ac-wrap").style.display = "block";
+}
+</script>
 </body>
 </html>
