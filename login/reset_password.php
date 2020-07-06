@@ -121,9 +121,11 @@ if (isset($_POST['reset-password'])) {
             $mail->addAddress($to,$username);
             // Content
             $mail->isHTML(true);
-            $mail->Subject = $subject;
-            $mail->Body    = $msg;
-            $mail->AltBody = $msg;
+            $mail->CharSet = 'UTF-8';
+            $mail->MsgHTML($msg);
+            // $mail->Subject = $subject;
+            // $mail->Body    = $msg;
+            // $mail->AltBody = $msg;
             $mail->send();
             // echo 'Message has been sent';
         } catch (Exception $e) {
