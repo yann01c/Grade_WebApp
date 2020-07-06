@@ -74,24 +74,14 @@ if (isset($_POST['reset-password'])) {
         
         <style>
         .container {
-            width: 50em;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         .main {
-            width: 40em;
-            height: 40vh;
-            opacity: 0.7;
         }
         .title {
-            color: white;
             font-size: 1.4em;
             text-shadow: 2px 2px black;
         }
         .text {
-            color: white;
             font-size: 1.0em;
         }
         .link {
@@ -102,7 +92,7 @@ if (isset($_POST['reset-password'])) {
         }
         </style>
 
-        <div class='container' style='background-color:black;display:flex;justify-content:center;align-items:center;width:10em;height:50em;'><div class='main'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='m1igrades.msp.ccsn.ch/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
+        <div class='container'><div class='main'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='m1igrades.msp.ccsn.ch/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
         ";
 
         $mail = new PHPMailer(true);
