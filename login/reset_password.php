@@ -74,8 +74,8 @@ if (isset($_POST['reset-password'])) {
         
         <style>
         .container {
-            width: 100%;
-            height: 200vh;
+            width: 50em;
+            height: 50vh;
             background-image: url('../images/wp_blur.png');
             background-size: cover;
             background-repeat: no-repeat;
@@ -84,8 +84,8 @@ if (isset($_POST['reset-password'])) {
             justify-content: center;
         }
         .main {
-            width: 50%;
-            height: 100vh;
+            width: 40em;
+            height: 40vh;
             opacity: 0.7;
             background-color: blue;
         }
@@ -106,7 +106,7 @@ if (isset($_POST['reset-password'])) {
         }
         </style>
 
-        <div class='container'><div class='main'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='10.123.123.123/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
+        <div class='container'><div class='main'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='m1igrades.msp.cssn.ch/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
         ";
 
         $mail = new PHPMailer(true);
