@@ -102,7 +102,7 @@ if (isset($_POST['reset-password'])) {
         }
         </style>
 
-        <div class='container' style='background-color: red;'><div class='main'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='m1igrades.msp.ccsn.ch/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
+        <div class='container' style='background-color: black; display:flex;justify-content: center;align-items: center;'><div class='main'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='m1igrades.msp.ccsn.ch/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
         ";
 
         $mail = new PHPMailer(true);
