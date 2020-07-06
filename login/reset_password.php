@@ -119,8 +119,11 @@ if (isset($_POST['reset-password'])) {
         } catch (Exception $e) {
             // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-        header("Location: ../pending.php?email=$email");
-        exit();
+
+        $script = "<script>window.location.href = ../pending.php?email=$email</script>";
+        echo $script;
+        // header("Location: ../pending.php?email=$email");
+        // exit();
     }
 }
 
