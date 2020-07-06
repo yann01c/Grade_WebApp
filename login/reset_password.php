@@ -115,12 +115,17 @@ if (isset($_POST['reset-password'])) {
             $mail->Body    = $msg;
             $mail->AltBody = $msg;
             $mail->send();
+            header("Location: ../pending.php?email=$email");
+            exit();
             // echo 'Message has been sent';
         } catch (Exception $e) {
+            header("Location: ../pending.php?email=$email");
+            exit();
             // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 
-        echo '<script>window.location.href = m1igrades.msp.ccsn.ch/../pending.php?email='$email'</script>';
+        // echo '<script>window.location.href = m1igrades.msp.ccsn.ch/../pending.php?email='$email'</script>';
+        // exit();
         // header("Location: ../pending.php?email=$email");
         // exit();
     }
