@@ -120,7 +120,7 @@ if (isset($_POST['reset-password'])) {
             // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 
-        echo '<script>window.location.href = m1igrades.msp.ccsn.ch/../pending.php?email='.$email.'</script>';
+        echo '<script>window.location.href = m1igrades.msp.ccsn.ch/../pending.php?email='+$email+'</script>';
         // header("Location: ../pending.php?email=$email");
         // exit();
     }
