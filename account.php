@@ -179,8 +179,8 @@
         </div>
     </div>
     <?php if (empty($_SESSION['userID'])) {
-            echo "<script>alert('Logout in 20 Seconds...');</script>";
-            echo "<script>setTimeout('location.href = 'account.php',20000);</script>";
+            // echo "<script>alert('Logout in 20 Seconds...');</script>";
+            // echo "<script>setTimeout('location.href = 'account.php',20000);</script>";
         } ?>
     <script src="js/a2hs/addtohomescreen.js"></script>
     <script>addToHomescreen();</script>
