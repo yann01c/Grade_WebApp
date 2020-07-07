@@ -6,12 +6,12 @@ session_start();
 setcookie("mod_auth_openidc_session","",time() -3600);
 session_unset();
 session_destroy();
-if ($_SERVER['HTTP_HOST'] == "m1igrades.msp.ccsn.ch" || $_SERVER['HTTP_HOST'] == "m1pgrades.msp.ccsn.ch") {
-    $server = $_SERVER['HTTP_HOST'];
+if ($_SERVER['SERVER_NAME'] == "m1igrades.msp.ccsn.ch" || $_SERVER['SERVER_NAME'] == "m1pgrades.msp.ccsn.ch") {
+    $server = $_SERVER['SERVER_NAME'];
     header("Location: https://login-i-ng.xtra.netwatch.ch/auth/realms/MSP/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2F$server");
 
 } else {
-    $server = $_SERVER['HTTP_HOST'];
+    $server = $_SERVER['SERVER_NAME'];
     header("Location: https://login-i-ng.xtra.netwatch.ch/auth/realms/MSP/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2F$server");
 }
 // }
