@@ -64,10 +64,12 @@
 
 
 </head>
-<body id="account" onload="myFunction()">
-<div id="div-loader">
+<!-- <body id="account" onload="myFunction()"> -->
+<!-- <body id="account"> -->
+
+<!-- <div id="div-loader">
     <img style='width:100px;height:auto;' id="loader" src="images/logo.png" alt="'LOGO'">
-</div>
+</div> -->
     <div class="container" id="ac-wrap">
         <div class="nav-wrapper">
             <div class="left-side">
@@ -119,7 +121,8 @@
                     echo "</form>";
                     if (isset($_SESSION['userID'])) {
                         if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
-                            echo "<br><br><a href='register.php'>Register User</a>";
+                            echo "<br><br><a href='calendar.php'>Calendar</a>";
+                            echo "<br><a href='register.php'>Register User</a>";
                             echo "<br><a id='a-change' href='change_password.php'>Change Password</a>";
                         } else {
                             echo "<br><br><a id='a-change' href='change_password.php'>Change Password</a>";

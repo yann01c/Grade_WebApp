@@ -1,0 +1,64 @@
+// Vars
+@arial: Arial, Helvetica, sans-serif;
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+body,html {
+  max-width: 100%;
+  margin:0;
+  padding:0;
+}
+.calendar {
+  max-width: 100%;
+  height: auto;
+  background-color: black;
+}
+.calendar > #events > div {
+  font-family: @arial;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  background-color: white;
+  color: black;
+}
+#events > div > p {
+  padding: 10px;
+}
+#events {
+  width: 100%;
+  display: block;
+  text-align: center;
+  height: 50em;
+  overflow: scroll;
+}
+.submission {
+  font-family: @arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20em;
+  background-color: grey;
+}
+.submission > div {
+}
+input[type="submit"] {
+  width: 100%;
+  border: none;
+  margin: 20px 0 0 0;
+  padding: 6px;
+}
+input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+label {
+  margin-right: 5em;
+}
+@media (max-width: 400px) {
+  #events { display: block; }
+  #events > div { width: 100%;border: none;}
+  
+}
