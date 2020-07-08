@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <div class="submission" id="e-sub">
-        <div class="back">
+        <div class="back" id="e-back">
             <!-- <a href="account.php">Back</a> -->
             <button onclick="hideshow()" id="e-btn">Hide</button>
         </div>
@@ -18,14 +18,17 @@
             <div>
                 <label for="e-name">Eventname</label>
                 <input type="text" name="e-name">
+                <div class="border"></div>
             </div>
             <div>
                 <label for="e-date">Date</label>
                 <input type="date" name="e-date">
+                <div class="border"></div>
             </div>
             <div>
                 <label for="e-time">Time</label>
                 <input type="time" name="e-time">
+                <div class="border"></div>
             </div>
             <div>
                 <label for="">Reminder</label>
@@ -36,10 +39,12 @@
                     <option value="2d">2 days before</option>
                     <option value="1w">1 week before</option>
                 </select>
+                <div class="border"></div>
             </div>
             <div>
                 <label for="e-description">Description</label>
                 <textarea rows="5" cols="50" name="e-description" placeholder=""></textarea>
+                <div class="border"></div>
             </div>
             <div>
                 <input type="submit" name="e-submit" value="Add Event" id="e-add">

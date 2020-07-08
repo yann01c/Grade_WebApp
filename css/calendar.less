@@ -12,7 +12,7 @@ body,html {
 }
 label {
   color: white;
-  font-size: 1.2em;
+  font-size: 1.0em;
 }
 
 // Calendar listing
@@ -44,37 +44,42 @@ label {
   transition: 500ms;
   margin-bottom: 20px;
 }
-.calendar > div > form > input:hover {
-}
 
 // Submission Form
 .submission > form {
   width: 20em;
 }
 .submission {
+  background-color: #2E3333;
+  color: white;
   font-family: @arial;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 30em;
-  background-color: black;
   transition: 300ms;
 }
   // BTN
 .submission > form > div > input[type="submit"] {
+  color: white;
   -webkit-appearance: none;
   appearance: none;
   width: 30%;
   border: none;
+  font-size: 0.9em;
   margin: 15px 0 0 0;
-  padding: 6px;
-  background-color: white;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  z-index: 1;
+  transition: 200ms;
+}
+.submission > form > div > input[type="submit"]:hover {
+  background-color: black;
 }
 .submission > form > div > input {
-  height: auto;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
@@ -86,6 +91,8 @@ label {
   margin-top: 5px;
 }
 .submission > form > div > select {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
@@ -96,9 +103,13 @@ label {
   margin-bottom: 5px;
   margin-top: 5px;
 }
+option {
+  color: black;
+}
 .submission > form > div > textarea {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
   resize: none;
-  height: auto;
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
@@ -109,12 +120,29 @@ label {
   margin-bottom: 0px;
   margin-top: 5px;
 }
+// .submission > form > div > input:focus ~ .border {
+//   width:0;
+// }
+// .submission > form > div > select:focus ~ .border {
+//   width:0;
+// }
+// .submission > form > div > textarea:focus ~ .border {
+//   width:0;
+// }
+// .border {
+//   transition: 300ms;
+//   width: 100%;
+//   margin-bottom: 10px;
+//   height: 3px;
+//   background-color: white;
+// }
 .back {
   display: flex;
   align-self: flex-end;
   justify-content: left; 
   position: absolute;
   left: 0px;
+  top: 0em;
 }
 .back > a {
   text-decoration: none;
@@ -132,10 +160,12 @@ label {
   cursor: pointer;
   padding: 8px;
   width: 5em;
-  font-size: 1em;
+  font-size: 1.0em;
+  transition: 200ms;
 }
-
-
+#e-btn:hover {
+  background-color: #009100;
+}
 // Mobile
 @media (max-width: 400px) {
   .calendar > div { width: 100%; }
@@ -143,7 +173,7 @@ label {
 @media (max-width: 600px) {
   .submission > form > div > input { padding: 4px; }
   .submission > form > div > textarea { padding: 4px; }
-  .submission > form > div > select { padding: 0px; }
+  .submission > form > div > select { padding: 4px; }
   label { font-size: 1em; }
 }
 @media (max-width: 800px) {
