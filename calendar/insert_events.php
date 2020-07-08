@@ -28,8 +28,9 @@ if(isset($_POST['e-submit'])) {
     $db = new SQLite3('../sqlite/webapp.db');
 
     $fkuser = $_SESSION['userID'];
-
-    $sql = $db->prepare("INSERT INTO events (eventname,date,time,description,deleted,fk_user,reminder) VALUES (:event,:date,:time,:desc,'false',:user,:reminder)");
+    $email = $_SESSION['userMAIL'];
+    
+    $sql = $db->prepare("INSERT INTO events (eventname,date,time,description,deleted,fk_user,reminder,email) VALUES (:event,:date,:time,:desc,'false',:user,:reminder,:email)");
     if (!$sql) {
         header("Location: ../calendar.php?error=sql");
     }
@@ -40,6 +41,7 @@ if(isset($_POST['e-submit'])) {
     $sql->bindValue(':desc',$description);
     $sql->bindValue(':user',$fkuser);
     $sql->bindValue(':reminder',$reminder);
+    $sql->bindValue(':email',$email);
 
     $result = $sql->execute();
     

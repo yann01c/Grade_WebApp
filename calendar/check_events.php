@@ -11,11 +11,7 @@ require '../phpmailer/src/SMTP.php';
 session_start();
 $db = new SQLite3("../sqlite/webapp.db");
 
-$userid = 3;
-
-$sql = $db->prepare("SELECT * FROM events WHERE fk_user = :user");
-$sql->bindValue(':user',$userid);
-
+$sql = $db->prepare("SELECT * FROM events");
 $result = $sql->execute();
 
 while ($row = $result->fetchArray()) {
@@ -23,7 +19,7 @@ while ($row = $result->fetchArray()) {
     $eventname = $row['eventname'];
 
     // Mail basics
-    $to = "yannic.haas@spie.com";
+    $to = $row['email'];
     $subject = "Reminder: $eventname";
     $rtime = $row['reminder'];
     $msg = "
@@ -150,4 +146,7 @@ while ($row = $result->fetchArray()) {
             }
         }
     }
+} else {
+    header("Location: ../calendar.php")
+    exit();
 }

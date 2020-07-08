@@ -6,6 +6,7 @@
         date date,
         time date,
         description TEXT,
+        email varchar(50),
         reminder varchar(32),
         deleted varchar(16),
         fk_user INTEGER,
