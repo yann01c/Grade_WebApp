@@ -42,7 +42,7 @@
                 <textarea rows="5" cols="50" name="e-description" placeholder=""></textarea>
             </div>
             <div>
-                <input type="submit" name="e-submit" value="Add Event">
+                <input type="submit" name="e-submit" value="Add Event" id="e-add">
             </div>
         </form>
     </div>
