@@ -6,6 +6,8 @@
         date date,
         time date,
         description TEXT,
+        reminder varchar(32),
+        deleted varchar(16),
         fk_user INTEGER,
         FOREIGN KEY (fk_user)
             REFERENCES login (user_id))');

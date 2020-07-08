@@ -9,8 +9,12 @@
 </head>
 <body>
 <div class="container">
-    <div class="submission">
-        <form action="calendar/insert_events.php" method="POST">
+    <div class="submission" id="e-sub">
+        <div class="back">
+            <!-- <a href="account.php">Back</a> -->
+            <button onclick="hideshow()" id="e-btn">Hide</button>
+        </div>
+        <form action="calendar/insert_events.php" method="POST" id="form">
             <div>
                 <label for="e-name">Eventname</label>
                 <input type="text" name="e-name">
@@ -21,11 +25,21 @@
             </div>
             <div>
                 <label for="e-time">Time</label>
-                <input type="text" name="e-time">
+                <input type="time" name="e-time">
+            </div>
+            <div>
+                <label for="">Reminder</label>
+                <select name="e-reminder" id="reminder">
+                    <option value="-">-</option>
+                    <option value="12h">12 hours before</option>
+                    <option value="1d">1 day before</option>
+                    <option value="2d">2 days before</option>
+                    <option value="1w">1 week before</option>
+                </select>
             </div>
             <div>
                 <label for="e-description">Description</label>
-                <input type="textarea" name="e-description">
+                <textarea rows="5" cols="50" name="e-description" placeholder=""></textarea>
             </div>
             <div>
                 <input type="submit" name="e-submit" value="Add Event">
@@ -34,9 +48,9 @@
     </div>
         <div class="calendar">
             <!-- <button onclick="AddEvent()">Add Event</button> -->
-            <div id="events">
-                <?php include "calendar/select_events.php"; ?>
-            </div>
+            <!-- <div id="events"> -->
+            <?php include "calendar/select_events.php"; ?>
+            <!-- </div> -->
         </div>
 </div>
 <script src="js/calendar.js"></script>

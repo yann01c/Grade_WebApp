@@ -114,7 +114,7 @@ if (isset($_POST['reset-password'])) {
             $mail->Subject = $subject;
             $mail->Body    = $msg;
             $mail->AltBody = $msg;
-            header("Location: ../pending.php?email=$email");            
+            header("Location: ../pending.php?email=$email");
             $mail->send();
 
             // echo 'Message has been sent';

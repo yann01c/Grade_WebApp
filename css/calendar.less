@@ -10,27 +10,46 @@ body,html {
   margin:0;
   padding:0;
 }
-.calendar {
-  max-width: 100%;
-  height: auto;
-  background-color: black;
+label {
+  color: white;
+  font-size: 1.2em;
 }
-.calendar > #events > div {
+
+// Calendar listing
+.calendar {
+  width: 100%;
+  height: 10em;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+.calendar > div {
+  text-align: center;
+  width: 25%;
   font-family: @arial;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  border-bottom: 1px solid silver;
   background-color: white;
   color: black;
 }
-#events > div > p {
-  padding: 10px;
+.title {
+  font-weight: bold;
+  font-size: 1.1em;
 }
-#events {
-  width: 100%;
-  display: block;
-  text-align: center;
-  height: 50em;
-  overflow: scroll;
+.calendar > div > form > input {
+  border: none;
+  background-image: linear-gradient(white 0%,  darkred 0px);  
+  color: white;
+  padding: 4px;
+  cursor: pointer;
+  transition: 500ms;
+  margin-bottom: 20px;
+}
+.calendar > div > form > input:hover {
+}
+
+// Submission Form
+.submission > form {
+  width: 20em;
 }
 .submission {
   font-family: @arial;
@@ -38,29 +57,96 @@ body,html {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 20em;
-  background-color: grey;
+  height: 30em;
+  background-color: black;
+  transition: 300ms;
 }
-.submission > div {
-}
-input[type="submit"] {
-  width: 100%;
+  // BTN
+.submission > form > div > input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30%;
   border: none;
-  margin: 20px 0 0 0;
+  margin: 15px 0 0 0;
   padding: 6px;
+  background-color: white;
+  cursor: pointer;
+  z-index: 1;
 }
-input {
+.submission > form > div > input {
+  height: auto;
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
-  padding: 0;
+  padding: 8px;
+  border: none;
   width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
-label {
-  margin-right: 5em;
+.submission > form > div > select {
+  height: auto;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 8px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
+.submission > form > div > textarea {
+  resize: none;
+  height: auto;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 8px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+.back {
+  display: flex;
+  align-self: flex-end;
+  justify-content: left; 
+  position: absolute;
+  left: 0px;
+}
+.back > a {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 5px;
+  transition: 150ms;
+}
+.back > a:hover {
+  transform: scale(1.1);
+}
+#e-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 5em;
+  font-size: 1em;
+}
+
+
+// Mobile
 @media (max-width: 400px) {
-  #events { display: block; }
-  #events > div { width: 100%;border: none;}
-  
+  .calendar > div { width: 100%; }
+}
+@media (max-width: 600px) {
+  .submission > form > div > input { padding: 4px; }
+  .submission > form > div > textarea { padding: 4px; }
+  .submission > form > div > select { padding: ; }
+  label { font-size: 1em; }
+}
+@media (max-width: 800px) {
+  .calendar > div { width: 100%; }
 }
