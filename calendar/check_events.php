@@ -147,6 +147,6 @@ while ($row = $result->fetchArray()) {
         }
     }
 } else {
-    header("Location: ../calendar.php")
+    header("Location: ../calendar.php");
     exit();
 }
