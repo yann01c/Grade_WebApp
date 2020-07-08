@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_POST['e-delete'])) {
 
     $event = $_POST['event_id'];
