@@ -13,7 +13,7 @@ $db = new SQLite3("../sqlite/webapp.db");
 
 $userid = 3;
 
-$sql = $db->prepare("SELECT * FROM events WHERE fk_user = :user ORDER BY date ASC");
+$sql = $db->prepare("SELECT * FROM events WHERE fk_user = :user");
 $sql->bindValue(':user',$userid);
 
 $result = $sql->execute();
@@ -71,7 +71,7 @@ while ($row = $result->fetchArray()) {
                 $mail->Subject = $subject;
                 $mail->Body    = $msg;
                 $mail->AltBody = $msg;
-
+                $mail->send();
                 echo 'Message has been sent';
                 echo " - 1 Day\n";
             } catch (Exception $e) {
@@ -107,7 +107,7 @@ while ($row = $result->fetchArray()) {
                 $mail->Subject = $subject;
                 $mail->Body    = $msg;
                 $mail->AltBody = $msg;
-
+                $mail->send();
                 echo 'Message has been sent';
                 echo " - 2 Days\n";
             } catch (Exception $e) {
@@ -142,7 +142,7 @@ while ($row = $result->fetchArray()) {
                 $mail->Subject = $subject;
                 $mail->Body    = $msg;
                 $mail->AltBody = $msg;
-
+                $mail->send();
                 echo 'Message has been sent';
                 echo " - 1 Week\n";
             } catch (Exception $e) {
