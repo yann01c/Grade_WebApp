@@ -20,6 +20,7 @@ function hideshow() {
 
     form.style.position = (form.style.position == "absolute") ? "relative" : "absolute";
     form.style.zIndex = (form.style.zIndex == "-1") ? "10" : "-1";
+    form.style.color = (form.style.color == "white") ? "black" : "white";
     submission.style.height = (submission.style.height == "2em") ? "30em" : "2em";
     submission.style.backgroundColor = (submission.style.backgroundColor == "white") ? "black" : "white";
     reminder.style.color = (reminder.style.color == "white") ? "black" : "white";
