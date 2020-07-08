@@ -39,7 +39,7 @@ if(isset($_POST['e-submit'])) {
     $sql->bindValue(':time',$time);
     $sql->bindValue(':desc',$description);
     $sql->bindValue(':user',$fkuser);
-    $sql->bindValue(':rem',$reminder);
+    $sql->bindValue(':reminder',$reminder);
 
     $result = $sql->execute();
     
