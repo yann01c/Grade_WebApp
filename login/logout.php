@@ -8,6 +8,6 @@ session_unset();
 session_destroy();
 
 $string = $_SERVER['HTTP_X_FORWARDED_HOST'];
-$server = substr($string,16);
+$server = substr($string,0,16);
 header("Location: https://login-i-ng.xtra.netwatch.ch/auth/realms/MSP/protocol/openid-connect/logout?redirect_uri=https%3A%2F%2F$server");
 // }
