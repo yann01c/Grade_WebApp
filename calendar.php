@@ -11,8 +11,10 @@
 <div class="container">
     <div class="submission" id="e-sub">
         <div class="back" id="e-back">
-            <!-- <a href="account.php">Back</a> -->
             <button onclick="hideshow()" id="e-btn">Hide</button>
+        </div>
+        <div id="e-back2">
+            <a href="account.php" id="b-btn">Back</a>
         </div>
         <form action="calendar/insert_events.php" method="POST" id="form">
             <div>

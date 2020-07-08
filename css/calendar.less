@@ -57,7 +57,7 @@ label {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 30em;
+  height: 40em;
   transition: 300ms;
 }
   // BTN
@@ -122,22 +122,6 @@ option {
   margin-bottom: 0px;
   margin-top: 5px;
 }
-// .submission > form > div > input:focus ~ .border {
-//   width:0;
-// }
-// .submission > form > div > select:focus ~ .border {
-//   width:0;
-// }
-// .submission > form > div > textarea:focus ~ .border {
-//   width:0;
-// }
-// .border {
-//   transition: 300ms;
-//   width: 100%;
-//   margin-bottom: 10px;
-//   height: 3px;
-//   background-color: white;
-// }
 .back {
   display: flex;
   align-self: flex-end;
@@ -152,9 +136,6 @@ option {
   margin-bottom: 5px;
   transition: 150ms;
 }
-.back > a:hover {
-  transform: scale(1.1);
-}
 #e-btn {
   background-color: green;
   color: white;
@@ -166,9 +147,36 @@ option {
   transition: 200ms;
   margin: 0;
 }
+#e-back2 {
+  display: flex;
+  align-self: flex-end;
+  justify-content: left; 
+  position: absolute;
+  right: 0px;
+  top: 0em;
+}
+#b-btn {
+  padding: 8px 8px 8px 8px;
+  -webkit-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  background-color: #BF0413;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 4em;
+  font-size: 1.0em;
+  transition: 200ms;
+  text-align: center;
+  margin: 0;
+}
 #e-btn:hover {
   background-color: #009100;
 }
+#b-btn:hover {
+  background-color: #CC0415;
+}
+
 // Mobile
 @media (max-width: 400px) {
   .calendar > div { width: 100%; }

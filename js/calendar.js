@@ -18,7 +18,7 @@ function hideshow() {
     var reminder = document.getElementById("reminder");
     var submission = document.getElementById("e-sub");
 
-    submission.style.height = (submission.style.height == "0em") ? "30em" : "0em";
+    submission.style.height = (submission.style.height == "0em") ? "40em" : "0em";
     btn.firstChild.data = (btn.firstChild.data == "Show") ? "Hide" : "Show";
     back.style.top = (back.style.top == "0em") ? "no" : "0em";
 

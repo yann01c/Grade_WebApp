@@ -5,7 +5,7 @@ $db = new SQLite3('sqlite/webapp.db');
 
 $fkuser = $_SESSION['userID'];
 
-$sql = $db->prepare("SELECT * FROM events WHERE fk_user = :user AND deleted = 'false'");
+$sql = $db->prepare("SELECT * FROM events WHERE fk_user = :user AND deleted = 'false' ORDER BY date ASC");
 $sql->bindValue('user',$fkuser);
 
 $result = $sql->execute();
