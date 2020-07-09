@@ -19,23 +19,9 @@ if (isset($_POST['reset-password'])) {
     $email = filter_var($mail, FILTER_SANITIZE_STRING);
     
     $db = new SQLite3('../sqlite/webapp.db');
-
-    $sql = $db->prepare("SELECT * FROM login WHERE email = :mail");
-    if (!$sql) {
-        header("Location: ../account.php?error=sql");
-        exit();
-    } else {
-        $sql->bindValue(':mail',$email);
-        $result = $sql->execute();
-        $row = $result->fetchArray();
-
-        if (empty($row['email'])) {
-            header("Location: ../reset.php?error=notexist");
-            exit();
-        }
-
+    
         $check = $db->prepare("SELECT * FROM token WHERE email = :m");
-        $check->bindValue(":m",$row['email']);
+        $check->bindValue(":m",$email);
         $cresult = $check->execute();
         $crow = $cresult->fetchArray();
 
@@ -43,7 +29,7 @@ if (isset($_POST['reset-password'])) {
             $token = md5(uniqid(rand(), true));
 
             $tsql = $db->prepare("INSERT INTO token (email,token,timestamp) VALUES (:email,:token,datetime('now','localtime'))");
-            $tsql->bindValue(':email',$row['email']);
+            $tsql->bindValue(':email',$email);
             $tsql->bindValue(':token',$token);
 
             $tresult = $tsql->execute();
@@ -52,31 +38,16 @@ if (isset($_POST['reset-password'])) {
 
             $usql = $db->prepare("UPDATE token SET token = :newtoken, timestamp = datetime('now','localtime') WHERE email = :newemail");
             $usql->bindValue(':newtoken',$token);
-            $usql->bindValue(':newemail',$row['email']);
+            $usql->bindValue(':newemail',$email);
             
             $uresult = $usql->execute();
         }
-
-        if (empty($row['username'])) {
-
-            $username = "-";
-
-        } else {
-
-            $username = $row['username'];
-
-        }
-
         // Send mail
-        $to = $row['email'];
-        $subject = "Reset your Password, $username";
+        $to = $email;
+        $subject = "Reset your Password on SPIE Grades";
         $msg = "
         
         <style>
-        .container {
-        }
-        .main {
-        }
         .title {
             font-size: 1.4em;
             text-shadow: 2px 2px black;
@@ -92,7 +63,7 @@ if (isset($_POST['reset-password'])) {
         }
         </style>
 
-        <div class='container'><div class='main'><h1 class='title'>Hello $username</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='m1igrades.msp.ccsn.ch/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
+        <div class='container'><div class='main'><h1 class='title'>Hello,</h1>\n\n <p class='text'>You can reset your password by clicking on the following link:</p>\n\n<a class='link' href='m1igrades.msp.ccsn.ch/new_password.php?token=$token'>Reset Password</a>\n<p style='font-size: 0.7em;color:darkblue;'>-This link is valid for 15 Minutes-</p></div></div>
         ";
 
         $mail = new PHPMailer(true);
@@ -123,7 +94,6 @@ if (isset($_POST['reset-password'])) {
             exit();
             // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-    }
 }
 
 if (isset($_POST['new-password'])) {

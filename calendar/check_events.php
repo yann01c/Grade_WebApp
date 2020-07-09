@@ -21,7 +21,7 @@ while ($row = $result->fetchArray()) {
     $chdate = $row['date'];
     $chtnow = date("h:i");
     $chtime = $row['time'];
-    if ($chnow == $chdate && $chtnow == $chtime) {
+    if ($chnow == $chdate) {
         $csql = $db->prepare("UPDATE events SET deleted = 'true' WHERE event_id = :eventid");
         $csql->bindValue(':eventid', $id);
         $cresult = $csql->execute();
