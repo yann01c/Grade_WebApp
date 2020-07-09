@@ -11,7 +11,7 @@ require '../phpmailer/src/SMTP.php';
 session_start();
 $db = new SQLite3("../sqlite/webapp.db");
 
-$sql = $db->prepare("SELECT * FROM events");
+$sql = $db->prepare("SELECT * FROM events WHERE deleted != 'true'");
 $result = $sql->execute();
 
 while ($row = $result->fetchArray()) {
@@ -41,14 +41,14 @@ while ($row = $result->fetchArray()) {
     // if ($row['check'] != 1) {
 
         // 1 day reminder
-        if ($row['reminder'] == "1d") {
+        if ($rtime == "1d") {
             $now = date("Y-m-d");
             $date = $row['date'];
             $time = strtotime("$date -1 days");
             $date = date("Y-m-d", $time);
 
             if ($date == $now) {
-                
+                echo "wow".$date."wow";
                 // Send mail
 
                 $mail = new PHPMailer(true);
@@ -73,7 +73,7 @@ while ($row = $result->fetchArray()) {
                     $mail->send();
                     echo 'Message has been sent';
                     echo " - 1 Day\n";
-                    $usql = $db->prepare("UPDATE events SET check = 1 WHERE event_id = $id");
+                    $usql = $db->prepare("UPDATE events SET 'check' = 1 WHERE event_id = $id");
                     $uresult = $usql->execute();
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -81,14 +81,13 @@ while ($row = $result->fetchArray()) {
             }
         }
         // 2 days reminder
-        else if ($row['reminder'] == "2d") {
+        if ($rtime == "2d") {
             $now = date("Y-m-d");
             $date = $row['date'];
             $time = strtotime("$date -2 days");
             $date = date("Y-m-d", $time);
 
             if ($date == $now) {
-                
                 $mail = new PHPMailer(true);
 
                 try {
@@ -111,7 +110,7 @@ while ($row = $result->fetchArray()) {
                     $mail->send();
                     echo 'Message has been sent';
                     echo " - 2 Days\n";
-                    $usql = $db->prepare("UPDATE events SET check = 1 WHERE event_id = $id");
+                    $usql = $db->prepare("UPDATE events SET 'check' = 1 WHERE event_id = $id");
                     $uresult = $usql->execute();
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -119,7 +118,7 @@ while ($row = $result->fetchArray()) {
             }
         }
         // 1 week reminder
-        else if ($row['reminder'] == "1w") {
+        if ($rtime == "1w") {
             $now = date("Y-m-d");
             $date = $row['date'];
             $time = strtotime("$date -7 days");
@@ -148,7 +147,7 @@ while ($row = $result->fetchArray()) {
                     $mail->send();
                     echo 'Message has been sent';
                     echo " - 1 Week\n";
-                    $usql = $db->prepare("UPDATE events SET check = 1 WHERE event_id = $id");
+                    $usql = $db->prepare("UPDATE events SET 'check' = 1 WHERE event_id = $id");
                     $uresult = $usql->execute();
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
