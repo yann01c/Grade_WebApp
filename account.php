@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="css/addtohomescreen.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
-    <link rel="manifest" href="manifest.json">
-
     <!-- IOS App Icons (instead of manifest icon)
     <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/iphone/generated/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/iphone/generated/apple-icon-60x60.png">
@@ -62,6 +60,7 @@
     <meta name="msapplication-TileImage" content="/images/icons/iphone/generated/ms-icon-144x144.png">
     <meta name="theme-color" content="black">
 
+    <link rel="manifest" href="manifest.json">
 
 </head>
 <!-- <body id="account" onload="myFunction()"> -->

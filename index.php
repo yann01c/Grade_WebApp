@@ -10,8 +10,6 @@
     <title>Grades | Submit</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
-    
-    <link rel="manifest" href="manifest.json">
 
     <!-- IOS Icon (instead of manifest icon)
     <link rel="apple-touch-icon" href="images/logo.png">
@@ -49,6 +47,9 @@
     <!-- iPhone SE -->
     <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_640x1136.png">
     <link rel="apple-touch-startup-image" media="screen and (device-width: 568px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_1136x640.png">
+
+    <link rel="manifest" href="manifest.json">
+
 </head>
 <body id="index">
     <div class="container">
