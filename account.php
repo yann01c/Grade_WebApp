@@ -14,7 +14,7 @@
 
     <link rel="manifest" href="manifest.json">
 
-    <!-- IOS App Icons (instead of manifest icon) --
+    <!-- IOS App Icons (instead of manifest icon)
     <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/iphone/generated/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/iphone/generated/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/iphone/generated/apple-icon-72x72.png">
@@ -121,8 +121,7 @@
                     echo "</form>";
                     if (isset($_SESSION['userID'])) {
                         if ($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
-                            echo "<br><br><a href='calendar.php'>Calendar</a>";
-                            echo "<br><a href='register.php'>Register User</a>";
+                            echo "<br><br><a href='register.php'>Register User</a>";
                             echo "<br><a id='a-change' href='change_password.php'>Change Password</a>";
                         } else {
                             echo "<br><br><a id='a-change' href='change_password.php'>Change Password</a>";

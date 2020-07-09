@@ -167,7 +167,7 @@
                     $message = "Weighting Invalid!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }
-                else if ($_GET['error'] == 'grade') {
+                else if ($_GET['error'] == 'invalidgrade') {
                     $message = "Grade Invalid!";
                     echo "<script type='text/javascript'>alert('$message');</script>";
                 }

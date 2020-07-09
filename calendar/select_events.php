@@ -10,6 +10,8 @@ $sql->bindValue('user',$fkuser);
 
 $result = $sql->execute();
 
+$now = date("Y-m-d h:i");
+
 while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     $id = $row['event_id'];
     $name = $row['eventname'];
@@ -17,7 +19,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     $time = $row['time'];
     $desc = $row['description'];
     $priority = $row['priority'];
-
+        
     if ($priority == "h") {
         $color = "rgba(230, 25, 25, 0.56);";
     }

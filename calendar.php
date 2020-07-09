@@ -13,7 +13,7 @@
         <div class="back" id="e-back">
             <button onclick="hideshow()" id="e-btn">Hide</button>
         </div>
-        <div id="e-bar"><h1 style="opacity: 1;">Calendar</h1></div>
+        <div id="e-bar"><h1>Calendar</h1></div>
         <div id="e-back2">
             <a href="account.php" id="b-btn">Back</a>
         </div>
@@ -37,7 +37,6 @@
                 <label for="">Reminder</label>
                 <select name="e-reminder" id="reminder">
                     <option value="-">-</option>
-                    <option value="12h">12 hours before</option>
                     <option value="1d">1 day before</option>
                     <option value="2d">2 days before</option>
                     <option value="1w">1 week before</option>
@@ -65,10 +64,7 @@
         </form>
     </div>
         <div class="calendar">
-            <!-- <button onclick="AddEvent()">Add Event</button> -->
-            <!-- <div id="events"> -->
             <?php include "calendar/select_events.php"; ?>
-            <!-- </div> -->
         </div>
 </div>
 <script src="js/calendar.js"></script>

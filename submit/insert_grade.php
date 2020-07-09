@@ -34,11 +34,12 @@ if(isset($_POST['submit'])) {
         exit();
     }
     else if (empty($desc)) {
-        $desc = "-";
+        header("Location: ../index.php?error=empty&g=$grade&d=$date&w=$weighting&c=$class");
+        exit();
     }
     // Check if grade is valid
     else if ($grade > 6.0 || $grade < 0) {
-        header("Location: ../index.php?error=grade?d=$date?w=$weighting?c=$class");
+        header("Location: ../index.php?error=invalidgrade&d=$date&w=$weighting&c=$class");
         exit();
     }
 
