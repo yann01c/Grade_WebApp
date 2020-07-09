@@ -16,7 +16,21 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     $date = $row['date'];
     $time = $row['time'];
     $desc = $row['description'];
-    echo "<div>
+    $priority = $row['priority'];
+
+    if ($priority == "h") {
+        $color = "rgba(230, 25, 25, 0.56);";
+    }
+    else if ($priority == "m") {
+        $color = "rgba(25, 107, 230, 0.56);";
+    }
+    else if ($priority == "l") {
+        $color = "rgba(25, 230, 25, 0.56)";
+    }
+    else {
+        $color = "silver";
+    }
+    echo "<div style='background-color: $color;'>
             <p class='title'>$name</p>
             <p>$date</p>
             <p>$time</p>

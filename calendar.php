@@ -44,6 +44,16 @@
                 <div class="border"></div>
             </div>
             <div>
+                <label for="">Priority</label>
+                <select name="e-priority" id="priority">
+                    <option value="-">-</option>
+                    <option value="h">High</option>
+                    <option value="m">Medium</option>
+                    <option value="l">Low</option>
+                </select>
+                <div class="border"></div>
+            </div>
+            <div>
                 <label for="e-description">Description</label>
                 <textarea rows="5" cols="50" name="e-description" placeholder=""></textarea>
                 <div class="border"></div>

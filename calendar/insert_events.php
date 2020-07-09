@@ -10,6 +10,8 @@ if(isset($_POST['e-submit'])) {
     $description = filter_var($des, FILTER_SANITIZE_STRING);
     $rem = $_POST['e-reminder'];
     $reminder = filter_var($rem, FILTER_SANITIZE_STRING);
+    $pri = $_POST['e-priority'];
+    $priority = filter_var($pri, FILTER_SANITIZE_STRING);
 
     if (empty($date)) {
         header("Location: ../calendar.php?error=missingdate");
@@ -30,7 +32,7 @@ if(isset($_POST['e-submit'])) {
     $fkuser = $_SESSION['userID'];
     $email = $_SESSION['userMAIL'];
     
-    $sql = $db->prepare("INSERT INTO events (eventname,date,time,description,deleted,fk_user,reminder,email) VALUES (:event,:date,:time,:desc,'false',:user,:reminder,:email)");
+    $sql = $db->prepare("INSERT INTO events (eventname,date,time,description,deleted,fk_user,reminder,email,priority) VALUES (:event,:date,:time,:desc,'false',:user,:reminder,:email,:priority)");
     if (!$sql) {
         header("Location: ../calendar.php?error=sql");
     }
@@ -42,6 +44,7 @@ if(isset($_POST['e-submit'])) {
     $sql->bindValue(':user',$fkuser);
     $sql->bindValue(':reminder',$reminder);
     $sql->bindValue(':email',$email);
+    $sql->bindValue(':priority',$priority);
 
     $result = $sql->execute();
     
