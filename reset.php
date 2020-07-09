@@ -38,8 +38,8 @@
             $message = "Empty Field!";
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
-        else if ($_GET['error'] == "notexist") {
-            $message = "No E-Mail found!";
+        else if ($_GET['error'] == "invalid") {
+            $message = "E-Mail Invalid!";
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
 }
