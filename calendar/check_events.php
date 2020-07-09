@@ -23,6 +23,7 @@ while ($row = $result->fetchArray()) {
     $subject = "Reminder: $eventname";
     $rtime = $row['reminder'];
     $id = $row['event_id'];
+    $check = $row['check'];
     $msg = "
 
     <style>
@@ -38,7 +39,7 @@ while ($row = $result->fetchArray()) {
     <div class='container'><div class='main'><h1 class='title'>Quick Reminder for $eventname!</h1>\n\n <p class='text'>Your event will take place in $rtime.</p>\n\n<p style='font-size: 0.7em;color:darkblue;'>Thanks for using SPIE Grades</p></div></div>
     ";
 
-    // if ($row['check'] != 1) {
+    if ($check != 1) {
 
         // 1 day reminder
         if ($rtime == "1d") {
@@ -48,7 +49,6 @@ while ($row = $result->fetchArray()) {
             $date = date("Y-m-d", $time);
 
             if ($date == $now) {
-                echo "wow".$date."wow";
                 // Send mail
 
                 $mail = new PHPMailer(true);
@@ -73,13 +73,17 @@ while ($row = $result->fetchArray()) {
                     $mail->send();
                     echo 'Message has been sent';
                     echo " - 1 Day\n";
-                    $usql = $db->prepare("UPDATE events SET 'check' = 1 WHERE event_id = $id");
+                    $usql = $db->prepare("UPDATE events SET 'check' = 1 WHERE event_id = :id");
+                    $usql->bindValue(':id',$id);
                     $uresult = $usql->execute();
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 }
             }
         }
+    }
+    if ($check != 1) {
+
         // 2 days reminder
         if ($rtime == "2d") {
             $now = date("Y-m-d");
@@ -117,6 +121,9 @@ while ($row = $result->fetchArray()) {
                 }
             }
         }
+    }
+    if ($check != 1) {
+
         // 1 week reminder
         if ($rtime == "1w") {
             $now = date("Y-m-d");
@@ -154,5 +161,5 @@ while ($row = $result->fetchArray()) {
                 }
             }
         }
-    // }
+    }
 }
