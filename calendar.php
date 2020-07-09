@@ -16,7 +16,7 @@
         <div id="e-back2">
             <a href="account.php" id="b-btn">Back</a>
         </div>
-        <form action="calendar/insert_events.php" method="POST" id="form">
+        <form action="calendar/insert_events.php" method="GET" id="form">
             <div>
                 <label for="e-name">Eventname</label>
                 <input type="text" name="e-name">

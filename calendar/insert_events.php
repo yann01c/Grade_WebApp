@@ -26,7 +26,7 @@ if(isset($_POST['e-submit'])) {
     if (empty($description)) {
         $description = "-";
     }
-
+    echo "TEST";
     $db = new SQLite3('../sqlite/webapp.db');
 
     $fkuser = $_SESSION['userID'];
@@ -48,6 +48,6 @@ if(isset($_POST['e-submit'])) {
 
     $result = $sql->execute();
     
-    header("Location: ../calendar.php?info=submitted");
+    header("Location: ../calendar.php");
     exit();
 }
