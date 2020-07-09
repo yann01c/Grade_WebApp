@@ -15,6 +15,17 @@ $sql = $db->prepare("SELECT * FROM events WHERE deleted != 'true'");
 $result = $sql->execute();
 
 while ($row = $result->fetchArray()) {
+    $id = $row['event_id'];
+
+    $chnow = date("Y-m-d");
+    $chdate = $row['date'];
+    $chtnow = date("h:i");
+    $chtime = $row['time'];
+    if ($chnow == $chdate && $chtnow == $chtime) {
+        $csql = $db->prepare("UPDATE events SET deleted = 'true' WHERE event_id = :eventid");
+        $csql->bindValue(':eventid', $id);
+        $cresult = $csql->execute();
+    }
 
     $eventname = $row['eventname'];
 
@@ -31,7 +42,6 @@ while ($row = $result->fetchArray()) {
     } else {
         $rtime = "-";
     }
-    $id = $row['event_id'];
     $check = $row['check'];
     $msg = "
 
