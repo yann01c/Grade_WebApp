@@ -32,7 +32,7 @@ if(isset($_POST['e-submit'])) {
     $fkuser = $_SESSION['userID'];
     $email = $_SESSION['userMAIL'];
     
-    $sql = $db->prepare("INSERT INTO events (eventname,date,time,description,deleted,fk_user,reminder,email,priority,check) VALUES (:event,:date,:time,:desc,'false',:user,:reminder,:email,:priority,0)");
+    $sql = $db->prepare("INSERT INTO events (eventname,date,time,description,deleted,fk_user,reminder,email,priority,'check') VALUES (:event,:date,:time,:desc,'false',:user,:reminder,:email,:priority,'0')");
     if (!$sql) {
         header("Location: ../calendar.php?error=sql");
     }
