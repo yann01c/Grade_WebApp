@@ -1,16 +1,16 @@
 <?php
 session_start();
-if(isset($_POST['e-submit'])) {
-    $eve = $_POST['e-name'];
+if(isset($_GET['e-submit'])) {
+    $eve = $_GET['e-name'];
     $eventname = filter_var($eve, FILTER_SANITIZE_STRING);
-    $date = $_POST['e-date'];
-    $tim = $_POST['e-time'];
+    $date = $_GET['e-date'];
+    $tim = $_GET['e-time'];
     $time = filter_var($tim, FILTER_SANITIZE_STRING);
-    $des = $_POST['e-description'];
+    $des = $_GET['e-description'];
     $description = filter_var($des, FILTER_SANITIZE_STRING);
-    $rem = $_POST['e-reminder'];
+    $rem = $_GET['e-reminder'];
     $reminder = filter_var($rem, FILTER_SANITIZE_STRING);
-    $pri = $_POST['e-priority'];
+    $pri = $_GET['e-priority'];
     $priority = filter_var($pri, FILTER_SANITIZE_STRING);
 
     if (empty($date)) {
