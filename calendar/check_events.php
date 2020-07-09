@@ -38,7 +38,7 @@ while ($row = $result->fetchArray()) {
     <div class='container'><div class='main'><h1 class='title'>Quick Reminder for $eventname!</h1>\n\n <p class='text'>Your event will take place in $rtime.</p>\n\n<p style='font-size: 0.7em;color:darkblue;'>Thanks for using SPIE Grades</p></div></div>
     ";
 
-    if ($row['check'] != 1) {
+    // if ($row['check'] != 1) {
 
         // 1 day reminder
         if ($row['reminder'] == "1d") {
@@ -155,5 +155,5 @@ while ($row = $result->fetchArray()) {
                 }
             }
         }
-    }
+    // }
 }
