@@ -22,6 +22,15 @@ while ($row = $result->fetchArray()) {
     $to = $row['email'];
     $subject = "Reminder: $eventname";
     $rtime = $row['reminder'];
+    if ($rtime == "1d") {
+        $rmail = "1 Day";
+    } else if ($rtime == "2d") {
+        $rmail = "2 Days";
+    } else if ($rtime == "1w") {
+        $rtime = "1 Week";
+    } else {
+        $rtime = "-";
+    }
     $id = $row['event_id'];
     $check = $row['check'];
     $msg = "

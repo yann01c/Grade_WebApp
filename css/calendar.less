@@ -1,11 +1,19 @@
 // Vars
 @arial: Arial, Helvetica, sans-serif;
+@maven: 'Maven Pro', sans-serif;
+@iceland: 'Iceland', cursive;
+
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Iceland&family=Nosifer&family=Open+Sans:wght@300&family=Philosopher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 
 .container {
   width: 100%;
   height: 100vh;
 }
 body,html {
+  background-color: #292E2E;
   max-width: 100%;
   margin:0;
   padding:0;
@@ -17,23 +25,34 @@ label {
 
 // Calendar listing
 .calendar {
+  position: relative;
+  z-index: 100;
   width: 100%;
   height: 10em;
-  background-color: white;
+  background-color: #292E2E;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  margin-top: 3em;
 }
 .calendar > div {
+  position: relative;
+  z-index: 100;
   text-align: center;
   width: 25%;
   font-family: @arial;
-  border-bottom: 1px solid black;
-  background-color: white;
-  color: black;
+  background-color: #292E2E;
+  margin: 10px 10px 0 10px;
+  color: white;
+  transition: 200ms;
+}
+.calendar > div:hover {
+  background-color: #151717;
 }
 .title {
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.3em;
+  font-family: @maven;
 }
 .calendar > div > form > input {
   border: none;
@@ -129,6 +148,7 @@ option {
   position: absolute;
   left: 0px;
   top: 0em;
+  z-index: 200;
 }
 .back > a {
   text-decoration: none;
@@ -137,15 +157,18 @@ option {
   transition: 150ms;
 }
 #e-btn {
+  font-family: @iceland;
+  z-index: 101;
   background-color: green;
   color: white;
   border: none;
   cursor: pointer;
   padding: 8px;
   width: 5em;
-  font-size: 1.0em;
+  font-size: 1.3em;
   transition: 200ms;
   margin: 0;
+  height: 1.96em;
 }
 #e-back2 {
   display: flex;
@@ -154,8 +177,12 @@ option {
   position: absolute;
   right: 0px;
   top: 0em;
+  z-index: 200;
 }
 #b-btn {
+  font-family: @iceland;
+  height: 1.19em;
+  z-index: 101;
   padding: 8px 8px 8px 8px;
   -webkit-appearance: button;
   appearance: button;
@@ -165,10 +192,23 @@ option {
   border: none;
   cursor: pointer;
   width: 4em;
-  font-size: 1.0em;
+  font-size: 1.3em;
   transition: 200ms;
   text-align: center;
   margin: 0;
+}
+#e-bar {
+  background-color: black;
+  height: 2.55em;
+  opacity: 0.5;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center; 
+  font-family: @iceland;
+  right: 0px;
+  width: 100%;
+  top: 0em;
 }
 #e-btn:hover {
   background-color: #009100;

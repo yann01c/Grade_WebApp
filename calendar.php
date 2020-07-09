@@ -13,10 +13,11 @@
         <div class="back" id="e-back">
             <button onclick="hideshow()" id="e-btn">Hide</button>
         </div>
+        <div id="e-bar"><h1 style="opacity: 1;">Calendar</h1></div>
         <div id="e-back2">
             <a href="account.php" id="b-btn">Back</a>
         </div>
-        <form action="calendar/insert_events.php" method="GET" id="form">
+        <form action="calendar/insert_events.php" method="GET" id="eform">
             <div>
                 <label for="e-name">Eventname</label>
                 <input type="text" name="e-name">
@@ -47,9 +48,9 @@
                 <label for="">Priority</label>
                 <select name="e-priority" id="priority">
                     <option value="-">-</option>
-                    <option value="h">High</option>
-                    <option value="m">Medium</option>
-                    <option value="l">Low</option>
+                    <option value="h" style="color:red;">High</option>
+                    <option value="m" style="color:blue;">Medium</option>
+                    <option value="l" style="color:green;">Low</option>
                 </select>
                 <div class="border"></div>
             </div>

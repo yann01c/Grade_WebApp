@@ -30,7 +30,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     else {
         $color = "silver";
     }
-    echo "<div style='background-color: $color;'>
+    echo "<div style='border: 5px inset $color;'>
             <p class='title'>$name</p>
             <p>$date</p>
             <p>$time</p>

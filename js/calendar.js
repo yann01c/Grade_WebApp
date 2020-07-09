@@ -1,17 +1,9 @@
-function AddEvent() {
-    var eprompt = prompt("Enter Eventname:", "");
-    String(eprompt);
-
-    var newDiv = document.createElement("div");
-    var newContent = document.createTextNode(eprompt);
-    newDiv.appendChild(newContent);
-
-    var calendar = document.getElementById("events");
-    calendar.appendChild(newDiv);
-}
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+ }
 
 function hideshow() {
-    var form = document.getElementById("form");
+    var form = document.getElementById("eform");
     var btn = document.getElementById("e-btn");
     var back = document.getElementById("e-back");
     var addbtn = document.getElementById("e-add");
@@ -21,6 +13,9 @@ function hideshow() {
     submission.style.height = (submission.style.height == "0em") ? "40em" : "0em";
     btn.firstChild.data = (btn.firstChild.data == "Show") ? "Hide" : "Show";
     back.style.top = (back.style.top == "0em") ? "no" : "0em";
+
+    setTimeout(3000);
+    form.style.display = (form.style.display == "none") ? "block" : "none";
 
 
 }
