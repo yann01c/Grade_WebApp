@@ -4,8 +4,6 @@
 body, html {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    /*font-family: 'Philosopher', sans-serif;
-    font-family: 'Faster One', cursive;*/
     font-family: 'Iceland', cursive;
 }
 html {
@@ -221,7 +219,6 @@ span {
     font-size: 1.4em;
     width: 15em;
     transition: 200ms;
-    /*background-image: linear-gradient(transparent 60%,  #BF0413 0px);*/
 }
 .copyright > a {
     color: white;
@@ -392,10 +389,6 @@ span {
 #change #change_cont {
     height: 100vh;
     min-height: 100%;
-    /*background-color: #0F2259;*/
-    /* background-image: url("../images/wp_blur.png");
-    background-size: cover;
-    background-repeat: no-repeat; */
     background-color: black;
 }
 #change #change_main {
@@ -405,9 +398,6 @@ span {
     height: 95vh;
     width: 100%;
     background-color: black;
-    /* background-image: url("../images/wp_blur.png");
-    background-size: cover;
-    background-repeat: no-repeat; */
 }
 #change #change_main > form > div > .test {
     background-color: transparent;
@@ -478,7 +468,6 @@ span {
 @media (max-width: 700px) { 
     #change #change_main > form > div > .test { font-size: 0.9em;}
     #change #change_main > form > div > label { font-size: 1.3em;}
-    /* #change #change-btn { font-size: 0.9em; } */
     #change .change-text { font-size: 1.2em; }
 }
 @media (max-width: 450px) { 
@@ -490,9 +479,6 @@ span {
     height: 100vh;
     min-height: 100%;
     background-color: black;
-    /* background-image: url("../images/wp_blur.png");
-    background-size: cover;
-    background-repeat: no-repeat; */
 }
 #reset #reset_main {
     display: flex;
@@ -501,9 +487,6 @@ span {
     height: 95vh;
     width: 100%;
     background-color: black;
-    /* background-image: url("../images/wp_blur.png");
-    background-size: cover;
-    background-repeat: no-repeat; */
 }
 #reset #reset_main > form > div > .input {
     width: 20em;
@@ -675,10 +658,6 @@ span {
 #new #new_cont {
     height: 100vh;
     min-height: 100%;
-    /*background-color: #0F2259;*/
-    /* background-image: url("../images/wp_blur.png");
-    background-size: cover;
-    background-repeat: no-repeat; */
     background-color: black;
 }
 #new #new_main {
@@ -688,9 +667,6 @@ span {
     height: 95vh;
     width: 100%;
     background-color: black;
-    /* background-image: url("../images/wp_blur.png");
-    background-size: cover;
-    background-repeat: no-repeat; */
 }
 #new #new_main > form > div > .test {
     background-color: transparent;
@@ -739,14 +715,13 @@ span {
 @media (max-width: 700px) { 
     #new #new_main > form > div > .test { font-size: 0.9em;}
     #new #new_main > form > div > label { font-size: 1.3em;}
-    /* #new #new-btn { font-size: 0.9em; } */
     #new .new-text { font-size: 1.2em; }
 }
 @media (max-width: 450px) { 
     #new .new-text { font-size: 1em; }
 }
 
-/* gallery */
+/* Gallery */
 
 .gbody {
     background-color: black;
@@ -851,7 +826,6 @@ span {
 
 /* Grid Responsive */
 #gallery .wrapper {
-    /* Prevent vertical gaps */
     line-height: 0;
         
     -webkit-column-count: 5;
@@ -896,66 +870,53 @@ span {
 }
 
 /* Grades */
+#grades body,html {
+    background-color: #1E2121;
+}
 #grades form {
-    display: flex;
+    display:flex;
     justify-content: center;
 }
-#grades body,html {
-    margin: 0;
-    padding: 0;
-    background-color: white;
+#grades .big-wrapper {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
-#grades #grades_cont {
-    height: 20vh;
+#grades .title-wrapper {
     width: 100%;
-    background-color: #ddd;
-}
-/* Table */
-#grades table {
-    overflow-x: auto;
-    color: black;
-    border-spacing: 0;
-    width: 100vw;
-    /* border: 1px solid silver; */
-    background-color: #ddd;
-}
-#grades .grades_wrapper {
-    border: 1px solid silver;
-    -webkit-box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.31);
-    -moz-box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.31);
-    box-shadow: 0px 5px 6px -1px rgba(0,0,0,0.31);
-    overflow-x: scroll;
-}
-#grades th {
-    font-size: 1.4em;
-    cursor: pointer;
-    font-family: 'Iceland', cursive;
-}
-#grades th, td {
-    text-align: left;
-    padding: 16px;
-}
-#grades td {
-    font-family: 'Maven Pro', sans-serif;
-}
-#grades tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-#grades .gradetable {
-    width: em;
-}
-/* #grades .weightingtable {
-    width: 5em;
-}  */
-#grades .idtable {
-    width: 1vw;
+    font-size: 0.8;
+    border-radius: 10px;
+    margin: 2em 10px 2em 10px;
     text-align: center;
-    border-right: 1px solid silver;
+    display: inline;
+    background-color: black;
+    color: white;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
 }
-@media screen and (max-width: 1000px) {
-    #grades th { font-size: 1.2em; }
-    #grades td { font-size: 0.7em; }
-    #grades table { width: 50em; }
+#grades .grades-wrapper {
+    align-self: center;
+    width: 20%;
+    height: 15em;
+    background-color:#2E3333;
+    color: white;
+    font-family: 'Maven Pro', sans-serif;
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+}
+@media (max-width: 970px) {
+    #grades .grades-wrapper {
+        width: 100%;
+    }
+}
+#grades .grades-wrapper > p {
 }
 .grades-back {
     margin-left: 20px;

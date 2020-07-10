@@ -8,6 +8,7 @@ $sql = $db->prepare("SELECT * FROM grade WHERE fk_user = :user");
 $sql->bindValue(':user',$userID);
 
 $result = $sql->execute();
+$checkclass = "";
 
 while ($row = $result->fetchArray()) {
     
@@ -30,15 +31,20 @@ while ($row = $result->fetchArray()) {
     
     $class = $crow['class'];
 
+    if ($checkclass != $class) {
+        echo "<div class='title-wrapper'><h1>$class</h1></div>";
+        $checkclass = $class;
+    }
     echo "                    
-    <tr>
-        <td class='idtable'>$id</td>
-        <td class='gradetable'>$grade</td>
-        <td>$date</td>
-        <td class='weightingtable'>$weighting%</td>
-        <td>$created / $deleted</td>
-        <td>$class</td>
-    </tr>
+    <div class='grades-wrapper'>";
+
+    echo "
+        <p class='gradetable' style='font-weight:bold;'>$grade</p>
+        <p>$date</p>
+        <p class='weightingtable'>$weighting%</p>
+        <p>$created / $deleted</p>
+        <p>$class</p>
+    </div>
     ";
 
 }

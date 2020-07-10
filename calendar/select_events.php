@@ -10,7 +10,7 @@ $sql->bindValue('user',$fkuser);
 
 $result = $sql->execute();
 
-$now = date("Y-m-d h:i");
+$now = date("Y-m-d");
 
 while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     $id = $row['event_id'];
@@ -32,11 +32,13 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
     else {
         $color = "silver";
     }
-    echo "<div style='border: 5px inset $color;'>
-            <div style='background-color: black;position:absolute;width:100%;;display:flex;justify-content:center;align-items:flex-start;font-size:0.5em;opacity: 0.6;'>
-                <h1>TODAY</h1>
-            </div>        
-            <p class='title' style=''>$name</p>
+    echo "<div style='border: 5px inset $color;'>";
+       if ($date == $now) {
+        echo "<div style='background-color:black;position:absolute;width:100%;height:10%;display:flex;justify-content:center;align-items:center;font-size:0.5em;opacity: 0.6;'>
+            <h1>TODAY</h1>
+        </div>";
+       }
+        echo "<p class='title' style=''>$name</p>
             <p>$date</p>
             <p>$time</p>
             <p>$desc</p>
