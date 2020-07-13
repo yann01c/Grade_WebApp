@@ -4,11 +4,11 @@ $db = new SQLite3('sqlite/webapp.db');
 
 $userID = $_SESSION['userID'];
 
-$sql = $db->prepare("SELECT * FROM grade WHERE fk_user = :user");
+$sql = $db->prepare("SELECT * FROM grade WHERE fk_user = :user ORDER BY fk_class ASC");
 $sql->bindValue(':user',$userID);
 
 $result = $sql->execute();
-$checkclass = "";
+$checkclass = array();
 
 while ($row = $result->fetchArray()) {
     
@@ -30,20 +30,26 @@ while ($row = $result->fetchArray()) {
     $crow = $cresult->fetchArray();
     
     $class = $crow['class'];
-
-    if ($checkclass != $class) {
+    if (!in_array($class, $checkclass)) {
         echo "<div class='title-wrapper'><h1>$class</h1></div>";
-        $checkclass = $class;
+        $checkclass[] = $class;
     }
     echo "                    
     <div class='grades-wrapper'>";
 
     echo "
-        <p class='gradetable' style='font-weight:bold;'>$grade</p>
-        <p>$date</p>
-        <p class='weightingtable'>$weighting%</p>
-        <p>$created / $deleted</p>
-        <p>$class</p>
+        <div style='padding:8px;font-size:1.2em;'><p class='gradetable' style='font-weight:bold;'>$grade</p></div>
+        <div><p>$date</p></div>
+        <div><p class='weightingtable'>$weighting%</p></div>
+        <div><p>$created</p></div>";
+        if ($deleted == "false") {
+            $deleted = "Active";
+            $color = "green";
+        } else {
+            $deleted = "Deleted";
+            $color = "red";
+        }
+        echo "<div><p style='color:$color;'>$deleted</p></div>
     </div>
     ";
 
