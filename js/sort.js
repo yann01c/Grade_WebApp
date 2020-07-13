@@ -56,3 +56,39 @@ function sortTable(n) {
       }
     }
   }
+
+// function zoom(id) {
+//     var x, i;
+//     var wrapper = document.getElementById(id);
+
+//     wrapper.style.position = (wrapper.style.position == "absolute") ? "relative" : "absolute";
+// }
+
+function navigate() {
+  var link, i
+  
+  var cont = document.getElementById("n-dropdown");
+  var link = document.querySelectorAll(".n-div");
+  var a = document.querySelectorAll(".navigation");
+
+  cont.style.height = (cont.style.height == "auto") ? "0" : "auto"; 
+  cont.style.visibility = (cont.style.visibility == "visible") ? "hidden" : "visible"; 
+
+
+
+  for (i=0; i < link.length; i++) {
+    link[i].style.height = (link[i].style.height == "1.5em") ? "0em" : "1.5em"; 
+    link[i].style.opacity = (link[i].style.opacity == "1") ? "0" : "1"; 
+  }
+  for (i=0; i < link.length; i++) {
+    a[i].style.display = (a[i].style.display == "flex") ? "none" : "flex"; 
+  }
+
+}
+
+function title(id) {
+  alert(id);
+  var title = document.getElementById(id);
+
+  title.style.textDecoration = (title.style.textDecoration == "underline") ? "none" : "underline";
+}

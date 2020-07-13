@@ -10,6 +10,8 @@ $sql->bindValue(':user',$userID);
 $result = $sql->execute();
 $checkclass = array();
 
+$count = 0;
+
 while ($row = $result->fetchArray()) {
     
     $id = $row['grade_id'];
@@ -28,14 +30,20 @@ while ($row = $result->fetchArray()) {
     $cresult = $csql->execute();
 
     $crow = $cresult->fetchArray();
+
+    $count++;
     
     $class = $crow['class'];
+
     if (!in_array($class, $checkclass)) {
-        echo "<div class='title-wrapper'><h1>$class</h1></div>";
+        echo "<div class='title-wrapper' id='$class'><h1>$class</h1></div>";
         $checkclass[] = $class;
     }
-    echo "                    
-    <div class='grades-wrapper'>";
+
+    // Summary
+
+    echo "
+    <div class='grades-wrapper' onclick='zoom(this.id)' id='$count' id='section'>";
 
     echo "
         <div style='padding:8px;font-size:1.2em;'><p class='gradetable' style='font-weight:bold;'>$grade</p></div>

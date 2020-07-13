@@ -18,6 +18,10 @@
     <div id="grades_cont">
         <div id="grades_main">
         <form action="#" method="POST">
+            <div id="drpdwn" onclick="navigate()">&#9776;</div>
+            <div class='grades-link' id="n-dropdown">
+                <?php include 'all/scroll.php';?>
+            </div>
             <div class="big-wrapper">
                 <?php include 'all/allgrades.php'; ?>
             </div>
