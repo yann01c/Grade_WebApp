@@ -15,10 +15,23 @@
 
 </head>
 <body id="grades">
+    <div id="test">
+        <a href="#" class="ye">test</a>
+        <a href="#" class="ye">test</a>
+        <a href="#" class="ye">test</a>
+        <a href="#" class="ye">test</a>
+    </div>
+    <button onclick="openup()">OPEN</button>
+
     <div id="grades_cont">
         <div id="grades_main">
         <form action="#" method="POST">
-            <div id="drpdwn" onclick="navigate()">&#9776;</div>
+        <div class="dd" onclick="navigate(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+            <!-- <div id="drpdwn" onclick="navigate()">&#9776;</div> -->
             <div class='grades-link' id="n-dropdown">
                 <?php include 'all/scroll.php';?>
             </div>
@@ -26,7 +39,7 @@
                 <?php include 'all/allgrades.php'; ?>
             </div>
         </form>
-        <div style="width:100%;display:flex;justify-content:center;"><a class="grades-back" href="index.php">Back</a></div>
+        <!-- <div style="width:100%;display:flex;justify-content:center;"><a class="grades-back" href="index.php">Back</a></div> -->
         </div>
     </div>
     <script src="js/sort.js"></script>
