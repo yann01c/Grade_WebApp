@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
+    <link rel="preload" as="manifest" href="/manifest.json">
+
     <link rel="manifest" href="/manifest.json">
 
     <meta charset="UTF-8">
