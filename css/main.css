@@ -10,7 +10,6 @@ body, html {
     padding: 0;
 }
 html {
-    height: 100%;
 }
 body {
     min-height: 100%;
@@ -109,12 +108,13 @@ span {
     z-index: 1000;
     -webkit-transition: all 300ms;
     transition: all 300ms;
-    align-items: center;
+    align-items: left;
 }
 #wall > div > div{
+    margin-left: 2em;
     padding: 8px;
     display: flex;
-    justify-content:  center;
+    justify-content: left;
 }
 .burger-link-container {
     margin-top: 3em;
@@ -129,6 +129,15 @@ span {
     font-size: 1.5em;
     -webkit-transition: all 200ms;
     transition: all 200ms;
+}
+.burger-link::before {
+    content: "> ";
+    opacity: 0;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+}
+.burger-link:hover::before {
+    opacity: 1;
 }
 .burger-icon {
     z-index: 1001;

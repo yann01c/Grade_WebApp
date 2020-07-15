@@ -13,7 +13,7 @@
         <div class="back" id="e-back">
             <button onclick="hideshow()" id="e-btn">Hide</button>
         </div>
-        <div id="e-bar"><h1>Calendar</h1></div>
+        <div id="e-bar"></div>
         <div id="e-back2">
             <a href="account.php" id="b-btn">Back</a>
         </div>

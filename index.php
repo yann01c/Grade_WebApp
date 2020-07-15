@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 
-    <link rel="preload" as="manifest" href="/manifest.json">
+    <link rel="preload" as="script" href="/manifest.json">
 
     <link rel="manifest" href="/manifest.json">
 
@@ -57,13 +57,13 @@
 <body id="index">
 <div id="wall">
     <div class="burger-link-container" style="font-size: 1.3em;">
-        <div><a href="#" style="color:red;" class="burger-link">Submit</a></div>
-        <div><a href="classes.php" class="burger-link">Classes</a></div>
-        <div><a href="account.php" class="burger-link">Account</a></div>
+        <div><a href="#" style="color:red;" title="Submit" class="burger-link">Submit</a></div>
+        <div><a href="classes.php" class="burger-link" title="Classes">Classes</a></div>
+        <div><a href="account.php" class="burger-link" title="Account">Account</a></div>
     </div>
     <div class="burger-link-container">
-        <div><a href="calendar.php" class="burger-link">Calendar</a></div>
-        <div><a href="grades.php" class="burger-link">All Grades</a></div>
+        <div><a href="calendar.php" class="burger-link" title="Calendar">Calendar</a></div>
+        <div><a href="grades.php" class="burger-link" title="Grades Overview">All Grades</a></div>
     </div>
 </div>
     <div class="container">
@@ -78,13 +78,13 @@
                 </div>
 
                 <div class="nav-link-wrapper" id="a-submit">
-                    <a href="#" class="active">Submit</a>
+                    <a href="#" title="Stay here" class="active">Submit</a>
                 </div>
                 <div class="nav-link-wrapper" id="a-classes">
-                    <a href="classes.php">Classes</a>
+                    <a href="classes.php" title="Classes">Classes</a>
                 </div>
                 <div class="nav-link-wrapper" id="a-account">
-                    <a href="account.php">Account</a>
+                    <a href="account.php" title="Account">Account</a>
                 </div>
             </div>
             <div class="right-side">

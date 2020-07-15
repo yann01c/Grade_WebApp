@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 
-    <link rel="preload" as="manifest" href="/manifest.json">
+    <link rel="preload" as="script" href="/manifest.json">
 
     <link rel="manifest" href="/manifest.json">
 
@@ -226,5 +226,4 @@ function showPage() {
   document.getElementById("ac-wrap").style.display = "block";
 }
 </script>
-</body>
 </html>
