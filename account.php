@@ -136,7 +136,7 @@
                     </div>
                     <div>
                         <label for="a-password">Password</label><br>
-                        <input type="password" name="a-password" value="">
+                        <input type="password" name="a-password">
                     </div>
                     <div>
                         <a href="reset.php" id="a-float">Forgot Password?</a>

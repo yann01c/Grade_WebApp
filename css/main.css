@@ -143,6 +143,7 @@ span {
     height: 5px;
     background-color: silver;
     margin: 6px 0;
+    -webkit-transition: 0.4s;
     transition: 0.4s;
 }
 
@@ -164,7 +165,7 @@ span {
 }
 
 @media (max-width: 520px) {
-    .nav-link-wrapper { display: none; }
+    .nav-link-wrapper { background-color: black; }
 }
 @media (max-width: 520px) {
     .burger-icon { display: inline-block; }
