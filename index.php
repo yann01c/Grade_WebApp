@@ -53,11 +53,17 @@
 
 </head>
 <body id="index">
-    <div id="wall">
-        <a href="#" class="burger-link" style="margin-top:2em;">Submit</a>
-        <a href="classes.php" class="burger-link">Classes</a>
-        <a href="account.php" class="burger-link">Account</a>
+<div id="wall">
+    <div class="burger-link-container" style="font-size: 1.3em;">
+        <div><a href="#" style="color:red;" class="burger-link">Submit</a></div>
+        <div><a href="classes.php" class="burger-link">Classes</a></div>
+        <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
+    <div class="burger-link-container">
+        <div><a href="calendar.php" class="burger-link">Calendar</a></div>
+        <div><a href="grades.php" class="burger-link">All Grades</a></div>
+    </div>
+</div>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
