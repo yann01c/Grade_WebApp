@@ -22,7 +22,7 @@
         <div><a href="#" style="color:red;" class="burger-link">Classes</a></div>
         <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
-    <div class="burger-link-container" style="font-size: 1.2em;">
+    <div class="burger-link-container">
         <div><a href="calendar.php" class="burger-link">Calendar</a></div>
         <div><a href="grades.php" class="burger-link">All Grades</a></div>
     </div>
