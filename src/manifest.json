@@ -25,5 +25,5 @@
   }],
   "name": "Grade WebApp",
   "short_name": "SPIE Grades",
-  "start_url": "https://grades-i.spie.ch/index.php"
+  "start_url": "../account.php"
 }
