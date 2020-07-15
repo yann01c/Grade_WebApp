@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/manifest.webmanifest">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=2, maximum-scale=1, user-scalable=0"/>
