@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include "login/check_remote_auth.php"; ?>
 <?php include "login/check_cookies.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
