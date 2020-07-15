@@ -60,7 +60,7 @@
     <meta name="msapplication-TileImage" content="/images/icons/iphone/generated/ms-icon-144x144.png">
     <meta name="theme-color" content="black">
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
 
 </head>
 <!-- <body id="account" onload="myFunction()"> -->
