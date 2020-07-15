@@ -120,9 +120,9 @@ span {
     margin-top: 3em;
 }
 .burger-link {
-    cursor: default;
+    /* cursor: default;
     pointer-events: none;        
-    text-decoration: none;
+    text-decoration: none; */
     opacity: 0;
     color: white;
     text-decoration: none;
