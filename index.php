@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 
-    <link rel="preload" as="script" href="/manifest.json">
+    <!-- <link rel="preload" as="script" href="/manifest.json"> -->
 
     <link rel="manifest" href="/manifest.json">
 
