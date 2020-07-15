@@ -164,10 +164,10 @@ span {
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
-@media (max-width: 520px) {
-    .nav-link-wrapper { background-color: black; }
+@media screen and (max-width: 520px) {
+    .nav-link-wrapper { display: none; }
 }
-@media (max-width: 520px) {
+@media screen and (max-width: 520px) {
     .burger-icon { display: inline-block; }
 }
 form {
