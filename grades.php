@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
-    <title>Grades | All Grades</title>
+    <title>Grades | Al Grades</title>
     <link rel="icon" type="image/png" href="images/icons/icon_taskbar_transparent.png">
     <link rel="stylesheet" href="css/account.css">
 
@@ -15,13 +15,13 @@
 
 </head>
 <body id="grades">
-    <div id="test">
+    <!-- <div id="test">
         <a href="#" class="ye">test</a>
         <a href="#" class="ye">test</a>
         <a href="#" class="ye">test</a>
         <a href="#" class="ye">test</a>
     </div>
-    <button onclick="openup()">OPEN</button>
+    <button onclick="openup()">OPEN</button> -->
 
     <div id="grades_cont">
         <div id="grades_main">

@@ -52,9 +52,22 @@
 
 </head>
 <body id="index">
+    <div id="wall">
+        <a href="#" class="burger-link" style="margin-top:2em;">Submit</a>
+        <a href="classes.php" class="burger-link">Classes</a>
+        <a href="account.php" class="burger-link">Account</a>
+    </div>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
+                
+                <!-- Burger Icon -->
+                <div class="burger-icon" onclick="burger(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
                 <div class="nav-link-wrapper" id="a-submit">
                     <a href="#" class="active">Submit</a>
                 </div>
@@ -192,5 +205,6 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
+    <script src="js/burger.js"></script>
 </body>
 </html>
