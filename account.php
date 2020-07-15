@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <link rel="manifest" href="/manifest.json">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
     <title>Grades | Account</title>
@@ -59,8 +62,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/images/icons/iphone/generated/ms-icon-144x144.png">
     <meta name="theme-color" content="black">
-
-    <link rel="manifest" href="/manifest.json">
 
 </head>
 <!-- <body id="account" onload="myFunction()"> -->

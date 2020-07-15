@@ -5,6 +5,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <link rel="manifest" href="/manifest.json">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=2, maximum-scale=1, user-scalable=0"/>
     <title>Grades | Submit</title>
@@ -47,8 +50,6 @@
     <!-- iPhone SE -->
     <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/splash/splash_640x1136.png">
     <link rel="apple-touch-startup-image" media="screen and (device-width: 568px) and (device-height: 320px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/splash/splash_1136x640.png">
-
-    <link rel="manifest" href="/manifest.json">
 
 </head>
 <body id="index">
