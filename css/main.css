@@ -134,7 +134,7 @@ span {
     z-index: 1001;
     left: 10px;
     top: 5px;
-    position: fixed;
+    position: absolute;
     display: none;
     cursor: pointer;
   }
