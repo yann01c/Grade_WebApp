@@ -72,9 +72,28 @@
 <!-- <div id="div-loader">
     <img style='width:100px;height:auto;' id="loader" src="images/logo.png" alt="'LOGO'">
 </div> -->
+<div id="wall">
+    <div class="burger-link-container" style="font-size: 1.3em;">
+        <div><a href="index.php" class="burger-link">Submit</a></div>
+        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" style="color:red;" class="burger-link">Classes</a></div>
+        <div><a href="account.php" class="burger-link">Account</a></div>
+    </div>
+    <div class="burger-link-container">
+        <div><a href="calendar.php" class="burger-link">Calendar</a></div>
+        <div><a href="grades.php" class="burger-link">All Grades</a></div>
+    </div>
+</div>
     <div class="container" id="ac-wrap">
         <div class="nav-wrapper">
             <div class="left-side">
+                
+                <!-- Burger Icon -->
+                <div class="burger-icon" onclick="burger(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
                 <div id="a-submit"  class="nav-link-wrapper">
                     <a href="index.php">Submit</a>
                 </div>
@@ -193,6 +212,7 @@
     <script>addToHomescreen();</script>
     <script src="js/a2hs/register.js"></script>
     <script src="js/change.js"></script>
+    <script src="js/burger.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
     window.cookieconsent.initialise({

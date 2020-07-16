@@ -97,6 +97,9 @@ span {
 }
 /* Burger Icon / Mobile Navigation */
 #wall {
+    -webkit-box-shadow: 5px 0px 24px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 0px 24px -8px rgba(0,0,0,0.75);
+    box-shadow: 5px 0px 24px -8px rgba(0,0,0,0.75);
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -104,6 +107,7 @@ span {
     justify-content: flex-start;
     height: 100vh;
     background-color: #0F2259;
+    background-image: linear-gradient(to right, #0F2259 , #1E43B3);  
     float: left;
     z-index: 1000;
     -webkit-transition: all 300ms;
@@ -111,23 +115,28 @@ span {
     align-items: center;
 }
 #wall > div > div{
-    padding: 8px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    margin-bottom: 10px;
+    overflow: hidden;
 }
 .burger-link-container {
     margin-top: 3em;
+    width: 100%;
 }
 .burger-link {
+    padding: 10px;
     /* cursor: default;
     pointer-events: none;        
     text-decoration: none; */
     opacity: 0;
+    width: 5em;
     color: white;
     text-decoration: none;
     font-size: 1.5em;
     -webkit-transition: all 200ms;
     transition: all 200ms;
+    overflow: hidden;
 }
 .burger-link:hover {
     color: silver;
@@ -143,8 +152,8 @@ span {
 } */
 .burger-icon {
     z-index: 1001;
-    left: 10px;
-    top: 5px;
+    left: 15px;
+    top: 10px;
     position: absolute;
     display: none;
     cursor: pointer;
@@ -156,20 +165,26 @@ span {
     margin: 6px 0;
     -webkit-transition: 0.4s;
     transition: 0.4s;
+    -webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
 }
 
 .change .bar1 {
+    box-shadow: none;
     background-color: red;
     -webkit-transform: rotate(-45deg) translate(-9px, 7px);
     transform: rotate(-45deg) translate(-9px, 7px);
 }
 
 .change .bar2 {
+    box-shadow: none;
     opacity: 0;    
     background-color: red;
 }
 
 .change .bar3 {
+    box-shadow: none;
     background-color: red;
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);

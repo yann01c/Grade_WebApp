@@ -20,9 +20,27 @@
 
 </head>
 <body id="class">
+<div id="wall">
+    <div class="burger-link-container" style="font-size: 1.3em;">
+        <div><a href="index.php" class="burger-link">Submit</a></div>
+        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" style="color:red;" class="burger-link">Classes</a></div>
+        <div><a href="account.php" class="burger-link">Account</a></div>
+    </div>
+    <div class="burger-link-container">
+        <div><a href="calendar.php" class="burger-link">Calendar</a></div>
+        <div><a href="grades.php" class="burger-link">All Grades</a></div>
+    </div>
+</div>
     <div class="container">
         <div class="nav-wrapper">
             <div class="left-side">
+                
+                <!-- Burger Icon -->
+                <div class="burger-icon" onclick="burger(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
                 <div class="nav-link-wrapper" id="a-submit">
                     <a href="index.php">Submit</a>
                 </div>
@@ -82,5 +100,6 @@
         </div>
     </div>
     <script src="js/zoom.js"></script>
+    <script src="js/burger.js"></script>
 </body>
 </html>

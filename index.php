@@ -57,7 +57,7 @@
 <body id="index">
 <div id="wall">
     <div class="burger-link-container" style="font-size: 1.3em;">
-        <div><a href="#" style="color:red;" title="Submit" class="burger-link">Submit</a></div>
+        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" style="color:red;" title="Submit" class="burger-link">Submit</a></div>
         <div><a href="classes.php" class="burger-link" title="Classes">Classes</a></div>
         <div><a href="account.php" class="burger-link" title="Account">Account</a></div>
     </div>

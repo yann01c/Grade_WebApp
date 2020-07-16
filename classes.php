@@ -19,7 +19,7 @@
 <div id="wall">
     <div class="burger-link-container" style="font-size: 1.3em;">
         <div><a href="index.php" class="burger-link">Submit</a></div>
-        <div><a href="#" style="color:red;" class="burger-link">Classes</a></div>
+        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" style="color:red;" class="burger-link">Classes</a></div>
         <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
     <div class="burger-link-container">
