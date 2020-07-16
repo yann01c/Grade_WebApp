@@ -57,13 +57,15 @@
 <body id="index">
 <div id="wall">
     <div class="burger-link-container" style="font-size: 1.3em;">
-        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" style="color:red;" title="Submit" class="burger-link">Submit</a></div>
+        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" title="Submit" class="burger-link burger-link-active">Submit</a></div>
         <div><a href="classes.php" class="burger-link" title="Classes">Classes</a></div>
         <div><a href="account.php" class="burger-link" title="Account">Account</a></div>
     </div>
     <div class="burger-link-container">
-        <div><a href="calendar.php" class="burger-link" title="Calendar">Calendar</a></div>
-        <div><a href="grades.php" class="burger-link" title="Grades Overview">All Grades</a></div>
+        <div><a href="overview.php" class="burger-link">User Overview</a></div>
+        <div><a href="grades.php" class="burger-link">Grades Overview</a></div>
+        <div><a href="gallery.php" class="burger-link">Image Gallery</a></div>
+        <div><a href="calendar.php" class="burger-link">Calendar</a></div>
     </div>
 </div>
     <div class="container">

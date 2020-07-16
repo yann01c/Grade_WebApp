@@ -107,49 +107,50 @@ span {
     justify-content: flex-start;
     height: 100vh;
     background-color: #0F2259;
-    background-image: linear-gradient(to right, #0F2259 , #1E43B3);  
+    background: hsla(350,10%,10%,0.9); 
+    /* background-image: linear-gradient(to right, #0F2259 , #1E43B3);   */
     float: left;
     z-index: 1000;
     -webkit-transition: all 300ms;
     transition: all 300ms;
     align-items: center;
 }
-#wall > div > div{
+#wall > div > div {
     display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-    overflow: hidden;
+    justify-content: left;
+    overflow: visible;
 }
 .burger-link-container {
-    margin-top: 3em;
+    margin-top: 4em;
     width: 100%;
 }
+.burger-link.burger-link-active {
+    color: red;
+}
+.burger-link.burger-link-active::after {
+    margin-left: 10%;
+    content: "<";
+}
 .burger-link {
+    position: relative;
+    width: 100%;
     padding: 10px;
     /* cursor: default;
     pointer-events: none;        
     text-decoration: none; */
     opacity: 0;
-    width: 5em;
+    width: 100%;
     color: white;
     text-decoration: none;
     font-size: 1.5em;
-    -webkit-transition: all 200ms;
-    transition: all 200ms;
-    overflow: hidden;
+    -webkit-transition: 200ms;
+    transition: 200ms;
+    /* -webkit-transition: opacity 50ms;
+    transition: opacity 50ms; */
 }
 .burger-link:hover {
     color: silver;
 }
-/* .burger-link::before {
-    content: "> ";
-    opacity: 0;
-    -webkit-transition: all 200ms;
-    transition: all 200ms;
-}
-.burger-link:hover::before {
-    opacity: 1;
-} */
 .burger-icon {
     z-index: 1001;
     left: 15px;
@@ -157,7 +158,9 @@ span {
     position: absolute;
     display: none;
     cursor: pointer;
-  }
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
 .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
@@ -169,27 +172,26 @@ span {
     -moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
     box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
 }
-
+.burger-icon.change {
+    transform: rotate(-180deg);
+}
 .change .bar1 {
     box-shadow: none;
     background-color: red;
-    -webkit-transform: rotate(-45deg) translate(-9px, 7px);
-    transform: rotate(-45deg) translate(-9px, 7px);
+    -webkit-transform: rotate(-43deg) translate(-8px, 7px);
+    transform: rotate(-43deg) translate(-8px, 7px);
 }
-
 .change .bar2 {
     box-shadow: none;
     opacity: 0;    
     background-color: red;
 }
-
 .change .bar3 {
     box-shadow: none;
     background-color: red;
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
+    -webkit-transform: rotate(43deg) translate(-9px, -8px);
+    transform: rotate(43deg) translate(-9px, -8px);
 }
-
 @media screen and (max-width: 520px) {
     .nav-link-wrapper { display: none; }
 }

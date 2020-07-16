@@ -1,11 +1,19 @@
 function burger(b) {
     var check;
-    x = document.getElementById("wall");
-    link = document.querySelectorAll(".burger-link");
+    var y = window.matchMedia("(max-width: 520px)");
+    var x = document.getElementById("wall");
+    var link = document.querySelectorAll(".burger-link");
+    var w = "";
 
-    x.style.width = (x.style.width == "75%") ? "0" : "75%";
+    if (y.matches) {
+        w = "75%";
+    } else {
+        w = "25%";
+    }
 
-    if (x.style.width == "75%") {
+    x.style.width = (x.style.width == w) ? "0" : w;
+
+    if (x.style.width == w) {
         check = 1;
     } else {
         check = 0;
@@ -28,3 +36,4 @@ function burger(b) {
         }
     }
 }
+

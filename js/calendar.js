@@ -13,9 +13,9 @@ function hideshow() {
     submission.style.height = (submission.style.height == "0em") ? "40em" : "0em";
     btn.firstChild.data = (btn.firstChild.data == "Show") ? "Hide" : "Show";
     back.style.top = (back.style.top == "0em") ? "no" : "0em";
+    form.style.opacity = (form.style.opacity == "0") ? "1" : "0";
 
-    setTimeout(3000);
-    form.style.display = (form.style.display == "none") ? "block" : "none";
+    // form.style.display = (form.style.display == "none") ? "block" : "none";
 
 
 }

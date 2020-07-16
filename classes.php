@@ -19,12 +19,14 @@
 <div id="wall">
     <div class="burger-link-container" style="font-size: 1.3em;">
         <div><a href="index.php" class="burger-link">Submit</a></div>
-        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" style="color:red;" class="burger-link">Classes</a></div>
+        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" class="burger-link burger-link-active">Classes</a></div>
         <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
     <div class="burger-link-container">
+        <div><a href="overview.php" class="burger-link">User Overview</a></div>
+        <div><a href="grades.php" class="burger-link">Grades Overview</a></div>
+        <div><a href="gallery.php" class="burger-link">Image Gallery</a></div>
         <div><a href="calendar.php" class="burger-link">Calendar</a></div>
-        <div><a href="grades.php" class="burger-link">All Grades</a></div>
     </div>
 </div>
     <div class="container">

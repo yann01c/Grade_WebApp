@@ -16,28 +16,22 @@
 </head>
 <body id="grades">
 <div id="wall">
-    <div class="burger-link-container" style="font-size: 1.3em;">
-        <div><a href="index.php" class="burger-link">Submit</a></div>
-        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" style="color:red;" class="burger-link">Classes</a></div>
-        <div><a href="account.php" class="burger-link">Account</a></div>
-    </div>
+    <div class="back-div"><a title="Go back" href="index.php">&#8627;</a></div>
     <div class="burger-link-container">
-        <div><a href="calendar.php" class="burger-link">Calendar</a></div>
-        <div><a href="grades.php" class="burger-link">All Grades</a></div>
+        <?php include 'all/scroll.php';?>
     </div>
 </div>
     <div id="grades_cont">
         <div id="grades_main">
         <form action="#" method="POST">
-        <div class="burger-icon" onclick="burger(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-            <!-- <div id="drpdwn" onclick="navigate()">&#9776;</div> -->
-            <div class='grades-link' id="n-dropdown">
-                <?php include 'all/scroll.php';?>
+            <div style="position:fixed;left:15px;top:10px;z-index:10000;">
+                <div class="burger-icon" onclick="burger(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
             </div>
+
             <div class="big-wrapper">
                 <?php include 'all/allgrades.php'; ?>
             </div>
@@ -46,7 +40,7 @@
         </div>
     </div>
     <script src="js/sort.js"></script>
-    <script src="js/burger.js"></script>
+    <script src="js/burger-grades.js"></script>
 </body>
 </html>
 
