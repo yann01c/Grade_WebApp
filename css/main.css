@@ -107,7 +107,7 @@ span {
     justify-content: flex-start;
     height: 100vh;
     background-color: #0F2259;
-    background: hsla(350,10%,10%,0.9); 
+    background: hsla(200,10%,10%,0.9); 
     /* background-image: linear-gradient(to right, #0F2259 , #1E43B3);   */
     float: left;
     z-index: 1000;
@@ -143,10 +143,8 @@ span {
     color: white;
     text-decoration: none;
     font-size: 1.5em;
-    -webkit-transition: 200ms;
-    transition: 200ms;
-    /* -webkit-transition: opacity 50ms;
-    transition: opacity 50ms; */
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
 }
 .burger-link:hover {
     color: silver;

@@ -27,7 +27,7 @@ while ($row = $result->fetchArray()) {
     $count++;
 
     if ($checkclass != $class) {
-        echo "<div class='n-div'><a class='navigation' onclick='' class='$class' href='#$class'>$class</a></div>";
+        echo "<div class='top-element'><a class='top-a' href='#$class'>$class</a></div>";
         $checkclass = $class;
     }
 }

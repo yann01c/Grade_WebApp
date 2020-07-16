@@ -23,7 +23,6 @@ function burger(b) {
 
     for (i=0; i < link.length; i++) {
         link[i].style.opacity = (link[i].style.opacity == "1") ? "0" : "1";
-        // link[i].style.position = (link[i].style.position == "relative") ? "absolute" : "relative";
     }
 
     if (check == 0) {
@@ -36,4 +35,44 @@ function burger(b) {
         }
     }
 }
+function droptop(a) {
+    var i;
+    var x = document.getElementById("top-wall");
+    var arrow = document.getElementById("top-arrow");
+    var link = document.querySelectorAll(".top-a");
+    var element = document.querySelectorAll(".top-element");
+    var h = "50vh";
+    var check = 0;
 
+    // a.classList.toggle("top-change");
+
+    arrow.style.transform = (arrow.style.transform == "rotate(180deg)") ? "rotate(0deg)" : "rotate(180deg)";
+    x.style.height = (x.style.height == h) ? "0" : h;
+
+    for (i=0; i < link.length;i++) {
+        link[i].style.opacity = (link[i].style.opacity == "1") ? "0" : "1";
+    }
+
+    if (x.style.height == "0px") {
+        for (i=0; i < element.length;i++) {
+            element[i].style.display == "none";
+        } 
+    } else {
+        for (i=0; i < element.length;i++) {
+            element[i].style.display == "flex";
+        }
+    }
+
+    // if (check == 0) {
+    //     for (i=0; i < link.length; i++) {
+    //         link[i].style.display == "none";
+    //     }
+    // } else {
+    //     alert(11);
+    //     for (i=0; i < link.length; i++) {
+    //         alert(111);
+    //         link[i].style.display == "flex";
+    //         link[i].style.color == "red";
+    //     }
+    // }
+}

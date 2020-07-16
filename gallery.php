@@ -20,9 +20,9 @@
         <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
     <div class="burger-link-container">
-        <div><a href="overview.php" class="burger-link">User Overview</a></div>
-        <div><a href="grades.php" class="burger-link">Grades Overview</a></div>
-        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="gallery.php" class="burger-link burger-link-active">Image Gallery</a></div>
+        <div><a href="overview.php" class="burger-link">User OV</a></div>
+        <div><a href="grades.php" class="burger-link">Grades OV</a></div>
+        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="gallery.php" class="burger-link burger-link-active">Gallery</a></div>
         <div><a href="calendar.php" class="burger-link">Calendar</a></div>
     </div>
 </div>
@@ -44,7 +44,6 @@
         <div id="gallery_main">
         <form action="#" method="POST">
             <!-- <a class="gallery-back" href="index.php">Back</a> -->
-            <div style="margin-bottom:11em;width: 100%;"></div>
             <div class="wrapper">
                 <?php include "all/images.php"; ?>        
             </div>
