@@ -63,5 +63,5 @@ while ($row = $result->fetchArray()) {
     $emptycheck = 1;
 }
 if ($emptycheck == 0) {
-    echo "<h1 style='color:white;margin-top:2em;'>No Grades / Classes yet.</h1>";
+    echo "<h1 style='color:white;margin-top:2em;text-shadow: 3px 3px 0 black;'>No Grades / Classes yet.</h1>";
 }

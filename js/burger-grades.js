@@ -13,27 +13,29 @@ function burger(b) {
 
     x.style.width = (x.style.width == w) ? "0" : w;
 
-    if (x.style.width == w) {
-        check = 1;
-    } else {
-        check = 0;
-    }
+    // if (x.style.width == w) {
+    //     check = 1;
+    // } else {
+    //     check = 0;
+    // }
 
     b.classList.toggle("change");
 
     for (i=0; i < link.length; i++) {
         link[i].style.opacity = (link[i].style.opacity == "1") ? "0" : "1";
+        link[i].style.cursor = (link[i].style.cursor == "pointer") ? "default" : "pointer";
+        link[i].style.pointerEvents = (link[i].style.pointerEvents == "auto") ? "none" : "auto";
     }
 
-    if (check == 0) {
-        for (i=0; i < link.length; i++) {
-            link[i].style.display == "none";
-        }
-    } else {
-        for (i=0; i < link.length; i++) {
-            link[i].style.display == "flex";
-        }
-    }
+    // if (check == 0) {
+    //     for (i=0; i < link.length; i++) {
+    //         link[i].style.display == "none";
+    //     }
+    // } else {
+    //     for (i=0; i < link.length; i++) {
+    //         link[i].style.display == "flex";
+    //     }
+    // }
 }
 function droptop(a) {
     var i;
@@ -51,17 +53,19 @@ function droptop(a) {
 
     for (i=0; i < link.length;i++) {
         link[i].style.opacity = (link[i].style.opacity == "1") ? "0" : "1";
+        link[i].style.cursor = (link[i].style.cursor == "pointer") ? "default" : "pointer";
+        link[i].style.pointerEvents = (link[i].style.pointerEvents == "auto") ? "none" : "auto";
     }
 
-    if (x.style.height == "0px") {
-        for (i=0; i < element.length;i++) {
-            element[i].style.display == "none";
-        } 
-    } else {
-        for (i=0; i < element.length;i++) {
-            element[i].style.display == "flex";
-        }
-    }
+    // if (x.style.height == "0px") {
+    //     for (i=0; i < element.length;i++) {
+    //         element[i].style.display == "none";
+    //     } 
+    // } else {
+    //     for (i=0; i < element.length;i++) {
+    //         element[i].style.display == "flex";
+    //     }
+    // }
 
     // if (check == 0) {
     //     for (i=0; i < link.length; i++) {

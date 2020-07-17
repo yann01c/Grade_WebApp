@@ -20,8 +20,10 @@
         <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
     <div class="burger-link-container">
-        <div><a href="overview.php" class="burger-link">User OV</a></div>
-        <div><a href="grades.php" class="burger-link">Grades OV</a></div>
+        <?php if($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
+            echo '<div><a href="overview.php" class="burger-link">User</a></div>';
+        } ?>
+        <div><a href="grades.php" class="burger-link">Grades</a></div>
         <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="gallery.php" class="burger-link burger-link-active">Gallery</a></div>
         <div><a href="calendar.php" class="burger-link">Calendar</a></div>
     </div>
@@ -35,6 +37,7 @@
     <div id="gallery_cont">
         <div style="display:flex;justify-content:center;text-align: center;">
             <div class="header">
+                <button onclick="light()" style="background-color:darkred;color:white;border:none;padding:10px;" id="dl-btn">LIGHT</button>
                 <h1>Gallery</h1>
                 <p>
                     You can find every image you ever uploaded on this page.        
@@ -57,6 +60,7 @@
         </div>
     </div>
     <script src="js/zoom_gallery.js"></script>
+    <script src="js/light.js"></script>
     <script src="js/burger-grades.js"></script>
 </body>
 </html>

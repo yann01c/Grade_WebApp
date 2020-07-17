@@ -135,11 +135,9 @@ span {
 }
 .burger-link {
     position: relative;
-    width: 100%;
     padding: 10px;
-    /* cursor: default;
-    pointer-events: none;        
-    text-decoration: none; */
+    cursor: default;
+    pointer-events: none;
     opacity: 0;
     width: 100%;
     color: white;
@@ -199,16 +197,15 @@ span {
 @media screen and (max-width: 520px) {
     .burger-icon { display: inline-block; }
 }
-
 .form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 69vh;
     width: 100%;
 }
 .form > form > div {
-    margin-top: 10px;
+    margin-top: 0;
 }
 .form > form > div > label {
     font-size: 1.8em;
@@ -828,6 +825,7 @@ span {
 
 /* Gallery */
 
+
 #gallery .burger-icon {
     display: inline-block;
     position: fixed;
@@ -839,6 +837,7 @@ span {
 
 .gbody {
     background-color: #2E3333;
+    transition: 1s;
 
 }
 #gallery body,#gallery html {
@@ -850,6 +849,7 @@ span {
     height: 20vh;
     width: 100%;
     background-color: #2E3333;
+    transition: 1s;
 }
 .gallery-back {
     margin-left: 20px;
@@ -1015,7 +1015,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     border-radius: 25px;
     background-color: silver;
     color: #1E2121;
@@ -1026,7 +1026,7 @@ span {
     background-color: white;
 }
 #grades .top-dropdown-arrow {
-    margin: 15px 0 0 0;
+    margin: 20px 0 0 0;
     font-size: 1.2em;
 }
 #top-wall {   
@@ -1053,7 +1053,6 @@ span {
     z-index: 100002;
     display: flex;
     justify-content: left;
-    overflow: hidden;
 }
 .top-a {
     position: relative;
@@ -1062,6 +1061,8 @@ span {
     opacity: 0;
     width: 100%;
     color: white;
+    cursor: default;
+    pointer-events: none;
     text-decoration: none;
     font-size: 1.5em;
     -webkit-transition: all 200ms;

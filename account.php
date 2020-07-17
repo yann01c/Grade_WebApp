@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 <?php include "login/check_remote_auth.php"; ?>
 <?php include "login/check_cookies.php"; ?>
+<?php include "sqlite/create_db.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,9 +81,11 @@
         <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" class="burger-link burger-link-active">Account</a></div>
     </div>
     <div class="burger-link-container">
-        <div><a href="overview.php" class="burger-link">User Overview</a></div>
-        <div><a href="grades.php" class="burger-link">Grades Overview</a></div>
-        <div><a href="gallery.php" class="burger-link">Image Gallery</a></div>
+        <?php if($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
+            echo '<div><a href="overview.php" class="burger-link">User</a></div>';
+        } ?>
+        <div><a href="grades.php" class="burger-link">Grades</a></div>
+        <div><a href="gallery.php" class="burger-link">Gallery</a></div>
         <div><a href="calendar.php" class="burger-link">Calendar</a></div>
     </div>
 </div>

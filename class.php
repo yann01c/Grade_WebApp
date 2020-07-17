@@ -27,8 +27,12 @@
         <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
     <div class="burger-link-container">
+        <?php if($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
+            echo '<div><a href="overview.php" class="burger-link">User</a></div>';
+        } ?>
+        <div><a href="grades.php" class="burger-link">Grades</a></div>
+        <div><a href="gallery.php" class="burger-link">Gallery</a></div>
         <div><a href="calendar.php" class="burger-link">Calendar</a></div>
-        <div><a href="grades.php" class="burger-link">All Grades</a></div>
     </div>
 </div>
     <div class="container">
@@ -85,11 +89,6 @@
                        echo '<div class="bck-btn">
                         <a href="overview.php" style="margin-right:10px;">Back</a>
                         <a href="classes.php">Classes</a>
-                        </div>';
-                    } else {
-                        echo '<div class="bck-btn">
-                        <a href="classes.php" style="margin-right:10px;">Back</a>
-                        <a href="index.php">Submit</a>
                         </div>';
                     }
                 ?>

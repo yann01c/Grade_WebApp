@@ -18,17 +18,19 @@
 <div id="wall">
     <div class="burger-link-container" style="font-size: 1.3em;">
         <div><a href="index.php" class="burger-link">Submit</a></div>
-        <div><a href="#" class="burger-link">Classes</a></div>
+        <div><a href="classes.php" class="burger-link">Classes</a></div>
         <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
     <div class="burger-link-container">
-        <div style="background-color: rgba(255, 255, 255, 0.1);"><a href="overview.php" class="burger-link burger-link-active">User Overview</a></div>
-        <div><a href="grades.php" class="burger-link">Grades Overview</a></div>
-        <div><a href="gallery.php" class="burger-link">Image Gallery</a></div>
+        <?php if($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
+            echo '<div style="background-color: rgba(255, 255, 255, 0.1);"><a href="#" class="burger-link burger-link-active">User</a></div>';
+        } ?>
+        <div><a href="grades.php" class="burger-link">Grades</a></div>
+        <div><a href="gallery.php" class="burger-link">Gallery</a></div>
         <div><a href="calendar.php" class="burger-link">Calendar</a></div>
     </div>
 </div>
-    <div class="container">
+    <div class="container_o">
         <div class="nav-wrapper">
             <div class="left-side">
                 
@@ -82,15 +84,12 @@
                     <?php include "overview/select_classes_bb.php"; ?>
 
                 </div>
-                <div class="bck-btn" style="margin-top:2em;">
-                    <a href="classes.php">Back</a>
-                </div>
             </div>
         </div>
         <div class="footer">
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
-    <script src="js/burger.js"></script>
+    <script src="js/burger-grades.js"></script>
 </body>
 </html>

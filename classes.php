@@ -23,9 +23,10 @@
         <div><a href="account.php" class="burger-link">Account</a></div>
     </div>
     <div class="burger-link-container">
-        <div><a href="overview.php" class="burger-link">User Overview</a></div>
-        <div><a href="grades.php" class="burger-link">Grades Overview</a></div>
-        <div><a href="gallery.php" class="burger-link">Image Gallery</a></div>
+        <?php if($_SESSION['userGRPID'] == 3 || $_SESSION['userGRPID'] == 4) {
+            echo '<div><a href="overview.php" class="burger-link">User</a></div>';
+        } ?>        <div><a href="grades.php" class="burger-link">Grades</a></div>
+        <div><a href="gallery.php" class="burger-link">Gallery</a></div>
         <div><a href="calendar.php" class="burger-link">Calendar</a></div>
     </div>
 </div>
