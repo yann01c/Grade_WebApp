@@ -96,7 +96,6 @@ span {
     display: block;
 }
 /* Burger Icon / Mobile Navigation */
-/* Burger Icon / Mobile Navigation */
 #wall {
     -webkit-box-shadow: 5px 0px 24px -8px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 0px 24px -8px rgba(0,0,0,0.75);
@@ -401,7 +400,7 @@ span {
 }
 #save-btn:hover {
     box-shadow: none;
-    background-color: #0F2259;
+    background-color: green;
 }
 #cancel-btn {
     visibility: hidden;

@@ -42,5 +42,5 @@ if (isset($_GET['user-preview'])) {
         echo "</form>";
     }
 } else {
-    echo "<h1>Select a User!</h1>";
+    echo "<h1 style='color:white;'>Select an User!</h1>";
 }
