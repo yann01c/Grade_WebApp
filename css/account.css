@@ -401,7 +401,7 @@ span {
 }
 #save-btn:hover {
     box-shadow: none;
-    background-color: green;
+    background-color: #0F2259;
 }
 #cancel-btn {
     visibility: hidden;

@@ -756,6 +756,19 @@ table th {
 }
 
 
+#overview .ov-email-div {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 10em;
+}
+#overview .ov-email {
+    font-size: 1.3em;
+    color: white;
+    font-weight: normal;
+}
+
 #overview .container_o {
     margin: 0;
     padding: 0;

@@ -79,6 +79,7 @@
                     </div>
                 </form>
             </div>
+            <?php include "overview/select_userinfo.php"; ?>
             <div class="form">
                 <div>
                     <?php include "overview/select_classes_bb.php"; ?>

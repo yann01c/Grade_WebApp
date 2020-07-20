@@ -37,7 +37,7 @@
     <div id="gallery_cont">
         <div style="display:flex;justify-content:center;text-align: center;">
             <div class="header">
-                <button onclick="light()" style="background-color:darkred;color:white;border:none;padding:10px;" id="dl-btn">LIGHT</button>
+                <button onclick="light()" style="background-color:darkred;color:white;border:none;padding:10px;position:absolute;right:0;width:5em;cursor:pointer;" id="dl-btn">LIGHT</button>
                 <h1>Gallery</h1>
                 <p>
                     You can find every image you ever uploaded on this page.        

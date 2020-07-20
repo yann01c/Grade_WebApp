@@ -5,10 +5,6 @@ if (isset($_GET['user-preview'])) {
     // Get fk_group ID
     $userID = $_GET['user-preview'];
 
-    // if ($userID == "") {
-    //     echo "<h1>Select a user.</h1>";
-    // }
-
     $sql = $db->prepare("SELECT * FROM login WHERE user_id = :userid");
     if (!$sql) {
         header("Location: classes.php?error=sql");
@@ -20,6 +16,7 @@ if (isset($_GET['user-preview'])) {
     $fk = $r->fetchArray();
 
     $uid = $fk['username'];
+    $email = $fk['email'];
 
     // Get all Classes with group_id = $fkgroup
     $sql2 = $db->prepare("SELECT * FROM class WHERE fk_user = :id");
@@ -44,4 +41,6 @@ if (isset($_GET['user-preview'])) {
         echo "<div>";
         echo "</form>";
     }
+} else {
+    echo "<h1>Select a User!</h1>";
 }
