@@ -205,6 +205,6 @@ if(isset($_POST['submit'])) {
     }
 } else {
     // Redirect when accessed manually
-    header("Location: account.php");
+    header("Location: ../index.php?submission=no");
     exit();
 }
