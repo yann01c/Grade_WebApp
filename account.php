@@ -220,6 +220,7 @@
     <script src="js/change.js"></script>
     <script src="js/burger.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+    <script src="ini.js"></script>
     <script>
     window.cookieconsent.initialise({
     "palette": {
