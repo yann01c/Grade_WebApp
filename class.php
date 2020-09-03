@@ -98,6 +98,14 @@
             <div class="copyright"><a style="text-decoration:none;" href="privacy.php">All Rights Reserved - © SPIE ICS</a></div>
         </div>
     </div>
+    <?php
+    if (isset($_GET['old'])) {
+        if ($_GET['old'] == 'true') {
+            $message = "Grade is too old to delete (7days)";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+    }
+    ?>
     <script src="js/zoom.js"></script>
     <script src="js/burger.js"></script>
 </body>
